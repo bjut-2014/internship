@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="true" />
+
+	<!-- 把struts的请求委托给spring管理, 作用:创建Action实例的过程由spring处理,其他的还是有struts2自己处理 -->
+	<constant name="struts.objectFactory" value="spring" />
+
+	<package name="default" namespace="/" extends="struts-default">
+
+		<!-- 测试struts2与spring的整合 -->
+		<action name="helloAction" class="helloAction">
+			<result>/WEB-INF/success.jsp</result>
+		</action>
+
+	</package>
+
+
+</struts>
