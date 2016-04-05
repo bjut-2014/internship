@@ -15,7 +15,7 @@
 
 		<!-- 测试struts2与spring的整合 -->
 		<action name="helloAction" class="helloAction">
-			<result>/WEB-INF/success.jsp</result>
+			<result>/WEB-INF/views/students/index.jsp</result>
 		</action>
 
 	</package>
