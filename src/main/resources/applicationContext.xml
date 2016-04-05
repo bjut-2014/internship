@@ -53,20 +53,7 @@
 		<aop:advisor advice-ref="tx" pointcut-ref="perform" />
 	</aop:config>
 
-
-	<!-- ============================================================================================================================================================ -->
-
 	<!-- 测试使用 -->
 	<bean id="helloAction" class="cn.internship.action.HelloAction"></bean>
 	<!-- end -->
-
-
-
-
-
-
-
-
-
-
 </beans>
