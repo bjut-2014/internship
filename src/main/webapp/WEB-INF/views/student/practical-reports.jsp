@@ -23,14 +23,14 @@
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
         <div>题目：<input type="text" class="form-control" value=""></div>
         <div>实训时间：
-            <div class="input-group date col-sm-3" data-provide="datepicker" data-date-format="yyyy/mm/dd">
-                <input type="text" class="form-control">
+            <div class="input-group date col-sm-3" >
+                <input type="text" class="form-control datepicker" data-date-format="yyyy/mm/dd">
                 <div class="input-group-addon">
                     <span class="glyphicon glyphicon-th"></span>
                 </div>
             </div>至
-            <div class="input-group date col-sm-3" data-provide="datepicker" data-date-format="yyyy/mm/dd">
-                <input type="text" class="form-control">
+            <div class="input-group date col-sm-3">
+                <input type="text" class="form-control datepicker" data-date-format="yyyy/mm/dd">
                 <div class="input-group-addon">
                     <span class="glyphicon glyphicon-th"></span>
                 </div>
@@ -44,8 +44,12 @@
     </div>
   </div>
 </div>
-<input data-provide="datepicker">
 <jsp:include page="../footer/footer.jsp" />
 <script src="scripts/bootstrap-datepicker.min.js" charset="UTF-8"></script>
+<script type="text/javascript">
+    $('.datepicker').datepicker({
+        language: "cn"
+    });
+</script>
 </body>
 </html>
