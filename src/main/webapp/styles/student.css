@@ -7,6 +7,12 @@ body {
 .fr {
     float: right;
 }
+button, a {
+    outline: none!important;
+}
+textarea {
+    resize: none;
+}
 .sub-header {
     padding-bottom: 10px;
     border-bottom: 1px solid #eee;
