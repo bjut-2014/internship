@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <!DOCTYPE>
 <html>
-<jsp:include page="../header/header.jsp" />
+<jsp:include page="header/header.jsp" />
 <link href="styles/students.css" rel="stylesheet">
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -120,6 +120,6 @@
         </div>
     </div>
 </div>
-<jsp:include page="../footer/footer.jsp" />
+<jsp:include page="footer/footer.jsp" />
 </body>
 </html>

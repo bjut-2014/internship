@@ -1,0 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<!DOCTYPE>
+<html>
+<jsp:include page="WEB-INF/views/header/header.jsp" />
+<link href="styles/students.css" rel="stylesheet">
+<body>
+<a href="helloAction">登录</a>
+<jsp:include page="WEB-INF/views/footer/footer.jsp" />
+</body>
+</html>
