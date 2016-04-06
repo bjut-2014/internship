@@ -54,6 +54,7 @@
 	</aop:config>
 
 	<!-- 测试使用 -->
-	<bean id="helloAction" class="cn.internship.action.HelloAction"></bean>
+	<bean id="index" class="cn.internship.action.IndexAction"></bean>
+	<bean id="stu-info" class="cn.internship.action.StuInfoAction"></bean>
 	<!-- end -->
 </beans>

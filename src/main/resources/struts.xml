@@ -14,8 +14,12 @@
 	<package name="default" namespace="/" extends="struts-default">
 
 		<!-- 测试struts2与spring的整合 -->
-		<action name="helloAction" class="helloAction">
+		<action name="index" class="index">
 			<result>/WEB-INF/views/index.jsp</result>
+		</action>
+
+		<action name="stu-info" class="stu-info">
+			<result>/WEB-INF/views/student/info.jsp</result>
 		</action>
 
 	</package>

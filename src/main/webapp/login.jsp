@@ -4,7 +4,7 @@
 <jsp:include page="WEB-INF/views/header/header.jsp" />
 <link href="styles/students.css" rel="stylesheet">
 <body>
-<a href="helloAction">登录</a>
+<a href="index">登录</a>
 <jsp:include page="WEB-INF/views/footer/footer.jsp" />
 </body>
 </html>
