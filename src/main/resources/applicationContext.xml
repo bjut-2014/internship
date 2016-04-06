@@ -56,5 +56,8 @@
 	<!-- 测试使用 -->
 	<bean id="index" class="cn.internship.action.IndexAction"></bean>
 	<bean id="stu-info" class="cn.internship.action.StuInfoAction"></bean>
+	<bean id="weekly-plan" class="cn.internship.action.StuWeeklyPlanAction"></bean>
+	<bean id="practical-reports" class="cn.internship.action.StuPracticalReportsAction"></bean>
+	<bean id="internship-reports" class="cn.internship.action.StuInternshipReportsAction"></bean>
 	<!-- end -->
 </beans>

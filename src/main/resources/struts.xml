@@ -17,11 +17,18 @@
 		<action name="index" class="index">
 			<result>/WEB-INF/views/index.jsp</result>
 		</action>
-
 		<action name="stu-info" class="stu-info">
 			<result>/WEB-INF/views/student/info.jsp</result>
 		</action>
-
+		<action name="weekly-plan" class="weekly-plan">
+			<result>/WEB-INF/views/student/weekly-plan.jsp</result>
+		</action>
+		<action name="practical-reports" class="practical-reports">
+			<result>/WEB-INF/views/student/practical-reports.jsp</result>
+		</action>
+		<action name="internship-reports" class="internship-reports">
+			<result>/WEB-INF/views/student/internship-reports.jsp</result>
+		</action>
 	</package>
 
 
