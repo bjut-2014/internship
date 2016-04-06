@@ -13,10 +13,10 @@
         <li><a href="stu-info">个人信息</a></li>
         <li><a href="weekly-plan">周计划</a></li>
         <li><a href="practical-reports">实训报告</a></li>
-        <li class="active"><a href="internship-reports">实习报告</a></li>
+        <li><a href="internship-reports">实习报告</a></li>
       </ul>
       <ul class="nav nav-sidebar">
-        <li><a href="reset-pwd">修改密码</a></li>
+        <li class="active"><a href="reset-pwd">修改密码</a></li>
       </ul>
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">

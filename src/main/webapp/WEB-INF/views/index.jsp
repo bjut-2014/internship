@@ -2,7 +2,7 @@
 <!DOCTYPE>
 <html>
 <jsp:include page="header/header.jsp" />
-<link href="styles/students.css" rel="stylesheet">
+<link href="styles/student.css" rel="stylesheet">
 <body>
 <jsp:include page="nav/nav.jsp" />
 
@@ -17,7 +17,7 @@
                 <li><a href="internship-reports">实习报告</a></li>
             </ul>
             <ul class="nav nav-sidebar">
-                <li><a href="">修改密码</a></li>
+                <li><a href="reset-pwd">修改密码</a></li>
             </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">

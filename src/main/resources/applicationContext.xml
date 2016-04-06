@@ -59,5 +59,6 @@
 	<bean id="weekly-plan" class="cn.internship.action.StuWeeklyPlanAction"></bean>
 	<bean id="practical-reports" class="cn.internship.action.StuPracticalReportsAction"></bean>
 	<bean id="internship-reports" class="cn.internship.action.StuInternshipReportsAction"></bean>
+	<bean id="reset-pwd" class="cn.internship.action.ResetPwdAction"></bean>
 	<!-- end -->
 </beans>
