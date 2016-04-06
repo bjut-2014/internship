@@ -20,7 +20,26 @@
       </ul>
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-
+      <div>题目：<input type="text" class="form-control" value=""></div>
+      <div>实习时间：
+        <div class="input-group date col-sm-3" data-provide="datepicker" data-date-format="yyyy/mm/dd">
+          <input type="text" class="form-control">
+          <div class="input-group-addon">
+            <span class="glyphicon glyphicon-th"></span>
+          </div>
+        </div>至
+        <div class="input-group date col-sm-3" data-provide="datepicker" data-date-format="yyyy/mm/dd">
+          <input type="text" class="form-control">
+          <div class="input-group-addon">
+            <span class="glyphicon glyphicon-th"></span>
+          </div>
+        </div>
+      </div>
+      <div>实习单位：<input type="text" class="form-control" value=""></div>
+      <div>实习部门：<input type="text" class="form-control" value=""></div>
+      <div>实习地点：<input type="text" class="form-control" value=""></div>
+      <div>实习总结：<textarea class="form-control" rows="5" placeholder="3000个字以上"></textarea></div>
+      <button type="button" class="btn btn-primary fr practical-reports-submit">提交</button>
     </div>
   </div>
 </div>

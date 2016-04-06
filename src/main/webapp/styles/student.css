@@ -91,4 +91,9 @@ textarea {
 .info-container {
     margin:0 auto;
 }
-
+.modal {
+    top: 100px;
+}
+.practical-reports-submit {
+    margin: 10px;
+}
