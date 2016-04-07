@@ -10,12 +10,12 @@
             <h3>嵌入式实训平台</h3>
             <form>
                 <div class="form-group">
-                    <label for="exampleInputEmail1">用户名：</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1">
+                    <label>用户名：</label>
+                    <input type="email" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="exampleInputPassword1">密码：</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                    <label>密码：</label>
+                    <input type="password" class="form-control">
                 </div>
                 <div class="form-group">
                 </div>
