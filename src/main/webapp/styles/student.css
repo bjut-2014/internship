@@ -103,3 +103,13 @@ textarea {
     width: 4%;
     padding-left: 20px;
 }
+.captcha {
+    width: 30%;
+    display: inline-block;
+}
+.captcha-link {
+    margin-left: 15px;
+}
+.captcha-link:hover {
+    text-decoration: none;
+}

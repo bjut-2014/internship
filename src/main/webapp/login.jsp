@@ -18,7 +18,11 @@
                     <input type="password" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label>验证码：</label>
+                    <label>验证码：</label><br>
+                    <input type="text" class="form-control captcha">
+                    <a class="captcha-link" href="javascript:void(0);">
+                        <img src="" class="captcha-img">&nbsp;&nbsp;&nbsp;&nbsp;换一张
+                    </a>
                 </div>
                 <div class="checkbox">
                     <label>
@@ -31,5 +35,7 @@
     </div>
 </div>
 <jsp:include page="WEB-INF/views/footer/footer.jsp" />
+<script src="scripts/captcha-password.js"></script>
+<script src="scripts/login.js"></script>
 </body>
 </html>
