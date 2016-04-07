@@ -6,7 +6,7 @@
 <body>
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-4 col-md-offset-4">
             <h3>嵌入式实训平台</h3>
             <form>
                 <div class="form-group">
@@ -24,7 +24,7 @@
                         <input type="checkbox"> 记住密码
                     </label>
                 </div>
-                <a href="index" class="btn btn-default">登录</a>
+                <a href="index" class="btn btn-primary fr">登录</a>
             </form>
         </div>
     </div>
