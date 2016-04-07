@@ -18,6 +18,7 @@
                     <input type="password" class="form-control">
                 </div>
                 <div class="form-group">
+                    <label>验证码：</label>
                 </div>
                 <div class="checkbox">
                     <label>
