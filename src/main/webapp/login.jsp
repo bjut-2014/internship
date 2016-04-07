@@ -35,7 +35,6 @@
     </div>
 </div>
 <jsp:include page="WEB-INF/views/footer/footer.jsp" />
-<script src="scripts/captcha-password.js"></script>
 <script src="scripts/login.js"></script>
 </body>
 </html>

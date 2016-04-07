@@ -2,6 +2,7 @@
 <!DOCTYPE>
 <html>
 <jsp:include page="../header/header.jsp" />
+<link href="styles/bootstrap-datepicker.min.css" rel="stylesheet">
 <link href="styles/student.css" rel="stylesheet">
 <body>
 <jsp:include page="../nav/nav.jsp" />
@@ -30,14 +31,14 @@
           </div>
           <div class="form-group">
             <label class="col-sm-2 control-label">实习时间：</label>
-            <div class="input-group date input-group-date col-sm-3" data-provide="datepicker" data-date-format="yyyy/mm/dd">
+            <div class="input-group date input-group-date col-sm-3 datepicker">
                 <input type="text" class="form-control">
                 <span class="input-group-addon">
                     <i class="glyphicon glyphicon-th"></i>
                 </span>
             </div>
             <label class="col-sm-1 control-label control-label-to">至</label>
-            <div class="input-group date col-sm-3" data-provide="datepicker" data-date-format="yyyy/mm/dd">
+            <div class="input-group date col-sm-3 datepicker">
                 <input type="text" class="form-control">
                 <span class="input-group-addon">
                     <i class="glyphicon glyphicon-th"></i>
@@ -76,5 +77,12 @@
 </div>
 <jsp:include page="../footer/footer.jsp" />
 <script src="scripts/bootstrap-datepicker.min.js" charset="UTF-8"></script>
+<script type="text/javascript">
+    $('.datepicker').datepicker({
+        autoclose: true,
+        format: "yyyy/dd/mm",
+        todayHighlight: true
+    });
+</script>
 </body>
 </html>
