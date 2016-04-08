@@ -72,30 +72,35 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-            <div class="info-container">
-                <div class="panel panel-info col-sm-4">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">公告</h3>
-                    </div>
-                    <div class="list-group">
-                        <a href="#" class="list-group-item">Cras justo odio</a>
-                        <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-                        <a href="#" class="list-group-item">Morbi leo risus</a>
-                        <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-                        <a href="#" class="list-group-item">Vestibulum at eros</a>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">公告</h3>
+                            <a href="#" class="panel-title panel-title-more fr">更多>></a>
+                        </div>
+                        <div class="list-group">
+                            <a href="#" class="list-group-item">这是一条公告xxxxxxxxxxx</a>
+                            <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+                            <a href="#" class="list-group-item">Morbi leo risus</a>
+                            <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+                            <a href="#" class="list-group-item">Vestibulum at eros</a>
+                        </div>
                     </div>
                 </div>
-                <div class="panel panel-info panel-info-job col-sm-8">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">招聘信息</h3>
-                        <a href="#" class="panel-title panel-title-more fr">更多>></a>
-                    </div>
-                    <div class="list-group">
-                        <a href="#" class="list-group-item">Cras justo odio</a>
-                        <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-                        <a href="#" class="list-group-item">Morbi leo risus</a>
-                        <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-                        <a href="#" class="list-group-item">Vestibulum at eros</a>
+                <div class="col-md-6">
+                    <div class="panel panel-info panel-info-job">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">招聘信息</h3>
+                            <a href="#" class="panel-title panel-title-more fr">更多>></a>
+                        </div>
+                        <div class="list-group">
+                            <a href="#" class="list-group-item">这是一条招聘信息xxxxxxxxx</a>
+                            <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
+                            <a href="#" class="list-group-item">Morbi leo risus</a>
+                            <a href="#" class="list-group-item">Porta ac consectetur ac</a>
+                            <a href="#" class="list-group-item">Vestibulum at eros</a>
+                        </div>
                     </div>
                 </div>
             </div>

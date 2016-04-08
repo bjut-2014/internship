@@ -94,6 +94,22 @@ textarea {
 .modal {
     top: 100px;
 }
-.practical-reports-submit {
-    margin: 10px;
+.input-group[class*=col-] {
+    margin-left: 14px;
+    float: left;
+}
+.form-horizontal .control-label-to {
+    text-align: center;
+    width: 4%;
+    padding-left: 20px;
+}
+.captcha {
+    width: 30%;
+    display: inline-block;
+}
+.captcha-link {
+    margin-left: 15px;
+}
+.captcha-link:hover {
+    text-decoration: none;
 }

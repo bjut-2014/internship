@@ -39,13 +39,6 @@
 		</div>
 	</div>
 	<jsp:include page="WEB-INF/views/footer/footer.jsp" />
-	<script type="text/javascript">
-		$(function() {
-			//点击图片更换验证码  
-			$("#Verify").click(function() {
-				$(this).attr("src", "securityCodeImageAction");
-			});
-		});
-	</script>
+	<script src="scripts/login.js"></script>
 </body>
 </html>

@@ -122,11 +122,5 @@
     </div>
 </div>
 <jsp:include page="../footer/footer.jsp" />
-<script src="scripts/bootstrap-datepicker.min.js" charset="UTF-8"></script>
-<script type="text/javascript">
-    $('.datepicker').datepicker({
-        language: "cn"
-    });
-</script>
 </body>
 </html>
