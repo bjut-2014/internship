@@ -22,11 +22,11 @@
 							id="exampleInputPassword1">
 					</div>
 					<div class="form-group">
-						<input type="text" class="form-control" name="checkCode"
-							id="exampleInputSecurityCode1"> <img
-							src="createImageAction"
-							onclick="this.src='createImageAction.action?'+ Math.random()"
-							title="点击图片刷新验证码" />
+                        <label>验证码：</label><br>
+                        <input type="text" class="form-control captcha" name="checkCode">
+                        <a class="captcha-link" href="javascript:void(0);">
+                            <img src="createImageAction" class="captcha-img">&nbsp;&nbsp;&nbsp;&nbsp;换一张
+                        </a>
 					</div>
 					<div class="checkbox">
 						<label> <input type="checkbox"> 记住密码

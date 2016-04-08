@@ -80,7 +80,7 @@
 <script type="text/javascript">
     $('.datepicker').datepicker({
         autoclose: true,
-        format: "yyyy/dd/mm",
+        format: "yyyy/mm/dd",
         todayHighlight: true
     });
 </script>
