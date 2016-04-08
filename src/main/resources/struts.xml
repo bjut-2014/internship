@@ -13,13 +13,57 @@
 
 	<package name="default" namespace="/" extends="struts-default">
 
-		<!-- 测试struts2与spring的整合 -->
+
+		<!-- session过期拦截器 -->
+		<interceptors>
+			<interceptor name="loginedCheck"
+				class="cn.internship.interceptor.LoginedCheckInterceptor" />
+			<interceptor-stack name="mystack">
+				<interceptor-ref name="loginedCheck" />
+				<interceptor-ref name="defaultStack">
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+
+		<!-- 所有的action都配置一个拦截器 -->
+		<default-interceptor-ref name="mystack">
+		</default-interceptor-ref>
+
+		<!-- 定义全局result -->
+		<global-results>
+			<result name="tologin" type="redirect">/login.jsp</result>
+		</global-results>
+
+		<!-- 登陆 -->
+		<action name="login" class="login" method="loginValidate">
+			<result type="redirectAction">index</result>
+			<result name="input" >/login.jsp</result>
+		</action>
+		<!-- end -->
+		<!-- 注销 -->
+		<action name="logout" class="login" method="logout">
+			<result name="logout" >/login.jsp</result>
+		</action>
+		<!-- end -->
+		<!-- 验证码 -->
+		<action name="createImageAction" class="createImageAction">
+			<result name="success" type="stream">
+				<param name="contentType">image/jpeg</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- end -->
+		<!-- 首页 -->
 		<action name="index" class="index">
 			<result>/WEB-INF/views/index.jsp</result>
 		</action>
+		<!-- end -->
+		<!-- 学生个人信息页面 -->
 		<action name="stu-info" class="stu-info">
 			<result>/WEB-INF/views/student/info.jsp</result>
 		</action>
+		<!-- end -->
+		
 		<action name="weekly-plan" class="weekly-plan">
 			<result>/WEB-INF/views/student/weekly-plan.jsp</result>
 		</action>

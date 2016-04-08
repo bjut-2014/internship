@@ -48,17 +48,41 @@
 
 	<!-- 配置spring声明式事务 -->
 	<aop:config>
-		<aop:pointcut expression="execution(* cn.internship.test.*.*(..))"
+		<aop:pointcut expression="execution(* cn.internship.service.*.*(..))"
 			id="perform" />
 		<aop:advisor advice-ref="tx" pointcut-ref="perform" />
 	</aop:config>
-
-	<!-- 测试使用 -->
-	<bean id="index" class="cn.internship.action.IndexAction"></bean>
-	<bean id="stu-info" class="cn.internship.action.StuInfoAction"></bean>
+	<!-- 登陆验证 -->
+	<bean id="login" class="cn.internship.action.LoginAction" scope="prototype">
+		<property name="studentService" ref="studentService"/>
+	</bean>
+	<!-- end -->
+	<!-- 验证码 -->
+	<bean id="createImageAction" class="cn.internship.action.CreateImageAction"></bean>
+	<!-- end -->
+	<!-- 首页 -->
+	<bean id="index" class="cn.internship.action.IndexAction">
+		<property name="studentService" ref="studentService"/>
+	</bean>
+	<!-- end -->
+	<!-- 学生个人信息页面 -->
+	<bean id="stu-info" class="cn.internship.action.StuInfoAction">
+		<property name="studentService" ref="studentService"/>
+	</bean>
+	<!-- end -->
 	<bean id="weekly-plan" class="cn.internship.action.StuWeeklyPlanAction"></bean>
 	<bean id="practical-reports" class="cn.internship.action.StuPracticalReportsAction"></bean>
 	<bean id="internship-reports" class="cn.internship.action.StuInternshipReportsAction"></bean>
 	<bean id="reset-pwd" class="cn.internship.action.ResetPwdAction"></bean>
+	
+	
+	<!-- 学生 -->
+	<bean id="studentDao" class="cn.internship.dao.impl.StudentDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="studentService" class="cn.internship.service.Impl.StudentServiceImpl">
+		<property name="studentDao" ref="studentDao"/>
+	</bean>
 	<!-- end -->
+	
 </beans>

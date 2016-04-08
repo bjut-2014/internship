@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE>
 <html>
 <jsp:include page="../header/header.jsp" />
@@ -22,12 +23,12 @@
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
         <div class="panel panel-default">
             <div class="panel-body">
-                <p>姓名：xxxx</p>
-                <p>学号：xxxxxxxxxx</p>
-                <p>校内导师：xxxx</p>
-                <p>校外导师：xxxx</p>
-                <p>实习单位：xxx</p>
-                <p>实训成绩：xxx</p>
+                <p>姓名：<s:property value="#session.currentUser.studentName" /></p>
+                <p>学号：<s:property value="#session.currentUser.studentId"/></p>
+                <p>校内导师：<s:if test="#session.currentUser.schoolTeacher==null">无</s:if><s:else><s:property value="#session.currentUser.schoolTeacher"/></s:else> </p>
+                <p>校外导师：<s:if test="#session.currentUser.enterpriseTeacher==null">无</s:if><s:else><s:property value="#session.currentUser.enterpriseTeacher"/></s:else></p>
+                <p>实习单位：<s:if test="#session.currentUser.practiceCompany==null">无</s:if><s:else><s:property value="#session.currentUser.practiceCompany"/></s:else></p>
+                <p>实训成绩：<s:if test="#session.currentUser.studentScore==null">无</s:if><s:else><s:property value="#session.currentUser.studentScore"/></s:else></p>
             </div>
         </div>
     </div>

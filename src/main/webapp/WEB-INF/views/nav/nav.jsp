@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -12,8 +13,8 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="javascript:void(0)">您好，xxxx</a></li>
-        <li><a href="#">注销</a></li>
+        <li><a href="javascript:void(0)">您好，<s:property value="#session.currentUser.studentName" /></a></li>
+        <li><a href="logout">注销</a></li>
       </ul>
     </div>
   </div>
