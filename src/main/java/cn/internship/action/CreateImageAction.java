@@ -16,6 +16,10 @@ import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+/**
+ * 生成验证码图片
+ * @author dreamlate
+ */
 public class CreateImageAction extends ActionSupport {
 	private ByteArrayInputStream inputStream;
 	private static int WIDTH = 60;

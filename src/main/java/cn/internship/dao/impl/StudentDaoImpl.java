@@ -14,12 +14,17 @@ import cn.internship.entity.Student;
  */
 public class StudentDaoImpl extends HibernateDaoSupport implements StudentDao{
 
-	//通过学号、密码查找学生
-	public Student findStudentByUP(String username, String password) {
-		String hql = "from Student stu where stu.studentId=? and stu.password=?";
-		Object[] values = {username,password};
-		List<Student> list = (List<Student>) getHibernateTemplate().find(hql,values);
-		if(list==null||list.size()==0){
+
+	//通过主键查找学生
+	public Student get(Integer id) {
+		return getHibernateTemplate().get(Student.class, id);
+	}
+
+	//通过学号查找学生
+	public Student get(String studentId) {
+		String hql = "from Student s where s.studentId=?";
+		List<Student> list = (List<Student>) getHibernateTemplate().find(hql, new Object[]{studentId});
+		if(list==null || list.size() ==0){
 			return null;
 		}
 		return list.get(0);

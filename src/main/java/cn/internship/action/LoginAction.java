@@ -7,7 +7,10 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 import com.opensymphony.xwork2.ActionSupport;
 import cn.internship.entity.Student;
+import cn.internship.entity.User;
 import cn.internship.service.StudentService;
+import cn.internship.service.UserService;
+import sun.print.resources.serviceui;
 
 /**
  * 登陆验证
@@ -18,6 +21,7 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 	private HttpServletRequest request;
 	private HttpServletResponse response;
 	private StudentService studentService;
+	private UserService userService;
 
 	// 用户名
 	private String username;
@@ -51,20 +55,25 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 			this.addActionError("用户名、密码不正确！");
 			return INPUT;
 		}
-		//判断用户类型
-		char userType = username.charAt(0);
-		//类型为学生
-		if(userType == 'S'){
-			Student student = studentService.login(username, password);
+		
+		//验证用户是否存在
+		User user = userService.login(username, password);
+		if(user == null){
+			this.addActionError("用户名、密码不正确！");
+			return INPUT;
+		}
+		//获得用户权限
+		int right = user.getRights();
+		//权限1为学生
+		if(right == 1){
+			Student student = studentService.get(user.getUsername());
 			if(student == null){
 				this.addActionError("用户名、密码不正确！");
 				return INPUT;
 			}
-			//将登陆成功的学生存入session
 			session.setAttribute("currentUser", student);
-			return SUCCESS;
 		}
-		return INPUT;
+		return SUCCESS;
 	}
 
 	
@@ -115,6 +124,14 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 
 	public void setServletRequest(HttpServletRequest request) {
 		this.request = request;
+	}
+
+	public UserService getUserService() {
+		return userService;
+	}
+
+	public void setUserService(UserService userService) {
+		this.userService = userService;
 	}
 
 }

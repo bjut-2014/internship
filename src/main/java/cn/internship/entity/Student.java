@@ -23,12 +23,6 @@ public class Student {
 	//学号,不能重复
 	@Column(unique=true,length=14)
 	private String studentId;
-	//密码
-	@Column(length=14)
-	private String password;
-	//权限
-	@Column(length=2)
-	private Integer rights;
 	//学生姓名
 	@Column(length=20)
 	private String studentName;
@@ -56,18 +50,6 @@ public class Student {
 	}
 	public void setStudentId(String studentId) {
 		this.studentId = studentId;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public Integer getRights() {
-		return rights;
-	}
-	public void setRights(Integer rights) {
-		this.rights = rights;
 	}
 	public String getStudentName() {
 		return studentName;

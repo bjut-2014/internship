@@ -8,9 +8,10 @@ import cn.internship.entity.Student;
  */
 public interface StudentDao{
 
-	//通过学号、密码查找学生
-	public Student findStudentByUP(String username,String password);
+	//通过主键查找学生
+	public Student get(Integer id);
 	
-	
+	//通过学号查找学生
+	public Student get(String studentId);
 	
 }
