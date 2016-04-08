@@ -83,7 +83,6 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 		return "logout";
 	}
 	
-	
 	//-------------------------------------------set与get方法-------------------------------------------------
 	
 	public StudentService getStudentService() {

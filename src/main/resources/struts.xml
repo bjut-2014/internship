@@ -73,9 +73,17 @@
 		<action name="internship-reports" class="internship-reports">
 			<result>/WEB-INF/views/student/internship-reports.jsp</result>
 		</action>
+		<!-- 修改密码页面 -->
 		<action name="reset-pwd" class="reset-pwd">
 			<result>/WEB-INF/views/common/reset-pwd.jsp</result>
 		</action>
+		<!-- end -->
+		<!-- 修改密码 -->
+		<action name="chpwd" class="reset-pwd" method="chpwd">
+			<result type="redirectAction">reset-pwd</result>
+			<result name="input">/WEB-INF/views/common/reset-pwd.jsp</result>
+		</action>
+		<!-- end -->
 	</package>
 
 
