@@ -23,5 +23,6 @@
 		<!-- 实体层映射到数据库的类 -->
 		<mapping class="cn.internship.entity.Student" />
 		<mapping class="cn.internship.entity.User"/>
+		<mapping class="cn.internship.entity.WeeklyPlan"/>
 	</session-factory>
 </hibernate-configuration>

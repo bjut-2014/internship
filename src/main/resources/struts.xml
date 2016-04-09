@@ -63,10 +63,20 @@
 			<result>/WEB-INF/views/student/info.jsp</result>
 		</action>
 		<!-- end -->
-		
+		<!-- 学生周报页面 -->
 		<action name="weekly-plan" class="weekly-plan">
 			<result>/WEB-INF/views/student/weekly-plan.jsp</result>
 		</action>
+		<action name="weekly-plan-add" class="weekly-plan" method="add">
+			<result type="redirectAction">weekly-plan</result>
+		</action>
+		<action name="weekly-plan-delete" class="weekly-plan" method="delete">
+			<result type="redirectAction">weekly-plan</result>
+		</action>
+		<action name="weekly-plan-update" class="weekly-plan" method="update">
+			<result type="redirectAction">weekly-plan</result>
+		</action>
+		<!-- end -->
 		<action name="practical-reports" class="practical-reports">
 			<result>/WEB-INF/views/student/practical-reports.jsp</result>
 		</action>

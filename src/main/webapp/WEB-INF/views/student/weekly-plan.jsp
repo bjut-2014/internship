@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE>
 <html>
 <jsp:include page="../header/header.jsp" />
@@ -33,33 +34,18 @@
             </tr>
             </thead>
             <tbody>
+            <s:iterator value="#request.weeklyplan" var="list">
             <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
+                <th scope="row"><s:property value="#list.id"/></th>
+                <td><s:property value="#list.weeklyplanTitle"/></td>
+                <td><s:property value="#list.weeklyplanDate"/></td>
                 <td>
                     <button type="button" class="btn btn-default" data-toggle="modal" data-target="#WeeklyPlanModify">修改</button>
-                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#WeeklyPlanDel">删除</button>
+                    <!-- <button type="button" class="btn btn-default" data-toggle="modal" data-target="#WeeklyPlanDel">删除</button>-->
+                	<a class="btn btn-default" href="weekly-plan-delete?deleteId=<s:property value="#list.id" />">删除</a>
                 </td>
             </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>
-                    <button type="button" class="btn btn-default">修改</button>
-                    <button type="button" class="btn btn-default">删除</button>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td>
-                    <button type="button" class="btn btn-default">修改</button>
-                    <button type="button" class="btn btn-default">删除</button>
-                </td>
-            </tr>
+            </s:iterator>
             </tbody>
         </table>
     </div>
@@ -68,20 +54,22 @@
 <%--添加弹窗--%>
 <div class="modal fade" id="WeeklyPlanAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel3">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel3">添加周计划</h4>
-            </div>
-            <div class="modal-body">
-                <div>标题：<input type="text" class="form-control" value=""></div>
-                <div>内容：<textarea class="form-control" rows="5" placeholder="1000个字以上"></textarea></div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-primary"  data-dismiss="modal">提交</button>
-            </div>
-        </div>
+    	<form action="weekly-plan-add" method="post">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	                <h4 class="modal-title" id="myModalLabel3">添加周计划</h4>
+	            </div>
+	            <div class="modal-body">
+	                <div>标题：<input name="addTitle" type="text" class="form-control" value=""></div>
+	                <div>内容：<textarea name="addContent" class="form-control" rows="5" placeholder="1000个字以上"></textarea></div>
+	            </div>
+	            <div class="modal-footer">
+	               <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+	               <input type="submit" class="btn btn-primary"  value="提交" />
+	            </div>
+	        </div>
+        </form>
     </div>
 </div>
 <%--修改弹窗--%>
