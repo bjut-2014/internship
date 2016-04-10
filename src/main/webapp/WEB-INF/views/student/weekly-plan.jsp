@@ -74,7 +74,7 @@
 <%--修改弹窗--%>
 <div class="modal fade" id="WeeklyPlanModify" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" data-id>
     <div class="modal-dialog" role="document">
-		<div class="modal-content">
+		<!-- <div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title" id="myModalLabel2">修改周计划</h4>
@@ -89,7 +89,25 @@
 				<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
 				<button type="button" class="btn btn-primary weekly-plan-update-confirm" data-dismiss="modal">修改</button>
 			</div>
-		</div>
+		</div> -->
+        <form action="weekly-plan-update" method="post">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel2">修改周计划</h4>
+                </div>
+                <div class="modal-body">
+                    <div>编号：<input name="updateId" type="text" class="form-control plan-id" value="" disabled></div>
+                    <div>标题：<input name="updateTitle" type="text" class="form-control plan-title" value=""></div>
+                    <div>内容：<textarea name="updateContent" class="form-control plan-content" rows="5" placeholder="1000个字以上" value=""></textarea></div>
+                    <div>时间：<input type="text" class="form-control plan-date" value="" disabled></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="submit" class="btn btn-primary weekly-plan-edit-confirm">修改</button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
 <%--删除弹窗--%>
