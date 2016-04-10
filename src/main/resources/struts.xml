@@ -68,7 +68,7 @@
 			<result>/WEB-INF/views/student/weekly-plan.jsp</result>
 		</action>
         <action name="weekly-plan-edit" class="weekly-plan" method="get">
-            <result type="redirectAction">weekly-plan</result>
+            <result>/WEB-INF/views/student/weekly-plan.jsp</result>
         </action>
 		<action name="weekly-plan-add" class="weekly-plan" method="add">
 			<result type="redirectAction">weekly-plan</result>

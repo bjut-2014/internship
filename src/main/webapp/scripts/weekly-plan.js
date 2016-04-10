@@ -30,11 +30,15 @@ $weeklyPlanEdit.on('click', function() {
     $.ajax({
         url: 'weekly-plan-edit',
         type: 'POST',
+        dataType: "JSON",
         data: {
             weeklyPlanId: id
         },
         success: function(data) {
-            console.log(data);
+            $('.plan-id').val(data.id);
+            $('.plan-title').val(data.weeklyplanTitle);
+            $('.plan-content').val(data.weeklyplanContent);
+            $('.plan-date').val(data.weeklyplanDate);
         }
     })
 });
