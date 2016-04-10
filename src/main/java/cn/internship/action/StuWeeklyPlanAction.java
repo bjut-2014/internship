@@ -56,11 +56,14 @@ public class StuWeeklyPlanAction extends ActionSupport implements ServletRequest
 
 	//查找某一条周报
 	public String get() throws Exception {
-//		WeeklyPlan oneWeeklyPlan = weeklyPlanService.get(weeklyPlanId);
-//		request.setAttribute("oneWeeklyplan", oneWeeklyPlan);
-//		return super.execute();
-        String weeklyPlanId = request.getParameter("weeklyPlanId");
+        WeeklyPlan oneWeeklyPlan = weeklyPlanService.get(weeklyPlanId);
         JSONArray jsonArray = new JSONArray();
+
+        System.out.println(weeklyPlanId);
+        System.out.println(oneWeeklyPlan);
+//        for (WeeklyPlan wp : oneWeeklyPlan) {
+//
+//        }
 
         return SUCCESS;
 	}
