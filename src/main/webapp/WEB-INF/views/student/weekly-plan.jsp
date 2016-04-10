@@ -72,7 +72,7 @@
     </div>
 </div>
 <%--修改弹窗--%>
-<div class="modal fade" id="WeeklyPlanModify" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+<div class="modal fade" id="WeeklyPlanModify" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" data-id>
     <div class="modal-dialog" role="document">
         <form>
             <div class="modal-content">
