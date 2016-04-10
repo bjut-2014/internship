@@ -28,8 +28,6 @@ $weeklyPlanDelConfirm.on('click', function() {
 $weeklyPlanEdit.on('click', function() {
     var id = $(this).attr('data-id');
     
-    $('#WeeklyPlanModify').attr('data-id', id);
-    
     $.ajax({
         url: 'weekly-plan-edit',
         type: 'POST',
