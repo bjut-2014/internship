@@ -74,7 +74,7 @@
 <%--修改弹窗--%>
 <div class="modal fade" id="WeeklyPlanModify" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
     <div class="modal-dialog" role="document">
-        <form action="weekly-plan-update" method="post">
+        <form>
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -88,7 +88,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                    <button type="submit" class="btn btn-primary weekly-plan-edit-confirm">修改</button>
+                    <button class="btn btn-primary weekly-plan-edit-confirm">修改</button>
                 </div>
             </div>
         </form>

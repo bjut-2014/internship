@@ -38,24 +38,23 @@ $weeklyPlanEdit.on('click', function() {
         success: function(data) {
             $('.plan-id').attr("value", data.id);
             $('.plan-title').attr("value", data.weeklyplanTitle);
-            $('.plan-content').attr("value", data.weeklyplanContent);
-            $('.plan-content').text(data.weeklyplanContent);
+            $('.plan-content').attr("value", data.weeklyplanContent).text(data.weeklyplanContent);
             $('.plan-date').attr("value", data.weeklyplanDate);
         }
     })
 });
-//$weeklyPlanEditConfirm.on('click', function () {
-//    $.ajax({
-//        url: 'weekly-plan-update',
-//        type: 'POST',
-//        dataType: 'JSON',
-//        data: {
-//            updateId: $('.plan-id').val(),
-//            updateTitle: $('.plan-title').val(),
-//            updateContent: $('.plan-content').text()
-//        },
-//        success: function (data) {
-//            window.location.reload();
-//        }
-//    });
-//});
+$weeklyPlanEditConfirm.on('click', function () {
+    $.ajax({
+        url: 'weekly-plan-update',
+        type: 'POST',
+        dataType: 'JSON',
+        data: {
+            updateId: $('.plan-id').val(),
+            updateTitle: $('.plan-title').val(),
+            updateContent: $('.plan-content').text()
+        },
+        success: function (data) {
+            //window.location.reload();
+        }
+    });
+});

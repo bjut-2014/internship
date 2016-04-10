@@ -105,6 +105,7 @@ public class StuWeeklyPlanAction extends ActionSupport implements ServletRequest
 		weeklyPlan.setWeeklyplanTitle(updateTitle);
 		weeklyPlan.setWeeklyplanContent(updateContent);
 		weeklyPlan.setWeeklyplanDate(new Date(new java.util.Date().getTime()));
+        System.out.println(updateId + "---" + updateTitle + "---" + updateContent);
 		weeklyPlanService.update(weeklyPlan);
 		return SUCCESS;
 	}
