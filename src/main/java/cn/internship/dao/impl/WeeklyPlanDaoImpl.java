@@ -15,7 +15,7 @@ public class WeeklyPlanDaoImpl extends HibernateDaoSupport implements WeeklyPlan
 
 	//通过主键找到指定周报
 	public WeeklyPlan get(Integer id) {
-		return getHibernateTemplate().get(WeeklyPlan.class	, id);
+		return getHibernateTemplate().get(WeeklyPlan.class, id);
 	}
 
 	//通过主键删除指定周报
