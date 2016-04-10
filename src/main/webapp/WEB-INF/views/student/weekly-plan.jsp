@@ -40,7 +40,7 @@
                 <td>${list.weeklyplanTitle}</td>
                 <td>${list.weeklyplanDate}</td>
                 <td>
-                    <button type="button" class="btn btn-default" data-toggle="modal" data-target="#WeeklyPlanModify">修改</button>
+                    <button type="button" class="btn btn-default weekly-plan-edit" data-toggle="modal" data-target="#WeeklyPlanModify" data-id=${list.id}>修改</button>
                     <button type="button" class="btn btn-default weekly-plan-del" data-toggle="modal" data-target="#WeeklyPlanDel" data-id=${list.id}>删除</button>
                 </td>
             </tr>
@@ -80,10 +80,12 @@
                 <h4 class="modal-title" id="myModalLabel2">修改周计划</h4>
             </div>
             <div class="modal-body">
-                <div>编号：<input type="text" class="form-control" value="1" disabled></div>
-                <div>标题：<input type="text" class="form-control" value="这是一篇周计划标题"></div>
-                <div>内容：<textarea class="form-control" rows="5" placeholder="1000个字以上">这是一篇周计划，这是一篇周计划，这是一篇周计划，这是一篇周计划</textarea></div>
-                <div>时间：<input type="text" class="form-control" value="2016.04.01" disabled></div>
+                <s:iterator value="#request.oneWeeklyplan" var="list">
+                    <div>编号：<input type="text" class="form-control id" value="" disabled></div>
+                    <div>标题：<input type="text" class="form-control title" value=""></div>
+                    <div>内容：<textarea class="form-control content" rows="5" placeholder="1000个字以上"></textarea></div>
+                    <div>时间：<input type="text" class="form-control date" value="" disabled></div>
+                </s:iterator>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>

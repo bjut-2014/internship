@@ -32,6 +32,9 @@ public class StuWeeklyPlanAction extends ActionSupport implements ServletRequest
 	
 	//删除周报ID
 	private Integer deleteId;
+
+    //查找周报ID
+    private Integer weeklyPlanId;
 	
 	//修改周报标题
 	private String updateTitle;
@@ -49,6 +52,13 @@ public class StuWeeklyPlanAction extends ActionSupport implements ServletRequest
         request.setAttribute("weeklyplan", list);
 		return super.execute();
     }
+
+	//查找某一条周报
+	public String get() throws Exception {
+		WeeklyPlan oneWeeklyPlan = weeklyPlanService.get(weeklyPlanId);
+		request.setAttribute("oneWeeklyplan", oneWeeklyPlan);
+		return super.execute();
+	}
 
 	//添加周报
 	public String add(){
