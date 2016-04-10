@@ -16,7 +16,6 @@ import com.opensymphony.xwork2.ActionSupport;
 import cn.internship.entity.Student;
 import cn.internship.entity.WeeklyPlan;
 import cn.internship.service.WeeklyPlanService;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 /**
@@ -60,7 +59,6 @@ public class StuWeeklyPlanAction extends ActionSupport implements ServletRequest
 	//查找某一条周报
 	public String get() throws Exception {
         WeeklyPlan oneWeeklyPlan = weeklyPlanService.get(weeklyPlanId);
-        JSONArray jsonArray = new JSONArray();
         JSONObject jo = new JSONObject();
 
         jo.put("id", oneWeeklyPlan.getId());
@@ -68,11 +66,10 @@ public class StuWeeklyPlanAction extends ActionSupport implements ServletRequest
         jo.put("weeklyplanContent", oneWeeklyPlan.getWeeklyplanContent());
         jo.put("weeklyplanDate", oneWeeklyPlan.getWeeklyplanDate());
 
-        jsonArray.put(jo);
         try {
             response.setCharacterEncoding("utf-8");
             PrintWriter out = response.getWriter();
-            out.println(jsonArray);
+            out.println(jo);
             out.flush();
             out.close();
         } catch (IOException e) {
