@@ -1,5 +1,7 @@
 package cn.internship.action;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Date;
 import java.util.List;
 
@@ -15,6 +17,7 @@ import cn.internship.entity.Student;
 import cn.internship.entity.WeeklyPlan;
 import cn.internship.service.WeeklyPlanService;
 import org.json.JSONArray;
+import org.json.JSONObject;
 
 /**
  * 学生周报页面
@@ -58,14 +61,24 @@ public class StuWeeklyPlanAction extends ActionSupport implements ServletRequest
 	public String get() throws Exception {
         WeeklyPlan oneWeeklyPlan = weeklyPlanService.get(weeklyPlanId);
         JSONArray jsonArray = new JSONArray();
+        JSONObject jo = new JSONObject();
 
-        System.out.println(weeklyPlanId);
-        System.out.println(oneWeeklyPlan);
-//        for (WeeklyPlan wp : oneWeeklyPlan) {
-//
-//        }
+        jo.put("id", oneWeeklyPlan.getId());
+        jo.put("weeklyplanTitle", oneWeeklyPlan.getWeeklyplanTitle());
+        jo.put("weeklyplanContent", oneWeeklyPlan.getWeeklyplanContent());
+        jo.put("weeklyplanDate", oneWeeklyPlan.getWeeklyplanDate());
 
-        return SUCCESS;
+        jsonArray.put(jo);
+        try {
+            response.setCharacterEncoding("utf-8");
+            PrintWriter out = response.getWriter();
+            out.println(jsonArray);
+            out.flush();
+            out.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+       return SUCCESS;
 	}
 
 	//添加周报
