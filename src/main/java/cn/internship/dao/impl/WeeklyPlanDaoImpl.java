@@ -36,7 +36,7 @@ public class WeeklyPlanDaoImpl extends HibernateDaoSupport implements WeeklyPlan
 		
 	//获得所有周报
 	public List<WeeklyPlan> getAll(String studentId) {
-		String hql = "from WeeklyPlan wp where wp.studentId=?";
+		String hql = "from WeeklyPlan wp where wp.studentId = ?";
 		Object[] values = {studentId};
 		List<WeeklyPlan> list = (List<WeeklyPlan>) getHibernateTemplate().find(hql,values);
 		return list;

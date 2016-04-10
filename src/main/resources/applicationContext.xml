@@ -67,7 +67,7 @@
 		<property name="studentService" ref="studentService"/>
 	</bean>
 	<!-- end -->
-	<!-- 学生个人信息页面 -->
+	<!-- 周报页面 -->
 	<bean id="weekly-plan" class="cn.internship.action.StuWeeklyPlanAction">
 		<property name="weeklyPlanService" ref="weeklyPlanService"/>
 	</bean>
