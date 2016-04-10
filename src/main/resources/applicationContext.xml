@@ -73,8 +73,11 @@
 	</bean>
 	<!-- end -->
 	<bean id="practical-reports" class="cn.internship.action.StuPracticalReportsAction"></bean>
-	<bean id="internship-reports" class="cn.internship.action.StuInternshipReportsAction"></bean>
-	
+	<!-- 实习报告页面 -->
+	<bean id="internship-reports" class="cn.internship.action.StuInternshipReportsAction">
+		<property name="internshipReportService" ref="internshipReportService"></property>
+	</bean>
+	<!-- end -->
 	<!-- 学生修改密码页面 -->
 	<bean id="reset-pwd" class="cn.internship.action.ResetPwdAction" scope="prototype">
 		<property name="userService" ref="userService"/>
@@ -105,6 +108,15 @@
 	</bean>
 	<bean id="weeklyPlanService" class="cn.internship.service.impl.WeeklyPlanServiceImpl">
 		<property name="weeklyPlanDao" ref="weeklyPlanDao"/>
+	</bean>
+	<!-- end -->
+	
+	<!-- 实习报告 -->
+	<bean id="internshipReportDao" class="cn.internship.dao.impl.InternshipReportDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="internshipReportService" class="cn.internship.service.impl.InternshipReportServiceImpl">
+		<property name="internshipReportDao" ref="internshipReportDao"/>
 	</bean>
 	<!-- end -->
 	

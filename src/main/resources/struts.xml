@@ -83,9 +83,12 @@
 		<action name="practical-reports" class="practical-reports">
 			<result>/WEB-INF/views/student/practical-reports.jsp</result>
 		</action>
+		<!-- 实习报告页面 -->
 		<action name="internship-reports" class="internship-reports">
 			<result>/WEB-INF/views/student/internship-reports.jsp</result>
+			<result name="input">/WEB-INF/views/student/internship-reports.jsp</result>
 		</action>
+		<!-- end -->
 		<!-- 修改密码页面 -->
 		<action name="reset-pwd" class="reset-pwd">
 			<result>/WEB-INF/views/common/reset-pwd.jsp</result>
