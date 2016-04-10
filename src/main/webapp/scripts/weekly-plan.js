@@ -35,10 +35,10 @@ $weeklyPlanEdit.on('click', function() {
             weeklyPlanId: id
         },
         success: function(data) {
-            $('.plan-id').val(data.id);
-            $('.plan-title').val(data.weeklyplanTitle);
-            $('.plan-content').val(data.weeklyplanContent);
-            $('.plan-date').val(data.weeklyplanDate);
+            $('.plan-id').attr("value", data.id);
+            $('.plan-title').attr("value", data.weeklyplanTitle);
+            $('.plan-content').attr("value", data.weeklyplanContent);
+            $('.plan-date').attr("value", data.weeklyplanDate);
         }
     })
 });
