@@ -26,7 +26,7 @@
           <form action="chpwd" method="post">
             <div class="form-group">
               <label>初始密码：</label>
-              <input name="password" type="text" class="form-control">
+              <input name="password" type="password" class="form-control">
             </div>
             <div class="form-group">
               <label>新密码：</label>

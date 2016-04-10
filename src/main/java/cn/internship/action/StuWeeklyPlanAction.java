@@ -14,6 +14,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import cn.internship.entity.Student;
 import cn.internship.entity.WeeklyPlan;
 import cn.internship.service.WeeklyPlanService;
+import org.json.JSONArray;
 
 /**
  * 学生周报页面
@@ -42,8 +43,8 @@ public class StuWeeklyPlanAction extends ActionSupport implements ServletRequest
 	private String updateContent;
 	//修改周报ID
 	private Integer updateId;
-	
-	@Override
+
+    @Override
     public String execute() throws Exception {
         //获得当前session下的学生
 		Student student = (Student) request.getSession().getAttribute("currentUser");
@@ -55,9 +56,13 @@ public class StuWeeklyPlanAction extends ActionSupport implements ServletRequest
 
 	//查找某一条周报
 	public String get() throws Exception {
-		WeeklyPlan oneWeeklyPlan = weeklyPlanService.get(weeklyPlanId);
-		request.setAttribute("oneWeeklyplan", oneWeeklyPlan);
-		return super.execute();
+//		WeeklyPlan oneWeeklyPlan = weeklyPlanService.get(weeklyPlanId);
+//		request.setAttribute("oneWeeklyplan", oneWeeklyPlan);
+//		return super.execute();
+        String weeklyPlanId = request.getParameter("weeklyPlanId");
+        JSONArray jsonArray = new JSONArray();
+
+        return SUCCESS;
 	}
 
 	//添加周报
@@ -159,5 +164,11 @@ public class StuWeeklyPlanAction extends ActionSupport implements ServletRequest
 		this.updateId = updateId;
 	}
 
-    
+    public Integer getWeeklyPlanId() {
+        return weeklyPlanId;
+    }
+
+    public void setWeeklyPlanId(Integer weeklyPlanId) {
+        this.weeklyPlanId = weeklyPlanId;
+    }
 }

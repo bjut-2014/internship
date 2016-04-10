@@ -80,12 +80,10 @@
                 <h4 class="modal-title" id="myModalLabel2">修改周计划</h4>
             </div>
             <div class="modal-body">
-                <s:iterator value="#request.oneWeeklyplan" var="list">
-                    <div>编号：<input type="text" class="form-control id" value="" disabled></div>
-                    <div>标题：<input type="text" class="form-control title" value=""></div>
-                    <div>内容：<textarea class="form-control content" rows="5" placeholder="1000个字以上"></textarea></div>
-                    <div>时间：<input type="text" class="form-control date" value="" disabled></div>
-                </s:iterator>
+                <div>编号：<input type="text" class="form-control plan-id" value="" disabled></div>
+                <div>标题：<input type="text" class="form-control plan-title" value=""></div>
+                <div>内容：<textarea class="form-control plan-content" rows="5" placeholder="1000个字以上"></textarea></div>
+                <div>时间：<input type="text" class="form-control plan-date" value="" disabled></div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
