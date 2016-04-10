@@ -61,9 +61,9 @@ public class StuWeeklyPlanAction extends ActionSupport implements ServletRequest
 
         System.out.println(weeklyPlanId);
         System.out.println(oneWeeklyPlan);
-        for (WeeklyPlan wp : oneWeeklyPlan) {
-
-        }
+//        for (WeeklyPlan wp : oneWeeklyPlan) {
+//
+//        }
 
         return SUCCESS;
 	}
