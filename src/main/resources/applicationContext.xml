@@ -78,6 +78,8 @@
 		<property name="internshipReportService" ref="internshipReportService"></property>
 	</bean>
 	<!-- end -->
+    <!-- 实训报告 -->
+
 	<!-- 学生修改密码页面 -->
 	<bean id="reset-pwd" class="cn.internship.action.ResetPwdAction" scope="prototype">
 		<property name="userService" ref="userService"/>
