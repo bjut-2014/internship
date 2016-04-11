@@ -28,12 +28,12 @@
                             <img src="createImageAction" class="captcha-img">&nbsp;&nbsp;&nbsp;&nbsp;换一张
                         </a>
 					</div>
-					<div class="checkbox">
-						<label> <input type="checkbox"> 记住密码
-						</label>
-					</div>
+					<%--<div class="checkbox">--%>
+						<%--<label> <input type="checkbox"> 记住密码--%>
+						<%--</label>--%>
+					<%--</div>--%>
 					<s:actionerror cssStyle="color:red" />
-					<input type="submit" class="btn btn-primary fr" value="登陆" />
+					<button type="submit" class="btn btn-primary fr">登录</button>
 				</form>
 			</div>
 		</div>

@@ -56,6 +56,14 @@ public class StuWeeklyPlanAction extends ActionSupport implements ServletRequest
 		return super.execute();
     }
 
+    //获得某一条周报报告
+    public String getOneWeeklyPlan() {
+        WeeklyPlan oneWeeklyPlan = weeklyPlanService.get(weeklyPlanId);
+        request.setAttribute("oneWeeklyPlan", oneWeeklyPlan);
+
+        return SUCCESS;
+    }
+
 	//查找某一条周报
 	public String get() throws Exception {
         WeeklyPlan oneWeeklyPlan = weeklyPlanService.get(weeklyPlanId);

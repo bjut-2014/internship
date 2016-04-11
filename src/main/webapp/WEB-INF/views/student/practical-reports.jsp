@@ -4,7 +4,6 @@
 <html>
 <jsp:include page="../header/header.jsp" />
 <link href="styles/student.css" rel="stylesheet">
-<link href="styles/bootstrap-datepicker.min.css" rel="stylesheet">
 <body>
 <jsp:include page="../nav/nav.jsp" />
 <div class="container-fluid">
@@ -28,7 +27,7 @@
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th>编号</th>
+                    <%--<th>编号</th>--%>
                     <th>标题</th>
                     <th>时间</th>
                     <th>操作</th>
@@ -37,9 +36,9 @@
                 <tbody>
                 <s:iterator value="#request.practicalreports" var="list">
                     <tr>
-                        <th scope="row">${list.id}</th>
-                        <td>${list.practicalReportsTitle}</td>
-                        <td>${list.prcaticalReportsDate}</td>
+                        <%--<th scope="row">${list.id}</th>--%>
+                        <td><a href="practical-report-view?practicalReportsId=${list.id}">${list.practicalReportsTitle}</a></td>
+                        <td>${list.practicalReportsDate}</td>
                         <td>
                             <button type="button" class="btn btn-default practical-reports-edit" data-toggle="modal" data-target="#PracticalReportsModify" data-id=${list.id}>修改</button>
                             <button type="button" class="btn btn-default practical-reports-del" data-toggle="modal" data-target="#PracticalReportsDel" data-id=${list.id}>删除</button>
@@ -81,10 +80,10 @@
                 <h4 class="modal-title" id="myModalLabel2">修改实训报告</h4>
             </div>
             <div class="modal-body">
-                <div>编号：<input type="text" name="updateId" class="form-control reports-id" value="" disabled></div>
-                <div>标题：<input type="text" name="updateTitle" class="form-control reports-title" value=""></div>
-                <div>内容：<textarea name="updateContent" class="form-control reports-content" rows="5" placeholder=""></textarea></div>
-                <div>时间：<input type="text" class="form-control reports-date" value="" disabled></div>
+                <input type="hidden" class="form-control reports-id" value="">
+                <div>标题：<input type="text" class="form-control reports-title" value=""></div>
+                <div>内容：<textarea class="form-control reports-content" rows="5" placeholder="1000个字以上" value=""></textarea></div>
+                <%--<div>时间：<input type="text" class="form-control reports-date" value="" disabled></div>--%>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>

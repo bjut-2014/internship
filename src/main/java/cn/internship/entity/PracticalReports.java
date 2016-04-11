@@ -24,9 +24,9 @@ public class PracticalReports {
     private String practicalReportsTitle;
     //实训报告内容
     @Type(type="text")
-    private String prcaticalReportsContent;
+    private String practicalReportsContent;
     //实训报告时间
-    private Date prcaticalReportsDate;
+    private Date practicalReportsDate;
 	public Integer getId() {
 		return id;
 	}
@@ -45,19 +45,20 @@ public class PracticalReports {
 	public void setPracticalReportsTitle(String practicalReportsTitle) {
 		this.practicalReportsTitle = practicalReportsTitle;
 	}
-	public String getPrcaticalReportsContent() {
-		return prcaticalReportsContent;
-	}
-	public void setPrcaticalReportsContent(String prcaticalReportsContent) {
-		this.prcaticalReportsContent = prcaticalReportsContent;
-	}
-	public Date getPrcaticalReportsDate() {
-		return prcaticalReportsDate;
-	}
-	public void setPrcaticalReportsDate(Date prcaticalReportsDate) {
-		this.prcaticalReportsDate = prcaticalReportsDate;
+
+	public String getPracticalReportsContent() {
+		return practicalReportsContent;
 	}
 
-    
-    
+	public void setPracticalReportsContent(String practicalReportsContent) {
+		this.practicalReportsContent = practicalReportsContent;
+	}
+
+	public Date getPracticalReportsDate() {
+		return practicalReportsDate;
+	}
+
+	public void setPracticalReportsDate(Date practicalReportsDate) {
+		this.practicalReportsDate = practicalReportsDate;
+	}
 }

@@ -31,7 +31,7 @@ public class StuPracticalReportsAction extends ActionSupport implements ServletR
 
     private Integer deleteId;
 
-    private Integer practicalReportId;
+    private Integer practicalReportsId;
 
     private String updateTitle;
     private Integer updateId;
@@ -42,17 +42,26 @@ public class StuPracticalReportsAction extends ActionSupport implements ServletR
         Student student = (Student) request.getSession().getAttribute("currentUser");
         List<PracticalReports> list = practicalReportsService.getAll(student.getStudentId());
         request.setAttribute("practicalreports", list);
+
         return super.execute();
     }
 
+    //获得某一条实训报告
+    public String getOnePracticalreport() {
+        PracticalReports onePracticalReport = practicalReportsService.get(practicalReportsId);
+        request.setAttribute("onePracticalreport", onePracticalReport);
+
+        return SUCCESS;
+    }
+
     public String get() throws Exception {
-        PracticalReports onePracticalReport = practicalReportsService.get(practicalReportId);
+        PracticalReports onePracticalReport = practicalReportsService.get(practicalReportsId);
         JSONObject jo = new JSONObject();
 
         jo.put("id", onePracticalReport.getId());
         jo.put("practicalReportsTitle", onePracticalReport.getPracticalReportsTitle());
-        jo.put("practicalReportsContent", onePracticalReport.getPrcaticalReportsContent());
-        jo.put("practicalReportsDate", onePracticalReport.getPrcaticalReportsDate());
+        jo.put("practicalReportsContent", onePracticalReport.getPracticalReportsContent());
+        jo.put("practicalReportsDate", onePracticalReport.getPracticalReportsDate());
 
         try {
             response.setCharacterEncoding("utf-8");
@@ -72,8 +81,8 @@ public class StuPracticalReportsAction extends ActionSupport implements ServletR
         PracticalReports practicalReports = new PracticalReports();
         practicalReports.setStudentId(student.getStudentId());
         practicalReports.setPracticalReportsTitle(addTitle);
-        practicalReports.setPrcaticalReportsContent(addContent);
-        practicalReports.setPrcaticalReportsDate(new Date(new java.util.Date().getTime()));
+        practicalReports.setPracticalReportsContent(addContent);
+        practicalReports.setPracticalReportsDate(new Date(new java.util.Date().getTime()));
         practicalReportsService.save(practicalReports);
 
         return SUCCESS;
@@ -90,8 +99,8 @@ public class StuPracticalReportsAction extends ActionSupport implements ServletR
         JSONObject jo = new JSONObject();
 
         practicalReports.setPracticalReportsTitle(updateTitle);
-        practicalReports.setPrcaticalReportsContent(updateContent);
-        practicalReports.setPrcaticalReportsDate(new Date(new java.util.Date().getTime()));
+        practicalReports.setPracticalReportsContent(updateContent);
+        practicalReports.setPracticalReportsDate(new Date(new java.util.Date().getTime()));
         practicalReportsService.update(practicalReports);
 
         try {
@@ -149,14 +158,6 @@ public class StuPracticalReportsAction extends ActionSupport implements ServletR
 		this.deleteId = deleteId;
 	}
 
-	public Integer getPracticalReportId() {
-		return practicalReportId;
-	}
-
-	public void setPracticalReportId(Integer practicalReportId) {
-		this.practicalReportId = practicalReportId;
-	}
-
 	public String getUpdateTitle() {
 		return updateTitle;
 	}
@@ -181,5 +182,11 @@ public class StuPracticalReportsAction extends ActionSupport implements ServletR
 		this.updateContent = updateContent;
 	}
 
-    
+    public Integer getPracticalReportsId() {
+        return practicalReportsId;
+    }
+
+    public void setPracticalReportsId(Integer practicalReportsId) {
+        this.practicalReportsId = practicalReportsId;
+    }
 }

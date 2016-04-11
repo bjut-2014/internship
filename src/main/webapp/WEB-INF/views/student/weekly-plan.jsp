@@ -27,7 +27,7 @@
         <table class="table table-hover">
             <thead>
             <tr>
-                <th>编号</th>
+                <%--<th>编号</th>--%>
                 <th>标题</th>
                 <th>时间</th>
                 <th>操作</th>
@@ -36,8 +36,8 @@
             <tbody>
             <s:iterator value="#request.weeklyplan" var="list">
             <tr>
-                <th scope="row">${list.id}</th>
-                <td>${list.weeklyplanTitle}</td>
+                <%--<th scope="row">${list.id}</th>--%>
+                <td><a href="weekly-plan-view?weeklyPlanId=${list.id}">${list.weeklyplanTitle}</a></td>
                 <td>${list.weeklyplanDate}</td>
                 <td>
                     <button type="button" class="btn btn-default weekly-plan-edit" data-toggle="modal" data-target="#WeeklyPlanModify" data-id=${list.id}>修改</button>
@@ -80,10 +80,10 @@
                 <h4 class="modal-title" id="myModalLabel2">修改周计划</h4>
             </div>
             <div class="modal-body">
-                <div>编号：<input name="updateId" type="text" class="form-control plan-id" value="" disabled></div>
-                <div>标题：<input name="updateTitle" type="text" class="form-control plan-title" value=""></div>
-                <div>内容：<textarea name="updateContent" class="form-control plan-content" rows="5" placeholder="1000个字以上" value=""></textarea></div>
-                <div>时间：<input type="text" class="form-control plan-date" value="" disabled></div>
+                <input type="hidden" class="form-control plan-id" value="">
+                <div>标题：<input type="text" class="form-control plan-title" value=""></div>
+                <div>内容：<textarea class="form-control plan-content" rows="5" placeholder="1000个字以上" value=""></textarea></div>
+                <%--<div>时间：<input type="text" class="form-control plan-date" value="" disabled></div>--%>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
