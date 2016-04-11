@@ -29,9 +29,9 @@ public class PracticalReportsDaoImpl extends HibernateDaoSupport implements Prac
     }
 
     public List<PracticalReports> getAll(String studentId) {
-        String hql = "from practical_reports wp where wp.studentId = ?";
+        String hql = "from stu_practical_reports pr where pr.studentId = ?";
         Object[] values = {studentId};
-        List<PracticalReports> list = (List<PracticalReports>) getHibernateTemplate().find(hql,values);
+        List<PracticalReports> list = (List<PracticalReports>) getHibernateTemplate().find(hql, values);
         return list;
     }
 }

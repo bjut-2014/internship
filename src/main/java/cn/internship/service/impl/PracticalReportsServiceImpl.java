@@ -29,7 +29,6 @@ public class PracticalReportsServiceImpl implements PracticalReportsService {
         practicalReportsDao.save(practicalReports);
     }
 
-    //获得所有周报
     public List<PracticalReports> getAll(String studentId) {
         return practicalReportsDao.getAll(studentId);
     }

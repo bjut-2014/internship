@@ -80,9 +80,22 @@
 			<result type="redirectAction">weekly-plan</result>
 		</action>
 		<!-- end -->
+        <!-- 实训报告 -->
 		<action name="practical-reports" class="practical-reports">
 			<result>/WEB-INF/views/student/practical-reports.jsp</result>
 		</action>
+        <action name="practical-reports-edit" class="practical-reports" method="get">
+            <result>/WEB-INF/views/student/practical-reports.jsp</result>
+        </action>
+        <action name="practical-reports-add" class="practical-reports" method="add">
+            <result type="redirectAction">practical-reports</result>
+        </action>
+        <action name="practical-reports-delete" class="practical-reports" method="delete">
+            <result type="redirectAction">practical-reports</result>
+        </action>
+        <action name="practical-reports-update" class="practical-reports" method="update">
+            <result type="redirectAction">practical-reports</result>
+        </action>
 		<!-- 实习报告页面 -->
 		<action name="internship-reports" class="internship-reports">
 			<result>/WEB-INF/views/student/internship-reports.jsp</result>

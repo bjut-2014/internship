@@ -72,14 +72,15 @@
 		<property name="weeklyPlanService" ref="weeklyPlanService"/>
 	</bean>
 	<!-- end -->
-	<bean id="practical-reports" class="cn.internship.action.StuPracticalReportsAction"></bean>
+    <!-- 实训报告 -->
+    <bean id="practical-reports" class="cn.internship.action.StuPracticalReportsAction">
+        <property name="practicalReportsService" ref="practicalReportsService"/>
+    </bean>
 	<!-- 实习报告页面 -->
 	<bean id="internship-reports" class="cn.internship.action.StuInternshipReportsAction">
 		<property name="internshipReportService" ref="internshipReportService"></property>
 	</bean>
 	<!-- end -->
-    <!-- 实训报告 -->
-
 	<!-- 学生修改密码页面 -->
 	<bean id="reset-pwd" class="cn.internship.action.ResetPwdAction" scope="prototype">
 		<property name="userService" ref="userService"/>
@@ -112,7 +113,14 @@
 		<property name="weeklyPlanDao" ref="weeklyPlanDao"/>
 	</bean>
 	<!-- end -->
-	
+    <!-- 实训报告 -->
+    <bean id="practicalReportsDao" class="cn.internship.dao.impl.PracticalReportsDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="practicalReportsService" class="cn.internship.service.impl.PracticalReportsServiceImpl">
+        <property name="practicalReportsDao" ref="practicalReportsDao"/>
+    </bean>
+
 	<!-- 实习报告 -->
 	<bean id="internshipReportDao" class="cn.internship.dao.impl.InternshipReportDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"/>

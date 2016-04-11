@@ -7,7 +7,7 @@ import java.util.Date;
  * Created by surprise on 4/9/16.
  */
 @Entity
-@Table(name="practical_reports")
+@Table(name="stu_practical_reports")
 public class PracticalReports {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
