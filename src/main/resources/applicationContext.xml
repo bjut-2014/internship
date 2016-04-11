@@ -72,7 +72,10 @@
 		<property name="weeklyPlanService" ref="weeklyPlanService"/>
 	</bean>
 	<!-- end -->
-	<bean id="practical-reports" class="cn.internship.action.StuPracticalReportsAction"></bean>
+    <!-- 实训报告 -->
+    <bean id="practical-reports" class="cn.internship.action.StuPracticalReportsAction">
+        <property name="practicalReportsService" ref="practicalReportsService"/>
+    </bean>
 	<!-- 实习报告页面 -->
 	<bean id="internship-reports" class="cn.internship.action.StuInternshipReportsAction">
 		<property name="internshipReportService" ref="internshipReportService"></property>
@@ -110,7 +113,14 @@
 		<property name="weeklyPlanDao" ref="weeklyPlanDao"/>
 	</bean>
 	<!-- end -->
-	
+    <!-- 实训报告 -->
+    <bean id="practicalReportsDao" class="cn.internship.dao.impl.PracticalReportsDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <bean id="practicalReportsService" class="cn.internship.service.impl.PracticalReportsServiceImpl">
+        <property name="practicalReportsDao" ref="practicalReportsDao"/>
+    </bean>
+	<!-- end -->
 	<!-- 实习报告 -->
 	<bean id="internshipReportDao" class="cn.internship.dao.impl.InternshipReportDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"/>

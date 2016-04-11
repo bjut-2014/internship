@@ -22,7 +22,7 @@
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
         <button type="button" class="btn btn-success fr" aria-label="Left Align" data-toggle="modal" data-target="#WeeklyPlanAdd">
-            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-plus" aria-hidden="true" style="top:-1px"></span>
         </button>
         <table class="table table-hover">
             <thead>
