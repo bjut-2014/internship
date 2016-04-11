@@ -83,12 +83,12 @@
             <div class="modal-body">
                 <div>编号：<input type="text" name="updateId" class="form-control reports-id" value="" disabled></div>
                 <div>标题：<input type="text" name="updateTitle" class="form-control reports-title" value=""></div>
-                <div>内容：<textarea name="updateContent" class="form-control reports-content" rows="5" placeholder="">这是一篇周计划，这是一篇周计划，这是一篇周计划，这是一篇周计划</textarea></div>
+                <div>内容：<textarea name="updateContent" class="form-control reports-content" rows="5" placeholder=""></textarea></div>
                 <div>时间：<input type="text" class="form-control reports-date" value="" disabled></div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                <button type="button" class="btn btn-primary practical-reports-edit-confirm">修改</button>
+                <button type="button" class="btn btn-primary practical-reports-edit-confirm" data-dismiss="modal">修改</button>
             </div>
         </div>
     </div>

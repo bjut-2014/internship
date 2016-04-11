@@ -102,11 +102,23 @@ public class StuWeeklyPlanAction extends ActionSupport implements ServletRequest
 	//修改周报
 	public String update(){
 		WeeklyPlan weeklyPlan = weeklyPlanService.get(updateId);
+        JSONObject jo = new JSONObject();
+
 		weeklyPlan.setWeeklyplanTitle(updateTitle);
 		weeklyPlan.setWeeklyplanContent(updateContent);
 		weeklyPlan.setWeeklyplanDate(new Date(new java.util.Date().getTime()));
-        System.out.println(updateId + "---" + updateTitle + "---" + updateContent);
 		weeklyPlanService.update(weeklyPlan);
+
+		try {
+			response.setCharacterEncoding("utf-8");
+			PrintWriter out = response.getWriter();
+			out.println(jo);
+			out.flush();
+			out.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 		return SUCCESS;
 	}
 	

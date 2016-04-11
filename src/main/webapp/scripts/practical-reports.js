@@ -33,7 +33,7 @@ $practicalReportsEdit.on('click', function() {
         type: 'POST',
         dataType: "JSON",
         data: {
-            practicalReportsId: id
+            practicalReportId: id
         },
         success: function(data) {
             $('.reports-id').attr("value", data.id);
@@ -54,7 +54,7 @@ $practicalReportsEditConfirm.on('click', function () {
             updateContent: $('.reports-content').text()
         },
         success: function (data) {
-            //window.location.reload();
+            window.location.reload();
         }
     });
 });

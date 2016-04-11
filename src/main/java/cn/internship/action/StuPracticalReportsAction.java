@@ -87,10 +87,22 @@ public class StuPracticalReportsAction extends ActionSupport implements ServletR
 
     public String update(){
         PracticalReports practicalReports = practicalReportsService.get(updateId);
+        JSONObject jo = new JSONObject();
+
         practicalReports.setPracticalReportsTitle(updateTitle);
         practicalReports.setPrcaticalReportsContent(updateContent);
         practicalReports.setPrcaticalReportsDate(new Date(new java.util.Date().getTime()));
         practicalReportsService.update(practicalReports);
+
+        try {
+            response.setCharacterEncoding("utf-8");
+            PrintWriter out = response.getWriter();
+            out.println(jo);
+            out.flush();
+            out.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         return SUCCESS;
     }
