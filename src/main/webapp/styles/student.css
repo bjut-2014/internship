@@ -7,6 +7,10 @@ body {
 .fr {
     float: right;
 }
+.none {
+    display: none;
+}
+
 button, a {
     outline: none!important;
 }

@@ -2,7 +2,6 @@
 <!DOCTYPE>
 <html>
 <jsp:include page="../header/header.jsp" />
-<link href="styles/bootstrap-datepicker.min.css" rel="stylesheet">
 <link href="styles/student.css" rel="stylesheet">
 <body>
 <jsp:include page="../nav/nav.jsp" />
@@ -21,68 +20,29 @@
       </ul>
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-      <div class="row">
-        <div class="form-horizontal">
-          <div class="form-group">
-            <label class="col-sm-2 control-label">题目：</label>
-            <div class="col-sm-7">
-              <input type="email" class="form-control">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-sm-2 control-label">实习时间：</label>
-            <div class="input-group date input-group-date col-sm-3 datepicker">
-                <input type="text" class="form-control">
-                <span class="input-group-addon">
-                    <i class="glyphicon glyphicon-th"></i>
-                </span>
-            </div>
-            <label class="col-sm-1 control-label control-label-to">至</label>
-            <div class="input-group date col-sm-3 datepicker">
-                <input type="text" class="form-control">
-                <span class="input-group-addon">
-                    <i class="glyphicon glyphicon-th"></i>
-                </span>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-sm-2 control-label">实习单位：</label>
-            <div class="col-sm-7">
-              <input type="email" class="form-control">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-sm-2 control-label">实习部门：</label>
-            <div class="col-sm-7">
-              <input type="email" class="form-control">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-sm-2 control-label">实习地点：</label>
-            <div class="col-sm-7">
-              <input type="email" class="form-control">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="col-sm-2 control-label">实习总结：</label>
-            <div class="col-sm-7">
-                <textarea class="form-control" rows="5" placeholder="3000个字以上"></textarea>
-            </div>
-          </div>
+        <%--没有实习报告--%>
+        <div class="jumbotron none">
+            <h1>暂时没有实习报告</h1>
+            <p><a class="btn btn-primary btn-lg" href="/internship-reports-add">添加</a></p>
         </div>
-        <button type="button" class="btn btn-primary practical-reports-submit col-sm-offset-8">提交</button>
-      </div>
+        <%--有实习报告--%>
+        <div class="row">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <p><b>题目：</b>${request.internshipReport.internshipreportTitle}</p>
+                    <p><b>实习时间：</b>${request.internshipReport.internshipBeginTime}至${request.internshipReport.internshipEndTime}</p>
+                    <p><b>实习单位：</b>${request.internshipReport.internshipCompany}</p>
+                    <p><b>实习部门：</b>${request.internshipReport.internshipDepartment}</p>
+                    <p><b>实习地点：</b>${request.internshipReport.internshipPlace}</p>
+                    <p><b>实习总结：</b></p>
+                    <p>${request.internshipReport.internshipSummary}</p>
+                    <a href="/internship-reports-edit" class="btn btn-primary internship-reports-edit col-sm-offset-8">修改</a>
+                </div>
+            </div>
+        </div>
     </div>
   </div>
 </div>
 <jsp:include page="../footer/footer.jsp" />
-<script src="scripts/bootstrap-datepicker.min.js" charset="UTF-8"></script>
-<script type="text/javascript">
-    $('.datepicker').datepicker({
-        autoclose: true,
-        format: "yyyy/mm/dd",
-        todayHighlight: true
-    });
-</script>
 </body>
 </html>

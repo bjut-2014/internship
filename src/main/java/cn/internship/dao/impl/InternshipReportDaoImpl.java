@@ -24,12 +24,12 @@ public class InternshipReportDaoImpl extends HibernateDaoSupport implements Inte
 		return list.get(0);
 	}
 
-	//写实习报告
+	//添加实习报告
 	public void add(InternshipReport internshipReport) {
 		getHibernateTemplate().save(internshipReport);
 	}
 
-	//通过修改实习报告
+	//修改实习报告
 	public void update(InternshipReport internshipReport) {
 		getHibernateTemplate().update(internshipReport);
 	}

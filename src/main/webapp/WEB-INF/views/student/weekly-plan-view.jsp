@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE>
 <html>
 <jsp:include page="../header/header.jsp" />
@@ -23,10 +22,10 @@
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
       <div class="panel panel-default">
         <div class="panel-body">
-          <p>标题：${request.oneWeeklyPlan.weeklyplanTitle}</p>
-          <p>内容：</p>
+          <p><b>标题：</b>${request.oneWeeklyPlan.weeklyplanTitle}</p>
+          <p><b>内容：</b></p>
           <p>${request.oneWeeklyPlan.weeklyplanContent}</p>
-          <p>时间：${request.oneWeeklyPlan.weeklyplanDate}</p>
+          <p><b>时间：</b>${request.oneWeeklyPlan.weeklyplanDate}</p>
           <a href="/weekly-plan" class="btn btn-primary fr">返回</a>
         </div>
       </div>
