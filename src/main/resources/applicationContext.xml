@@ -13,7 +13,6 @@
 
 	<!-- 导入资源文件 -->
 	<context:property-placeholder location="classpath:db.properties" />
-
 	<!-- 配置c3p0数据源 -->
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
 		<property name="user" value="${jdbc.user}"></property>
@@ -24,19 +23,16 @@
 		<property name="maxPoolSize" value="${jdbc.maxPoolSize}"></property>
 	</bean>
 
-
 	<!-- 配置sessionFactory -->
 	<bean id="sessionFactory"
 		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"></property>
 		<property name="configLocation" value="classpath:hibernate.cfg.xml"></property>
 	</bean>
-
 	<bean id="transactionManager"
 		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-
 	<tx:advice id="tx" transaction-manager="transactionManager">
 		<tx:attributes>
 			<tx:method name="save*" read-only="false" />
@@ -52,6 +48,7 @@
 			id="perform" />
 		<aop:advisor advice-ref="tx" pointcut-ref="perform" />
 	</aop:config>
+	
 	<!-- 登陆验证 -->
 	<bean id="login" class="cn.internship.action.LoginAction" scope="prototype">
 		<property name="studentService" ref="studentService"/>
@@ -70,10 +67,22 @@
 		<property name="studentService" ref="studentService"/>
 	</bean>
 	<!-- end -->
-	<bean id="weekly-plan" class="cn.internship.action.StuWeeklyPlanAction"></bean>
+	<!-- 周报页面 -->
+	<bean id="weekly-plan" class="cn.internship.action.StuWeeklyPlanAction">
+		<property name="weeklyPlanService" ref="weeklyPlanService"/>
+	</bean>
+	<!-- end -->
 	<bean id="practical-reports" class="cn.internship.action.StuPracticalReportsAction"></bean>
-	<bean id="internship-reports" class="cn.internship.action.StuInternshipReportsAction"></bean>
-	<bean id="reset-pwd" class="cn.internship.action.ResetPwdAction"></bean>
+	<!-- 实习报告页面 -->
+	<bean id="internship-reports" class="cn.internship.action.StuInternshipReportsAction">
+		<property name="internshipReportService" ref="internshipReportService"></property>
+	</bean>
+	<!-- end -->
+	<!-- 学生修改密码页面 -->
+	<bean id="reset-pwd" class="cn.internship.action.ResetPwdAction" scope="prototype">
+		<property name="userService" ref="userService"/>
+	</bean>
+	<!-- end -->
 	
 	<!-- 用户 -->
 	<bean id="userDao" class="cn.internship.dao.impl.UserDaoImpl">
@@ -93,5 +102,22 @@
 	</bean>
 	<!-- end -->
 	
+	<!-- 学生周报 -->
+	<bean id="weeklyPlanDao" class="cn.internship.dao.impl.WeeklyPlanDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="weeklyPlanService" class="cn.internship.service.impl.WeeklyPlanServiceImpl">
+		<property name="weeklyPlanDao" ref="weeklyPlanDao"/>
+	</bean>
+	<!-- end -->
+	
+	<!-- 实习报告 -->
+	<bean id="internshipReportDao" class="cn.internship.dao.impl.InternshipReportDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="internshipReportService" class="cn.internship.service.impl.InternshipReportServiceImpl">
+		<property name="internshipReportDao" ref="internshipReportDao"/>
+	</bean>
+	<!-- end -->
 	
 </beans>

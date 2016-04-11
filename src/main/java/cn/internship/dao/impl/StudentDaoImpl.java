@@ -23,6 +23,8 @@ public class StudentDaoImpl extends HibernateDaoSupport implements StudentDao{
 	//通过学号查找学生
 	public Student get(String studentId) {
 		String hql = "from Student s where s.studentId=?";
+//		List<Student> list = getSessionFactory().getCurrentSession()
+//										.createQuery(hql).setParameter("studentId", studentId).list();
 		List<Student> list = (List<Student>) getHibernateTemplate().find(hql, new Object[]{studentId});
 		if(list==null || list.size() ==0){
 			return null;

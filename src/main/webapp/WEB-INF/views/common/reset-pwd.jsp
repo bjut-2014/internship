@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE>
 <html>
 <jsp:include page="../header/header.jsp" />
@@ -22,20 +23,21 @@
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
       <div class="row">
         <div class="col-md-4 col-md-offset-4">
-          <form>
+          <form action="chpwd" method="post">
             <div class="form-group">
               <label>初始密码：</label>
-              <input type="email" class="form-control">
+              <input name="password" type="password" class="form-control">
             </div>
             <div class="form-group">
               <label>新密码：</label>
-              <input type="password" class="form-control">
+              <input name="newpwd" type="password" class="form-control">
             </div>
             <div class="form-group">
               <label>确认新密码：</label>
-              <input type="password" class="form-control">
+              <input name="renewpwd" type="password" class="form-control">
             </div>
-            <button href="index" class="btn btn-primary fr">确认修改</button>
+            <s:actionerror cssStyle="color:red" />
+            <input type="submit" class="btn btn-primary fr" value="确认修改"/>
           </form>
         </div>
       </div>

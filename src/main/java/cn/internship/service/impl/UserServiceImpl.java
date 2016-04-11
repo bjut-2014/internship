@@ -16,7 +16,16 @@ public class UserServiceImpl implements UserService{
 	public User login(String username, String password) {
 		return userDao.login(username, password);
 	}
+	
+	//修改用户密码
+	public void updatePwd(User user) {
+		userDao.updateUser(user);
+	}
 
+	//根据用户名获得用户
+	public User findUserByUsername(String username) {
+		return userDao.findUserByUsername(username);
+	}
 	
 	//-------------------------------------------set与get方法-------------------------------------------------
 
