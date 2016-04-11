@@ -54,7 +54,8 @@ $weeklyPlanEditConfirm.on('click', function () {
             updateContent: $('.plan-content').text()
         },
         success: function (data) {
-            window.location.reload();
+//            window.location.reload();
+        	location.replace(location.href = 'weekly-plan'); 
         }
     });
 });
