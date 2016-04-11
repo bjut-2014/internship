@@ -57,6 +57,8 @@ public class ResetPwdAction extends ActionSupport implements ServletRequestAware
     	//更改密码
     	user.setPassword(newpwd);
     	userService.updatePwd(user);
+    	//移除当前session中的student
+    	request.getSession().removeAttribute("currentUser");
     	return SUCCESS;
     }
     

@@ -74,7 +74,7 @@
 <%--修改弹窗--%>
 <div class="modal fade" id="WeeklyPlanModify" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" data-id>
     <div class="modal-dialog" role="document">
-        <form>
+        <form method="post">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>

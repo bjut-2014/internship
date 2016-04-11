@@ -37,11 +37,11 @@ public class StuInternshipReportsAction extends ActionSupport  implements Servle
 	
 	//-----------------------get与set方法------------------------
 	
-	@Override
+	
 	public void setServletResponse(HttpServletResponse response) {
 		this.response = response;
 	}
-	@Override
+	
 	public void setServletRequest(HttpServletRequest request) {
 		this.request = request;
 	}
