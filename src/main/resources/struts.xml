@@ -105,8 +105,11 @@
 		<!-- 实习报告页面 -->
 		<action name="internship-reports" class="internship-reports">
 			<result>/WEB-INF/views/student/internship-reports.jsp</result>
-			<result name="input">/WEB-INF/views/student/internship-reports-add.jsp</result>
+			<result name="input">/WEB-INF/views/student/internship-reports.jsp</result>
 		</action>
+        <action name="to-internship-reports-add">
+            <result>/WEB-INF/views/student/internship-reports-add.jsp</result>
+        </action>
 		<action name="internship-reports-add" class="internship-reports" method="add">
 			<result type="redirectAction">internship-reports</result>
 		</action>

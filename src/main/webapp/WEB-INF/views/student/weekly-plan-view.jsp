@@ -11,8 +11,8 @@
       <ul class="nav nav-sidebar">
         <li><a href="index">首页 <span class="sr-only">(current)</span></a></li>
         <li><a href="stu-info">个人信息</a></li>
-        <li><a href="weekly-plan">周计划</a></li>
-        <li class="active"><a href="practical-reports">实训报告</a></li>
+        <li class="active"><a href="weekly-plan">周计划</a></li>
+        <li><a href="practical-reports">实训报告</a></li>
         <li><a href="internship-reports">实习报告</a></li>
       </ul>
       <ul class="nav nav-sidebar">
