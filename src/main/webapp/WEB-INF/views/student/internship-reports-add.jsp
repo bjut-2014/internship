@@ -21,25 +21,26 @@
       </ul>
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <form action="internship-reports-add" method="post">
       <div class="row">
         <div class="form-horizontal">
           <div class="form-group">
             <label class="col-sm-2 control-label">题目：</label>
             <div class="col-sm-7">
-              <input type="email" class="form-control">
+              <input name="internshipreportTitle" type="text" class="form-control">
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-2 control-label">实习时间：</label>
             <div class="input-group date input-group-date col-sm-3 datepicker">
-                <input type="text" class="form-control">
+                <input name="internshipBeginTime" type="text" class="form-control">
                 <span class="input-group-addon">
                     <i class="glyphicon glyphicon-th"></i>
                 </span>
             </div>
             <label class="col-sm-1 control-label control-label-to">至</label>
             <div class="input-group date col-sm-3 datepicker">
-                <input type="text" class="form-control">
+                <input name="intershipEndTime" type="text" class="form-control">
                 <span class="input-group-addon">
                     <i class="glyphicon glyphicon-th"></i>
                 </span>
@@ -48,30 +49,31 @@
           <div class="form-group">
             <label class="col-sm-2 control-label">实习单位：</label>
             <div class="col-sm-7">
-              <input type="email" class="form-control">
+              <input name="internshipCompany" type="text" class="form-control">
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-2 control-label">实习部门：</label>
             <div class="col-sm-7">
-              <input type="email" class="form-control">
+              <input name="internshipDepartment" type="text" class="form-control">
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-2 control-label">实习地点：</label>
             <div class="col-sm-7">
-              <input type="email" class="form-control">
+              <input name="internshipPlace" type="text" class="form-control">
             </div>
           </div>
           <div class="form-group">
             <label class="col-sm-2 control-label">实习总结：</label>
             <div class="col-sm-7">
-                <textarea class="form-control" rows="5" placeholder="3000个字以上"></textarea>
+                <textarea name="internshipSummary" class="form-control" rows="5" placeholder="3000个字以上"></textarea>
             </div>
           </div>
         </div>
-        <button type="button" class="btn btn-primary practical-reports-submit col-sm-offset-8">提交</button>
+        <input type="submit" class="btn btn-primary practical-reports-submit col-sm-offset-8" value="提交" />
       </div>
+      </form>
     </div>
   </div>
 </div>

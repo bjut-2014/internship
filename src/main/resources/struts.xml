@@ -105,13 +105,16 @@
 		<!-- 实习报告页面 -->
 		<action name="internship-reports" class="internship-reports">
 			<result>/WEB-INF/views/student/internship-reports.jsp</result>
-			<result name="input">/WEB-INF/views/student/internship-reports.jsp</result>
+			<result name="input">/WEB-INF/views/student/internship-reports-add.jsp</result>
 		</action>
-		<action name="internship-reports-add" class="internship-reports">
-			<result>/WEB-INF/views/student/internship-reports-add.jsp</result>
+		<action name="internship-reports-add" class="internship-reports" method="add">
+			<result type="redirectAction">internship-reports</result>
 		</action>
-        <action name="internship-reports-edit" class="internship-reports">
+        <action name="internship-reports-edit" class="internship-reports" method="get">
             <result>/WEB-INF/views/student/internship-reports-edit.jsp</result>
+        </action>
+        <action name="internship-reports-edit-confirm" class="internship-reports" method="update">
+            <result type="redirectAction">internship-reports</result>
         </action>
 		<!-- end -->
 		<!-- 修改密码页面 -->

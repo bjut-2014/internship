@@ -36,7 +36,7 @@
                     <p><b>实习地点：</b>${request.internshipReport.internshipPlace}</p>
                     <p><b>实习总结：</b></p>
                     <p>${request.internshipReport.internshipSummary}</p>
-                    <a href="/internship-reports-edit" class="btn btn-primary internship-reports-edit col-sm-offset-8">修改</a>
+                    <a href="internship-reports-edit" class="btn btn-primary internship-reports-edit col-sm-offset-8">修改</a>
                 </div>
             </div>
         </div>
