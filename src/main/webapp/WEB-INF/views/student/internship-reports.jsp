@@ -21,9 +21,9 @@
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
         <%--没有实习报告--%>
-        <div class="jumbotron none">
-            <h1>暂时没有实习报告</h1>
-            <p><a class="btn btn-primary btn-lg" href="/internship-reports-add">添加</a></p>
+        <div class="jumbotron">
+            <h2>暂时没有实习报告</h2>
+            <p><a class="btn btn-primary" href="/internship-reports-add">添加</a></p>
         </div>
         <%--有实习报告--%>
         <div class="row">

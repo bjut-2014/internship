@@ -30,7 +30,7 @@ public class StuInternshipReportsAction extends ActionSupport  implements Servle
 		if(internshipReport == null){
 			return INPUT;
 		}
-		request.getSession().setAttribute("internshipReport", internshipReport);
+		request.setAttribute("internshipReport", internshipReport);
 		return super.execute();
 	}
 	
