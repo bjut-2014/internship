@@ -44,90 +44,11 @@
 
 	<!-- 配置spring声明式事务 -->
 	<aop:config>
-		<aop:pointcut expression="execution(* cn.internship.service.*.*(..))"
+		<aop:pointcut expression="execution(* cn.internship.*.*.*(..))"
 			id="perform" />
 		<aop:advisor advice-ref="tx" pointcut-ref="perform" />
 	</aop:config>
-	
-	<!-- 登陆验证 -->
-	<bean id="login" class="cn.internship.action.LoginAction" scope="prototype">
-		<property name="studentService" ref="studentService"/>
-		<property name="userService" ref="userService"/>
-	</bean>
-	<!-- end -->
-	<!-- 验证码 -->
-	<bean id="createImageAction" class="cn.internship.action.CreateImageAction"></bean>
-	<!-- end -->
-	<!-- 学生首页 -->
-	<bean id="index" class="cn.internship.action.IndexAction">
-	</bean>
-	<!-- end -->
-	<!-- 学生个人信息页面 -->
-	<bean id="stu-info" class="cn.internship.action.StuInfoAction">
-		<property name="studentService" ref="studentService"/>
-	</bean>
-	<!-- end -->
-	<!-- 周报页面 -->
-	<bean id="weekly-plan" class="cn.internship.action.StuWeeklyPlanAction">
-		<property name="weeklyPlanService" ref="weeklyPlanService"/>
-	</bean>
-	<!-- end -->
-    <!-- 实训报告 -->
-    <bean id="practical-reports" class="cn.internship.action.StuPracticalReportsAction">
-        <property name="practicalReportsService" ref="practicalReportsService"/>
-    </bean>
-	<!-- 实习报告页面 -->
-	<bean id="internship-reports" class="cn.internship.action.StuInternshipReportsAction">
-		<property name="internshipReportService" ref="internshipReportService"></property>
-	</bean>
-	<!-- end -->
-	<!-- 学生修改密码页面 -->
-	<bean id="reset-pwd" class="cn.internship.action.ResetPwdAction" scope="prototype">
-		<property name="userService" ref="userService"/>
-	</bean>
-	<!-- end -->
-	
-	<!-- 用户 -->
-	<bean id="userDao" class="cn.internship.dao.impl.UserDaoImpl">
-		<property name="sessionFactory" ref="sessionFactory"/>
-	</bean>
-	<bean id="userService" class="cn.internship.service.impl.UserServiceImpl">
-		<property name="userDao" ref="userDao"/>
-	</bean>
-	<!-- end -->
-	
-	<!-- 学生 -->
-	<bean id="studentDao" class="cn.internship.dao.impl.StudentDaoImpl">
-		<property name="sessionFactory" ref="sessionFactory"/>
-	</bean>
-	<bean id="studentService" class="cn.internship.service.impl.StudentServiceImpl">
-		<property name="studentDao" ref="studentDao"/>
-	</bean>
-	<!-- end -->
-	
-	<!-- 学生周报 -->
-	<bean id="weeklyPlanDao" class="cn.internship.dao.impl.WeeklyPlanDaoImpl">
-		<property name="sessionFactory" ref="sessionFactory"/>
-	</bean>
-	<bean id="weeklyPlanService" class="cn.internship.service.impl.WeeklyPlanServiceImpl">
-		<property name="weeklyPlanDao" ref="weeklyPlanDao"/>
-	</bean>
-	<!-- end -->
-    <!-- 实训报告 -->
-    <bean id="practicalReportsDao" class="cn.internship.dao.impl.PracticalReportsDaoImpl">
-        <property name="sessionFactory" ref="sessionFactory"/>
-    </bean>
-    <bean id="practicalReportsService" class="cn.internship.service.impl.PracticalReportsServiceImpl">
-        <property name="practicalReportsDao" ref="practicalReportsDao"/>
-    </bean>
-	<!-- end -->
-	<!-- 实习报告 -->
-	<bean id="internshipReportDao" class="cn.internship.dao.impl.InternshipReportDaoImpl">
-		<property name="sessionFactory" ref="sessionFactory"/>
-	</bean>
-	<bean id="internshipReportService" class="cn.internship.service.impl.InternshipReportServiceImpl">
-		<property name="internshipReportDao" ref="internshipReportDao"/>
-	</bean>
-	<!-- end -->
-	
+
+
+
 </beans>
