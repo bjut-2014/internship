@@ -12,10 +12,11 @@
 	<constant name="struts.objectFactory" value="spring" />
 
 	<package name="default" namespace="/" extends="struts-default">
-
-
-		
-
+		<!-- 学生相关操作 -->
+		<action name="login" class="studentAction">
+			<result>/WEB-INF/views/index.jsp</result>
+		</action>		
+		<!-- end -->
 	</package>
 
 
