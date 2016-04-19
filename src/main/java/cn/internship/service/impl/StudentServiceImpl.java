@@ -18,6 +18,12 @@ public class StudentServiceImpl implements StudentService{
 		return studentDao.get(sno, password);
 	}
 
+	//获得指定学号的学生
+	@Override
+	public Student get(Integer id){
+		return studentDao.get(id);
+	}
+	
 	//------------------------------------------get与set方法-----------------------------------------------------------------
 	public StudentDao getStudentDao() {
 		return studentDao;

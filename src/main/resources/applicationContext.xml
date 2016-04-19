@@ -49,6 +49,15 @@
 		<aop:advisor advice-ref="tx" pointcut-ref="perform" />
 	</aop:config>
 
+	<!-- 配置系统日志 -->
+	<bean id="systemLog" class="cn.internship.utils.SyslogUtils"/>
+	<aop:config>
+		<aop:aspect ref="systemLog">
+			<aop:after method="afterReturnLog" pointcut="execution(* cn.internship.service.impl.*.save*(..)) and !bean(sysLogService)"/>
+			<aop:after method="afterReturnLog" pointcut="execution(* cn.internship.service.impl.*.delete*(..)) and !bean(sysLogService)"/>
+			<aop:after method="afterReturnLog" pointcut="execution(* cn.internship.service.impl.*.update*(..)) and !bean(sysLogService)"/>
+		</aop:aspect>
+	</aop:config>
 
 	<!-- *******************************非系统配置******************************* -->
 
@@ -73,6 +82,18 @@
 	</bean>
 	<!-- end -->
 	
+	<!-- 系统日志相关配置 -->
+	<bean id="syslogDao" class="cn.internship.dao.impl.SyslogDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="syslogService" class="cn.internship.service.impl.SyslogServiceImpl">
+		<property name="syslogDao" ref="syslogDao" />
+	</bean>
+	<bean id="syslogAction" class="cn.internship.action.SyslogAction">
+		<property name="syslogService" ref="syslogService" />
+		<property name="studentService" ref="studentService" />
+	</bean>
+	<!-- end -->
 	
 
 </beans>

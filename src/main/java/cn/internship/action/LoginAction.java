@@ -23,6 +23,9 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 
 	private StudentService studentService;
 
+	public static String CURRENT_NAME = "";
+	public static String CURRENT_NO = "";
+	
 	// 用户名
 	private String username;
 	// 密码
@@ -61,7 +64,8 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 		}
 		//将登陆用户存到session中
 		session.setAttribute("currentUser", student);
-
+		CURRENT_NAME = student.getName();
+		CURRENT_NO = student.getSno();
 		return SUCCESS;
 	}
 
