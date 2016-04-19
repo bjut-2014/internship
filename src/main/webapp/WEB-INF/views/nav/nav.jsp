@@ -13,7 +13,7 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="javascript:void(0)">您好，<s:property value="#session.currentUser.studentName" /></a></li>
+        <li><a href="javascript:void(0)">您好，<s:property value="#session.currentUser.name" /></a></li>
         <li><a href="logout">注销</a></li>
       </ul>
     </div>

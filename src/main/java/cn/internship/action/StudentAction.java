@@ -44,5 +44,6 @@ public class StudentAction extends ActionSupport implements ServletRequestAware,
 	public void setServletRequest(HttpServletRequest request) {
 		this.request = request;
 	}
+
 	
 }

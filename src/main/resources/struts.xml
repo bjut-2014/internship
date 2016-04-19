@@ -10,12 +10,58 @@
 
 	<!-- 把struts的请求委托给spring管理, 作用:创建Action实例的过程由spring处理,其他的还是有struts2自己处理 -->
 	<constant name="struts.objectFactory" value="spring" />
+	<!-- 去掉请求url中的‘.action’后缀 -->
+	<constant name="struts.action.extension" value="," />
 
 	<package name="default" namespace="/" extends="struts-default">
+
+		<!-- session过期拦截器 -->
+		<interceptors>
+			<interceptor name="loginedCheck"
+				class="cn.internship.interceptor.LoginedCheckInterceptor" />
+			<interceptor-stack name="mystack">
+				<interceptor-ref name="loginedCheck" />
+				<interceptor-ref name="defaultStack">
+				</interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<!-- end -->
+		
+		<!-- 所有的action都配置一个拦截器 -->
+		<default-interceptor-ref name="mystack">
+		</default-interceptor-ref>
+		<!-- end -->
+		
+		<!-- 定义全局result -->
+		<global-results>
+			<result name="tologin" type="redirect">/login.jsp</result>
+		</global-results>
+		<!-- end -->
+
+		<!-- 验证码 -->
+		<action name="verifyCodeAction" class="verifyCodeAction">
+			<result name="success" type="stream">
+				<param name="contentType">image/jpeg</param>
+				<param name="inputName">inputStream</param>
+			</result>
+		</action>
+		<!-- end -->
+
+		<!-- 登陆 -->
+		<action name="login" class="loginAction">
+			<result type="redirectAction">index</result>
+			<result name="input">/login.jsp</result>
+		</action>
+		<!-- end -->
+		<!-- 注销 -->
+		<action name="logout" class="loginAction" method="logout">
+			<result name="logout">/login.jsp</result>
+		</action>
+		<!-- end -->
 		<!-- 学生相关操作 -->
-		<action name="login" class="studentAction">
+		<action name="index" class="studentAction">
 			<result>/WEB-INF/views/index.jsp</result>
-		</action>		
+		</action>
 		<!-- end -->
 	</package>
 

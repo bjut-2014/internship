@@ -23,9 +23,9 @@
 					</div>
 					<div class="form-group">
                         <label>验证码：</label><br>
-                        <input type="text" class="form-control captcha" name="checkCode">
+                        <input type="text" class="form-control captcha" name="verifyCode">
                         <a class="captcha-link" href="javascript:void(0);">
-                            <img src="createImageAction" class="captcha-img">&nbsp;&nbsp;&nbsp;&nbsp;换一张
+                            <img src="verifyCodeAction" class="captcha-img">&nbsp;&nbsp;&nbsp;&nbsp;换一张
                         </a>
 					</div>
 					<%--<div class="checkbox">--%>

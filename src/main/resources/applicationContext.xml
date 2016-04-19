@@ -44,10 +44,22 @@
 
 	<!-- 配置spring声明式事务 -->
 	<aop:config>
-		<aop:pointcut expression="execution(* cn.internship.service.impl.*(..))"
+		<aop:pointcut expression="execution(* cn.internship.service.*.*(..))"
 			id="perform" />
 		<aop:advisor advice-ref="tx" pointcut-ref="perform" />
 	</aop:config>
+
+
+	<!-- *******************************非系统配置******************************* -->
+
+	<!-- 验证码 -->
+	<bean id="verifyCodeAction" class="cn.internship.action.VerifyCodeAction"></bean>
+	<!-- end -->
+	<!-- 登陆 -->
+	<bean id="loginAction" class="cn.internship.action.LoginAction" scope="prototype">
+		<property name="studentService" ref="studentService" />
+	</bean>
+	<!-- end -->
 
 	<!-- 学生相关配置 -->
 	<bean id="studentDao" class="cn.internship.dao.impl.StudentDaoImpl">
