@@ -3,6 +3,7 @@ package cn.internship.service.impl;
 import cn.internship.dao.StudentDao;
 import cn.internship.entity.Student;
 import cn.internship.service.StudentService;
+import cn.internship.utils.UserInfo;
 
 /**
  * 学生业务层操作
@@ -15,7 +16,10 @@ public class StudentServiceImpl implements StudentService{
 	//登陆
 	@Override
 	public Student login(String sno, String password) {
-		return studentDao.get(sno, password);
+		Student student = studentDao.get(sno, password);
+		//设置全局用户信息
+		UserInfo.setInfo(student.getName(), student.getSno());
+		return student;
 	}
 
 	//获得指定学号的学生

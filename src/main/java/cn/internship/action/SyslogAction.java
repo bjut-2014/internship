@@ -56,4 +56,22 @@ public class SyslogAction extends ActionSupport implements ServletRequestAware, 
 	public void setServletRequest(HttpServletRequest request) {
 		this.request = request;
 	}
+
+	public SyslogService getSyslogService() {
+		return syslogService;
+	}
+
+	public void setSyslogService(SyslogService syslogService) {
+		this.syslogService = syslogService;
+	}
+
+	public StudentService getStudentService() {
+		return studentService;
+	}
+
+	public void setStudentService(StudentService studentService) {
+		this.studentService = studentService;
+	}
+	
+	
 }

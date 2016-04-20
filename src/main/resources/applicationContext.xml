@@ -35,6 +35,7 @@
 	</bean>
 	<tx:advice id="tx" transaction-manager="transactionManager">
 		<tx:attributes>
+			<tx:method name="add*" read-only="false" />
 			<tx:method name="save*" read-only="false" />
 			<tx:method name="delete*" read-only="false" />
 			<tx:method name="update*" read-only="false" />
@@ -50,12 +51,15 @@
 	</aop:config>
 
 	<!-- 配置系统日志 -->
-	<bean id="systemLog" class="cn.internship.utils.SyslogUtils"/>
+	<bean id="systemLog" class="cn.internship.utils.SyslogUtils">
+		<property name="syslogService" ref="syslogService" />
+	</bean>
 	<aop:config>
 		<aop:aspect ref="systemLog">
-			<aop:after method="afterReturnLog" pointcut="execution(* cn.internship.service.impl.*.save*(..)) and !bean(sysLogService)"/>
-			<aop:after method="afterReturnLog" pointcut="execution(* cn.internship.service.impl.*.delete*(..)) and !bean(sysLogService)"/>
-			<aop:after method="afterReturnLog" pointcut="execution(* cn.internship.service.impl.*.update*(..)) and !bean(sysLogService)"/>
+			<aop:after method="afterReturnLog" pointcut="execution(* cn.internship.service.impl.*.save*(..)) and !bean(syslogService)"/>
+			<aop:after method="afterReturnLog" pointcut="execution(* cn.internship.service.impl.*.delete*(..)) and !bean(syslogService)"/>
+			<aop:after method="afterReturnLog" pointcut="execution(* cn.internship.service.impl.*.update*(..)) and !bean(syslogService)"/>
+			<aop:after method="afterReturnLog" pointcut="execution(* cn.internship.service.impl.*.login*(..)) and !bean(syslogService)"/>
 		</aop:aspect>
 	</aop:config>
 

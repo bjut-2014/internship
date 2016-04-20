@@ -34,9 +34,9 @@ public class SyslogUtils{
 	 */
 	public void afterReturnLog(JoinPoint joinPoint) {
 		//姓名
-		String name = LoginAction.CURRENT_NAME;
+		String name = UserInfo.CURRENT_NAME;
 		//编号
-		String no = LoginAction.CURRENT_NO;
+		String no = UserInfo.CURRENT_NO;
 		// 调用的方法名字
 		String methodName = joinPoint.getSignature().getName();
 		// 调用的类名字
@@ -44,17 +44,24 @@ public class SyslogUtils{
 		//调用时间
 		Date date = new Date();
 		//行为
-		String behavior = "";
-		if(methodName.indexOf("execute")!=-1){
-			behavior = "登陆了";
-		}
-		if(methodName.indexOf("logout")!=-1){
-			behavior = "注销类";
-		}
+		String behavior = judgeBehavior(methodName);
 //		setSystemLog(systemGlobalUser, this, "调用了" + className + "的" + methodName + "方法");
-		setSystemLog(no, className, date, behavior);
+		setSystemLog(no, name, date, behavior);
 	}
 
+	public static String judgeBehavior(String methodName){
+		String str = "";
+		if(methodName.indexOf("login")!=-1){
+			str = "登陆了";
+		}
+		else if(methodName.indexOf("logout")!=-1){
+			str = "注销了";
+		}else{
+			str="do nothing";
+		}
+		return str;
+	}
+	
 	//-----------------------------------get与set方法------------------------------------------------------
 	public SyslogService getSyslogService() {
 		return syslogService;
