@@ -9,19 +9,19 @@
   <title>嵌入式实训平台</title>
   <!-- Bootstrap core CSS -->
   <link href="styles/lib/bootstrap.min.css" rel="stylesheet">
-  <link href="styles/lib/bootstrap-reset.css" rel="stylesheet">
+  <%--<link href="styles/lib/bootstrap-reset.css" rel="stylesheet">--%>
 
   <!--Animation css-->
-  <link href="styles/lib/animate.css" rel="stylesheet">
+  <%--<link href="styles/lib/animate.css" rel="stylesheet">--%>
 
-  <!--Icon-fonts css-->
-  <link href="styles/lib/font-awesome.css" rel="stylesheet" />
-  <link href="styles/lib/ionicons.min.css" rel="stylesheet" />
+  <%--<!--Icon-fonts css-->--%>
+  <%--<link href="styles/lib/font-awesome.css" rel="stylesheet" />--%>
+  <%--<link href="styles/lib/ionicons.min.css" rel="stylesheet" />--%>
 
 
-  <!-- Custom styles for this template -->
-  <link href="styles/lib/style.css" rel="stylesheet">
-  <link href="styles/lib/helper.css" rel="stylesheet">
+  <%--<!-- Custom styles for this template -->--%>
+  <%--<link href="styles/lib/style.css" rel="stylesheet">--%>
+  <%--<link href="styles/lib/helper.css" rel="stylesheet">--%>
 
   <link href="styles/common.css" rel="stylesheet">
 

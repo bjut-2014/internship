@@ -1,7 +1,6 @@
 /**
  * Created by surprise on 4/21/16.
  */
-
 .login-container {
     background: url(/images/login/login-bg.jpg) 0 0 no-repeat;
     width: 100%;
@@ -30,20 +29,38 @@
     height: 44px;
     line-height: 44px;
     background-color: #4f5f6f;
+    padding: 7px 27px;
 }
-.radio-inline {
+.login-radio {
+    display: inline-block;
     font-size: 13px;
-    padding-left: 3px;
     color: #fff;
+    margin-top: 6px;
+    cursor: pointer;
 }
-.cr-styled {
-    margin: 0px 2px 0 18px;
-    letter-spacing: 1px;
+.login-radio span {
+    display: inline-block;
+    height: 16px;
+    margin-top: -14px;
+    margin-left: 29px;
 }
-.cr-styled i {
-    margin-top: -3px;
-    margin-right: 7px;
+.radio-student {
+    margin-left: 32px;
+    margin-right: 27px;
 }
+/*.radio-inline {*/
+    /*font-size: 13px;*/
+    /*padding-left: 3px;*/
+    /*color: #fff;*/
+/*}*/
+/*.cr-styled {*/
+    /*margin: 0px 2px 0 18px;*/
+    /*letter-spacing: 1px;*/
+/*}*/
+/*.cr-styled i {*/
+    /*margin-top: -3px;*/
+    /*margin-right: 7px;*/
+/*}*/
 .login-form {
     background-color: #fff;
     /*opacity: .3;*/
@@ -125,14 +142,6 @@
     display: inline-block;
     margin-left: 30px;
     margin-top: 3px;
-}
-.unchecked {
-    background: url(/images/login/checkbox-unchecked.png) 0 1px no-repeat;
-    height: 19px;
-}
-.checked {
-    background: url(/images/login/checkbox-checked.png) 0 1px no-repeat;
-    height: 19px;
 }
 .login-bt {
     width: 224px;

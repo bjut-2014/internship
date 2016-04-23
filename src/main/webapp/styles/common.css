@@ -39,3 +39,21 @@ img {
 .clearfix:after {
     clear: both;
 }
+/*checkbox*/
+.checkbox-unchecked {
+    background: url(/images/login/checkbox-unchecked.png) 0 1px no-repeat;
+    height: 19px;
+}
+.checkbox-checked {
+    background: url(/images/login/checkbox-checked.png) 0 1px no-repeat;
+    height: 19px;
+}
+/*radio*/
+.radio-unchecked {
+    background: url(/images/login/radio-unchecked.png) 0 1px no-repeat;
+    height: 19px;
+}
+.radio-checked {
+    background: url(/images/login/radio-checked.png) 0 1px no-repeat;
+    height: 19px;
+}
