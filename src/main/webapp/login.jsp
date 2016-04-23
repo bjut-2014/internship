@@ -30,18 +30,25 @@
                         </label>
                     </div>
                 </div>
-                <div class="login-form">
-                    <div class="login-input-con"><span class="user-icon"></span><input type="text" class="name" placeholder="用户名"/></div>
-                    <div class="login-input-con"><span class="pwd-icon"></span><input type="password" class="password" placeholder="密码"/></div>
-                    <div class="login-input-con">
-                        <input type="text" class="code" placeholder="验证码"/>
-                        <a href="javascript:void(0)" class="code-link">
-                            <img src="verifyCodeAction" class="code-img"/><span class="change-code">换一张</span>
-                        </a>
+                <form action="login" method="post">
+                    <div class="login-form">
+                        <div class="login-input-con">
+                            <span class="user-icon"></span><input type="text" class="name" name="username" placeholder="用户名"/>
+                        </div>
+                        <div class="login-input-con">
+                            <span class="pwd-icon"></span><input type="password" class="password" name="password" placeholder="密码"/>
+                        </div>
+                        <div class="login-input-con">
+                            <input type="text" class="code" placeholder="验证码" name="verifyCode"/>
+                            <a href="javascript:void(0)" class="code-link">
+                                <img src="verifyCodeAction" class="code-img"/><span class="change-code">换一张</span>
+                            </a>
+                        </div>
+                        <div class="login-checkbox checked"><span>记住密码</span></div>
+                        <div class="login-error"><s:actionerror/></div>
+                        <button class="login-bt">登&nbsp;录</button>
                     </div>
-                    <div class="login-checkbox checked"><span>记住密码</span></div>
-                    <button class="login-bt">登&nbsp;录</button>
-                </div>
+                </form>
 			</div>
         </div>
     </div>
