@@ -40,7 +40,7 @@
                         </a>
                     </div>
                     <div class="login-checkbox checked"><span>记住密码</span></div>
-                    <button class="login-bt">登录</button>
+                    <button class="login-bt">登&nbsp;录</button>
                 </div>
 			</div>
         </div>

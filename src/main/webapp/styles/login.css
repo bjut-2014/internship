@@ -37,7 +37,8 @@
     color: #fff;
 }
 .cr-styled {
-    margin: 0px 2px 0 20px;
+    margin: 0px 2px 0 18px;
+    letter-spacing: 1px;
 }
 .cr-styled i {
     margin-top: -3px;
@@ -51,7 +52,7 @@
     height: 260px;
 }
 .teacher {
-    padding-left: 1px;
+    padding-left: 2px;
 }
 .user-icon {
     background: url(/images/login/username-icon.png) 0 1px no-repeat;
