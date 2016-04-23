@@ -34,12 +34,12 @@
                     <div class="login-input-con"><span class="user-icon"></span><input type="text" class="name" placeholder="用户名"/></div>
                     <div class="login-input-con"><span class="pwd-icon"></span><input type="password" class="password" placeholder="密码"/></div>
                     <div class="login-input-con">
-                        <input type="text" class="code"/>
-                        <a href="" class="code-link">
-                            <img src="" class="code-img"/><span class="change-code">换一张</span>
+                        <input type="text" class="code" placeholder="验证码"/>
+                        <a href="javascript:void(0)" class="code-link">
+                            <img src="verifyCodeAction" class="code-img"/><span class="change-code">换一张</span>
                         </a>
                     </div>
-                    <div class="login-checkbox unchecked"><span>记住密码</span></div>
+                    <div class="login-checkbox checked"><span>记住密码</span></div>
                     <button class="login-bt">登录</button>
                 </div>
 			</div>
