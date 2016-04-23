@@ -4,10 +4,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 
-import com.opensymphony.xwork2.ActionSupport;
 
 import cn.internship.entity.Student;
 import cn.internship.service.StudentService;
@@ -24,12 +24,15 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 
 	private StudentService studentService;
 
+    // 用户类型
+    private int userType;
 	// 用户名
 	private String username;
 	// 密码
 	private String password;
 	// 验证码
 	private String verifyCode;
+
 
 	@Override
 	public String execute() throws Exception {
@@ -49,19 +52,25 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 
 		// 用户名或者密码为空
 		if (username == null || "".equals(username) || password == null || "".equals(password)) {
-			this.addActionError("用户名、密码不正确！");
+			this.addActionError("用户名或密码为空！");
 			return INPUT;
 		}
 
-		// 判断登陆类型
-		//用户类型为学生，验证用户是否存在
-		Student student = studentService.login(username, password);
-		if(student == null){
-			this.addActionError("用户名、密码不正确！");
-			return INPUT;
-		}
-		//将登陆用户存到session中
-		session.setAttribute("currentUser", student);
+		// 判断登陆类型(0：管理员；1：老师；2：企业；3：学生)
+//		if (userType == 3) {
+			//用户类型为学生，验证用户是否存在
+			Student student = studentService.login(username, password);
+			if(student == null){
+				this.addActionError("用户名或密码不正确！");
+				return INPUT;
+			}
+			//将登陆用户存到session中
+			session.setAttribute("currentUser", student);
+//		} else {
+//			this.addActionError("登录类型不对");
+//            return INPUT;
+//		}
+
 		return SUCCESS;
 	}
 
@@ -116,4 +125,11 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 		this.verifyCode = verifyCode;
 	}
 
+	public int getUserType() {
+		return userType;
+	}
+
+	public void setUserType(int userType) {
+		this.userType = userType;
+	}
 }
