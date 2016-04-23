@@ -1,0 +1,141 @@
+.login-container {
+    background: url(/images/login/login-bg.jpg) 0 0 no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+.login-content {
+    margin: 0 auto;
+    width: 518px;
+    padding-top: 130px;
+}
+.title {
+    font-size: 56px;
+    color: #fff;
+    text-align: center;
+}
+.login-line {
+    width: 518px;
+    margin-top: 20px;
+}
+.login-form-container {
+    width: 278px;
+    margin: 25px auto 0;
+}
+.login-roles {
+    height: 44px;
+    line-height: 44px;
+    background-color: #4f5f6f;
+}
+.radio-inline {
+    font-size: 13px;
+    padding-left: 3px;
+    color: #fff;
+}
+.cr-styled {
+    margin: 0px 2px 0 20px;
+}
+.cr-styled i {
+    margin-top: -3px;
+    margin-right: 7px;
+}
+.login-form {
+    background-color: #fff;
+    /*opacity: .3;*/
+    background-color: rgba(256, 256, 256, 0.3);
+    padding: 15px 27px;
+    height: 260px;
+}
+.teacher {
+    padding-left: 1px;
+}
+.user-icon {
+    background: url(/images/login/username-icon.png) 0 1px no-repeat;
+    width: 28px;
+    height: 16px;
+    display: inline-block;
+    position: absolute;
+    left: 16px;
+    top: 11px;
+    border-right: 2px solid #4f5f6f;
+}
+.login-form input {
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    background-color: #fff;
+    border: 1px solid #b8c3cc;
+    font-size: 13px;
+    color: #4f5f6f;
+}
+.name, .password {
+    width: 224px;
+    padding-left: 52px;
+}
+.login-input-con {
+    margin: 5px 0 13px;
+    position: relative;
+}
+.pwd-icon {
+    background: url(/images/login/pwd-icon.png) 0 1px no-repeat;
+    width: 28px;
+    height: 16px;
+    display: inline-block;
+    position: absolute;
+    left: 16px;
+    top: 11px;
+    border-right: 2px solid #4f5f6f;
+}
+.code {
+    width: 85px;
+    padding-left: 17px;
+}
+.code-link {
+    display: inline-block;
+    height: 36px;
+    margin-left: 7px;
+
+}
+.code-img {
+    width: 85px;
+    height: 36px;
+    line-height: 36px;
+    display: inline-block;
+    margin-top: -1px;
+}
+.change-code {
+    display: inline-block;
+    font-size: 12px;
+    margin-left: 4px;
+    color: #fff;
+    vertical-align: bottom;
+}
+.login-checkbox {
+    width: 80px;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+}
+.login-checkbox span {
+    display: inline-block;
+    margin-left: 30px;
+    margin-top: 3px;
+}
+.unchecked {
+    background: url(/images/login/checkbox-unchecked.png) 0 1px no-repeat;
+    height: 19px;
+}
+.checked {
+    background: url(/images/login/checkbox-checked.png) 0 1px no-repeat;
+    height: 19px;
+}
+.login-bt {
+    width: 224px;
+    height: 36px;
+    line-height: 36px;
+    background: #4bbbf4;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    margin-top: 16px;
+}
