@@ -2,22 +2,23 @@
 <!DOCTYPE>
 <html>
 <jsp:include page="header/header.jsp" />
-<link href="styles/student.css" rel="stylesheet">
+<link href="styles/index.css" rel="stylesheet">
 <body>
 <jsp:include page="nav/nav.jsp" />
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li class="active"><a href="index">首页 <span class="sr-only">(current)</span></a></li>
-                <li><a href="stu-info">个人信息</a></li>
-                <li><a href="weekly-plan">周计划</a></li>
-                <li><a href="practical-reports">实训报告</a></li>
-                <li><a href="internship-reports">实习报告</a></li>
+                <li class="active">
+                    <a href="index"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>首页</a>
+                </li>
+                <li><a href=""><span class="glyphicon glyphicon-user" aria-hidden="true"></span>个人信息</a></li>
+                <li><a href=""><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>课程</a></li>
+                <li><a href=""><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>实习</a></li>
+                <li><a href=""><span class="glyphicon glyphicon-file" aria-hidden="true"></span>毕设</a></li>
             </ul>
-            <ul class="nav nav-sidebar">
-                <li><a href="reset-pwd">修改密码</a></li>
+            <ul class="nav nav-sidebar reset-pwd-ul">
+                <li><a href="reset-pwd"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>修改密码</a></li>
             </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -33,28 +34,28 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
-                        <img src="/images/mindmap.png" alt="...">
+                        <img src="/images/index/banner-1.png" alt="...">
                         <div class="carousel-caption">
                             <h3>First slide label</h3>
                             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="/images/mindmap.png" alt="...">
+                        <img src="/images/index/banner-1.png" alt="...">
                         <div class="carousel-caption">
                             <h3>First slide label</h3>
                             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="/images/mindmap.png" alt="...">
+                        <img src="/images/index/banner-1.png" alt="...">
                         <div class="carousel-caption">
                             <h3>First slide label</h3>
                             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="/images/mindmap.png" alt="...">
+                        <img src="/images/index/banner-1.png" alt="...">
                         <div class="carousel-caption">
                             <h3>First slide label</h3>
                             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
