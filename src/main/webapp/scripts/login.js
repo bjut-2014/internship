@@ -2,6 +2,7 @@
  * Created by surprise on 4/23/16.
  */
 $(function () {
+    $('.copyright').remove();
     // checkbox
     $('.login-checkbox').on('click', function () {
         if ($(this).hasClass('checkbox-checked')) {
