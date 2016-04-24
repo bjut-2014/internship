@@ -1,0 +1,33 @@
+/*nav*/
+.nav-container {
+    height: 50px;
+    line-height: 50px;
+    background-color: #739497;
+    color: #fff;
+    font-size: 14px;
+
+}
+.nav-title {
+    width: 209px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+    background-color: #11848f;
+    text-align: center;
+}
+.nav-right {
+    margin-right: 20px;
+}
+.logout {
+    color: #fff;
+    margin-left: 38px;
+    background: url(/images/login/logout.png) 0 4px no-repeat;
+    height: 11px;
+}
+.logout:hover {
+    color: #fff;
+    text-decoration: none;
+}
+.logout span {
+    margin-left: 18px;
+}

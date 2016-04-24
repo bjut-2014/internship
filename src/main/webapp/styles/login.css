@@ -1,6 +1,3 @@
-/**
- * Created by surprise on 4/21/16.
- */
 .login-container {
     background: url(/images/login/login-bg.jpg) 0 0 no-repeat;
     width: 100%;
@@ -48,19 +45,6 @@
     margin-left: 32px;
     margin-right: 27px;
 }
-/*.radio-inline {*/
-    /*font-size: 13px;*/
-    /*padding-left: 3px;*/
-    /*color: #fff;*/
-/*}*/
-/*.cr-styled {*/
-    /*margin: 0px 2px 0 18px;*/
-    /*letter-spacing: 1px;*/
-/*}*/
-/*.cr-styled i {*/
-    /*margin-top: -3px;*/
-    /*margin-right: 7px;*/
-/*}*/
 .login-form {
     background-color: #fff;
     /*opacity: .3;*/

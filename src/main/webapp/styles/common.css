@@ -1,7 +1,3 @@
-/**
- * Created by surprise on 4/21/16.
- */
-
 /*公用样式*/
 * {
     margin: 0;
@@ -27,6 +23,15 @@ img {
 }
 .fr {
     float: right;
+}
+.none {
+    display: none;
+}
+button, a {
+    outline: none!important;
+}
+textarea {
+    resize: none;
 }
 .clearfix {
     *zoom: 1;

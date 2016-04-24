@@ -24,6 +24,7 @@
   <%--<link href="styles/lib/helper.css" rel="stylesheet">--%>
 
   <link href="styles/common.css" rel="stylesheet">
+  <link href="styles/index.css" rel="stylesheet">
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
   <!--[if lt IE 9]>
