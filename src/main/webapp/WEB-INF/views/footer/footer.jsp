@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<div class="copyright">2016 © Project Team Of Grade 2014.</div>
 <script src="scripts/lib/jquery.min.js"></script>
 <script src="scripts/lib/bootstrap.min.js"></script>
 <%--<script src="scripts/lib/pace.min.js"></script>--%>

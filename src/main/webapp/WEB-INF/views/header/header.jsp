@@ -15,8 +15,8 @@
   <%--<link href="styles/lib/animate.css" rel="stylesheet">--%>
 
   <%--<!--Icon-fonts css-->--%>
-  <link href="styles/lib/font-awesome.css" rel="stylesheet" />
-  <link href="styles/lib/ionicons.min.css" rel="stylesheet" />
+  <%--<link href="styles/lib/font-awesome.css" rel="stylesheet" />--%>
+  <%--<link href="styles/lib/ionicons.min.css" rel="stylesheet" />--%>
 
 
   <%--<!-- Custom styles for this template -->--%>

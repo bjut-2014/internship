@@ -83,8 +83,38 @@
 }
 /*index*/
 .main {
-    padding-top: 15px;
+    padding-top: 60px;
 }
 .carousel-inner img {
     width: 1035px;
+}
+.panel {
+    margin-top: 20px;
+}
+.panel-notice .panel-heading {
+    background-color: #6676c2;
+    color: #fff;
+}
+.panel-job .panel-heading {
+    background-color: #4bbbf4;
+    color: #fff;
+}
+.panel-title-more {
+    margin-top: -17px;
+    font-size: 14px;
+}
+.panel-title-more:hover {
+    color: #555;
+}
+.list-group-item {
+    font-size: 14px;
+}
+/*footer*/
+.copyright {
+    height: 50px;
+    line-height: 50px;
+    background-color: #f9f9f9;
+    color: #526069;
+    font-size: 12px;
+    padding-left: 230px;
 }
