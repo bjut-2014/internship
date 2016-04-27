@@ -1,5 +1,5 @@
 .login-container {
-    background: url(/images/login/login-bg.jpg) 0 0 no-repeat;
+    background: url(../images/login/login-bg.jpg) 0 0 no-repeat;
     width: 100%;
     height: 100%;
     background-size: cover;
@@ -56,7 +56,7 @@
     padding-left: 2px;
 }
 .user-icon {
-    background: url(/images/login/username-icon.png) 0 1px no-repeat;
+    background: url(../images/login/username-icon.png) 0 1px no-repeat;
     width: 28px;
     height: 16px;
     display: inline-block;
@@ -83,7 +83,7 @@
     position: relative;
 }
 .pwd-icon {
-    background: url(/images/login/pwd-icon.png) 0 1px no-repeat;
+    background: url(../images/login/pwd-icon.png) 0 1px no-repeat;
     width: 28px;
     height: 16px;
     display: inline-block;

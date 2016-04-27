@@ -18,10 +18,16 @@ public class StudentServiceImpl implements StudentService{
 	public Student login(String sno, String password) {
 		Student student = studentDao.get(sno, password);
 		//设置全局用户信息
-//		UserInfo.setInfo(student.getName(), student.getSno());
+		UserInfo.setInfo(student.getName(), student.getSno());
 		return student;
 	}
 
+	//注销
+	@Override
+	public void logout(){
+		//方法体为空，主要为了aop框架能检测到注销事件
+	}
+	
 	//获得指定学号的学生
 	@Override
 	public Student get(Integer id){

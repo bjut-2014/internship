@@ -11,5 +11,7 @@ public interface StudentService {
 	//登陆
 	public Student login(String sno,String password);
 	
+	public void logout();
+	
 	public Student get(Integer id);
 }
