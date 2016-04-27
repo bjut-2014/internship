@@ -30,7 +30,7 @@ public class Student {
 	private Integer grade;
 	//班级
 	@Column(length=24)
-	private String clazz;
+	private String classes;
 	//电话
 	@Column(length=24)
 	private String phone;
@@ -74,12 +74,15 @@ public class Student {
 	public void setGrade(Integer grade) {
 		this.grade = grade;
 	}
-	public String getClazz() {
-		return clazz;
+
+	public String getClasses() {
+		return classes;
 	}
-	public void setClazz(String clazz) {
-		this.clazz = clazz;
+
+	public void setClasses(String classes) {
+		this.classes = classes;
 	}
+
 	public String getPhone() {
 		return phone;
 	}

@@ -1,44 +1,43 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE>
 <html>
 <jsp:include page="WEB-INF/views/header/header.jsp" />
-<link href="styles/student.css" rel="stylesheet">
-<script src="scripts/jquery.min.js" type="text/javascript"></script>
+<link href="styles/login.css" rel="stylesheet">
 <body>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-4 col-md-offset-4">
-				<h3>嵌入式实训平台</h3>
-				<form action="login" method="post">
-					<div class="form-group">
-						<label for="exampleInputEmail1">用户名：</label> <input type="text"
-							class="form-control" name="username" id="exampleInputEmail1">
-					</div>
-					<div class="form-group">
-						<label for="exampleInputPassword1">密码：</label> <input
-							type="password" class="form-control" name="password"
-							id="exampleInputPassword1">
-					</div>
-					<div class="form-group">
-                        <label>验证码：</label><br>
-                        <input type="text" class="form-control captcha" name="verifyCode">
-                        <a class="captcha-link" href="javascript:void(0);">
-                            <img src="verifyCodeAction" class="captcha-img">&nbsp;&nbsp;&nbsp;&nbsp;换一张
-                        </a>
-					</div>
-					<%--<div class="checkbox">--%>
-						<%--<label> <input type="checkbox"> 记住密码--%>
-						<%--</label>--%>
-					<%--</div>--%>
-					<s:actionerror cssStyle="color:red" />
-					<button type="submit" class="btn btn-primary fr">登录</button>
-				</form>
+    <div class="login-container">
+        <div class="login-content">
+            <p class="title">嵌入式实训平台</p>
+            <img src="/images/login/login-line.png" class="login-line"/>
+			<div class="login-form-container">
+				<div class="login-roles">
+                    <div class="login-radio radio-checked fl"><span>老师</span></div>
+                    <div class="login-radio radio-unchecked fl radio-student"><span>学生</span></div>
+                    <div class="login-radio radio-unchecked fl"><span>企业</span></div>
+                </div>
+                <form action="login" method="post">
+                    <div class="login-form">
+                        <div class="login-input-con">
+                            <span class="user-icon"></span><input type="text" class="name" name="username" placeholder="用户名"/>
+                        </div>
+                        <div class="login-input-con">
+                            <span class="pwd-icon"></span><input type="password" class="password" name="password" placeholder="密码"/>
+                        </div>
+                        <div class="login-input-con">
+                            <input type="text" class="code" placeholder="验证码" name="verifyCode"/>
+                            <a href="javascript:void(0)" class="code-link">
+                                <img src="verifyCodeAction" class="code-img"/><span class="change-code">换一张</span>
+                            </a>
+                        </div>
+                        <div class="login-checkbox checkbox-checked"><span>记住密码</span></div>
+                        <div class="login-error"><s:actionerror/></div>
+                        <button class="login-bt">登&nbsp;录</button>
+                    </div>
+                </form>
 			</div>
-		</div>
-	</div>
-	<jsp:include page="WEB-INF/views/footer/footer.jsp" />
-	<script src="scripts/login.js"></script>
+        </div>
+    </div>
+    <jsp:include page="WEB-INF/views/footer/footer.jsp" />
+    <script src="scripts/login.js"></script>
 </body>
 </html>
