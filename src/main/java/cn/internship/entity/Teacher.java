@@ -8,52 +8,41 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-/**
- * 学生实体类
- * @author dreamlate
- */
 @Entity
-@Table(name="student")
-public class Student {
-	//主键
+@Table(name = "teacher")
+public class Teacher {
+
+	// 主键
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	//学号
-	@Column(length=24,unique=true)
-	private String sno;
-	//姓名
-	@Column(length=24)
+	// 职工号
+	@Column(length = 24, unique = true)
+	private String tno;
+	// 姓名
+	@Column(length = 24)
 	private String name;
-	//性别
+	// 性别
 	private Integer sex;
-	//年级
-	private Integer grade;
-	//班级
-	@Column(length=24)
-	private String classes;
-	//电话
-	@Column(length=24)
+	// 电话
+	@Column(length = 24)
 	private String phone;
-	//电子邮件
-	@Column(length=100)
+	// 电子邮件
+	@Column(length = 100)
 	private String email;
-	//密码
-	@Column(length=100)
+	// 密码
+	@Column(length = 100)
 	private String password;
-	//用户类型：该实体为学生
+	// 用户类型：该实体为教师
 	private Integer userType;
-	//学生选择的课程集合
-	@ManyToMany(targetEntity=Course.class)
-	@JoinTable(name="student_course",
-						joinColumns=@JoinColumn(name="id",referencedColumnName="studentId"),
-						inverseJoinColumns=@JoinColumn(name="id",referencedColumnName="courseId"))
+	//教师教授的课程集合
+	@OneToMany(targetEntity=Course.class)
 	private Set<Course> courses = new HashSet<>();
+	
+	
 	
 	public Integer getId() {
 		return id;
@@ -61,11 +50,11 @@ public class Student {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public String getSno() {
-		return sno;
+	public String getTno() {
+		return tno;
 	}
-	public void setSno(String sno) {
-		this.sno = sno;
+	public void setTno(String tno) {
+		this.tno = tno;
 	}
 	public String getName() {
 		return name;
@@ -79,21 +68,6 @@ public class Student {
 	public void setSex(Integer sex) {
 		this.sex = sex;
 	}
-	public Integer getGrade() {
-		return grade;
-	}
-	public void setGrade(Integer grade) {
-		this.grade = grade;
-	}
-
-	public String getClasses() {
-		return classes;
-	}
-
-	public void setClasses(String classes) {
-		this.classes = classes;
-	}
-
 	public String getPhone() {
 		return phone;
 	}
@@ -124,8 +98,5 @@ public class Student {
 	public void setCourses(Set<Course> courses) {
 		this.courses = courses;
 	}
-	
-	
-	
-	
+
 }
