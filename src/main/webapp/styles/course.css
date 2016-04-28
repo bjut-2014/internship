@@ -1,0 +1,36 @@
+.rposotion{
+	float:right;
+	
+}
+th{
+	text-align:center;
+}
+.table-striped>tbody,
+.table-striped>thead{
+	font-size:12px;
+	color:#797979;
+}
+.table-striped>thead{
+	border-top:1px solid #ddd;
+}
+.table-striped .rborder{
+	border-right:1px solid #ddd;
+}
+.plus{
+	color:#2c9f94;
+	font-size:33px;
+}
+.do{
+	color:#4bbbf4;
+	display:block;
+	margin-left:auto;
+	margin-top:5px;
+	text-align:center;
+}
+.up{
+	color:#6777c2;
+	display:block;
+	margin-left:auto;
+	margin-top:5px;
+	text-align:center;
+}

@@ -62,6 +62,15 @@
 		<action name="index" class="studentAction">
 			<result>/WEB-INF/views/index.jsp</result>
 		</action>
+		<action name="studentcourses" class="">
+			<result>/WEB-INF/views/student/studentcourses.jsp</result>
+		</action>
+		<action name="scourseExample" class="">
+			<result>/WEB-INF/views/student/scourseExample.jsp</result>
+		</action>
+		<action name="weekly-report" class="">
+			<result>/WEB-INF/views/student/weekly-report.jsp</result>
+		</action>
 		<!-- end -->
 	</package>
 
