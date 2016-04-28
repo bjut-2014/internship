@@ -1,0 +1,20 @@
+.panel-notice{
+	border-top:5px solid #6676c2 ;	
+	
+	
+}
+.panel-notice .panel-heading,
+.panel-job .panel-heading{
+	background-color:#fff;
+	border-bottom:2px solid #DDDDDD;
+	color:#797979;
+	font-size:16px;
+}
+.panel-job{
+	border-top:5px solid #4bbbf4 ;
+}
+
+.table-striped>tbody{
+	font-size:12px;
+	color:#797979;
+}
