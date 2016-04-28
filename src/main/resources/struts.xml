@@ -63,6 +63,11 @@
 			<result>/WEB-INF/views/index.jsp</result>
 		</action>
 		<!-- end -->
+		<!-- 课程相关操作 -->
+		<action name="course" class="courseAction">
+			<result>/WEB-INF/views/index.jsp</result>
+		</action>
+		<!-- end -->
 	</package>
 
 
