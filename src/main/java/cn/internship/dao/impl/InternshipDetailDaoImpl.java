@@ -14,8 +14,22 @@ public class InternshipDetailDaoImpl extends HibernateDaoSupport implements Inte
 		String hql="from InternshipDetail it where it.sno=?";
 		Object[] values={sno};
 		List<InternshipDetail> it=(List<InternshipDetail>) getHibernateTemplate().find(hql, values);
-		System.out.println(it.get(0));
-		return it.get(0);
+		
+		if(it.get(0)==null){
+			InternshipDetail intd=new InternshipDetail();
+			intd.setSno(sno);
+			intd.setCompany_address("尚未实习");
+			intd.setCompany_name("尚未实习");
+			intd.setCompany_teacher("尚未实习");
+			intd.setDate(null);
+			intd.setScore(null);
+			return intd;
+		}else{
+			System.out.println(it.get(0));
+			return it.get(0);
+		}
+		
+		
 	}
 
 }
