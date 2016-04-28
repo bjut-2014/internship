@@ -18,7 +18,7 @@ public class Teacher {
 	// 主键
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Integer teacherId;
 	// 职工号
 	@Column(length = 24, unique = true)
 	private String tno;
@@ -39,16 +39,15 @@ public class Teacher {
 	// 用户类型：该实体为教师
 	private Integer userType;
 	//教师教授的课程集合
-	@OneToMany(targetEntity=Course.class)
+	@OneToMany(targetEntity=Course.class,mappedBy="teacher")
 	private Set<Course> courses = new HashSet<>();
 	
 	
-	
-	public Integer getId() {
-		return id;
+	public Integer getTeacherId() {
+		return teacherId;
 	}
-	public void setId(Integer id) {
-		this.id = id;
+	public void setTeacherId(Integer teacherId) {
+		this.teacherId = teacherId;
 	}
 	public String getTno() {
 		return tno;

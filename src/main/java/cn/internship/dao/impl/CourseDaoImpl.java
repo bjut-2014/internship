@@ -18,13 +18,25 @@ public class CourseDaoImpl extends HibernateDaoSupport implements CourseDao{
 		return (List<Course>) getHibernateTemplate().find(hql);
 	}
 
+
+	//根据主键获得指定课程
 	@Override
-	public Course get(String tno) {
+	public Course get(Integer id) {
+		return getHibernateTemplate().get(Course.class, id);
+	}
+
+
+	//获得某个学生的所有必修课程
+	@Override
+	public List<Course> getBySno(Integer studentId) {
+//		String hql = "select c from Course c join c.studentId s join s.";
 		return null;
 	}
 
+
+	//获得某个教师的所有教授课程
 	@Override
-	public Course get(Integer id) {
+	public List<Course> getByTno(String tno) {
 		// TODO Auto-generated method stub
 		return null;
 	}

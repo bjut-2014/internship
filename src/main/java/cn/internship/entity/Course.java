@@ -20,17 +20,44 @@ public class Course {
 	//主键
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Integer courseId;
 	//课程名字
 	private String name;
 	//选课的老师
 	@ManyToOne(targetEntity=Teacher.class)
-	@JoinColumn(name="id",referencedColumnName="teacherId",nullable=false)
+	@JoinColumn(name="teacherId",referencedColumnName="teacherId",nullable=false)
 	private Teacher teacher;
 	//选课的学生集合
 	@ManyToMany(targetEntity=Student.class)
 	@JoinTable(name="student_course",
-						joinColumns=@JoinColumn(name="id",referencedColumnName="courseId"),
-						inverseJoinColumns=@JoinColumn(name="id",referencedColumnName="studentId"))
-	private Set<Integer> studentId = new HashSet<>();
+						joinColumns=@JoinColumn(name="courseId",referencedColumnName="courseId"),
+						inverseJoinColumns=@JoinColumn(name="studentId",referencedColumnName="studentId"))
+	private Set<Student> students = new HashSet<>();
+	
+	
+	public Integer getCourseId() {
+		return courseId;
+	}
+	public void setCourseId(Integer courseId) {
+		this.courseId = courseId;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public Teacher getTeacher() {
+		return teacher;
+	}
+	public void setTeacher(Teacher teacher) {
+		this.teacher = teacher;
+	}
+	public Set<Student> getStudents() {
+		return students;
+	}
+	public void setStudents(Set<Student> students) {
+		this.students = students;
+	}
+	
 }

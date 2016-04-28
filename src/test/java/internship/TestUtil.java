@@ -19,4 +19,9 @@ public class TestUtil {
 		System.out.println(new Date().getTime());
 	}
 	
+	@Test
+	public void testTable(){
+		
+	}
+	
 }

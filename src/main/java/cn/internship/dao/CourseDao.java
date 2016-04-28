@@ -12,7 +12,9 @@ public interface CourseDao {
 
 	public List<Course> getAll();
 	
-	public Course get(String tno);
+	public List<Course> getBySno(Integer studentId);
+	
+	public List<Course> getByTno(String tno);
 	
 	public Course get(Integer id);
 	
