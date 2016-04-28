@@ -62,6 +62,9 @@
 		<action name="index" class="studentAction">
 			<result>/WEB-INF/views/index.jsp</result>
 		</action>
+		<action name="stu-info" class="studentAction" method="info">
+			<result>/WEB-INF/views/student/studentinfo.jsp</result>
+		</action>
 		<action name="scourseExample" class="">
 			<result>/WEB-INF/views/student/scourseExample.jsp</result>
 		</action>

@@ -84,6 +84,7 @@
 	</bean>
 	<bean id="studentAction" class="cn.internship.action.StudentAction">
 		<property name="studentService" ref="studentService" />
+		<property name="syslogService" ref="syslogService" />
 	</bean>
 	<!-- end -->
 	

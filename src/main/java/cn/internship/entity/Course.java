@@ -37,7 +37,7 @@ public class Course {
 	
 	//课程对应的案例库
 	@OneToMany(targetEntity=CaseLibrary.class,mappedBy="course")
-	private Set<CaseLibrary> caseLibraries;
+	private Set<CaseLibrary> caseLibraries = new HashSet<CaseLibrary>();
 	
 	
 	public Integer getCourseId() {
