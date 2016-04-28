@@ -11,6 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -33,6 +34,10 @@ public class Course {
 						joinColumns=@JoinColumn(name="courseId",referencedColumnName="courseId"),
 						inverseJoinColumns=@JoinColumn(name="studentId",referencedColumnName="studentId"))
 	private Set<Student> students = new HashSet<>();
+	
+	//课程对应的案例库
+	@OneToMany(targetEntity=CaseLibrary.class,mappedBy="course")
+	private Set<CaseLibrary> caseLibraries;
 	
 	
 	public Integer getCourseId() {
@@ -59,5 +64,12 @@ public class Course {
 	public void setStudents(Set<Student> students) {
 		this.students = students;
 	}
+	public Set<CaseLibrary> getCaseLibraries() {
+		return caseLibraries;
+	}
+	public void setCaseLibraries(Set<CaseLibrary> caseLibraries) {
+		this.caseLibraries = caseLibraries;
+	}
+	
 	
 }

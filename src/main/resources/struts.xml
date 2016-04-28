@@ -62,9 +62,6 @@
 		<action name="index" class="studentAction">
 			<result>/WEB-INF/views/index.jsp</result>
 		</action>
-		<action name="studentcourses" class="">
-			<result>/WEB-INF/views/student/studentcourses.jsp</result>
-		</action>
 		<action name="scourseExample" class="">
 			<result>/WEB-INF/views/student/scourseExample.jsp</result>
 		</action>
@@ -74,7 +71,7 @@
 		<!-- end -->
 		<!-- 课程相关操作 -->
 		<action name="course" class="courseAction">
-			<result>/WEB-INF/views/index.jsp</result>
+			<result>/WEB-INF/views/student/studentcourses.jsp</result>
 		</action>
 		<!-- end -->
 	</package>

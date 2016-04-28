@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE>
 <html>
 <jsp:include page="../header/header.jsp" />
@@ -15,7 +16,7 @@
                     <a href="index"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>首页</a>
                 </li>
                 <li><a href=""><span class="glyphicon glyphicon-user" aria-hidden="true"></span>个人信息</a></li>
-                <li><a href="studentcourses"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>课程</a></li>
+                <li><a href="course"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>课程</a></li>
                 <li><a href=""><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>实习</a></li>
                 <li><a href=""><span class="glyphicon glyphicon-file" aria-hidden="true"></span>毕设</a></li>
             </ul>
@@ -74,6 +75,19 @@
 	                                           			
 	                                           		</td>
                                                </tr>
+                                               <s:iterator value="#request.courseList" var="course">
+                                               <tr>
+                                               		<td><s:property value="#course.name"/></td>
+                                               		<td>谌云莉</td>
+                                               		<td>周四上午 9：00</td>
+                                               		<td>软件学院  518</td>
+                                               		<td></td>
+                                               		<td><a href="scourseExample"><span class="fa fa-folder-open do"></span></a></td>
+	                                           		<td>
+	                                           			<label class="glyphicon glyphicon-open up"><input id="inputfile" style="display:none;" type="file"></input></label>
+	                                           		</td>
+                                               </tr>
+                                               </s:iterator>
                                             </tbody>
                                         </table>
 

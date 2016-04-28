@@ -26,6 +26,7 @@ public class CourseAction extends ActionSupport implements ServletRequestAware, 
 	
 	@Override
 	public String execute() throws Exception {
+		//获得当前session下的学生
 		Student student = (Student) request.getSession().getAttribute("currentUser");
 		Integer studentId = student.getStudentId();
 		List<Course> courseList = courseService.getBySno(studentId);
