@@ -8,7 +8,7 @@
     <div class="login-container">
         <div class="login-content">
             <p class="title">嵌入式实训平台</p>
-            <img src="/images/login/login-line.png" class="login-line"/>
+            <img src="images/login/login-line.png" class="login-line"/>
 			<div class="login-form-container">
 				<div class="login-roles">
                     <div class="login-radio radio-checked fl"><span>老师</span></div>

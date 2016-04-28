@@ -34,28 +34,28 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
-                        <img src="/images/index/banner-1.png" alt="...">
+                        <img src="images/index/banner-1.png" alt="...">
                         <div class="carousel-caption">
                             <h3>First slide label</h3>
                             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="/images/index/banner-1.png" alt="...">
+                        <img src="images/index/banner-1.png" alt="...">
                         <div class="carousel-caption">
                             <h3>First slide label</h3>
                             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="/images/index/banner-1.png" alt="...">
+                        <img src="images/index/banner-1.png" alt="...">
                         <div class="carousel-caption">
                             <h3>First slide label</h3>
                             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="/images/index/banner-1.png" alt="...">
+                        <img src="images/index/banner-1.png" alt="...">
                         <div class="carousel-caption">
                             <h3>First slide label</h3>
                             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>

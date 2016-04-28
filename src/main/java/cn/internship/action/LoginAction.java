@@ -78,6 +78,7 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 	//注销
 	public String logout(){
 		request.getSession().removeAttribute("currentUser");
+		studentService.logout();
 		return "logout";
 	}
 	

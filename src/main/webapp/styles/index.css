@@ -25,7 +25,7 @@
 .logout {
     color: #fff;
     margin-left: 38px;
-    background: url(/images/index/logout.png) 0 4px no-repeat;
+    background: url(../images/index/logout.png) 0 4px no-repeat;
     height: 11px;
 }
 .logout:hover {
