@@ -117,7 +117,7 @@ public class GraduationProjectAction extends ActionSupport implements
         //获得当前session下的学生
 		Student student = (Student) request.getSession().getAttribute("currentUser");
 		//获得指定学生的所有周报
-		List<GraduationWeeklyReport> list = graduationWeeklyReportService.getAll(student.getSno());
+		List<GraduationWeeklyReport> list = graduationWeeklyReportService.getAllGraduationWeeklyReport(student.getSno());
         request.setAttribute("graduationweeklyplan", list);
         return SUCCESS;
         }
@@ -133,19 +133,19 @@ public class GraduationProjectAction extends ActionSupport implements
 		graduationWeeklyReport.setContent(addContent);
 		graduationWeeklyReport.setDate(new Date(new java.util.Date().getTime()));
 		//保存
-		graduationWeeklyReportService.save(graduationWeeklyReport);
+		graduationWeeklyReportService.saveGraduationWeeklyReport(graduationWeeklyReport);
 		return SUCCESS;
 	}
 	
 	//删除周报
 	public String delete(int deleteId){
-		graduationWeeklyReportService.delete(deleteId);
+		graduationWeeklyReportService.deleteGraduationWeeklyReport(deleteId);
 		return SUCCESS;
 	}
 	
 	//获取周报
 	public String getOneWeeklyReport(){
-		GraduationWeeklyReport oneWeeklyReport=graduationWeeklyReportService.get(graduationWeeklyReportId);
+		GraduationWeeklyReport oneWeeklyReport=graduationWeeklyReportService.getGraduationWeeklyReport(graduationWeeklyReportId);
 		request.setAttribute("oneWeeklyReport", oneWeeklyReport);
 		return SUCCESS;
 	}
@@ -153,7 +153,7 @@ public class GraduationProjectAction extends ActionSupport implements
 	
 	//查找某一条周报
 	public String get() throws Exception {
-        GraduationWeeklyReport oneWeeklyReport = graduationWeeklyReportService.get(graduationWeeklyReportId);
+        GraduationWeeklyReport oneWeeklyReport = graduationWeeklyReportService.getGraduationWeeklyReport(graduationWeeklyReportId);
         JSONObject jo = new JSONObject();
 
         jo.put("id", oneWeeklyReport.getId());
@@ -174,13 +174,13 @@ public class GraduationProjectAction extends ActionSupport implements
 	}
 	//更新周报
 	public String update(){
-		GraduationWeeklyReport graduationWeeklyReport=graduationWeeklyReportService.get(graduationWeeklyReportId);
+		GraduationWeeklyReport graduationWeeklyReport=graduationWeeklyReportService.getGraduationWeeklyReport(graduationWeeklyReportId);
 		
 		JSONObject jo = new JSONObject();
 		graduationWeeklyReport.setTitle(updateTitle);
 		graduationWeeklyReport.setContent(updateContent);
 		graduationWeeklyReport.setDate(new Date(new java.util.Date().getTime()));
-		graduationWeeklyReportService.save(graduationWeeklyReport);
+		graduationWeeklyReportService.saveGraduationWeeklyReport(graduationWeeklyReport);
 		
 		try {
 			response.setCharacterEncoding("utf-8");

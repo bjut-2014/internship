@@ -9,6 +9,7 @@ public class InternshipDetailServiceImpl implements InternshipDetailService {
 
 	private InternshipDetailDao internshipDetailDao;
 	@Override
+	//通过学生学号获取其实习信息
 	public InternshipDetail getInternshipDetailBySno(String sno) {
 		return internshipDetailDao.get(sno);
 	}

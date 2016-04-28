@@ -13,27 +13,27 @@ public class GraduationWeeklyReportServiceImpl implements GraduationWeeklyReport
 private GraduationWeeklyReportDao graduationWeeklyReportDao;
 	
 	//通过主键id获取一条周报
-	public GraduationWeeklyReport get(Integer id) {
+	public GraduationWeeklyReport getGraduationWeeklyReport(Integer id) {
 		return graduationWeeklyReportDao.get(id);		
 	}
 
 	//通过主键id删除一条周报
-	public void delete(Integer id) {
+	public void deleteGraduationWeeklyReport(Integer id) {
 		graduationWeeklyReportDao.delete(id);
 	}
 
 	//更新一条周报
-	public void update(GraduationWeeklyReport graduationWeeklyReport) {
+	public void updateGraduationWeeklyReport(GraduationWeeklyReport graduationWeeklyReport) {
 		graduationWeeklyReportDao.update(graduationWeeklyReport);
 	}
 
 	//保存一条周报
-	public void save(GraduationWeeklyReport graduationWeeklyReport) {
+	public void saveGraduationWeeklyReport(GraduationWeeklyReport graduationWeeklyReport) {
 		graduationWeeklyReportDao.save(graduationWeeklyReport);
 	}
 
 	//根据当前学生学号获取所有的周报
-	public List<GraduationWeeklyReport> getAll(String sno) {
+	public List<GraduationWeeklyReport> getAllGraduationWeeklyReport(String sno) {
 		return graduationWeeklyReportDao.getAll(sno);
 	}
 

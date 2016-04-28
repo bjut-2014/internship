@@ -51,7 +51,7 @@ public class WeeklyReportAction extends ActionSupport implements ServletRequestA
         //获得当前session下的学生
 		Student student = (Student) request.getSession().getAttribute("currentUser");
 		//获得指定学生的所有周报
-		List<WeeklyReport> list = weeklyReportService.getAll(student.getSno());
+		List<WeeklyReport> list = weeklyReportService.getAllWeeklyReport(student.getSno());
         request.setAttribute("weeklyplan", list);
         //获得指定学生的实习信息
         InternshipDetail it=internshipDetailService.getInternshipDetailBySno(student.getSno());
@@ -70,19 +70,19 @@ public class WeeklyReportAction extends ActionSupport implements ServletRequestA
 		weeklyReport.setContent(addContent);
 		weeklyReport.setDate(new Date(new java.util.Date().getTime()));
 		//保存
-		weeklyReportService.save(weeklyReport);
+		weeklyReportService.saveWeeklyReport(weeklyReport);
 		return SUCCESS;
 	}
 	
 	//删除周报
 	public String delete(int deleteId){
-		weeklyReportService.delete(deleteId);
+		weeklyReportService.deleteWeeklyReport(deleteId);
 		return SUCCESS;
 	}
 	
 	//获取周报
 	public String getOneWeeklyReport(){
-		WeeklyReport oneWeeklyReport=weeklyReportService.get(weeklyReportId);
+		WeeklyReport oneWeeklyReport=weeklyReportService.getWeeklyReport(weeklyReportId);
 		request.setAttribute("oneWeeklyReport", oneWeeklyReport);
 		return SUCCESS;
 	}
@@ -90,7 +90,7 @@ public class WeeklyReportAction extends ActionSupport implements ServletRequestA
 	
 	//查找某一条周报
 	public String get() throws Exception {
-        WeeklyReport oneWeeklyReport = weeklyReportService.get(weeklyReportId);
+        WeeklyReport oneWeeklyReport = weeklyReportService.getWeeklyReport(weeklyReportId);
         JSONObject jo = new JSONObject();
 
         jo.put("id", oneWeeklyReport.getId());
@@ -111,13 +111,13 @@ public class WeeklyReportAction extends ActionSupport implements ServletRequestA
 	}
 	//更新周报
 	public String update(){
-		WeeklyReport weeklyReport=weeklyReportService.get(weeklyReportId);
+		WeeklyReport weeklyReport=weeklyReportService.getWeeklyReport(weeklyReportId);
 		
 		JSONObject jo = new JSONObject();
 		weeklyReport.setTitle(updateTitle);
 		weeklyReport.setContent(updateContent);
 		weeklyReport.setDate(new Date(new java.util.Date().getTime()));
-		weeklyReportService.save(weeklyReport);
+		weeklyReportService.saveWeeklyReport(weeklyReport);
 		
 		try {
 			response.setCharacterEncoding("utf-8");

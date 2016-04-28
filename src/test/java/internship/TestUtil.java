@@ -42,7 +42,7 @@ public class TestUtil implements ServletRequestAware{
 	public void testAddWeeklyReport(){
 
 		WeeklyReport weeklyReport = new WeeklyReport();
-		weeklyReport.setId(4);
+		//weeklyReport.setId(4);
 		weeklyReport.setSno("S0003");
 		weeklyReport.setTitle("Jennifer's first weekltReport");
 		weeklyReport.setContent("123456");
@@ -50,7 +50,7 @@ public class TestUtil implements ServletRequestAware{
 		System.out.println(weeklyReport);
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		WeeklyReportService wrs = (WeeklyReportService) context.getBean("weeklyReportService");
-		wrs.save(weeklyReport);
+		wrs.saveWeeklyReport(weeklyReport);
 	}
 	
 	@Test
@@ -60,7 +60,7 @@ public class TestUtil implements ServletRequestAware{
 //		System.out.println(weeklyReport);
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		WeeklyReportService wrs = (WeeklyReportService) context.getBean("weeklyReportService");
-		WeeklyReport weeklyReport=wrs.get(3);
+		WeeklyReport weeklyReport=wrs.getWeeklyReport(3);
 		System.out.println(weeklyReport);
 		
 	}
@@ -69,7 +69,7 @@ public class TestUtil implements ServletRequestAware{
 	public void deleteWeeklyReport(){
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		WeeklyReportService wrs = (WeeklyReportService) context.getBean("weeklyReportService");
-		wrs.delete(4);
+		wrs.deleteWeeklyReport(4);
 	}
 	
 	@Test
@@ -106,7 +106,7 @@ public class TestUtil implements ServletRequestAware{
 		System.out.println(graduationWeeklyReport);
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		GraduationWeeklyReportService wrs = (GraduationWeeklyReportService) context.getBean("graduationWeeklyReportService");
-		wrs.save(graduationWeeklyReport);
+		wrs.saveGraduationWeeklyReport(graduationWeeklyReport);
 	}
 	
 	
@@ -115,7 +115,7 @@ public class TestUtil implements ServletRequestAware{
 
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		GraduationWeeklyReportService wrs = (GraduationWeeklyReportService) context.getBean("graduationWeeklyReportService");
-		GraduationWeeklyReport graduationWeeklyReport=wrs.get(1);
+		GraduationWeeklyReport graduationWeeklyReport=wrs.getGraduationWeeklyReport(1);
 		System.out.println(graduationWeeklyReport);
 		
 	}
@@ -124,7 +124,7 @@ public class TestUtil implements ServletRequestAware{
 	public void deleteGraduationWeeklyReport(){
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		GraduationWeeklyReportService wrs = (GraduationWeeklyReportService) context.getBean("graduationWeeklyReportService");
-		wrs.delete(1);
+		wrs.deleteGraduationWeeklyReport(1);
 	}
 	
 	@Override

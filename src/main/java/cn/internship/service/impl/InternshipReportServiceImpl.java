@@ -14,6 +14,7 @@ public class InternshipReportServiceImpl implements InternshipReportService{
 		this.internshipReportDao = internshipReportDao;
 	}
 	@Override
+	//保存实习报告
 	public void saveInternshipReport(InternshipReport internshipReport) {
 		internshipReportDao.save(internshipReport);
 	}
