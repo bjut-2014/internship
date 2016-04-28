@@ -100,5 +100,17 @@
 	</bean>
 	<!-- end -->
 	
+	<!-- 课程相关配置 -->
+	<bean id="courseDao" class="cn.internship.dao.impl.CourseDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="courseService" class="cn.internship.service.impl.CourseServiceImpl">
+		<property name="courseDao" ref="courseDao" />
+	</bean>
+	<bean id="courseAction" class="cn.internship.action.CourseAction">
+		<property name="courseService" ref="courseService" />
+	</bean>
+	<!-- end -->
+	
 
 </beans>
