@@ -12,8 +12,10 @@ import org.apache.struts2.interceptor.ServletResponseAware;
 import com.opensymphony.xwork2.ActionSupport;
 
 import cn.internship.entity.Course;
+import cn.internship.entity.Homework;
 import cn.internship.entity.Student;
 import cn.internship.service.CourseService;
+import cn.internship.service.HomeworkService;
 
 /**
  * 课程页面的相关请求与操作
@@ -25,7 +27,7 @@ public class CourseAction extends ActionSupport implements ServletRequestAware, 
 	private HttpServletResponse response;
 	
 	private CourseService courseService;
-	
+	private HomeworkService homeworkService;
 	
 	@Override
 	public String execute() throws Exception {
@@ -39,11 +41,17 @@ public class CourseAction extends ActionSupport implements ServletRequestAware, 
 		List<String> teacherNameList = new ArrayList<String>(courseList.size());
 		//成绩
 		List<Integer> stuScoreList = new ArrayList<Integer>(courseList.size());
+		//作业
+		List<Homework> homeworkList = new ArrayList<Homework>(courseList.size());
+		
 		for(int i=0;i<n;i++){
 			String tchName = courseList.get(i).getTeacher().getName();
-			Integer sScore = courseService.getCourseScore(studentId, courseList.get(i).getCourseId());
+			Integer courseId = courseList.get(i).getCourseId();
+			Integer sScore = courseService.getCourseScore(studentId, courseId);
+			Homework homework = homeworkService.get(studentId, courseId);
 			teacherNameList.add(tchName);
 			stuScoreList.add(sScore);
+			homeworkList.add(homework);
 		}
 		
 		List<ComprehensiveCourseInfo> comprehensiveCourseInfoList = new ArrayList<CourseAction.ComprehensiveCourseInfo>();
@@ -52,6 +60,7 @@ public class CourseAction extends ActionSupport implements ServletRequestAware, 
 			comprehensiveCourseInfo.setTeacherName(teacherNameList.get(i));
 			comprehensiveCourseInfo.setStuScore(stuScoreList.get(i));
 			comprehensiveCourseInfo.setCourse(courseList.get(i));
+			comprehensiveCourseInfo.setHomework(homeworkList.get(i));
 			comprehensiveCourseInfoList.add(comprehensiveCourseInfo);
 		}
 		
@@ -64,6 +73,7 @@ public class CourseAction extends ActionSupport implements ServletRequestAware, 
 		private Course course;
 		private String teacherName;
 		private Integer stuScore;
+		private Homework homework;
 		public Course getCourse() {
 			return course;
 		}
@@ -82,6 +92,13 @@ public class CourseAction extends ActionSupport implements ServletRequestAware, 
 		public void setStuScore(Integer stuScore) {
 			this.stuScore = stuScore;
 		}
+		public Homework getHomework() {
+			return homework;
+		}
+		public void setHomework(Homework homework) {
+			this.homework = homework;
+		}
+		
 	}
 	
 	
@@ -103,6 +120,14 @@ public class CourseAction extends ActionSupport implements ServletRequestAware, 
 
 	public void setCourseService(CourseService courseService) {
 		this.courseService = courseService;
+	}
+
+	public HomeworkService getHomeworkService() {
+		return homeworkService;
+	}
+
+	public void setHomeworkService(HomeworkService homeworkService) {
+		this.homeworkService = homeworkService;
 	}
 
 	

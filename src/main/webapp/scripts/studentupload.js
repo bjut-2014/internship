@@ -1,6 +1,6 @@
 $(function () {
 	$('input[type="file"]').ajaxfileupload({
-	      'action': '',
+	      'action': 'uploadHomework',
 	      'params': {
 	        'extra': 'info'
 	      },

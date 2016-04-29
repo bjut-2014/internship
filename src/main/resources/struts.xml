@@ -77,6 +77,11 @@
 			<result>/WEB-INF/views/student/studentcourses.jsp</result>
 		</action>
 		<!-- end -->
+		<!-- 作业相关操作 -->
+		<action name="uploadHomework" class="homeworkAction">
+			<result type="redirectAction">course</result>
+		</action>
+		<!-- end -->
 	</package>
 
 

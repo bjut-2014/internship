@@ -66,7 +66,14 @@
                                                		<td><s:property value="#info.stuScore"/></td>
                                                		<td><a href="scourseExample"><span class="fa fa-folder-open do"></span></a></td>
 	                                           		<td>
-	                                           			<label class="glyphicon glyphicon-open up"><input id="inputfile" style="display:none;" type="file"></input></label>
+	                                           			<s:if test="#info.homework==null">
+	                                           			<!--<s:form action="uploadHomework" enctype="multipart/form-data" method="post">-->
+	                                           				<label class="glyphicon glyphicon-open up"><input id="inputfile" name="uploadFile" style="display:none;" type="file" /></label>
+	                                           			<!--</s:form>-->
+	                                           			</s:if>
+	                                           			<s:else>
+	                                           				<a href="#info.homework.title.path"><s:property value="#info.homework.title" /></a>
+	                                           			</s:else>
 	                                           		</td>
                                                </tr>
                                                </s:iterator>
