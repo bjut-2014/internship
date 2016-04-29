@@ -36,12 +36,18 @@
                 	实习分数：<s:property value="#request.internshipdetail.company_score" /><br>
                 </s:if>
                 <s:else>
-                	尚未选修实训课程！
+                	<p>姓名</p>
+                	<p>实习公司</p>
+                	<p>公司地址</p>
+                	<p>实习时间</p>
+                	<p>校外导师</p>
+                	<p>实习分数</p>
+                	
                 </s:else>
             </div>
         </div>
     </div>
-       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main myMain weekReport">
         <div class="panel panel-default myPanel weekReport">
             <div class="panel-head">周报 weekly Report<a href="weekly-report-save"><button class="glyphicon glyphicon-plus myBu"></button></a></div>
             <div class="panel-body">
@@ -61,8 +67,8 @@
                           <td><a href="weekly-report-view?weeklyReportId=${list.id}">${list.title}</a></td>
                           <td>${list.date }</td>
                           <td>
-                          <a href="weekly-report-edit?weeklyReportId=${list.id}"><button type="button" class="btn btn-default " data-toggle="modal">修改</button></a>
-                    	  <button type="button" class="btn btn-default weekly-plan-del" data-toggle="modal" data-target="#WeeklyPlanDel" data-id=${list.id}>删除</button>
+                          <a href="weekly-report-edit?weeklyReportId=${list.id}"><span class="glyphicon glyphicon-pencil Gl1"></span></a>
+                    	  <button type="button" class="glyphicon glyphicon-trash myPu weekly-plan-del" data-toggle="modal" data-target="#WeeklyPlanDel" data-id=${list.id}></button>
                     	  </td>
                        </tr>
                        
@@ -75,16 +81,18 @@
             </div>
         </div>
     </div>
-       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main myMain practiceRerort">
         <div class="panel panel-default myPanel practiceRerort">
             <div class="panel-head">实习报告 Practice Report</div>
             <div class="panel-body">
+            
                 
                 <!--  <button class="myBu">提交报告</button>-->
                 <form action="upload" method="post" enctype="multipart/form-data">
                 	<p><s:property value="#request.result"/></p>
+                	<input class="myBu" type="submit" value="提交报告">
    					<input name="upload" type="file"/><br>
-   					<input class="myBu" type="submit" value="提交报告">
+   					
    				</form>
             </div>
         </div>

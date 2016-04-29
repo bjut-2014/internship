@@ -39,7 +39,7 @@ public class InternshipReport {
 	private Date date;
 
 	//实习报告提交路径
-	@Column(length=100)
+	@Column(length=1000)
 	private String path;
 
 	public Integer getId() {

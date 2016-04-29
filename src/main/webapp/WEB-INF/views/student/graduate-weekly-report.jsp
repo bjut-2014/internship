@@ -27,12 +27,12 @@
         <div class="panel panel-default myPanel">
             <div class="panel-head">毕设信息</div>
             <div class="panel-body">
-                <p>毕设信息</p>
+                <p>暂无毕设信息</p>
                 <!--<s:property value="#session.currentUser.studentName" />  -->
             </div>
         </div>
     </div>
-       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main myMain weekReport">
         <div class="panel panel-default myPanel weekReport">
             <div class="panel-head">毕设周报 Graduation Weekly Report<a href="graduation-weekly-report-save"><button class="glyphicon glyphicon-plus myBu"></button></a></div>
             <div class="panel-body">
@@ -51,8 +51,9 @@
                           <td><a href="graduate-weekly-report-view?graduationWeeklyReportId=${list.id}">${list.title}</a></td>
                           <td>${list.date }</td>
                           <td>
-                          <a href="graduate-weekly-report-edit?graduationWeeklyReportId=${list.id}"><button type="button" class="btn btn-default " data-toggle="modal">修改</button></a>
-                    	  <button type="button" class="btn btn-default graduation-weekly-plan-del" data-toggle="modal" data-target="#GraduationWeeklyPlanDel" data-id=${list.id}>删除</button>
+                          <a href="graduate-weekly-report-edit?graduationWeeklyReportId=${list.id}"><span class="glyphicon glyphicon-pencil Gl1"></span></a>
+                          <button type="button" class="glyphicon glyphicon-trash myPu graduation-weekly-plan-del" data-toggle="modal" data-target="#GraduationWeeklyPlanDel" data-id=${list.id}></button>
+                    	  
                     	  </td>
                        </tr>
                        </s:iterator>
