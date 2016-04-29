@@ -74,6 +74,11 @@
 		<property name="studentService" ref="studentService" />
 	</bean>
 	<!-- end -->
+	<!-- 学生修改密码页面 -->
+	<bean id="reset-pwd" class="cn.internship.action.ResetPwdAction" scope="prototype">
+		<property name="userService" ref="userService"/>
+	</bean>
+	<!-- end -->
 
 	<!-- 学生相关配置 -->
 	<bean id="studentDao" class="cn.internship.dao.impl.StudentDaoImpl">

@@ -63,6 +63,10 @@
 			<result>/WEB-INF/views/index.jsp</result>
 		</action>
 		<!-- end -->
+		<!-- 重置密码 -->
+		<action name="resetPwd" class="resetPwdAction" method="resetPwd">
+			<result name="logout">/login.jsp</result>
+		</action>
 	</package>
 
 
