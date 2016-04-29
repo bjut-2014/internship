@@ -116,9 +116,13 @@ public class GraduationProjectAction extends ActionSupport implements
 	public String execute() throws Exception {
         //获得当前session下的学生
 		Student student = (Student) request.getSession().getAttribute("currentUser");
+		System.out.println(student);
 		//获得指定学生的所有周报
-		List<GraduationWeeklyReport> list = graduationWeeklyReportService.getAllGraduationWeeklyReport(student.getSno());
-        request.setAttribute("graduationweeklyplan", list);
+		if( graduationWeeklyReportService.getAllGraduationWeeklyReport(student.getSno())!=null){
+			List<GraduationWeeklyReport> list = graduationWeeklyReportService.getAllGraduationWeeklyReport(student.getSno());
+	        request.setAttribute("graduationWeeklyReport", list);
+		}
+		
         return SUCCESS;
         }
 	
@@ -138,7 +142,7 @@ public class GraduationProjectAction extends ActionSupport implements
 	}
 	
 	//删除周报
-	public String delete(int deleteId){
+	public String delete(){
 		graduationWeeklyReportService.deleteGraduationWeeklyReport(deleteId);
 		return SUCCESS;
 	}
@@ -154,43 +158,18 @@ public class GraduationProjectAction extends ActionSupport implements
 	//查找某一条周报
 	public String get() throws Exception {
         GraduationWeeklyReport oneWeeklyReport = graduationWeeklyReportService.getGraduationWeeklyReport(graduationWeeklyReportId);
-        JSONObject jo = new JSONObject();
-
-        jo.put("id", oneWeeklyReport.getId());
-        jo.put("graduationweeklyplanTitle", oneWeeklyReport.getTitle());
-        jo.put("graduationweeklyplanContent", oneWeeklyReport.getContent());
-        jo.put("graduationweeklyplanDate", oneWeeklyReport.getDate());
-
-        try {
-            response.setCharacterEncoding("utf-8");
-            PrintWriter out = response.getWriter();
-            out.println(jo);
-            out.flush();
-            out.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        request.setAttribute("updateReport", oneWeeklyReport);
        return SUCCESS;
 	}
 	//更新周报
 	public String update(){
 		GraduationWeeklyReport graduationWeeklyReport=graduationWeeklyReportService.getGraduationWeeklyReport(graduationWeeklyReportId);
 		
-		JSONObject jo = new JSONObject();
 		graduationWeeklyReport.setTitle(updateTitle);
 		graduationWeeklyReport.setContent(updateContent);
 		graduationWeeklyReport.setDate(new Date(new java.util.Date().getTime()));
-		graduationWeeklyReportService.saveGraduationWeeklyReport(graduationWeeklyReport);
+		graduationWeeklyReportService.updateGraduationWeeklyReport(graduationWeeklyReport);
 		
-		try {
-			response.setCharacterEncoding("utf-8");
-			PrintWriter out = response.getWriter();
-			out.println(jo);
-			out.flush();
-			out.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 		return SUCCESS;
 	}
 	

@@ -13,9 +13,11 @@ import org.apache.struts2.interceptor.ServletResponseAware;
 import org.json.JSONObject;
 
 import cn.internship.entity.InternshipDetail;
+import cn.internship.entity.InternshipReport;
 import cn.internship.entity.Student;
 import cn.internship.entity.WeeklyReport;
 import cn.internship.service.InternshipDetailService;
+import cn.internship.service.InternshipReportService;
 import cn.internship.service.WeeklyReportService;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -30,6 +32,7 @@ public class WeeklyReportAction extends ActionSupport implements ServletRequestA
 	private HttpServletResponse response;
 	private WeeklyReportService weeklyReportService;
 	private InternshipDetailService internshipDetailService;
+	private InternshipReportService internshipReportService;
 	
 	//======================添加模块=======================//
 	private String addTitle;
@@ -51,14 +54,49 @@ public class WeeklyReportAction extends ActionSupport implements ServletRequestA
         //获得当前session下的学生
 		Student student = (Student) request.getSession().getAttribute("currentUser");
 		//获得指定学生的所有周报
+		/*
 		List<WeeklyReport> list = weeklyReportService.getAllWeeklyReport(student.getSno());
         request.setAttribute("weeklyplan", list);
+        */
+		/*
+		if(weeklyReportService.getAllWeeklyReport(student.getSno())==null){
+			request.setAttribute("weeklyplan", "您尚未提交周报！");
+		}else{
+			List<WeeklyReport> list = weeklyReportService.getAllWeeklyReport(student.getSno());
+	        request.setAttribute("weeklyplan", list);
+		}
+		*/
+		if(weeklyReportService.getAllWeeklyReport(student.getSno())!=null){
+			List<WeeklyReport> list = weeklyReportService.getAllWeeklyReport(student.getSno());
+	        request.setAttribute("weeklyplan", list);
+		}
         //获得指定学生的实习信息
-        InternshipDetail it=internshipDetailService.getInternshipDetailBySno(student.getSno());
-		request.setAttribute("internshipdetail", it);
+		if(internshipDetailService.getInternshipDetailBySno(student.getSno())!=null){
+			InternshipDetail it=internshipDetailService.getInternshipDetailBySno(student.getSno());
+			request.setAttribute("internshipdetail", it);
+		}
+        
+		//设置上传实习报告状态
+		//String result="您尚未提交实习报告！";
+		InternshipReport it1=internshipReportService.getInternshipReport(student.getSno());
+		System.out.println(it1);
+		if(it1==null){
+			request.setAttribute("result", "您尚未提交实习报告！");
+		}else{
+			request.setAttribute("result", "您已提交实习报告，请勿重复提交！");
+		}
         return super.execute();
     }
 	
+	public InternshipReportService getInternshipReportService() {
+		return internshipReportService;
+	}
+
+	public void setInternshipReportService(
+			InternshipReportService internshipReportService) {
+		this.internshipReportService = internshipReportService;
+	}
+
 	//添加周报
 	public String add(){
 		 //获得当前session下的学生
@@ -75,7 +113,8 @@ public class WeeklyReportAction extends ActionSupport implements ServletRequestA
 	}
 	
 	//删除周报
-	public String delete(int deleteId){
+	public String delete(){
+		System.out.println("Action");
 		weeklyReportService.deleteWeeklyReport(deleteId);
 		return SUCCESS;
 	}
@@ -91,6 +130,8 @@ public class WeeklyReportAction extends ActionSupport implements ServletRequestA
 	//查找某一条周报
 	public String get() throws Exception {
         WeeklyReport oneWeeklyReport = weeklyReportService.getWeeklyReport(weeklyReportId);
+        request.setAttribute("updateReport", oneWeeklyReport);
+        /*
         JSONObject jo = new JSONObject();
 
         jo.put("id", oneWeeklyReport.getId());
@@ -107,27 +148,18 @@ public class WeeklyReportAction extends ActionSupport implements ServletRequestA
         } catch (IOException e) {
             e.printStackTrace();
         }
+        */
        return SUCCESS;
 	}
 	//更新周报
 	public String update(){
 		WeeklyReport weeklyReport=weeklyReportService.getWeeklyReport(weeklyReportId);
 		
-		JSONObject jo = new JSONObject();
 		weeklyReport.setTitle(updateTitle);
 		weeklyReport.setContent(updateContent);
 		weeklyReport.setDate(new Date(new java.util.Date().getTime()));
-		weeklyReportService.saveWeeklyReport(weeklyReport);
+		weeklyReportService.updateWeeklyReport(weeklyReport);
 		
-		try {
-			response.setCharacterEncoding("utf-8");
-			PrintWriter out = response.getWriter();
-			out.println(jo);
-			out.flush();
-			out.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 		return SUCCESS;
 	}
 	

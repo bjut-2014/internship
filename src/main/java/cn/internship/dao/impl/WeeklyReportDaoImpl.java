@@ -51,6 +51,11 @@ public class WeeklyReportDaoImpl extends HibernateDaoSupport implements WeeklyRe
 		String hql="from WeeklyReport wr where wr.sno=?";
 		Object[] values={sno};
 		List<WeeklyReport> list=(List<WeeklyReport>) getHibernateTemplate().find(hql, values);
+		if(list.isEmpty()){
+			WeeklyReport wr=new WeeklyReport();
+			wr.setSno(sno);
+			wr.setTitle("尚未提交周报！");
+		}
 		return list;
 	}
 

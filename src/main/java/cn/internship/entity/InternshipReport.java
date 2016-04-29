@@ -28,7 +28,7 @@ public class InternshipReport {
 	private Integer id;
 
 	// 学生学号
-	@Column(unique = true, length = 24)
+	@Column(length = 24)
 	private String sno;
 
 	// 实习报告标题

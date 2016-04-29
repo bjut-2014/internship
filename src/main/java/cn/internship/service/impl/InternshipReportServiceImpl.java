@@ -18,5 +18,12 @@ public class InternshipReportServiceImpl implements InternshipReportService{
 	public void saveInternshipReport(InternshipReport internshipReport) {
 		internshipReportDao.save(internshipReport);
 	}
+	@Override
+	public InternshipReport getInternshipReport(String sno) {
+		return internshipReportDao.get(sno);
+	}
 
+	//获取实习报告
+	
+	
 }

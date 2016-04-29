@@ -105,6 +105,7 @@
 	<bean id="weekly-report" class="cn.internship.action.WeeklyReportAction">
 		<property name="weeklyReportService" ref="weeklyReportService"></property>
 		<property name="internshipDetailService" ref="internshipDetailService"></property>
+		<property name="internshipReportService" ref="internshipReportService"></property>
 	</bean>
 	
 	<bean id="weeklyReportService" class="cn.internship.service.impl.WeeklyReportServiceImpl">
@@ -121,6 +122,8 @@
 	<bean id="internshipDetailDao" class="cn.internship.dao.impl.InternshipDetailDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
+	
+	
 	<!-- end -->
 	<!-- 学生实习报告模块 -->
 	
@@ -138,7 +141,7 @@
 
 	<!-- 毕设周报模块 -->
 	
-	<bean id="gradute-weekly-report" class="cn.internship.action.GraduationProjectAction">
+	<bean id="graduate-weekly-report" class="cn.internship.action.GraduationProjectAction">
 		<property name="graduationWeeklyReportService" ref="graduationWeeklyReportService"></property>
 		
 	</bean>
