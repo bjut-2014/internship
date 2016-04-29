@@ -32,6 +32,11 @@ public class CourseServiceImpl implements CourseService{
 		return courseDao.getByTno(teacherId);
 	}
 
+	@Override
+	public Integer getCourseScore(Integer studentId, Integer courseId) {
+		return courseDao.getCourseScore(studentId, courseId);
+	}
+	
 	//-----------------------------------get与set方法--------------------------------------------
 	
 	public CourseDao getCourseDao() {
@@ -41,5 +46,7 @@ public class CourseServiceImpl implements CourseService{
 	public void setCourseDao(CourseDao courseDao) {
 		this.courseDao = courseDao;
 	}
+
+	
 
 }

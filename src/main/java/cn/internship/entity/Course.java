@@ -38,7 +38,10 @@ public class Course {
 	//课程对应的案例库
 	@OneToMany(targetEntity=CaseLibrary.class,mappedBy="course")
 	private Set<CaseLibrary> caseLibraries = new HashSet<CaseLibrary>();
-	
+	//上课时间
+	private String courseDate;
+	//上课地点
+	private String coursePlace;
 	
 	public Integer getCourseId() {
 		return courseId;
@@ -69,6 +72,18 @@ public class Course {
 	}
 	public void setCaseLibraries(Set<CaseLibrary> caseLibraries) {
 		this.caseLibraries = caseLibraries;
+	}
+	public String getCourseDate() {
+		return courseDate;
+	}
+	public void setCourseDate(String courseDate) {
+		this.courseDate = courseDate;
+	}
+	public String getCoursePlace() {
+		return coursePlace;
+	}
+	public void setCoursePlace(String coursePlace) {
+		this.coursePlace = coursePlace;
 	}
 	
 	

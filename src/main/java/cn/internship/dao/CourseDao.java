@@ -18,4 +18,6 @@ public interface CourseDao {
 	
 	public Course get(Integer id);
 	
+	public Integer getCourseScore(Integer studentId,Integer courseId);
+	
 }
