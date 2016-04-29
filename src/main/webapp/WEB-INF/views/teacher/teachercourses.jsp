@@ -3,10 +3,10 @@
 <html>
 <jsp:include page="../header/header.jsp" />
 <link href="styles/lib/font-awesome.css" rel="stylesheet" />
-<link href="styles/lib/bootstrap-reset.css"  rel="stylesheet" />
-<link href="styles/course.css" rel="stylesheet" />
+<link href="styles/courses.css" rel="stylesheet" />
 <body>
 <jsp:include page="../nav/nav.jsp" />
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
@@ -14,8 +14,8 @@
                 <li class="active">
                     <a href="index"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>首页</a>
                 </li>
-                <li><a href="userinfo"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>个人信息</a></li>
-                <li><a href="courses"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>课程</a></li>
+                <li><a href="studentinfo"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>个人信息</a></li>
+                <li><a href="studentcourses"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>课程</a></li>
                 <li><a href=""><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>实习</a></li>
                 <li><a href=""><span class="glyphicon glyphicon-file" aria-hidden="true"></span>毕设</a></li>
             </ul>
@@ -32,37 +32,38 @@
                     <li data-target="#carousel-example-generic" data-slide-to="2"></li>
                     <li data-target="#carousel-example-generic" data-slide-to="3"></li>
                 </ol>
-			
+
                
                <div class="wraper container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="panel panel-default">
-                        	<div class="panel-heading">
-                        		<h3 class="panel-title">案例库 Case Base</h3>
-                        	</div>                          
+                        <div class="panel panel-default">                          
                             <div class="panel-body">
                                 <div class="row">
-                                    <div class="col-md-12 col-sm-12 col-xs-12 rposition">                                     	                                    
-	                                    	<div class="rposotion">
-	                                    		<a href="#"><span class="fa fa-plus-square plus"></span></a>
-	                                	     </div>                               	                               
-                                        <table class="table table-striped">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <table id="mytable" class="table table-striped table-bordered">
                                             <thead>
                                                 <tr>
-                                                    <th class="rborder">案 例 名 称</th>
-                                                    <th class="rborder">日 期</th>
-                                                    <th>下 载</th>                                                   
+                                                    <th>课程名称</th>                                                   
+                                                    <th>时间</th>
+                                                    <th>地点</th>                                                   
+                                                    <th class="position">案例库上传</th>
+                                                    <th class="position">作业下载</th>
                                                 </tr>
                                             </thead>
 
                                      
                                             <tbody>
                                                <tr>
-                                               		<td class="rborder">移动开发技术第一章.ppt</td>
-                                               		<td class="rborder">2016.4.26</td>
-                                               		<td><a href="course"><span class="glyphicon glyphicon-save do"></span></a></td>
-                                               	</tr>
+                                               		<td>嵌入式软件开发</td>                                              	
+                                               		<td>周四上午 9：00</td>
+                                               		<td>软件学院  518</td>                                         
+                                               		<td><a href="tcourseExample"><span class="glyphicon glyphicon-open tup"></span></a></td>
+                                               		
+	                                           		<td>
+	                                           			<a href="thomework"><span class="glyphicon glyphicon-save tdo"></span></a>	                                           			                                       		
+	                                           		</td>
+                                               </tr>
                                             </tbody>
                                         </table>
 
@@ -79,5 +80,6 @@
     </div>
 </div>
 <jsp:include page="../footer/footer.jsp" />
+<script src="scripts/lib/dropzone.js"></script>
 </body>
 </html>

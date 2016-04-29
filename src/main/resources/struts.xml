@@ -70,9 +70,20 @@
 		</action>
 		<action name="scourseExample" class="">
 			<result>/WEB-INF/views/student/scourseExample.jsp</result>
+		</action>		
+		<!-- end -->
+		<!-- 老师相关操作 -->		
+		<action name="teacherinfo" class="">
+			<result>/WEB-INF/views/teacher/teacherinfo.jsp</result>
 		</action>
-		<action name="weekly-report" class="">
-			<result>/WEB-INF/views/student/weekly-report.jsp</result>
+		<action name="teachercourses" class="">
+			<result>/WEB-INF/views/teacher/teachercourses.jsp</result>
+		</action>
+		<action name="tcourseExample" class="">
+			<result>/WEB-INF/views/teacher/tcourseExample.jsp</result>
+		</action>
+		<action name="thomework" class="">
+			<result>/WEB-INF/views/teacher/thomework.jsp</result>
 		</action>
 		<!-- end -->
 		<!-- 课程相关操作 -->

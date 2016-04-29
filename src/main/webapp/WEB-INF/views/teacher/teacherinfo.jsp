@@ -14,8 +14,8 @@
                 <li class="active">
                     <a href="index"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>首页</a>
                 </li>
-                <li><a href=""><span class="glyphicon glyphicon-user" aria-hidden="true"></span>个人信息</a></li>
-                <li><a href="studentcourses"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>课程</a></li>
+                <li><a href="teacherinfo"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>个人信息</a></li>
+                <li><a href="teachercourses"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>课程</a></li>
                 <li><a href=""><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>实习</a></li>
                 <li><a href=""><span class="glyphicon glyphicon-file" aria-hidden="true"></span>毕设</a></li>
             </ul>
@@ -33,7 +33,7 @@
                         <table id="mytable" class="table table-striped">                       
                        <tbody>
                            <tr>
-                              <td>学号：</td>
+                              <td>职工号：</td>
                               <td></td>
                            </tr>
                            <tr>
@@ -43,15 +43,19 @@
                            		<td>性别：</td>
                                 <td></td>
                            <tr>
-                           		<td>班级：</td>
+                           		<td>职称：</td>
                            		<td></td>
                            	</tr>
                            	<tr>
-                           		<td>年级：</td>
+                           		<td>专业方向：</td>
                            		<td></td>
                            	</tr>
                            	<tr>
                            		<td>联系方式：</td>
+                           		<td></td>
+                           	</tr>
+                           	<tr>
+                           		<td>邮箱：</td>
                            		<td></td>
                            	</tr>
                            </tbody>
@@ -69,7 +73,7 @@
                         			<div class="time-item">
                         				<div class="item-info">
                         					<div class="text-muted">2016年4月30日</div>
-                        					<p>上传了《移动开发技术》第一次作业</p>
+                        					<p>上传了《移动开发技术》案例库文件</p>
                         				</div>
                         			</div>
                         		</div>

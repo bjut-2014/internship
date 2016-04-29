@@ -3,7 +3,9 @@
 <html>
 <jsp:include page="../header/header.jsp" />
 <link href="styles/lib/font-awesome.css" rel="stylesheet" />
+<link href="styles/lib/bootstrap-reset.css"  rel="stylesheet" />
 <link href="styles/courses.css" rel="stylesheet" />
+<link href="styles/course.css" rel="stylesheet" />
 <body>
 <jsp:include page="../nav/nav.jsp" />
 
@@ -14,8 +16,8 @@
                 <li class="active">
                     <a href="index"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>首页</a>
                 </li>
-                <li><a href="studentinfo"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>个人信息</a></li>
-                <li><a href="studentcourses"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>课程</a></li>
+                <li><a href="teacherinfo"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>个人信息</a></li>
+                <li><a href="teachercourses"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>课程</a></li>
                 <li><a href=""><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>实习</a></li>
                 <li><a href=""><span class="glyphicon glyphicon-file" aria-hidden="true"></span>毕设</a></li>
             </ul>
@@ -37,41 +39,36 @@
                <div class="wraper container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="panel panel-default">                          
+                        <div class="panel panel-default">   
+                        <div class="panel-heading">
+                        		<h3 class="panel-title">作业 Homework</h3>
+                        	</div>                         
                             <div class="panel-body">
                                 <div class="row">
                                     <div class="col-md-12 col-sm-12 col-xs-12">
                                         <table id="mytable" class="table table-striped table-bordered">
                                             <thead>
                                                 <tr>
-                                                    <th>课程名称</th>
-                                                    <th>老师</th>
-                                                    <th>时间</th>
-                                                    <th>地点</th>
-                                                    <th>成绩</th>
-                                                    <th class="position">案例库下载</th>
-                                                    <th class="position">作业上传</th>
+                                                    <th>学号</th>                                                   
+                                                    <th>姓名</th>
+                                                    <th>作业名称</th>
+                                                    <th>上传日期</th>                                                   
+                                                    <th class="position">下载</th>
+                                                    <th class="position">打分</th>
                                                 </tr>
                                             </thead>
 
                                      
                                             <tbody>
                                                <tr>
-                                               		<td>嵌入式软件开发</td>
-                                               		<td>谌云莉</td>
-                                               		<td>周四上午 9：00</td>
-                                               		<td>软件学院  518</td>
-                                               		<td></td>
-                                               		<td><a href="scourseExample"><span class="fa fa-folder-open do"></span></a></td>
+                                               		<td>S201425024</td>                                              	
+                                               		<td>陈晓晓</td>
+                                               		<td>移动开发技术第一次作业</td>
+                                               		<td>2016年4月30日</td>                                         
+                                               		<td><a href="#"><span class="glyphicon glyphicon-save do"></span></a></td>
                                                		
-	                                           		<td>
-	                                           			<!-- <form class="dropzone dz-clickable" id="dropzone" action="#">
-	                                           				<div class="dz-default dz-message">
-	                                           					<span class="glyphicon glyphicon-open up"></span>
-	                                           				</div>
-	                                           			</form> -->
-	                                           			<label class="glyphicon glyphicon-open up"><input id="inputfile" style="display:none;" type="file"></input></label>
-	                                           			
+	                                           		<td class="thin-width">
+	                                           			<input type="text" class="form-control input-block"/>
 	                                           		</td>
                                                </tr>
                                             </tbody>

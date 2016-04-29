@@ -7,12 +7,16 @@
 .table-bordered>thead .position{
 	text-align:center;
 }
-
+.table-bordered>tbody .thin-width{
+	width:10%;
+	padding:5px;
+}
 .do{
 	color:#4bbbf4;
 	display:block;
 	margin-left:auto;
 	margin-top:5px;
+	font-size:14px;
 	text-align:center;
 }
 .up{
@@ -22,5 +26,23 @@
 	margin-left:auto;
 	margin-top:5px;
 	text-align:center;
+	font-size:14px;
+	
+}
+.tdo{
+	color:#6777c2;
+	display:block;
+	margin-left:auto;
+	margin-top:5px;
+	text-align:center;
+	font-size:14px;
+}
+.tup{
+	color:#4bbbf4;	
+	display:block;
+	margin-left:auto;
+	margin-top:5px;
+	text-align:center;
+	font-size:14px;
 	
 }

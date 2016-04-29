@@ -1,6 +1,5 @@
 .rposotion{
-	float:right;
-	
+	float:right;	
 }
 th{
 	text-align:center;
@@ -16,13 +15,18 @@ th{
 .table-striped .rborder{
 	border-right:1px solid #ddd;
 }
+.table-striped>tbody .position{
+	text-align:center;
+}
 .plus{
 	color:#2c9f94;
 	font-size:33px;
+	cursor:pointer;
 }
 .do{
 	color:#4bbbf4;
 	display:block;
+	font-size:14px;
 	margin-left:auto;
 	margin-top:5px;
 	text-align:center;
@@ -30,7 +34,13 @@ th{
 .up{
 	color:#6777c2;
 	display:block;
+	font-size:14px;
 	margin-left:auto;
 	margin-top:5px;
 	text-align:center;
+}
+
+.form-control{
+	padding:0px;
+	height:30px;
 }
