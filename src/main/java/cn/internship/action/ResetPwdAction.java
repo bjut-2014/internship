@@ -36,18 +36,20 @@ public class ResetPwdAction extends ActionSupport implements ServletRequestAware
     //修改密码
     public String resetPwd(){
         HttpSession session = request.getSession();
-        System.out.println(session.getAttribute("currentType").getClass().getName());
-//        if (session.getAttribute("currentType") == "3") {
-            Student student = (Student) request.getSession().getAttribute("currentUser");
-            Student student1 = studentService.get(student.getId());
-//        }
+        //System.out.println(session.getAttribute("currentType").getClass().getName());
         //清除修改密码时提示的错误信息
         this.clearErrorsAndMessages();
-        //获得当前用户的密码
-
-        if(password == null || !student1.getPassword().equals(password)){
-            this.addActionError("初始密码错误");
-            return INPUT;
+        if (session.getAttribute("currentType") == "3") {
+            Student student = (Student) request.getSession().getAttribute("currentUser");
+            Student student1 = studentService.get(student.getId());
+            //获得当前用户的密码
+            if(password == null || !student1.getPassword().equals(password)){
+                this.addActionError("初始密码错误");
+                return INPUT;
+            }
+            //更改密码
+            student1.setPassword(newpwd);
+            studentService.updatePwd(student1);
         }
         if(newpwd == null || "".equals(newpwd) || renewpwd == null || "".equals(renewpwd)){
             this.addActionError("密码不能为空");
@@ -57,9 +59,6 @@ public class ResetPwdAction extends ActionSupport implements ServletRequestAware
             this.addActionError("两次密码不一至");
             return INPUT;
         }
-        //更改密码
-        student1.setPassword(newpwd);
-        studentService.updatePwd(student1);
         //移除当前session中的student
         request.getSession().removeAttribute("currentUser");
         return SUCCESS;

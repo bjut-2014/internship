@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE>
 <html>
 <jsp:include page="../header/header.jsp" />
+<link href="styles/reset-pwd.css" rel="stylesheet">
 <body>
 <jsp:include page="../nav/nav.jsp" />
 <div class="container-fluid">
@@ -36,7 +38,7 @@
                             <label>确认新密码：</label>
                             <input name="renewpwd" type="password" class="form-control">
                         </div>
-                        <s:actionerror cssStyle="color:red" />
+                        <div class="submit-error"><s:actionerror/></div>
                         <input type="submit" class="btn btn-primary fr" value="确认修改"/>
                     </form>
                 </div>

@@ -161,3 +161,8 @@ textarea {
 .main {
     padding-top: 60px;
 }
+.submit-error {
+    height: 23px;
+    color:#F66;
+    font-size: 13px;
+}
