@@ -49,7 +49,8 @@
 
 		<!-- 登陆 -->
 		<action name="login" class="loginAction">
-			<result type="redirectAction">index</result>
+			<result name="ssuccess" type="redirectAction">index</result>
+			<result name="tsuccess" type="redirectAction">tch-index</result>
 			<result name="input">/login.jsp</result>
 		</action>
 		<!-- end -->
@@ -69,11 +70,14 @@
 			<result>/WEB-INF/views/student/scourseExample.jsp</result>
 		</action>		
 		<!-- end -->
-		<!-- 老师相关操作 -->		
-		<action name="teacherinfo" class="">
+		<!-- 老师相关操作 -->
+		<action name="tch-index" class="teacherAction">
+			<result>/WEB-INF/views/teacher/index.jsp</result>
+		</action>		
+		<action name="tch-info" class="teacherAction" method="info">
 			<result>/WEB-INF/views/teacher/teacherinfo.jsp</result>
 		</action>
-		<action name="teachercourses" class="">
+		<action name="tch-course" class="">
 			<result>/WEB-INF/views/teacher/teachercourses.jsp</result>
 		</action>
 		<action name="tcourseExample" class="">
