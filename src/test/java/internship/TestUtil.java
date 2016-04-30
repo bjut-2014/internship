@@ -46,4 +46,19 @@ public class TestUtil {
 		System.out.println(courseDao.getCourseScore(1, 3));
 	}
 	
+	@Test
+	public void testNull(){
+		List<String> list = new ArrayList<String>();
+		list.add("1");
+		list.add("2");
+		list.add("3");
+		list.add(null);
+		list.add("5");
+		list.add("6");
+		list.add(null);
+		for(String s1:list){
+			System.out.println(s1);
+		}
+	}
+	
 }

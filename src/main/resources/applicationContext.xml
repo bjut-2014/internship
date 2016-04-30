@@ -110,6 +110,20 @@
 	</bean>
 	<bean id="courseAction" class="cn.internship.action.CourseAction">
 		<property name="courseService" ref="courseService" />
+		<property name="homeworkService" ref="homeworkService" />
+	</bean>
+	<!-- end -->
+	
+	<!-- 上传作业的相关配置 -->
+	<bean id="homeworkDao" class="cn.internship.dao.impl.HomeworkDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="homeworkService" class="cn.internship.service.impl.HomeworkServiceImpl">
+		<property name="homeworkDao" ref="homeworkDao" />
+	</bean>
+	<bean id="homeworkAction" class="cn.internship.action.HomeworkAction">
+		<property name="homeworkService" ref="homeworkService" />
+		<property name="studentService" ref="studentService" />
 	</bean>
 	<!-- end -->
 	
