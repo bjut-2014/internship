@@ -6,6 +6,7 @@
 <link href="styles/lib/bootstrap-reset.css"  rel="stylesheet" />
 <link href="styles/courses.css" rel="stylesheet" />
 <link href="styles/course.css" rel="stylesheet" />
+
 <body>
 <jsp:include page="../nav/nav.jsp" />
 
@@ -61,14 +62,14 @@
                                      
                                             <tbody>
                                                <tr>
-                                               		<td>S201425024</td>                                              	
+                                               		<td class="sno">S201425024</td>                                              	
                                                		<td>陈晓晓</td>
                                                		<td>移动开发技术第一次作业</td>
                                                		<td>2016年4月30日</td>                                         
                                                		<td><a href="#"><span class="glyphicon glyphicon-save do"></span></a></td>
                                                		
 	                                           		<td class="thin-width">
-	                                           			<input type="text" class="form-control input-block"/>
+	                                           			<input type="text" class="form-control input-block input-score"/>
 	                                           		</td>
                                                </tr>
                                             </tbody>
@@ -87,5 +88,6 @@
     </div>
 </div>
 <jsp:include page="../footer/footer.jsp" />
+<script src="scripts/tscore.js"></script>
 </body>
 </html>
