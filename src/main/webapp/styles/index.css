@@ -2,7 +2,7 @@
 .nav-container {
     height: 50px;
     line-height: 50px;
-    background-color: #739497;
+    background-color: #739697;
     color: #fff;
     font-size: 14px;
 
@@ -12,7 +12,7 @@
     height: 50px;
     line-height: 50px;
     font-size: 20px;
-    background-color: #11848f;
+    background-color: #11858f;
     text-align: center;
     color: #fff;
 }
@@ -46,7 +46,7 @@
         padding: 20px;
         overflow-x: hidden;
         overflow-y: auto;
-        background-color: #2f353f;
+        background-color: #4a5562;
         width: 209px;
     }
 }
@@ -59,7 +59,7 @@
     padding-right: 20px;
     padding-left: 20px;
     font-size: 13px;
-    color: #838f99;
+    color: #839099;
 }
 .nav-sidebar > .active > a,
 .nav-sidebar > .active > a:hover,

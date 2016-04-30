@@ -14,4 +14,6 @@ public interface CourseService {
 	public List<Course> getBySno(Integer studentId);
 
 	public List<Course> getByTno(Integer teacherId);
+	
+	public Integer getCourseScore(Integer studentId,Integer courseId);
 }

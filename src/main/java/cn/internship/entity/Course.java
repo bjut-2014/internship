@@ -11,6 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -34,6 +35,13 @@ public class Course {
 						inverseJoinColumns=@JoinColumn(name="studentId",referencedColumnName="studentId"))
 	private Set<Student> students = new HashSet<>();
 	
+	//课程对应的案例库
+	@OneToMany(targetEntity=CaseLibrary.class,mappedBy="course")
+	private Set<CaseLibrary> caseLibraries = new HashSet<CaseLibrary>();
+	//上课时间
+	private String courseDate;
+	//上课地点
+	private String coursePlace;
 	
 	public Integer getCourseId() {
 		return courseId;
@@ -59,5 +67,24 @@ public class Course {
 	public void setStudents(Set<Student> students) {
 		this.students = students;
 	}
+	public Set<CaseLibrary> getCaseLibraries() {
+		return caseLibraries;
+	}
+	public void setCaseLibraries(Set<CaseLibrary> caseLibraries) {
+		this.caseLibraries = caseLibraries;
+	}
+	public String getCourseDate() {
+		return courseDate;
+	}
+	public void setCourseDate(String courseDate) {
+		this.courseDate = courseDate;
+	}
+	public String getCoursePlace() {
+		return coursePlace;
+	}
+	public void setCoursePlace(String coursePlace) {
+		this.coursePlace = coursePlace;
+	}
+	
 	
 }

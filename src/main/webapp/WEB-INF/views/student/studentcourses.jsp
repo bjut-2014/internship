@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE>
 <html>
 <jsp:include page="../header/header.jsp" />
@@ -14,8 +15,8 @@
                 <li class="active">
                     <a href="index"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>首页</a>
                 </li>
-                <li><a href="studentinfo"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>个人信息</a></li>
-                <li><a href="studentcourses"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>课程</a></li>
+                <li><a href="stu-info"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>个人信息</a></li>
+                <li><a href="course"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>课程</a></li>
                 <li><a href=""><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>实习</a></li>
                 <li><a href=""><span class="glyphicon glyphicon-file" aria-hidden="true"></span>毕设</a></li>
             </ul>
@@ -56,24 +57,19 @@
 
                                      
                                             <tbody>
+                                               <s:iterator value="#request.comprehensiveCourseInfoList" var="info">
                                                <tr>
-                                               		<td>嵌入式软件开发</td>
-                                               		<td>谌云莉</td>
-                                               		<td>周四上午 9：00</td>
-                                               		<td>软件学院  518</td>
-                                               		<td></td>
+                                               		<td><s:property value="#info.course.name"/></td>
+                                               		<td><s:property value="#info.teacherName"/></td>
+                                               		<td><s:property value="#info.course.courseDate"/></td>
+                                               		<td><s:property value="#info.course.coursePlace"/></td>
+                                               		<td><s:property value="#info.stuScore"/></td>
                                                		<td><a href="scourseExample"><span class="fa fa-folder-open do"></span></a></td>
-                                               		
 	                                           		<td>
-	                                           			<!-- <form class="dropzone dz-clickable" id="dropzone" action="#">
-	                                           				<div class="dz-default dz-message">
-	                                           					<span class="glyphicon glyphicon-open up"></span>
-	                                           				</div>
-	                                           			</form> -->
 	                                           			<label class="glyphicon glyphicon-open up"><input id="inputfile" style="display:none;" type="file"></input></label>
-	                                           			
 	                                           		</td>
                                                </tr>
+                                               </s:iterator>
                                             </tbody>
                                         </table>
 

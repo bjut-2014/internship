@@ -39,4 +39,11 @@ public class TestUtil {
 		System.out.println(course.getName());
 	}
 	
+	@Test
+	public void testScore(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		CourseDao courseDao = (CourseDao) context.getBean("courseDao");
+		System.out.println(courseDao.getCourseScore(1, 3));
+	}
+	
 }
