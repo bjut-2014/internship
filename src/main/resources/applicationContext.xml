@@ -75,8 +75,8 @@
 	</bean>
 	<!-- end -->
 	<!-- 学生修改密码页面 -->
-	<bean id="reset-pwd" class="cn.internship.action.ResetPwdAction" scope="prototype">
-		<property name="userService" ref="userService"/>
+	<bean id="resetPwdAction" class="cn.internship.action.ResetPwdAction" scope="prototype">
+		<property name="studentService" ref="studentService"/>
 	</bean>
 	<!-- end -->
 

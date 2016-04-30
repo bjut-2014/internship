@@ -117,4 +117,7 @@
     color: #526069;
     font-size: 12px;
     padding-left: 230px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
 }

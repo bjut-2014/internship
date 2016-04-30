@@ -2,7 +2,6 @@
 <!DOCTYPE>
 <html>
 <jsp:include page="../header/header.jsp" />
-<link href="styles/index.css" rel="stylesheet">
 <body>
 <jsp:include page="../nav/nav.jsp" />
 <div class="container-fluid">
@@ -24,7 +23,7 @@
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <div class="row">
                 <div class="col-md-4 col-md-offset-4">
-                    <form action="chpwd" method="post">
+                    <form action="resetPwd" method="post">
                         <div class="form-group">
                             <label>初始密码：</label>
                             <input name="password" type="password" class="form-control">

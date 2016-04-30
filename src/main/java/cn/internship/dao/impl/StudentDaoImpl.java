@@ -32,4 +32,10 @@ public class StudentDaoImpl extends HibernateDaoSupport implements StudentDao{
 		return getHibernateTemplate().get(Student.class, id);
 	}
 
+	//更新用户信息
+    @Override
+	public void updateStudent(Student student) {
+		getHibernateTemplate().update(student);
+	}
+
 }

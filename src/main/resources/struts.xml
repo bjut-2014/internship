@@ -58,15 +58,17 @@
 			<result name="logout">/login.jsp</result>
 		</action>
 		<!-- end -->
-		<!-- 学生相关操作 -->
-		<action name="index" class="studentAction">
-			<result>/WEB-INF/views/index.jsp</result>
-		</action>
-		<!-- end -->
 		<!-- 重置密码 -->
 		<action name="resetPwd" class="resetPwdAction" method="resetPwd">
-			<result name="logout">/login.jsp</result>
+			<result name="success">/login.jsp</result>
+            <result name="input">/WEB-INF/views/common/reset-pwd.jsp</result>
 		</action>
+		<!-- end -->
+		<!-- 学生相关操作 -->
+		<action name="index" class="studentAction">
+            <result>/WEB-INF/views/index.jsp</result>
+		</action>
+		<!-- end -->
 	</package>
 
 

@@ -2,15 +2,14 @@ package cn.internship.action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import cn.internship.entity.Student;
+import cn.internship.service.StudentService;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 
 import com.opensymphony.xwork2.ActionSupport;
-
-import cn.internship.entity.Student;
-import cn.internship.entity.User;
-import cn.internship.service.StudentService;
 
 /**
  * Created by surprise on 4/29/16.
@@ -19,6 +18,7 @@ public class ResetPwdAction extends ActionSupport implements ServletRequestAware
 
     private HttpServletRequest request;
     private HttpServletResponse response;
+
     private StudentService studentService;
 
     //初始密码
@@ -35,13 +35,17 @@ public class ResetPwdAction extends ActionSupport implements ServletRequestAware
 
     //修改密码
     public String resetPwd(){
-        Student student = (Student) request.getSession().getAttribute("currentUser");
+        HttpSession session = request.getSession();
+        System.out.println(session.getAttribute("currentType").getClass().getName());
+//        if (session.getAttribute("currentType") == "3") {
+            Student student = (Student) request.getSession().getAttribute("currentUser");
+            Student student1 = studentService.get(student.getId());
+//        }
         //清除修改密码时提示的错误信息
         this.clearErrorsAndMessages();
         //获得当前用户的密码
-        User user = studentService.findUserByUsername(student.getStudentId());
-        String userPwd = user.getPassword();
-        if(password == null || !userPwd.equals(password)){
+
+        if(password == null || !student1.getPassword().equals(password)){
             this.addActionError("初始密码错误");
             return INPUT;
         }
@@ -54,8 +58,8 @@ public class ResetPwdAction extends ActionSupport implements ServletRequestAware
             return INPUT;
         }
         //更改密码
-        user.setPassword(newpwd);
-        userService.updatePwd(user);
+        student1.setPassword(newpwd);
+        studentService.updatePwd(student1);
         //移除当前session中的student
         request.getSession().removeAttribute("currentUser");
         return SUCCESS;
@@ -96,14 +100,11 @@ public class ResetPwdAction extends ActionSupport implements ServletRequestAware
         this.renewpwd = renewpwd;
     }
 
-    public UserService getUserService() {
-        return userService;
+    public StudentService getStudentService() {
+        return studentService;
     }
 
-    public void setUserService(UserService userService) {
-        this.userService = userService;
+    public void setStudentService(StudentService studentService) {
+        this.studentService = studentService;
     }
-
-
-
 }
