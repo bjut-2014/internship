@@ -36,10 +36,10 @@ public class ResetPwdAction extends ActionSupport implements ServletRequestAware
     //修改密码
     public String resetPwd(){
         HttpSession session = request.getSession();
-        //System.out.println(session.getAttribute("currentType").getClass().getName());
         //清除修改密码时提示的错误信息
         this.clearErrorsAndMessages();
-        if (session.getAttribute("currentType") == "3") {
+        int currentType = (int)session.getAttribute("currentType");
+        if (currentType == 3) {
             Student student = (Student) request.getSession().getAttribute("currentUser");
             Student student1 = studentService.get(student.getId());
             //获得当前用户的密码
