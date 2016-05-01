@@ -1,5 +1,7 @@
 package cn.internship.service.impl;
 
+import java.util.List;
+
 import cn.internship.dao.HomeworkDao;
 import cn.internship.entity.Homework;
 import cn.internship.service.HomeworkService;
@@ -28,15 +30,21 @@ public class HomeworkServiceImpl implements HomeworkService{
 		return homeworkDao.get(studentId, courseId);
 	}
 
+	@Override
+	public List<Homework> getByCourse(Integer courseId) {
+		return homeworkDao.getByCourse(courseId);
+	}
+	
+	//----------------------------get与set方法-------------------------
+	
 	public HomeworkDao getHomeworkDao() {
 		return homeworkDao;
 	}
-
+	
 	public void setHomeworkDao(HomeworkDao homeworkDao) {
 		this.homeworkDao = homeworkDao;
 	}
 	
-	//----------------------------get与set方法-------------------------
 	
 
 }

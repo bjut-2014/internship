@@ -49,7 +49,8 @@
 
 		<!-- 登陆 -->
 		<action name="login" class="loginAction">
-			<result type="redirectAction">index</result>
+			<result name="ssuccess" type="redirectAction">index</result>
+			<result name="tsuccess" type="redirectAction">tch-index</result>
 			<result name="input">/login.jsp</result>
 		</action>
 		<!-- end -->
@@ -65,22 +66,31 @@
 		<action name="stu-info" class="studentAction" method="info">
 			<result>/WEB-INF/views/student/studentinfo.jsp</result>
 		</action>
+<<<<<<< HEAD
 		<action name="scourseExample" class="courseAction" method="showCaseLibraries"> 
  			<result>/WEB-INF/views/student/scourseExample.jsp</result> 
  		</action> 
 
+=======
+		<action name="scourseExample" class="courseAction" method="showCaseLibraries">
+			<result>/WEB-INF/views/student/scourseExample.jsp</result>
+		</action>		
+>>>>>>> dd9b0bf081ab06d05fde0dfd6a93e1dafb580532
 		<!-- end -->
-		<!-- 老师相关操作 -->		
-		<action name="teacherinfo" class="">
+		<!-- 老师相关操作 -->
+		<action name="tch-index" class="teacherAction">
+			<result>/WEB-INF/views/teacher/index.jsp</result>
+		</action>		
+		<action name="tch-info" class="teacherAction" method="info">
 			<result>/WEB-INF/views/teacher/teacherinfo.jsp</result>
 		</action>
-		<action name="teachercourses" class="">
+		<action name="tch-course" class="courseAction" method="tchCourse">
 			<result>/WEB-INF/views/teacher/teachercourses.jsp</result>
 		</action>
-		<action name="tcourseExample" class="">
+		<action name="tcourseExample" class="courseAction" method="showCaseLibraries">
 			<result>/WEB-INF/views/teacher/tcourseExample.jsp</result>
 		</action>
-		<action name="thomework" class="">
+		<action name="thomework" class="homeworkAction" method="listHomeworkByCourse">
 			<result>/WEB-INF/views/teacher/thomework.jsp</result>
 		</action>
 		<!-- end -->

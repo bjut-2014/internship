@@ -2,6 +2,7 @@ package internship;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 import org.junit.Test;
@@ -9,6 +10,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import cn.internship.dao.CourseDao;
+import cn.internship.entity.CaseLibrary;
 import cn.internship.entity.Course;
 import cn.internship.entity.Student;
 
@@ -58,6 +60,18 @@ public class TestUtil {
 		list.add(null);
 		for(String s1:list){
 			System.out.println(s1);
+		}
+	}
+	
+	@Test
+	public void testCourse(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		CourseDao courseDao = (CourseDao) context.getBean("courseDao");
+		List<Course> courses = courseDao.getByTno(1);
+		Iterator<CaseLibrary> iterator = courses.get(0).getCaseLibraries().iterator();
+		while(iterator.hasNext()){
+			CaseLibrary caseLibrary = iterator.next();
+			System.out.println(caseLibrary.getName());
 		}
 	}
 	

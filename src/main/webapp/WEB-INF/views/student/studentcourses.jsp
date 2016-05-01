@@ -14,11 +14,11 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li class="active">
+                <li>
                     <a href="index"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>首页</a>
                 </li>
                 <li><a href="stu-info"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>个人信息</a></li>
-                <li><a href="course"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>课程</a></li>
+                <li  class="active"><a href="course"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>课程</a></li>
                 <li><a href=""><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>实习</a></li>
                 <li><a href=""><span class="glyphicon glyphicon-file" aria-hidden="true"></span>毕设</a></li>
             </ul>
@@ -78,7 +78,7 @@
                                                		<td><s:property value="#info.course.courseDate"/></td>
                                                		<td><s:property value="#info.course.coursePlace"/></td>
                                                		<td><s:property value="#info.stuScore"/></td>
-                                               		<td><a href="scourseExample"><span class="fa fa-folder-open do"></span></a></td>
+                                               		<td><a href="scourseExample?courseId=<s:property value="#info.course.courseId" />"><span class="fa fa-folder-open do"></span></a></td>
 	                                           		<td>
 	                                           			<s:if test="#info.homework==null">
 	                                           			<!--<s:form action="uploadHomework" enctype="multipart/form-data" method="post">-->
@@ -107,7 +107,29 @@
     </div>
 </div>
 <jsp:include page="../footer/footer.jsp" />
+<<<<<<< HEAD
  <script src="scripts/studentupload.js"></script>
 
+=======
+<script type="text/javascript">
+	//负责ajax发送数据 
+	function up(fd) { 
+	    var xhr = new XMLHttpRequest(); 
+	    xhr.open('POST','uploadHomework',true); // 异步传输                
+	    xhr.send(fd); 
+	} 
+
+	document.getElementsById('#inputfile')[0].onchange = function() { 
+	    alert('你选择文件了'); 
+	    alert(this.files[0]); // 文件对象,html5新增的api 
+	
+	    var fd = new FormData(); // html5新增的对象,可以包装字符,二进制信息 
+	    fd.append(this.name,this.files[0]); 
+	
+	    up(fd); 
+	} 
+
+</script>
+>>>>>>> dd9b0bf081ab06d05fde0dfd6a93e1dafb580532
 </body>
 </html>

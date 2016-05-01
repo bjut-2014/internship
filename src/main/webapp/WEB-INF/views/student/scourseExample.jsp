@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE>
 <html>
 <jsp:include page="../header/header.jsp" />
@@ -11,11 +12,11 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li class="active">
+                <li>
                     <a href="index"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>首页</a>
                 </li>
                 <li><a href="studentinfo"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>个人信息</a></li>
-                <li><a href="course"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>课程</a></li>
+                <li class="active"><a href="course"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>课程</a></li>
                 <li><a href=""><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>实习</a></li>
                 <li><a href=""><span class="glyphicon glyphicon-file" aria-hidden="true"></span>毕设</a></li>
             </ul>
@@ -55,11 +56,13 @@
 
                                      
                                             <tbody>
-                                               <tr>
-                                               		<td class="rborder">移动开发技术第一章.ppt</td>
-                                               		<td class="rborder">2016.4.26</td>
+                                               	<s:iterator value="#request.caseLibraries" var="cl">
+                                               	<tr>
+                                               		<td class="rborder"><s:property value="#cl.name" /></td>
+                                               		<td class="rborder"><s:date format="yyyy-MM-dd" name="#cl.date" /></td>
                                                		<td><a href="#"><span class="glyphicon glyphicon-save do"></span></a></td>
                                                	</tr>
+                                            	</s:iterator>
                                             </tbody>
                                         </table>
 

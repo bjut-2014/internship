@@ -18,7 +18,9 @@ public class StudentServiceImpl implements StudentService{
 	public Student login(String sno, String password) {
 		Student student = studentDao.get(sno, password);
 		//设置全局用户信息
-		UserInfo.setInfo(student.getName(), student.getSno());
+		if(student!=null){
+			UserInfo.setInfo(student.getName(), student.getSno());
+		}
 		return student;
 	}
 

@@ -5,12 +5,17 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.opensymphony.xwork2.ActionSupport;
+
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 
 
+
+
 import cn.internship.entity.Student;
+import cn.internship.entity.Teacher;
 import cn.internship.service.StudentService;
+import cn.internship.service.TeacherService;
 import cn.internship.utils.UserInfo;
 
 /**
@@ -23,7 +28,8 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 	private HttpServletResponse response;
 
 	private StudentService studentService;
-
+	private TeacherService teacherService;
+	
     // 用户类型
     private int userType;
 	// 用户名
@@ -32,15 +38,16 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 	private String password;
 	// 验证码
 	private String verifyCode;
-
+	
 
 	@Override
 	public String execute() throws Exception {
 		HttpSession session = request.getSession();
-		// 判断session中是否已经存在用户
-		if (session.getAttribute("currentUser") != null) {
-			return SUCCESS;
-		}
+//		// 判断session中是否已经存在用户
+//		if (session.getAttribute("currentUser") != null) {
+//			return SUCCESS;
+//		}
+		
 		// 清除登陆验证时提示的错误信息
 		this.clearErrorsAndMessages();
 		// 验证码错误
@@ -57,7 +64,19 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 		}
 
 		// 判断登陆类型(0：管理员；1：老师；2：企业；3：学生)
-//		if (userType == 3) {
+		if (userType == 2) {
+			//用户类型为学生，验证用户是否存在
+			Teacher teacher = teacherService.login(username, password);
+			if(teacher == null){
+				this.addActionError("用户名或密码不正确！");
+				return INPUT;
+			}
+			//将登陆用户存到session中
+			session.setAttribute("currentUser", teacher);
+			session.setAttribute("userType", userType);
+			return "tsuccess";
+		}
+		else if (userType == 3) {
 			//用户类型为学生，验证用户是否存在
 			Student student = studentService.login(username, password);
 			if(student == null){
@@ -66,19 +85,25 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 			}
 			//将登陆用户存到session中
 			session.setAttribute("currentUser", student);
-//		} else {
-//			this.addActionError("登录类型不对");
-//            return INPUT;
-//		}
-
-		return SUCCESS;
+			session.setAttribute("userType", userType);
+			return "ssuccess";
+		}
+		else {
+			this.addActionError("登录类型不对");
+            return INPUT;
+		}
 	}
 
 	
 	//注销
 	public String logout(){
 		request.getSession().removeAttribute("currentUser");
-		studentService.logout();
+		int uType = (int) request.getSession().getAttribute("userType");
+		if(uType==2){
+			teacherService.logout();
+		}else if(uType == 3){
+			studentService.logout();
+		}
 		return "logout";
 	}
 	
@@ -133,4 +158,15 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 	public void setUserType(int userType) {
 		this.userType = userType;
 	}
+
+
+	public TeacherService getTeacherService() {
+		return teacherService;
+	}
+
+
+	public void setTeacherService(TeacherService teacherService) {
+		this.teacherService = teacherService;
+	}
+	
 }
