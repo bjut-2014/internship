@@ -65,9 +65,10 @@
 		<action name="stu-info" class="studentAction" method="info">
 			<result>/WEB-INF/views/student/studentinfo.jsp</result>
 		</action>
-		<action name="scourseExample" class="">
-			<result>/WEB-INF/views/student/scourseExample.jsp</result>
-		</action>		
+		<action name="scourseExample" class="courseAction" method="showCaseLibraries"> 
+ 			<result>/WEB-INF/views/student/scourseExample.jsp</result> 
+ 		</action> 
+
 		<!-- end -->
 		<!-- 老师相关操作 -->		
 		<action name="teacherinfo" class="">
