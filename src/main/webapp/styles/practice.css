@@ -74,3 +74,6 @@ body{
 .table>tbody>tr>td {
     font-size: 14px;
 }
+.copyright {
+    bottom: inherit;
+}

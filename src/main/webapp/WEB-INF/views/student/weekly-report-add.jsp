@@ -2,8 +2,6 @@
 <!DOCTYPE>
 <html>
 <jsp:include page="../header/header.jsp" />
-<link href="styles/lib/font-awesome.css"  rel="stylesheet" />
-<link href="styles/practice.css" rel="stylesheet" />
 <body>
 <jsp:include page="../nav/nav.jsp" />
 <div class="container-fluid">
@@ -19,33 +17,33 @@
                 <li><a href="graduate-weekly-report"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>毕设</a></li>
             </ul>
             <ul class="nav nav-sidebar reset-pwd-ul">
-                <li><a href=""><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>修改密码</a></li>
+                <li><a href="resetPwd"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>修改密码</a></li>
             </ul>
         </div>
- <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-    <form action="weekly-report-add" method="post">
+     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <form action="weekly-report-add" method="post">
 
-      <div class="row">
-        <div class="form-horizontal">
-          <div class="form-group">
-            <label class="col-sm-2 control-label">题目：</label>
-            <div class="col-sm-7">
-              <input name="addTitle" type="text" class="form-control">
+          <div class="row">
+            <div class="form-horizontal">
+              <div class="form-group">
+                <label class="col-sm-2 control-label">题目：</label>
+                <div class="col-sm-7">
+                  <input name="addTitle" type="text" class="form-control">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">内容：</label>
+                <div class="col-sm-7">
+                    <textarea name="addContent" class="form-control" rows="20" placeholder="500个字以上"></textarea>
+                </div>
+              </div>
             </div>
+            <input type="submit" class="btn btn-primary practical-reports-submit col-sm-offset-8" value="提交" />
           </div>
-    
-          <div class="form-group">
-            <label class="col-sm-2 control-label">内容：</label>
-            <div class="col-sm-7">
-                <textarea name="addContent" class="form-control" rows="20" placeholder="500个字以上"></textarea>
-            </div>
-          </div>
+          </form>
         </div>
-        <input type="submit" class="btn btn-primary practical-reports-submit col-sm-offset-8" value="提交" />
       </div>
-      </form>
-    </div>
-  </div>
 </div>
 <jsp:include page="../footer/footer.jsp" />
 </body>
