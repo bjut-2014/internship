@@ -5,8 +5,7 @@ body{
 }
 .myPanel{
 	padding:12px 20px;
-
-	font-size:23px;
+	color: #797979;
 }
 .panel-head{
 	border-bottom:3px solid rgb(217,217,217);
@@ -14,12 +13,7 @@ body{
 }
 .panel-body{
 	padding-bottom:50px;
-	font-size:18px;
-}
-
-.practiceInmation{
-	padding-top:40px;
-		
+	font-size:14px;
 }
 
 .myBu{
@@ -43,6 +37,8 @@ body{
 
 #the{
 	background:#F4F4F4;
+	font-size: 14px;
+	color: #797979;
 }
 .weekReport{padding-top:10px;}
 .weekReport table tr:nth-child(odd){background:white;}

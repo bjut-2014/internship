@@ -2,24 +2,12 @@
 <!DOCTYPE>
 <html>
 <jsp:include page="../header/header.jsp" />
-<link href="styles/student.css" rel="stylesheet">
 <body>
 <jsp:include page="../nav/nav.jsp" />
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-3 col-md-2 sidebar">
-      <ul class="nav nav-sidebar">
-                 <li>
-                    <a href="index"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>首页</a>
-                </li>
-                <li><a href=""><span class="glyphicon glyphicon-user" aria-hidden="true"></span>个人信息</a></li>
-                <li><a href=""><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>课程</a></li>
-                <li><a href="weekly-report"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>实习</a></li>
-                <li class="active"><a href="graduate-weekly-report"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>毕设</a></li>
-            </ul>
-      <ul class="nav nav-sidebar">
-        <li><a href="reset-pwd">修改密码</a></li>
-      </ul>
+        <jsp:include page="../sidebar/sidebar-student.jsp" />
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
       <div class="panel panel-default">

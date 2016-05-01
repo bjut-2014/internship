@@ -20,8 +20,7 @@ import cn.internship.service.GraduationWeeklyReportService;
 
 import com.opensymphony.xwork2.ActionSupport;
 
-public class GraduationProjectAction extends ActionSupport implements
-		ServletRequestAware, ServletResponseAware {
+public class GraduationProjectAction extends ActionSupport implements ServletRequestAware, ServletResponseAware {
 
 	/**
 	 * 
@@ -41,6 +40,90 @@ public class GraduationProjectAction extends ActionSupport implements
 	private String updateContent;
 	private int updateId;
 
+	// ======================删除模块=======================//
+	private int deleteId;
+
+	// ======================查找周报id=====================//
+	private int graduationWeeklyReportId;
+
+	
+	public String execute() throws Exception {
+		request.setAttribute("navId", 5);
+        //获得当前session下的学生
+		Student student = (Student) request.getSession().getAttribute("currentUser");
+		System.out.println(student);
+		//获得指定学生的所有周报
+		if( graduationWeeklyReportService.getAllGraduationWeeklyReport(student.getSno())!=null){
+			List<GraduationWeeklyReport> list = graduationWeeklyReportService.getAllGraduationWeeklyReport(student.getSno());
+	        request.setAttribute("graduationWeeklyReport", list);
+		}
+
+        return super.execute();
+        }
+	
+	//添加周报
+	public String add(){
+        request.setAttribute("navId", 5);
+		 //获得当前session下的学生
+		Student student = (Student) request.getSession().getAttribute("currentUser");
+		//创建实体
+		GraduationWeeklyReport graduationWeeklyReport = new GraduationWeeklyReport();
+		graduationWeeklyReport.setSno(student.getSno());
+		graduationWeeklyReport.setTitle(addTitle);
+		graduationWeeklyReport.setContent(addContent);
+		graduationWeeklyReport.setDate(new Date(new java.util.Date().getTime()));
+		//保存
+		graduationWeeklyReportService.saveGraduationWeeklyReport(graduationWeeklyReport);
+		return SUCCESS;
+	}
+	
+	//删除周报
+	public String delete(){
+        request.setAttribute("navId", 5);
+		graduationWeeklyReportService.deleteGraduationWeeklyReport(deleteId);
+		return SUCCESS;
+	}
+	
+	//获取周报
+	public String getOneWeeklyReport(){
+        request.setAttribute("navId", 5);
+		GraduationWeeklyReport oneWeeklyReport=graduationWeeklyReportService.getGraduationWeeklyReport(graduationWeeklyReportId);
+		request.setAttribute("oneWeeklyReport", oneWeeklyReport);
+		return SUCCESS;
+	}
+	
+	
+	//查找某一条周报
+	public String get() throws Exception {
+        request.setAttribute("navId", 5);
+        GraduationWeeklyReport oneWeeklyReport = graduationWeeklyReportService.getGraduationWeeklyReport(graduationWeeklyReportId);
+        request.setAttribute("updateReport", oneWeeklyReport);
+       return SUCCESS;
+	}
+	//更新周报
+	public String update(){
+        request.setAttribute("navId", 5);
+		GraduationWeeklyReport graduationWeeklyReport=graduationWeeklyReportService.getGraduationWeeklyReport(graduationWeeklyReportId);
+		
+		graduationWeeklyReport.setTitle(updateTitle);
+		graduationWeeklyReport.setContent(updateContent);
+		graduationWeeklyReport.setDate(new Date(new java.util.Date().getTime()));
+		graduationWeeklyReportService.updateGraduationWeeklyReport(graduationWeeklyReport);
+		
+		return SUCCESS;
+	}
+	
+	
+	
+	@Override
+	public void setServletResponse(HttpServletResponse response) {
+		this.response = response;
+	}
+
+	@Override
+	public void setServletRequest(HttpServletRequest request) {
+		this.request = request;
+	}
 	public GraduationWeeklyReportService getGraduationWeeklyReportService() {
 		return graduationWeeklyReportService;
 	}
@@ -105,84 +188,4 @@ public class GraduationProjectAction extends ActionSupport implements
 	public void setGraduationWeeklyReportId(int graduationWeeklyReportId) {
 		this.graduationWeeklyReportId = graduationWeeklyReportId;
 	}
-
-	// ======================删除模块=======================//
-	private int deleteId;
-
-	// ======================查找周报id=====================//
-	private int graduationWeeklyReportId;
-
-	
-	public String execute() throws Exception {
-        //获得当前session下的学生
-		Student student = (Student) request.getSession().getAttribute("currentUser");
-		System.out.println(student);
-		//获得指定学生的所有周报
-		if( graduationWeeklyReportService.getAllGraduationWeeklyReport(student.getSno())!=null){
-			List<GraduationWeeklyReport> list = graduationWeeklyReportService.getAllGraduationWeeklyReport(student.getSno());
-	        request.setAttribute("graduationWeeklyReport", list);
-		}
-		
-        return SUCCESS;
-        }
-	
-	//添加周报
-	public String add(){
-		 //获得当前session下的学生
-		Student student = (Student) request.getSession().getAttribute("currentUser");
-		//创建实体
-		GraduationWeeklyReport graduationWeeklyReport = new GraduationWeeklyReport();
-		graduationWeeklyReport.setSno(student.getSno());
-		graduationWeeklyReport.setTitle(addTitle);
-		graduationWeeklyReport.setContent(addContent);
-		graduationWeeklyReport.setDate(new Date(new java.util.Date().getTime()));
-		//保存
-		graduationWeeklyReportService.saveGraduationWeeklyReport(graduationWeeklyReport);
-		return SUCCESS;
-	}
-	
-	//删除周报
-	public String delete(){
-		graduationWeeklyReportService.deleteGraduationWeeklyReport(deleteId);
-		return SUCCESS;
-	}
-	
-	//获取周报
-	public String getOneWeeklyReport(){
-		GraduationWeeklyReport oneWeeklyReport=graduationWeeklyReportService.getGraduationWeeklyReport(graduationWeeklyReportId);
-		request.setAttribute("oneWeeklyReport", oneWeeklyReport);
-		return SUCCESS;
-	}
-	
-	
-	//查找某一条周报
-	public String get() throws Exception {
-        GraduationWeeklyReport oneWeeklyReport = graduationWeeklyReportService.getGraduationWeeklyReport(graduationWeeklyReportId);
-        request.setAttribute("updateReport", oneWeeklyReport);
-       return SUCCESS;
-	}
-	//更新周报
-	public String update(){
-		GraduationWeeklyReport graduationWeeklyReport=graduationWeeklyReportService.getGraduationWeeklyReport(graduationWeeklyReportId);
-		
-		graduationWeeklyReport.setTitle(updateTitle);
-		graduationWeeklyReport.setContent(updateContent);
-		graduationWeeklyReport.setDate(new Date(new java.util.Date().getTime()));
-		graduationWeeklyReportService.updateGraduationWeeklyReport(graduationWeeklyReport);
-		
-		return SUCCESS;
-	}
-	
-	
-	
-	@Override
-	public void setServletResponse(HttpServletResponse response) {
-		this.response = response;
-	}
-
-	@Override
-	public void setServletRequest(HttpServletRequest request) {
-		this.request = request;
-	}
-
 }
