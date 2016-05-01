@@ -61,5 +61,7 @@
 .item-info p {
   margin-bottom: 10px !important;
 }
-
+.copyright {
+  bottom: inherit;
+}
 

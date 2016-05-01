@@ -110,7 +110,6 @@
 <<<<<<< HEAD
  <script src="scripts/studentupload.js"></script>
 
-=======
 <script type="text/javascript">
 	//负责ajax发送数据 
 	function up(fd) { 
@@ -130,6 +129,5 @@
 	} 
 
 </script>
->>>>>>> dd9b0bf081ab06d05fde0dfd6a93e1dafb580532
 </body>
 </html>
