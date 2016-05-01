@@ -3,6 +3,7 @@ package cn.internship.action;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,6 +12,7 @@ import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 
+import cn.internship.entity.Homework;
 import cn.internship.entity.Student;
 import cn.internship.service.HomeworkService;
 import cn.internship.service.StudentService;
@@ -35,6 +37,8 @@ public class HomeworkAction extends ActionSupport implements ServletRequestAware
 	private String uploadContentType;
 	private String uploadFileName;
 	
+	//选的课程的ID
+	private Integer courseId;
 	
 	@Override
 	public String execute() throws Exception {
@@ -63,6 +67,14 @@ public class HomeworkAction extends ActionSupport implements ServletRequestAware
 		System.out.println(folderPath);
 		System.out.println(filePath);
 		return super.execute();
+	}
+	
+	
+	//罗列指定课程下的所有作业
+	public String listHomeworkByCourse(){
+		List<Homework> homeworks = homeworkService.getByCourse(courseId);
+		request.setAttribute("homeworks", homeworks);
+		return SUCCESS;
 	}
 	
 	//-----------------------get与set方法-------------------------
@@ -125,6 +137,16 @@ public class HomeworkAction extends ActionSupport implements ServletRequestAware
 
 	public void setStudentService(StudentService studentService) {
 		this.studentService = studentService;
+	}
+
+
+	public Integer getCourseId() {
+		return courseId;
+	}
+
+
+	public void setCourseId(Integer courseId) {
+		this.courseId = courseId;
 	}
 
 	

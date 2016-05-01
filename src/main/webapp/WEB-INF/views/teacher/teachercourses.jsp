@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE>
 <html>
 <jsp:include page="../header/header.jsp" />
@@ -11,11 +12,11 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li class="active">
-                    <a href="index"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>首页</a>
+                <li>
+                    <a href="tch-index"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>首页</a>
                 </li>
-                <li><a href="studentinfo"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>个人信息</a></li>
-                <li><a href="studentcourses"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>课程</a></li>
+                <li><a href="tch-info"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>个人信息</a></li>
+                <li class="active"><a href="tch-course"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>课程</a></li>
                 <li><a href=""><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>实习</a></li>
                 <li><a href=""><span class="glyphicon glyphicon-file" aria-hidden="true"></span>毕设</a></li>
             </ul>
@@ -54,16 +55,17 @@
 
                                      
                                             <tbody>
-                                               <tr>
-                                               		<td>嵌入式软件开发</td>                                              	
-                                               		<td>周四上午 9：00</td>
-                                               		<td>软件学院  518</td>                                         
-                                               		<td><a href="tcourseExample"><span class="glyphicon glyphicon-open tup"></span></a></td>
-                                               		
+                                            	<s:iterator value="#request.tchCourseList" var="tchList">
+                                            	<tr>
+                                            		<td><s:property value="#tchList.name"/></td>
+                                            		<td><s:property value="#tchList.courseDate"/></td>
+                                            		<td><s:property value="#tchList.coursePlace"/></td>
+                                            		<td><a href="tcourseExample?courseId=<s:property value="#tchList.courseId" />"><span class="glyphicon glyphicon-open tup"></span></a></td>
 	                                           		<td>
-	                                           			<a href="thomework"><span class="glyphicon glyphicon-save tdo"></span></a>	                                           			                                       		
+	                                           			<a href="thomework?courseId=<s:property value="#tchList.courseId" />"><span class="glyphicon glyphicon-save tdo"></span></a>	                                           			                                       		
 	                                           		</td>
-                                               </tr>
+                                            	</tr>
+                                            	</s:iterator>
                                             </tbody>
                                         </table>
 

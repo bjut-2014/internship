@@ -36,4 +36,12 @@ public class HomeworkDaoImpl extends HibernateDaoSupport implements HomeworkDao{
 		return list.get(0);
 	}
 
+	//获得指定课程下的所有作业
+	@Override
+	public List<Homework> getByCourse(Integer courseId) {
+		String hql = "from Homework h where h.courseId = "+courseId;
+		List<Homework> list = (List<Homework>) getHibernateTemplate().find(hql);
+		return list;
+	}
+
 }

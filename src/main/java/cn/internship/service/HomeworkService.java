@@ -1,5 +1,7 @@
 package cn.internship.service;
 
+import java.util.List;
+
 import cn.internship.entity.Homework;
 
 /**
@@ -14,4 +16,5 @@ public interface HomeworkService {
 	
 	public Homework get(Integer studentId,Integer courseId);
 	
+	public List<Homework> getByCourse(Integer courseId);
 }

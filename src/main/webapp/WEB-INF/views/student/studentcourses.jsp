@@ -64,7 +64,7 @@
                                                		<td><s:property value="#info.course.courseDate"/></td>
                                                		<td><s:property value="#info.course.coursePlace"/></td>
                                                		<td><s:property value="#info.stuScore"/></td>
-                                               		<td><a href="scourseExample"><span class="fa fa-folder-open do"></span></a></td>
+                                               		<td><a href="scourseExample?courseId=<s:property value="#info.course.courseId" />"><span class="fa fa-folder-open do"></span></a></td>
 	                                           		<td>
 	                                           			<s:if test="#info.homework==null">
 	                                           			<!--<s:form action="uploadHomework" enctype="multipart/form-data" method="post">-->

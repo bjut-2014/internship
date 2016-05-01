@@ -1,5 +1,7 @@
 package cn.internship.dao;
 
+import java.util.List;
+
 import cn.internship.entity.Homework;
 
 /**
@@ -14,4 +16,6 @@ public interface HomeworkDao {
 	
 	public Homework get(Integer studentId,Integer courseId);
 	
+	public List<Homework> getByCourse(Integer courseId);
+
 }

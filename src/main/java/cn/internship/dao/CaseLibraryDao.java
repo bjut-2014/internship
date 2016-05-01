@@ -2,6 +2,7 @@ package cn.internship.dao;
 
 import java.util.List;
 
+import cn.internship.entity.CaseLibrary;
 import cn.internship.entity.Course;
 
 /**
@@ -10,8 +11,10 @@ import cn.internship.entity.Course;
  */
 public interface CaseLibraryDao {
 
-	public List<Course> getAll(Integer courseId);
+	public List<CaseLibrary> getAll();
 	
-	public Course get(Integer id);
+	public CaseLibrary get(Integer id);
+	
+	public List<CaseLibrary> getByCId(Integer courseId);
 	
 }

@@ -112,6 +112,8 @@
 	<bean id="courseAction" class="cn.internship.action.CourseAction">
 		<property name="courseService" ref="courseService" />
 		<property name="homeworkService" ref="homeworkService" />
+		<property name="teacherService" ref="teacherService" />
+		<property name="caseLibraryService" ref="caseLibraryService" />
 	</bean>
 	<!-- end -->
 	
@@ -141,5 +143,13 @@
 	</bean>
 	<!-- edn -->
 	
+	<!-- 案例库相关配置 -->
+	<bean id="caseLibraryDao" class="cn.internship.dao.impl.CaseLibraryDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="caseLibraryService" class="cn.internship.service.impl.CaseLibraryServiceImpl">
+		<property name="caseLibraryDao" ref="caseLibraryDao" />
+	</bean>
+	<!-- end -->
 
 </beans>

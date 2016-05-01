@@ -47,6 +47,7 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 //		if (session.getAttribute("currentUser") != null) {
 //			return SUCCESS;
 //		}
+		
 		// 清除登陆验证时提示的错误信息
 		this.clearErrorsAndMessages();
 		// 验证码错误

@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <!DOCTYPE>
 <html>
 <jsp:include page="../header/header.jsp" />
@@ -13,11 +14,11 @@
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li class="active">
-                    <a href="index"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>首页</a>
+                <li>
+                    <a href="tch-index"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>首页</a>
                 </li>
-                <li><a href="teacherinfo"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>个人信息</a></li>
-                <li><a href="teachercourses"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>课程</a></li>
+                <li><a href="tch-info"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>个人信息</a></li>
+                <li class="active"><a href="tch-course"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>课程</a></li>
                 <li><a href=""><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>实习</a></li>
                 <li><a href=""><span class="glyphicon glyphicon-file" aria-hidden="true"></span>毕设</a></li>
             </ul>
@@ -60,17 +61,19 @@
 
                                      
                                             <tbody>
+                                               <s:iterator value="#request.homeworks" var="hm">
                                                <tr>
                                                		<td>S201425024</td>                                              	
                                                		<td>陈晓晓</td>
-                                               		<td>移动开发技术第一次作业</td>
-                                               		<td>2016年4月30日</td>                                         
-                                               		<td><a href="#"><span class="glyphicon glyphicon-save do"></span></a></td>
+                                               		<td><s:property value="#hm.title"/></td>
+                                               		<td><s:date format="yyyy-MM-dd" name="#hm.date"/></td>                                         
+                                               		<td><a href="<s:property value="#hm.path"/>"><span class="glyphicon glyphicon-save do"></span></a></td>
                                                		
 	                                           		<td class="thin-width">
 	                                           			<input type="text" class="form-control input-block"/>
 	                                           		</td>
                                                </tr>
+                                               </s:iterator>
                                             </tbody>
                                         </table>
 

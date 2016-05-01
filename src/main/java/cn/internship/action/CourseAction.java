@@ -2,6 +2,7 @@ package cn.internship.action;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,11 +12,15 @@ import org.apache.struts2.interceptor.ServletResponseAware;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+import cn.internship.entity.CaseLibrary;
 import cn.internship.entity.Course;
 import cn.internship.entity.Homework;
 import cn.internship.entity.Student;
+import cn.internship.entity.Teacher;
+import cn.internship.service.CaseLibraryService;
 import cn.internship.service.CourseService;
 import cn.internship.service.HomeworkService;
+import cn.internship.service.TeacherService;
 
 /**
  * 课程页面的相关请求与操作
@@ -28,6 +33,11 @@ public class CourseAction extends ActionSupport implements ServletRequestAware, 
 	
 	private CourseService courseService;
 	private HomeworkService homeworkService;
+	private TeacherService teacherService;
+	private CaseLibraryService caseLibraryService;
+	
+	//所选的课程主键ID，用来查找相关的案例库
+	private Integer courseId;
 	
 	@Override
 	public String execute() throws Exception {
@@ -102,6 +112,27 @@ public class CourseAction extends ActionSupport implements ServletRequestAware, 
 	}
 	
 	
+	//当前教师教授的课程
+	public String tchCourse(){
+		//获得当前session下的老师
+		Teacher teacher = (Teacher) request.getSession().getAttribute("currentUser");
+		Integer teacherId = teacher.getTeacherId();
+		List<Course> tchCourseList = courseService.getByTno(teacherId);
+		request.setAttribute("tchCourseList", tchCourseList);
+		return SUCCESS;
+	}
+	
+	//当前课程的案例库
+	public String showCaseLibraries(){
+//		Integer courseId = Integer.parseInt(request.getParameter("courseId"));
+		Course course = courseService.get(courseId);
+		Set<CaseLibrary> caseLibraries = course.getCaseLibraries();
+//		List<CaseLibrary> caseLibraries = caseLibraryService.getByCId(courseId);
+		request.setAttribute("caseLibraries", caseLibraries);
+		return SUCCESS;
+	}
+	
+	
 	//-------------------------------------------------get与set方法-------------------------------------------
 	
 	@Override
@@ -128,6 +159,32 @@ public class CourseAction extends ActionSupport implements ServletRequestAware, 
 
 	public void setHomeworkService(HomeworkService homeworkService) {
 		this.homeworkService = homeworkService;
+	}
+
+
+	public TeacherService getTeacherService() {
+		return teacherService;
+	}
+
+
+	public void setTeacherService(TeacherService teacherService) {
+		this.teacherService = teacherService;
+	}
+
+	public Integer getCourseId() {
+		return courseId;
+	}
+
+	public void setCourseId(Integer courseId) {
+		this.courseId = courseId;
+	}
+
+	public CaseLibraryService getCaseLibraryService() {
+		return caseLibraryService;
+	}
+
+	public void setCaseLibraryService(CaseLibraryService caseLibraryService) {
+		this.caseLibraryService = caseLibraryService;
 	}
 
 	
