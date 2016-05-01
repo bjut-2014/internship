@@ -94,13 +94,12 @@ public class FileUploadAction extends ActionSupport implements ServletRequestAwa
 	}
 	
 	public String execute() throws IOException{
-		System.out.println("Action started");
+		//System.out.println("Action started");
 		//获取当前学生
 		//获得当前session下的学生
-		//Student student = (Student) request.getSession().getAttribute("currentUser");
+		Student student = (Student) request.getSession().getAttribute("currentUser");
 		InternshipReport internshipReport=new InternshipReport();
-		//internshipReport.setSno(student.getSno());
-		internshipReport.setSno("S03");
+		internshipReport.setSno(student.getSno());
 		internshipReport.setDate(new Date(new java.util.Date().getTime()));
 		String path=ServletActionContext.getServletContext().getRealPath("/InternshipReport");
 		
@@ -119,6 +118,8 @@ public class FileUploadAction extends ActionSupport implements ServletRequestAwa
 		request.setAttribute("uploadFileName", uploadFileName);
 		
 		ir.saveInternshipReport(internshipReport);
+		result="您已提交实习报告，请勿重复提交！";
+		
 		return SUCCESS;
 	}
 

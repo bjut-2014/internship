@@ -79,7 +79,7 @@
 			<result>/WEB-INF/views/student/weekly-report.jsp</result>
 		</action>
         <action name="weekly-report-edit" class="weekly-report" method="get">
-            <result>/WEB-INF/views/student/weekly-report.jsp</result>
+            <result >/WEB-INF/views/student/weekly-report-update.jsp</result>
         </action>
 		<action name="weekly-report-add" class="weekly-report" method="add">
 			<result type="redirectAction">weekly-report</result>
@@ -90,15 +90,18 @@
 		<action name="weekly-report-update" class="weekly-report" method="update">
 			<result type="redirectAction">weekly-report</result>
 		</action>
-		<action name="weekly-report-view" class="weekly-report" method="getOneWeeklyreport">
+		<action name="weekly-report-view" class="weekly-report" method="getOneWeeklyReport">
 			<result>/WEB-INF/views/student/weekly-report-view.jsp</result>
+		</action>
+		<action name="weekly-report-save">
+			<result>/WEB-INF/views/student/weekly-report-add.jsp</result>
 		</action>
 		<!-- end -->
 		
 		<!-- 实习报告 -->
 		
 		<action name="upload" class="upload">
-    	<result >UploadInternshipReport.jsp</result>
+    	<result type="redirectAction">weekly-report</result>
     	<result name="input">error.jsp</result>
     	<!-- 配置拦截器信息限制上传文件类型、大小 -->
     	<interceptor-ref name="fileUpload">
@@ -116,9 +119,9 @@
 			<result>/WEB-INF/views/student/graduate-weekly-report.jsp</result>
 		</action>
         <action name="graduate-weekly-report-edit" class="graduate-weekly-report" method="get">
-            <result>/WEB-INF/views/student/graduate-weekly-report.jsp</result>
+            <result>/WEB-INF/views/student/graduate-weekly-update.jsp</result>
         </action>
-		<action name="graduateweekly-report-add" class="graduate-weekly-report" method="add">
+		<action name="graduate-weekly-report-add" class="graduate-weekly-report" method="add">
 			<result type="redirectAction">graduate-weekly-report</result>
 		</action>
 		<action name="graduate-weekly-report-delete" class="graduate-weekly-report" method="delete">
@@ -127,8 +130,11 @@
 		<action name="graduate-weekly-report-update" class="graduate-weekly-report" method="update">
 			<result type="redirectAction">graduate-weekly-report</result>
 		</action>
-		<action name="graduate-weekly-report-view" class="graduate-weekly-report" method="getOneWeeklyreport">
+		<action name="graduate-weekly-report-view" class="graduate-weekly-report" method="getOneWeeklyReport">
 			<result>/WEB-INF/views/student/graduate-weekly-report-view.jsp</result>
+		</action>
+		<action name="graduation-weekly-report-save">
+			<result>/WEB-INF/views/student/graduation-weekly-add.jsp</result>
 		</action>
 		
 		<!-- end -->

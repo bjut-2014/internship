@@ -69,7 +69,7 @@ public class TestUtil implements ServletRequestAware{
 	public void deleteWeeklyReport(){
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		WeeklyReportService wrs = (WeeklyReportService) context.getBean("weeklyReportService");
-		wrs.deleteWeeklyReport(4);
+		wrs.deleteWeeklyReport(1);
 	}
 	
 	@Test
@@ -99,7 +99,7 @@ public class TestUtil implements ServletRequestAware{
 
 		GraduationWeeklyReport graduationWeeklyReport = new GraduationWeeklyReport();
 		
-		graduationWeeklyReport.setSno("S0001");
+		graduationWeeklyReport.setSno("S0003");
 		graduationWeeklyReport.setTitle("Jennifer's first weekltReport");
 		graduationWeeklyReport.setContent("123456");
 		graduationWeeklyReport.setDate(new Date(new java.util.Date().getTime()));
