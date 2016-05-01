@@ -41,6 +41,7 @@ public class CourseAction extends ActionSupport implements ServletRequestAware, 
 	
 	@Override
 	public String execute() throws Exception {
+		request.setAttribute("navId", 3);
 		//获得当前session下的学生
 		Student student = (Student) request.getSession().getAttribute("currentUser");
 		Integer studentId = student.getStudentId();
@@ -114,6 +115,7 @@ public class CourseAction extends ActionSupport implements ServletRequestAware, 
 	
 	//当前教师教授的课程
 	public String tchCourse(){
+		request.setAttribute("navId", 3);
 		//获得当前session下的老师
 		Teacher teacher = (Teacher) request.getSession().getAttribute("currentUser");
 		Integer teacherId = teacher.getTeacherId();
@@ -124,6 +126,7 @@ public class CourseAction extends ActionSupport implements ServletRequestAware, 
 	
 	//当前课程的案例库
 	public String showCaseLibraries(){
+		request.setAttribute("navId", 3);
 //		Integer courseId = Integer.parseInt(request.getParameter("courseId"));
 		Course course = courseService.get(courseId);
 		Set<CaseLibrary> caseLibraries = course.getCaseLibraries();

@@ -74,6 +74,7 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 			//将登陆用户存到session中
 			session.setAttribute("currentUser", teacher);
 			session.setAttribute("userType", userType);
+            session.setAttribute("currentType", teacher.getUserType());
 			return "tsuccess";
 		}
 		else if (userType == 3) {
@@ -86,6 +87,7 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 			//将登陆用户存到session中
 			session.setAttribute("currentUser", student);
 			session.setAttribute("userType", userType);
+            session.setAttribute("currentType", student.getUserType());
 			return "ssuccess";
 		}
 		else {
@@ -98,6 +100,7 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 	//注销
 	public String logout(){
 		request.getSession().removeAttribute("currentUser");
+        request.getSession().removeAttribute("currentType");
 		int uType = (int) request.getSession().getAttribute("userType");
 		if(uType==2){
 			teacherService.logout();
