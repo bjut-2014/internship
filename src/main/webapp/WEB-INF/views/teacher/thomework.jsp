@@ -7,6 +7,7 @@
 <link href="styles/lib/bootstrap-reset.css"  rel="stylesheet" />
 <link href="styles/courses.css" rel="stylesheet" />
 <link href="styles/course.css" rel="stylesheet" />
+
 <body>
 <jsp:include page="../nav/nav.jsp" />
 
@@ -63,14 +64,14 @@
                                             <tbody>
                                                <s:iterator value="#request.homeworks" var="hm">
                                                <tr>
-                                               		<td>S201425024</td>                                              	
+                                               		<td class="sno">S201425024</td>                                              	
                                                		<td>陈晓晓</td>
                                                		<td><s:property value="#hm.title"/></td>
                                                		<td><s:date format="yyyy-MM-dd" name="#hm.date"/></td>                                         
                                                		<td><a href="<s:property value="#hm.path"/>"><span class="glyphicon glyphicon-save do"></span></a></td>
                                                		
 	                                           		<td class="thin-width">
-	                                           			<input type="text" class="form-control input-block"/>
+	                                           			<input type="text" class="form-control input-block input-score"/>
 	                                           		</td>
                                                </tr>
                                                </s:iterator>
@@ -90,5 +91,6 @@
     </div>
 </div>
 <jsp:include page="../footer/footer.jsp" />
+<script src="scripts/tscore.js"></script>
 </body>
 </html>
