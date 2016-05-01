@@ -59,17 +59,6 @@
 
                                      
                                             <tbody>
-                                            <tr>
-                                            	<td>移动开发技术</td>
-                                            	<td>谌云莉</td>
-                                            	<td>2016年4月30日</td>
-                                            	<td>软件学院</td>
-                                            	<td></td>
-                                            	<td><a href="scourseExample"><span class="fa fa-folder-open do"></span></a></td>
-                                            	<td>
-	                                           		<label class="glyphicon glyphicon-open up"><input id="inputfile" name="uploadFile" style="display:none;" type="file" /></label>	                                           			
-	                                           	</td>                                         
-                                            </tr>
                                                <s:iterator value="#request.comprehensiveCourseInfoList" var="info">
                                                <tr>
                                                

@@ -60,7 +60,7 @@
                                                	<tr>
                                                		<td class="rborder"><s:property value="#cl.name" /></td>
                                                		<td class="rborder"><s:date format="yyyy-MM-dd" name="#cl.date" /></td>
-                                               		<td><a href="#"><span class="glyphicon glyphicon-save do"></span></a></td>
+                                               		<td><a href="download?fileName=<s:property value="#cl.name"/>&baseFloder=<s:property value="#cl.filePath"/>"><span class="glyphicon glyphicon-save do"></span></a></td>
                                                	</tr>
                                             	</s:iterator>
                                             </tbody>

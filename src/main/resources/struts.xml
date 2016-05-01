@@ -97,6 +97,17 @@
 			<result type="redirectAction">course</result>
 		</action>
 		<!-- end -->
+		
+		<!-- 文件下载 -->
+		<action name="download" class="fileDownloadAction">
+			<result name="success" type="stream">
+				<param name="contentType">*</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="inputName">downloadFile</param>
+			</result>
+			
+		</action>
+		<!-- end -->
 	</package>
 
 

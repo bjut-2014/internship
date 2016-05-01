@@ -141,7 +141,7 @@
 		<property name="teacherService" ref="teacherService" />
 		<property name="syslogService" ref="syslogService" />
 	</bean>
-	<!-- edn -->
+	<!-- end -->
 	
 	<!-- 案例库相关配置 -->
 	<bean id="caseLibraryDao" class="cn.internship.dao.impl.CaseLibraryDaoImpl">
@@ -150,6 +150,10 @@
 	<bean id="caseLibraryService" class="cn.internship.service.impl.CaseLibraryServiceImpl">
 		<property name="caseLibraryDao" ref="caseLibraryDao" />
 	</bean>
+	<!-- end -->
+	
+	<!-- 文件下载相关配置 -->
+	<bean id="fileDownloadAction" class="cn.internship.action.FileDownloadAction"></bean>
 	<!-- end -->
 
 </beans>
