@@ -62,13 +62,13 @@
 
                                      
                                             <tbody>
-                                               <s:iterator value="#request.homeworks" var="hm">
+                                               <s:iterator value="#request.comprehensiveHomeworkInfos" var="hm">
                                                <tr>
-                                               		<td class="sno">S201425024</td>                                              	
-                                               		<td>陈晓晓</td>
-                                               		<td><s:property value="#hm.title"/></td>
-                                               		<td><s:date format="yyyy-MM-dd" name="#hm.date"/></td>                                         
-                                               		<td><a href="<s:property value="#hm.path"/>"><span class="glyphicon glyphicon-save do"></span></a></td>
+                                               		<td class="sno"><s:property value="#hm.no"/></td>                                              	
+                                               		<td><s:property value="#hm.name"/></td>
+                                               		<td><s:property value="#hm.homework.title"/></td>
+                                               		<td><s:date format="yyyy-MM-dd" name="#hm.homework.date"/></td>                                         
+                                               		<td><a href="download?fileName=<s:property value="#hm.homework.title"/>&baseFloder=<s:property value="#hm.homework.path"/>"><span class="glyphicon glyphicon-save do"></span></a></td>
                                                		
 	                                           		<td class="thin-width">
 	                                           			<input type="text" class="form-control input-block input-score"/>

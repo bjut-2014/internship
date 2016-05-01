@@ -3,6 +3,7 @@ package cn.internship.action;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -73,8 +74,53 @@ public class HomeworkAction extends ActionSupport implements ServletRequestAware
 	//罗列指定课程下的所有作业
 	public String listHomeworkByCourse(){
 		List<Homework> homeworks = homeworkService.getByCourse(courseId);
-		request.setAttribute("homeworks", homeworks);
+		int n = homeworks.size();
+		List<String> snoList = new ArrayList<String>(n);
+		List<String> snameList = new ArrayList<String>(n);
+		
+		for(int i=0;i<n;i++){
+//			int courseId = homeworks.get(i).getCourseId();
+			int studentId = homeworks.get(i).getStudentId();
+			Student student = studentService.get(studentId);
+			snoList.add(student.getSno());
+			snameList.add(student.getName());
+		}
+		List<ComprehensiveHomeworkInfo> comprehensiveHomeworkInfos = new ArrayList<HomeworkAction.ComprehensiveHomeworkInfo>(n);
+		for(int i=0;i<n;i++){
+			ComprehensiveHomeworkInfo comprehensiveHomeworkInfo = new ComprehensiveHomeworkInfo();
+			comprehensiveHomeworkInfo.setHomework(homeworks.get(i));
+			comprehensiveHomeworkInfo.setName(snameList.get(i));
+			comprehensiveHomeworkInfo.setNo(snoList.get(i));
+			comprehensiveHomeworkInfos.add(comprehensiveHomeworkInfo);
+		}
+		
+		request.setAttribute("comprehensiveHomeworkInfos", comprehensiveHomeworkInfos);
 		return SUCCESS;
+	}
+	
+	private class ComprehensiveHomeworkInfo{
+		private Homework homework;
+		private String name;
+		private String no;
+		public Homework getHomework() {
+			return homework;
+		}
+		public void setHomework(Homework homework) {
+			this.homework = homework;
+		}
+		public String getName() {
+			return name;
+		}
+		public void setName(String name) {
+			this.name = name;
+		}
+		public String getNo() {
+			return no;
+		}
+		public void setNo(String no) {
+			this.no = no;
+		}
+		
 	}
 	
 	//-----------------------get与set方法-------------------------
