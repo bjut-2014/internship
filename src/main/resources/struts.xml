@@ -66,16 +66,9 @@
 		<action name="stu-info" class="studentAction" method="info">
 			<result>/WEB-INF/views/student/studentinfo.jsp</result>
 		</action>
-<<<<<<< HEAD
 		<action name="scourseExample" class="courseAction" method="showCaseLibraries"> 
  			<result>/WEB-INF/views/student/scourseExample.jsp</result> 
  		</action> 
-
-=======
-		<action name="scourseExample" class="courseAction" method="showCaseLibraries">
-			<result>/WEB-INF/views/student/scourseExample.jsp</result>
-		</action>		
->>>>>>> dd9b0bf081ab06d05fde0dfd6a93e1dafb580532
 		<!-- end -->
 		<!-- 老师相关操作 -->
 		<action name="tch-index" class="teacherAction">
