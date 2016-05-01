@@ -30,7 +30,7 @@
                             </a>
                         </div>
                         <div class="login-checkbox checkbox-checked"><span>记住密码</span></div>
-                        <div class="login-error"><s:actionerror/></div>
+                        <div class="submit-error"><s:actionerror/></div>
                         <button class="login-bt">登&nbsp;录</button>
                     </div>
                 </form>

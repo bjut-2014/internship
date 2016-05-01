@@ -33,6 +33,11 @@ public class StudentServiceImpl implements StudentService{
 	public Student get(Integer id){
 		return studentDao.get(id);
 	}
+
+	@Override
+	public void updatePwd(Student student) {
+		studentDao.updateStudent(student);
+	}
 	
 	//------------------------------------------get与set方法-----------------------------------------------------------------
 	public StudentDao getStudentDao() {
