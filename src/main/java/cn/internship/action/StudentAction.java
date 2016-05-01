@@ -29,6 +29,7 @@ public class StudentAction extends ActionSupport implements ServletRequestAware,
 	
 	@Override
 	public String execute() throws Exception {
+		request.setAttribute("navId", 1);
 		return super.execute();
 	}
 
