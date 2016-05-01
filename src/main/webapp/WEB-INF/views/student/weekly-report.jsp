@@ -32,7 +32,9 @@
     </div>
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main myMain weekReport">
         <div class="panel panel-default myPanel weekReport">
-            <div class="panel-head">周报 weekly Report<a href="weekly-report-save"><button class="glyphicon glyphicon-plus myBu"></button></a></div>
+            <div class="panel-head">周报 weekly Report
+                <a href="weekly-report-save"><button class="glyphicon glyphicon-plus myBu"></button></a>
+            </div>
             <div class="panel-body">
                 <s:if test="#request.weeklyplan.size()!=0">
                 <table class="table weekTable">
@@ -65,14 +67,19 @@
     </div>
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main myMain practiceRerort">
         <div class="panel panel-default myPanel practiceRerort">
-            <div class="panel-head">实习报告 Practice Report</div>
+            <div class="panel-head">实习报告 Practice Report
+            </div>
             <div class="panel-body">
-                <!--  <button class="myBu">提交报告</button>-->
-                <form action="upload" method="post" enctype="multipart/form-data">
-                	<p><s:property value="#request.result"/></p>
-                	<input class="myBu" type="submit" value="提交报告">
-   					<input name="upload" type="file"/><br>
-   				</form>
+                <s:if test="#request.result==null">
+                    <p class="file-title">暂无实习报告</p>
+                    <form action="upload" method="post" enctype="multipart/form-data">
+                        <input class="myBu" type="submit" value="提交报告">
+                        <input type="file" name="upload">
+                    </form>
+                </s:if>
+                <s:else>
+                    <p><s:property value="#request.result.title"/></p>
+                </s:else>
             </div>
         </div>
     </div>

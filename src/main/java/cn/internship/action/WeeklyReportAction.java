@@ -80,12 +80,13 @@ public class WeeklyReportAction extends ActionSupport implements ServletRequestA
 		//设置上传实习报告状态
 		//String result="您尚未提交实习报告！";
 		InternshipReport it1=internshipReportService.getInternshipReport(student.getSno());
-		System.out.println(it1);
-		if(it1==null){
-			request.setAttribute("result", "您尚未提交实习报告！");
-		}else{
-			request.setAttribute("result", "您已提交实习报告，请勿重复提交！");
-		}
+//		System.out.println(it1);
+        request.setAttribute("result", it1);
+//		if(it1==null){
+//			request.setAttribute("result", "您尚未提交实习报告！");
+//		}else{
+//			request.setAttribute("result", "您已提交实习报告，请勿重复提交！");
+//		}
         return super.execute();
     }
 	

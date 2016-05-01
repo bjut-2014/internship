@@ -1,11 +1,9 @@
-
 /******new********/
 body{
 	background-color:rgb(223,226,227);
 }
 .myPanel{
 	padding:20px 20px;
-	/*font-size:23px;*/
 	color: #797979;
 }
 .panel-head{
@@ -17,22 +15,15 @@ body{
 	padding-bottom:10px;
 	font-size:14px;
 }
-/*.practiceInmation{*/
-	/*padding-top:40px;*/
-/*}*/
+
 .practiceRerort{
-	
 	padding-top:10px;
 }
 .practiceRerort .panel-body p{
 	float:left;
 	width:80%;
 }
-.practiceRerort .panel-body button{
 
-	
-
-}
 .myBu{
 	background:rgb(44,159,148);
 	border:none;
@@ -40,7 +31,6 @@ body{
 	padding:5px 10px;
 	float:right;
 	border-radius:2px;
-	
 }
 
 .myPu{
@@ -58,14 +48,21 @@ body{
 	color: #797979;
 }
 .weekReport{
-padding-top:10px;
+    padding-top:10px;
 }
-.weekReport table tr:nth-child(odd){background:white;}
-.weekReport table tr:nth-child(even){background:#F4F4F4;}
+.weekReport table tr:nth-child(odd){
+    background:white;
+}
+.weekReport table tr:nth-child(even){
+    background:#F4F4F4;
+}
 .weekReport table td,th{
 	text-align:center;
 }
-.weekReport table td:nth-child(2),th:nth-child(2){border-left:1px solid rgb(232,232,232);border-right:1px solid rgb(232,232,232);}
+.weekReport table td:nth-child(2),th:nth-child(2){
+    border-left:1px solid rgb(232,232,232);
+    border-right:1px solid rgb(232,232,232);
+}
 
 .Gl{
 	margin-left:30px;
@@ -76,7 +73,4 @@ padding-top:10px;
 }
 .table>tbody>tr>td {
     font-size: 14px;
-}
-.copyright {
-    bottom: 0;
 }
