@@ -17,7 +17,7 @@ public class Student {
 	//主键
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer id;
+	private Integer studentId;
 	//学号
 	@Column(length=24,unique=true)
 	private String sno;
@@ -44,11 +44,11 @@ public class Student {
 	private Integer userType;
 	
 	
-	public Integer getId() {
-		return id;
+	public Integer getStudentId() {
+		return studentId;
 	}
-	public void setId(Integer id) {
-		this.id = id;
+	public void setStudentId(Integer studentId) {
+		this.studentId = studentId;
 	}
 	public String getSno() {
 		return sno;
