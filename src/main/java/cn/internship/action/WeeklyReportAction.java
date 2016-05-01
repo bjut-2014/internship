@@ -51,6 +51,7 @@ public class WeeklyReportAction extends ActionSupport implements ServletRequestA
 	
 	
 	public String execute() throws Exception {
+		request.setAttribute("navId", 4);
         //获得当前session下的学生
 		Student student = (Student) request.getSession().getAttribute("currentUser");
 		//获得指定学生的所有周报
@@ -88,17 +89,9 @@ public class WeeklyReportAction extends ActionSupport implements ServletRequestA
         return super.execute();
     }
 	
-	public InternshipReportService getInternshipReportService() {
-		return internshipReportService;
-	}
-
-	public void setInternshipReportService(
-			InternshipReportService internshipReportService) {
-		this.internshipReportService = internshipReportService;
-	}
-
 	//添加周报
 	public String add(){
+		request.setAttribute("navId", 4);
 		 //获得当前session下的学生
 		Student student = (Student) request.getSession().getAttribute("currentUser");
 		//创建实体
@@ -114,6 +107,7 @@ public class WeeklyReportAction extends ActionSupport implements ServletRequestA
 	
 	//删除周报
 	public String delete(){
+		request.setAttribute("navId", 4);
 		System.out.println("Action");
 		weeklyReportService.deleteWeeklyReport(deleteId);
 		return SUCCESS;
@@ -121,6 +115,7 @@ public class WeeklyReportAction extends ActionSupport implements ServletRequestA
 	
 	//获取周报
 	public String getOneWeeklyReport(){
+		request.setAttribute("navId", 4);
 		WeeklyReport oneWeeklyReport=weeklyReportService.getWeeklyReport(weeklyReportId);
 		request.setAttribute("oneWeeklyReport", oneWeeklyReport);
 		return SUCCESS;
@@ -129,6 +124,7 @@ public class WeeklyReportAction extends ActionSupport implements ServletRequestA
 	
 	//查找某一条周报
 	public String get() throws Exception {
+		request.setAttribute("navId", 4);
         WeeklyReport oneWeeklyReport = weeklyReportService.getWeeklyReport(weeklyReportId);
         request.setAttribute("updateReport", oneWeeklyReport);
         /*
@@ -153,6 +149,7 @@ public class WeeklyReportAction extends ActionSupport implements ServletRequestA
 	}
 	//更新周报
 	public String update(){
+		request.setAttribute("navId", 4);
 		WeeklyReport weeklyReport=weeklyReportService.getWeeklyReport(weeklyReportId);
 		
 		weeklyReport.setTitle(updateTitle);
@@ -229,6 +226,12 @@ public class WeeklyReportAction extends ActionSupport implements ServletRequestA
 			InternshipDetailService internshipDetailService) {
 		this.internshipDetailService = internshipDetailService;
 	}
-	
+    public InternshipReportService getInternshipReportService() {
+        return internshipReportService;
+    }
+
+    public void setInternshipReportService(InternshipReportService internshipReportService) {
+        this.internshipReportService = internshipReportService;
+    }
 	
 }

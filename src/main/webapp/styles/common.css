@@ -156,7 +156,7 @@ textarea {
     padding-left: 230px;
     position: absolute;
     width: 100%;
-    bottom: 0;
+    /*bottom: 0;*/
 }
 .main {
     padding-top: 60px;

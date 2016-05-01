@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Type;
-import org.junit.ClassRule;
+//import org.junit.ClassRule;
 
 /**
  * 毕设周报实体类

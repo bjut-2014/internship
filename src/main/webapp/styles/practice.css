@@ -5,8 +5,8 @@ body{
 }
 .myPanel{
 	padding:20px 20px;
-
-	font-size:23px;
+	/*font-size:23px;*/
+	color: #797979;
 }
 .panel-head{
 	border-bottom:3px solid rgb(217,217,217);
@@ -15,16 +15,11 @@ body{
 
 .panel-body{
 	padding-bottom:10px;
-	font-size:18px;
-	
+	font-size:14px;
 }
-
-
-
-.practiceInmation{
-		
-		padding-top:40px;
-}
+/*.practiceInmation{*/
+	/*padding-top:40px;*/
+/*}*/
 .practiceRerort{
 	
 	padding-top:10px;
@@ -59,6 +54,8 @@ body{
 
 #the{
 	background:#F4F4F4;
+	font-size: 14px;
+	color: #797979;
 }
 .weekReport{
 padding-top:10px;
@@ -77,8 +74,9 @@ padding-top:10px;
 .Gl1{
 	color:rgb(57,134,243);
 }
-
-
-
-
-
+.table>tbody>tr>td {
+    font-size: 14px;
+}
+.copyright {
+    bottom: 0;
+}
