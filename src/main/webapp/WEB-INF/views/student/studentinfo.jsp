@@ -4,7 +4,7 @@
 <html>
 <jsp:include page="../header/header.jsp" />
 <link href="styles/lib/font-awesome.css" rel="stylesheet" />
-<link href="styles/lib/bootstrap-reset.css"  rel="stylesheet" />
+<%--<link href="styles/lib/bootstrap-reset.css"  rel="stylesheet" />--%>
 <link href="styles/studentinfo.css" rel="stylesheet">
 <body>
 <jsp:include page="../nav/nav.jsp" />
