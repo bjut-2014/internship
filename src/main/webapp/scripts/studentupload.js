@@ -6,13 +6,13 @@
          } 
   
   
-         document.getElementsByTagName('input')[0].onchange = function() { 
-            // alert('你选择文件了'); 
-             alert(this.value); // 文件对象,html5新增的api 
-  
-             var fd = new FormData(); // html5新增的对象,可以包装字符,二进制信息 
-             fd.append(this.name,this.files[0]); 
-  
-             up(fd); 
-  
+         function upload(obj) { 
+        	   // alert('你选择文件了'); 
+        	    alert(obj.value); // 文件对象,html5新增的api 
+
+        	    var fd = new FormData(); // html5新增的对象,可以包装字符,二进制信息 
+        	    fd.append(obj.name,obj.files[0]); 
+
+        	    up(fd); 
+
          } 
