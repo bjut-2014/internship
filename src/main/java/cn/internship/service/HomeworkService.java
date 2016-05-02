@@ -17,4 +17,6 @@ public interface HomeworkService {
 	public Homework get(Integer studentId,Integer courseId);
 	
 	public List<Homework> getByCourse(Integer courseId);
+	
+	public void saveHomework(Homework homework);
 }

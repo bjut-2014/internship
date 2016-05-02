@@ -60,8 +60,18 @@
 	                                           		<td>
 	                                           			<s:if test="#info.homework==null">
 	                                           			<!--<s:form action="uploadHomework" enctype="multipart/form-data" method="post">-->
-	                                           				<label class="glyphicon glyphicon-open up"><input id="inputfile" name="uploadFile" style="display:none;" type="file" /></label>
+	                                           				<!--<label class="glyphicon glyphicon-open up"><input id="inputfile" name="uploadFile" style="display:none;" type="file" /></label>-->
 	                                           			<!--</s:form>-->
+		                                           			<s:form action="uploadHomework" enctype="multipart/form-data" method="post">
+		                                           				<s:file name="upload" label="选择文件" />
+		                                           				<input type="hidden" name="courseId" value='<s:property value="#info.course.courseId" />' />
+																<s:submit value="上传"/>
+		                                           			</s:form>
+		                                           			<!--<td>
+			                                           			<label class="glyphicon glyphicon-open up">
+			                                           				<input id="inputfile" name="uploadFile" style="display:none;" type="file" onchange="upload(this)" />
+			                                           			</label>
+		                                           			</td>-->
 	                                           			</s:if>
 	                                           			<s:else>
 	                                           				<a href="#info.homework.title.path"><s:property value="#info.homework.title" /></a>
@@ -85,25 +95,26 @@
     </div>
 </div>
 <jsp:include page="../footer/footer.jsp" />
- <script src="scripts/studentupload.js"></script>
-<script type="text/javascript">
-	//负责ajax发送数据 
-	function up(fd) { 
-	    var xhr = new XMLHttpRequest(); 
-	    xhr.open('POST','uploadHomework',true); // 异步传输                
-	    xhr.send(fd); 
-	} 
+<!--<script src="scripts/studentupload.js"></script>-->
+<!--<script>
+// 负责ajax发送数据 
+function up(fd) { 
+    var xhr = new XMLHttpRequest(); 
+    xhr.open('POST','uploadHomework',true); // 异步传输                
+    xhr.send(fd); 
+} 
 
-	document.getElementsById('#inputfile')[0].onchange = function() { 
-	    alert('你选择文件了'); 
-	    alert(this.files[0]); // 文件对象,html5新增的api 
-	
-	    var fd = new FormData(); // html5新增的对象,可以包装字符,二进制信息 
-	    fd.append(this.name,this.files[0]); 
-	
-	    up(fd); 
-	} 
 
-</script>
+function upload(obj) { 
+   // alert('你选择文件了'); 
+    alert(obj.value); // 文件对象,html5新增的api 
+
+    var fd = new FormData(); // html5新增的对象,可以包装字符,二进制信息 
+    fd.append(obj.name,obj.files[0]); 
+
+    up(fd); 
+
+} 
+</script>-->
 </body>
 </html>

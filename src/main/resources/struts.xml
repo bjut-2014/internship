@@ -157,6 +157,12 @@
 		<!-- 作业相关操作 -->
 		<action name="uploadHomework" class="homeworkAction">
 			<result type="redirectAction">course</result>
+			<result name="input" type="redirectAction">course</result>
+			<interceptor-ref name="fileUpload">
+				<!-- <param name="allowedTypes">image/jpeg,image/png,application/pdf</param> -->
+				<param name="maximumSize">10240000</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack" />
 		</action>
 		<action name="graduate-weekly-report-delete" class="graduate-weekly-report" method="delete">
 			<result type="redirectAction">graduate-weekly-report</result>

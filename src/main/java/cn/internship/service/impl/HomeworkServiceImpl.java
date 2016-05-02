@@ -35,6 +35,12 @@ public class HomeworkServiceImpl implements HomeworkService{
 		return homeworkDao.getByCourse(courseId);
 	}
 	
+	@Override
+	public void saveHomework(Homework homework) {
+		homeworkDao.save(homework);
+	}
+	
+	
 	//----------------------------get与set方法-------------------------
 	
 	public HomeworkDao getHomeworkDao() {
@@ -44,6 +50,7 @@ public class HomeworkServiceImpl implements HomeworkService{
 	public void setHomeworkDao(HomeworkDao homeworkDao) {
 		this.homeworkDao = homeworkDao;
 	}
+
 	
 	
 
