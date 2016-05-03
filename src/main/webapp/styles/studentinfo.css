@@ -1,6 +1,6 @@
 .panel-notice{
 	border-top:5px solid #6676c2 ;
-    height:100%;
+    height:80%;
 	
 	
 }
@@ -13,6 +13,7 @@
 }
 .panel-job{
 	border-top:5px solid #4bbbf4 ;
+  height: 80%;
 }
 
 .table-striped>tbody{

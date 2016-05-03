@@ -29,7 +29,7 @@ public class SyslogDaoImpl extends HibernateDaoSupport implements SyslogDao{
 		return list;
 	}
 
-	//获得某个编号下的前10条日志
+	//获得某个编号下的前8条日志
 	@Override
 	public List<Syslog> getAll(String no) {
 		String hql = "from Syslog s where s.no='"+no+"' order by s.date desc";
@@ -41,8 +41,8 @@ public class SyslogDaoImpl extends HibernateDaoSupport implements SyslogDao{
 		}
 		//只取前10条数据
 		List<Syslog> newList = null;
-		if(list.size()>10){
-			newList = list.subList(0, 10);
+		if(list.size()>8){
+			newList = list.subList(0, 8);
 			return newList;
 		}
 		return list;
