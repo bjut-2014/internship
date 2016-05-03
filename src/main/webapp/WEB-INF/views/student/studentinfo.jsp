@@ -4,7 +4,7 @@
 <html>
 <jsp:include page="../header/header.jsp" />
 <link href="styles/lib/font-awesome.css" rel="stylesheet" />
-<%--<link href="styles/lib/bootstrap-reset.css"  rel="stylesheet" />--%>
+<link href="styles/lib/bootstrap-reset.css"  rel="stylesheet" />
 <link href="styles/studentinfo.css" rel="stylesheet">
 <body>
 <jsp:include page="../nav/nav.jsp" />
@@ -39,6 +39,10 @@
                            	<tr>
                            		<td>年级：</td>
                            		<td><s:property value="#session.currentUser.grade"/></td>
+                           	</tr>
+                           	<tr>
+                           		<td>联系方式：</td>
+                           		<td><s:property value="#session.currentUser.phone"/></td>
                            	</tr>
                            	<tr>
                            		<td>联系方式：</td>

@@ -51,6 +51,7 @@
                                         <table id="mytable" class="table table-striped table-bordered">
                                             <thead>
                                                 <tr>
+                                                	<th style="display:none;">课程</th>
                                                     <th>学号</th>                                                   
                                                     <th>姓名</th>
                                                     <th>作业名称</th>
@@ -64,6 +65,7 @@
                                             <tbody>
                                                <s:iterator value="#request.comprehensiveHomeworkInfos" var="hm">
                                                <tr>
+                                               		<td class="cno" style="display:none;"></td>
                                                		<td class="sno"><s:property value="#hm.no"/></td>                                              	
                                                		<td><s:property value="#hm.name"/></td>
                                                		<td><s:property value="#hm.homework.title"/></td>
