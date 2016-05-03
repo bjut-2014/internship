@@ -100,5 +100,18 @@
 	</bean>
 	<!-- end -->
 	
+	<!-- 老师查询周报相关配置 -->
+	
+	<bean id="teacherWeeklyReportAction" class="cn.internship.action.TeacherWeeklyReportAction">
+		<property name="courseService" ref="courseService"></property>
+	</bean>
+	<bean id="courseService" class="cn.internship.service.impl.CourseServiceImpl">
+		<property name="courseDao" ref="courseDao"></property>
+	</bean>
+	<bean id="courseDao" class="cn.internship.dao.impl.CourseDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- end -->
 
 </beans>

@@ -63,6 +63,21 @@
 			<result>/WEB-INF/views/index.jsp</result>
 		</action>
 		<!-- end -->
+		
+		<!-- 老师下载实习报告 -->
+		
+		<action name="downloadFile" class="cn.internship.action.FileDownloadAction">
+			<param name="filePath">/InternshipReport/周报  王云竹.doc</param>
+			<result name="success" type="stream">
+				<param name="contentType">application/octet-stream</param>
+				<param name="InputName">InputStream</param>
+				<param name="contentDisposition">attachment;filename="周报  王云竹.doc"</param>	
+				<param name="bufferSize">81920</param>		
+			</result>
+		</action>
+		
+		<!-- end -->
+		
 	</package>
 
 
