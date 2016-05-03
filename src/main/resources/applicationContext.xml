@@ -78,6 +78,7 @@
 	<!-- 学生修改密码页面 -->
 	<bean id="resetPwdAction" class="cn.internship.action.ResetPwdAction" scope="prototype">
 		<property name="studentService" ref="studentService"/>
+		<property name="teacherService" ref="teacherService"/>
 	</bean>
 	<!-- end -->
 
@@ -154,6 +155,9 @@
 	</bean>
 	<bean id="caseLibraryService" class="cn.internship.service.impl.CaseLibraryServiceImpl">
 		<property name="caseLibraryDao" ref="caseLibraryDao" />
+	</bean>
+	<bean id="caseLibraryAction" class="cn.internship.action.CaseLibraryAction">
+		<property name="caseLibraryService" ref="caseLibraryService" />
 	</bean>
 	<!-- 学生实习模块相关配置 -->
 	

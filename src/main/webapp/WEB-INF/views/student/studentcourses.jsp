@@ -47,6 +47,31 @@
                                             </thead>
                                      
                                             <tbody>
+<<<<<<< HEAD
+                                            <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><label class="glyphicon glyphicon-open up"> 
+ 			                                    <input id="inputfile" name="uploadFile" style="display:none;" type="file" onchange="upload(this)" /> 
+ 			                                 </label> </td>
+                                            </tr>
+                                            <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><label class="glyphicon glyphicon-open up"> 
+ 			                                    <input id="inputfile" name="uploadFile" style="display:none;" type="file" onchange="upload(this)" /> 
+ 			                                 </label></td>
+                                            </tr>
+=======
+>>>>>>> ead379e37530d5ff6e507aefbb438fc88ec9bb79
                                                <s:iterator value="#request.comprehensiveCourseInfoList" var="info">
                                                <tr>
                                                		<td><s:property value="#info.course.name"/></td>

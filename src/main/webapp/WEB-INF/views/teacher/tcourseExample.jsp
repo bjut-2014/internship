@@ -36,6 +36,10 @@
                                     <div class="col-md-12 col-sm-12 col-xs-12 rposition">                                     	                                    
 	                                    	<div class="rposotion">
 	                                    		<label class="fa fa-plus-square plus"><input id="inputfile" style="display:none;" type="file"></label>
+	                                	     	<s:form action="addCaseLibrary" enctype="multipart/form-data" method="post">
+	                                	     		<input type="hidden" name="courseId" value="<s:property value="#request.courseId" />">
+	                                	     		<s:file name="upload" label="选择文件" />
+	                                	     	</s:form>
 	                                	     </div>                               	                               
                                         <table class="table table-striped">
                                             <thead>

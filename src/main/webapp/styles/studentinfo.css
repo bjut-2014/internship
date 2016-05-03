@@ -1,8 +1,6 @@
 .panel-notice{
 	border-top:5px solid #6676c2 ;
-    height:80%;
-	
-	
+	height:80%
 }
 .panel-notice .panel-heading,
 .panel-job .panel-heading{
@@ -13,7 +11,7 @@
 }
 .panel-job{
 	border-top:5px solid #4bbbf4 ;
-  height: 80%;
+	height:80%
 }
 
 .table-striped>tbody{
@@ -48,9 +46,7 @@
   height: 14px;
   margin-left: -8px;
   background-color: #fff;
-  border-color: #14082d;
-  border-style: solid;
-  border-width: 2px;
+  border: 2px solid #14082d;
   border-radius: 10px;
   content: '';
 }
