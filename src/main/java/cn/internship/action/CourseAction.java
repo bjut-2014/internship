@@ -132,6 +132,7 @@ public class CourseAction extends ActionSupport implements ServletRequestAware, 
 		Set<CaseLibrary> caseLibraries = course.getCaseLibraries();
 //		List<CaseLibrary> caseLibraries = caseLibraryService.getByCId(courseId);
 		request.setAttribute("caseLibraries", caseLibraries);
+		request.setAttribute("courseId", courseId);
 		return SUCCESS;
 	}
 	

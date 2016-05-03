@@ -155,6 +155,9 @@
 	<bean id="caseLibraryService" class="cn.internship.service.impl.CaseLibraryServiceImpl">
 		<property name="caseLibraryDao" ref="caseLibraryDao" />
 	</bean>
+	<bean id="caseLibraryAction" class="cn.internship.action.CaseLibraryAction">
+		<property name="caseLibraryService" ref="caseLibraryService" />
+	</bean>
 	<!-- 学生实习模块相关配置 -->
 	
 	<bean id="weekly-report" class="cn.internship.action.WeeklyReportAction">
