@@ -64,6 +64,9 @@
 		</action>
 		<!-- end -->
 		<!-- 重置密码 -->
+		<action name="reset" class="resetPwdAction">
+			<result>/WEB-INF/views/common/reset-pwd.jsp</result>
+		</action>
 		<action name="resetPwd" class="resetPwdAction" method="resetPwd">
 			<result name="success">/login.jsp</result>
             <result name="input">/WEB-INF/views/common/reset-pwd.jsp</result>

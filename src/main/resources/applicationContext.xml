@@ -78,6 +78,7 @@
 	<!-- 学生修改密码页面 -->
 	<bean id="resetPwdAction" class="cn.internship.action.ResetPwdAction" scope="prototype">
 		<property name="studentService" ref="studentService"/>
+		<property name="teacherService" ref="teacherService"/>
 	</bean>
 	<!-- end -->
 
