@@ -45,30 +45,10 @@
                                                     <th class="position">作业上传</th>
                                                 </tr>
                                             </thead>
-
                                      
                                             <tbody>
-                                            <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td><label class="glyphicon glyphicon-open up"><input id="inputfile" name="uploadFile" style="display:none;" type="file" onchange="upload(this)" /></label></td>
-                                            <td></td>
-                                            </tr>
-                                            <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td><label class="glyphicon glyphicon-open up"><input id="inputfile" name="uploadFile" style="display:none;" type="file" onchange="upload(this)" /></label></td>
-                                            <td></td>
-                                            </tr>
                                                <s:iterator value="#request.comprehensiveCourseInfoList" var="info">
                                                <tr>
-                                               
                                                		<td><s:property value="#info.course.name"/></td>
                                                		<td><s:property value="#info.teacherName"/></td>
                                                		<td><s:property value="#info.course.courseDate"/></td>
@@ -99,7 +79,6 @@
                                                </s:iterator>
                                             </tbody>
                                         </table>
-
                                     </div>
                                 </div>
                             </div>
