@@ -24,9 +24,14 @@
 }
 .login-roles {
     height: 44px;
-    line-height: 44px;
+    /*line-height: 44px;*/
     background-color: #4f5f6f;
-    padding: 7px 27px;
+    padding: 10px 30px;
+    font-size: 13px;
+    color: #fff;
+}
+.login-roles span {
+    margin: 0 20px 0 5px;
 }
 .login-radio {
     display: inline-block;
@@ -136,4 +141,10 @@
     border: none;
     font-size: 16px;
     /*margin-top: 16px;*/
+}
+.radio-inline {
+    padding-left: 33px;
+}
+input[type=radio] {
+    margin: 3px 0 0;
 }

@@ -53,8 +53,8 @@
 
 		<!-- 登陆 -->
 		<action name="login" class="loginAction">
-			<result name="ssuccess" type="redirectAction">index</result>
-			<result name="tsuccess" type="redirectAction">tch-index</result>
+			<result name="success" type="redirectAction">index</result>
+			<!--<result name="tsuccess" type="redirectAction">index</result>-->
 			<result name="input">/login.jsp</result>
 		</action>
 		<!-- end -->
@@ -133,9 +133,9 @@
  		</action> 
 		<!-- end -->
 		<!-- 老师相关操作 -->
-		<action name="tch-index" class="teacherAction">
-			<result>/WEB-INF/views/teacher/index.jsp</result>
-		</action>		
+		<!--<action name="tch-index" class="teacherAction">-->
+			<!--<result>/WEB-INF/views/teacher/index.jsp</result>-->
+		<!--</action>		-->
 		<action name="tch-info" class="teacherAction" method="info">
 			<result>/WEB-INF/views/teacher/teacherinfo.jsp</result>
 		</action>
@@ -157,6 +157,12 @@
 		<!-- 作业相关操作 -->
 		<action name="uploadHomework" class="homeworkAction">
 			<result type="redirectAction">course</result>
+			<result name="input" type="redirectAction">course</result>
+			<interceptor-ref name="fileUpload">
+				<!-- <param name="allowedTypes">image/jpeg,image/png,application/pdf</param> -->
+				<param name="maximumSize">10240000</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack" />
 		</action>
 		<action name="graduate-weekly-report-delete" class="graduate-weekly-report" method="delete">
 			<result type="redirectAction">graduate-weekly-report</result>

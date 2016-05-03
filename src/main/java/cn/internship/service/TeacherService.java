@@ -13,5 +13,7 @@ public interface TeacherService {
 	public void logout();
 	
 	public Teacher get(Integer teacherId);
-	
+
+	//修改密码
+	public void updatePwd(Teacher teacher);
 }

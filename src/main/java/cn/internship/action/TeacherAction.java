@@ -24,11 +24,13 @@ public class TeacherAction  extends ActionSupport implements ServletRequestAware
 	
 	@Override
 	public String execute() throws Exception {
+		request.setAttribute("navId", 2);
 		return super.execute();
 	}
 	
 	//学生个人信息
 	public String info(){
+		request.setAttribute("navId", 2);
 		Teacher teacher = (Teacher) request.getSession().getAttribute("currentUser");
 		String tno = teacher.getTno();
 		List<Syslog> stuSyslogList = syslogService.getAll(tno);

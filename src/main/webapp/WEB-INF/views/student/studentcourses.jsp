@@ -45,9 +45,9 @@
                                                     <th class="position">作业上传</th>
                                                 </tr>
                                             </thead>
-
                                      
                                             <tbody>
+<<<<<<< HEAD
                                             <tr>
                                             <td></td>
                                             <td></td>
@@ -70,41 +70,40 @@
  			                                    <input id="inputfile" name="uploadFile" style="display:none;" type="file" onchange="upload(this)" /> 
  			                                 </label></td>
                                             </tr>
+=======
+>>>>>>> ead379e37530d5ff6e507aefbb438fc88ec9bb79
                                                <s:iterator value="#request.comprehensiveCourseInfoList" var="info">
                                                <tr>
-                                               
                                                		<td><s:property value="#info.course.name"/></td>
                                                		<td><s:property value="#info.teacherName"/></td>
                                                		<td><s:property value="#info.course.courseDate"/></td>
                                                		<td><s:property value="#info.course.coursePlace"/></td>
                                                		<td><s:property value="#info.stuScore"/></td>
                                                		<td><a href="scourseExample?courseId=<s:property value="#info.course.courseId" />"><span class="fa fa-folder-open do"></span></a></td>
-	                                           		<td> 
-	                                           			<s:if test="#info.homework==null"> 
- 	                                           			<!--<s:form action="uploadHomework" enctype="multipart/form-data" method="post">--> 
-	                                           				<!--<label class="glyphicon glyphicon-open up"><input id="inputfile" name="uploadFile" style="display:none;" type="file" onchange="upload()" /></label>--> 
- 	                                           			<!--</s:form>--> 
- 		                                           			<s:form action="uploadHomework" enctype="multipart/form-data" method="post"> 
- 		                                           				<s:file name="upload" label="选择文件" /> 
- 		                                           				<input type="hidden" name="courseId" value='<s:property value="#info.course.courseId" />' /> 
- 																<s:submit value="上传"/> 
- 		                                           			</s:form> 
- 		                                           			<!--<td> 
- 			                                           			<label class="glyphicon glyphicon-open up"> 
- 			                                           				<input id="inputfile" name="uploadFile" style="display:none;" type="file" onchange="upload(this)" /> 
- 			                                           			</label> 
- 		                                           			</td>--> 
- 	                                           			</s:if> 
- 	                                           			<s:else> 
- 	                                           				<a href="#info.homework.title.path"><s:property value="#info.homework.title" /></a> 
- 	                                           			</s:else> 
-
+	                                           		<td>
+	                                           			<s:if test="#info.homework==null">
+	                                           			<!--<s:form action="uploadHomework" enctype="multipart/form-data" method="post">-->
+	                                           				<!--<label class="glyphicon glyphicon-open up"><input id="inputfile" name="uploadFile" style="display:none;" type="file" onchange="upload()" /></label>-->
+	                                           			<!--</s:form>-->
+		                                           			<s:form action="uploadHomework" enctype="multipart/form-data" method="post">
+		                                           				<s:file name="upload" label="选择文件" />
+		                                           				<input type="hidden" name="courseId" value='<s:property value="#info.course.courseId" />' />
+																<s:submit value="上传"/>
+		                                           			</s:form>
+		                                           			<!--<td>
+			                                           			<label class="glyphicon glyphicon-open up">
+			                                           				<input id="inputfile" name="uploadFile" style="display:none;" type="file" onchange="upload(this)" />
+			                                           			</label>
+		                                           			</td>-->
+	                                           			</s:if>
+	                                           			<s:else>
+	                                           				<a href="#info.homework.title.path"><s:property value="#info.homework.title" /></a>
+	                                           			</s:else>
 	                                           		</td>
                                                </tr>
                                                </s:iterator>
                                             </tbody>
                                         </table>
-
                                     </div>
                                 </div>
                             </div>
