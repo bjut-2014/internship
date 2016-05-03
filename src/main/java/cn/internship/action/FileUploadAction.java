@@ -43,6 +43,7 @@ public class FileUploadAction extends ActionSupport implements ServletRequestAwa
 	private String result;
 
 	public String execute() throws IOException{
+        request.setAttribute("navId", 3);
 		//System.out.println("Action started");
 		//获取当前学生
 		//获得当前session下的学生

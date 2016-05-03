@@ -1,5 +1,6 @@
 .panel-notice{
-	border-top:5px solid #6676c2 ;	
+	border-top:5px solid #6676c2 ;
+    height:100%;
 	
 	
 }
@@ -60,4 +61,7 @@
 
 .item-info p {
   margin-bottom: 10px !important;
+}
+.copyright {
+    bottom: inherit;
 }

@@ -28,6 +28,9 @@
     background-color: #4f5f6f;
     padding: 7px 27px;
 }
+.login-roles span {
+    margin: 0 20px 0 5px;
+}
 .login-radio {
     display: inline-block;
     font-size: 13px;
