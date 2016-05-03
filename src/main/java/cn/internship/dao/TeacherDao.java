@@ -11,5 +11,6 @@ public interface TeacherDao {
 	public Teacher get(String tno,String password);
 	
 	public Teacher get(Integer teacherId);
-	
+	//更新用户信息
+	public void updateTeacher(Teacher teacher);
 }

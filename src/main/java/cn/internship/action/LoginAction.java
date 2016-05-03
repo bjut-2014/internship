@@ -65,7 +65,7 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 
 		// 判断登陆类型(0：管理员；1：老师；2：企业；3：学生)
 		if (userType == 2) {
-			//用户类型为学生，验证用户是否存在
+			//用户类型为老师，验证用户是否存在
 			Teacher teacher = teacherService.login(username, password);
 			if(teacher == null){
 				this.addActionError("用户名或密码不正确！");
@@ -74,8 +74,8 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 			//将登陆用户存到session中
 			session.setAttribute("currentUser", teacher);
 			session.setAttribute("userType", userType);
-            session.setAttribute("currentType", teacher.getUserType());
-			return "tsuccess";
+//            session.setAttribute("currentType", teacher.getUserType());
+			return "success";
 		}
 		else if (userType == 3) {
 			//用户类型为学生，验证用户是否存在
@@ -87,8 +87,8 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 			//将登陆用户存到session中
 			session.setAttribute("currentUser", student);
 			session.setAttribute("userType", userType);
-            session.setAttribute("currentType", student.getUserType());
-			return "ssuccess";
+//            session.setAttribute("currentType", student.getUserType());
+			return "success";
 		}
 		else {
 			this.addActionError("登录类型不对");
@@ -100,7 +100,7 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 	//注销
 	public String logout(){
 		request.getSession().removeAttribute("currentUser");
-        request.getSession().removeAttribute("currentType");
+//        request.getSession().removeAttribute("currentType");
 		int uType = (int) request.getSession().getAttribute("userType");
 		if(uType==2){
 			teacherService.logout();

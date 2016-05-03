@@ -45,6 +45,7 @@ public class HomeworkAction extends ActionSupport implements ServletRequestAware
 	
 	@Override
 	public String execute() throws Exception {
+		request.setAttribute("navId", 3);
 //		//当前服务器路径
 //		String basePath = ServletActionContext.getServletContext().getRealPath(File.separator);
 //		//当前用户存文件的路基
@@ -106,6 +107,7 @@ public class HomeworkAction extends ActionSupport implements ServletRequestAware
 	
 	//罗列指定课程下的所有作业
 	public String listHomeworkByCourse(){
+		request.setAttribute("navId", 3);
 		List<Homework> homeworks = homeworkService.getByCourse(courseId);
 		int n = homeworks.size();
 		List<String> snoList = new ArrayList<String>(n);
