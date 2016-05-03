@@ -44,6 +44,10 @@
                            		<td>联系方式：</td>
                            		<td><s:property value="#session.currentUser.phone"/></td>
                            	</tr>
+                           	<tr>
+                           		<td>联系方式：</td>
+                           		<td><s:property value="#session.currentUser.phone"/></td>
+                           	</tr>
                            </tbody>
                       </table>
                     </div>

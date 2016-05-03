@@ -17,9 +17,18 @@
                     <div class="login-radio radio-unchecked fl"><span>企业</span></div>
                 </div> -->
                 	<div class="login-roles">
-	                	<input type="radio" name="userType" value="2" checked="checked"/><span>老师</span>
-	                	<input type="radio" name="userType" value="3" /><span>学生</span>
-	                	<input type="radio" name="userType" value="4" /><span>企业</span>
+                        <label class="radio-inline">
+                            <input type="radio" name="userType" value="2" checked="checked"> 老师
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="userType" value="3"> 学生
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="userType" value="4"> 企业
+                        </label>
+	                	<%--<input type="radio" name="userType" value="2" checked="checked"/><span>老师</span>--%>
+	                	<%--<input type="radio" name="userType" value="3" /><span>学生</span>--%>
+	                	<%--<input type="radio" name="userType" value="4" /><span>企业</span>--%>
                 	</div>
                     <div class="login-form">
                         <div class="login-input-con">

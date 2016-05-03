@@ -185,7 +185,10 @@ public class HomeworkAction extends ActionSupport implements ServletRequestAware
 	}
 
 	public void setUploadContentType(String uploadContentType) {
+		System.out.println(uploadContentType);
 		this.uploadContentType = uploadContentType;
+		
+		
 	}
 
 	public String getUploadFileName() {
@@ -193,7 +196,9 @@ public class HomeworkAction extends ActionSupport implements ServletRequestAware
 	}
 
 	public void setUploadFileName(String uploadFileName) {
+		System.out.println(uploadFileName);
 		this.uploadFileName = uploadFileName;
+		
 	}
 
 	public StudentService getStudentService() {
