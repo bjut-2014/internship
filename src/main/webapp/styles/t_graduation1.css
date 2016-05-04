@@ -16,6 +16,7 @@ body{
 .panel-body{
 	
 	padding-bottom:20px;
+	font-size:14px;
 }
 
 .practiceInmation{
@@ -46,6 +47,8 @@ body{
 
 #the{
 	background:#F4F4F4;
+	font-size: 14px;
+	color: #797979;
 }
 .weekReport{padding-top:20px;}
 .weekReport table tr:nth-child(odd){background:white;}
