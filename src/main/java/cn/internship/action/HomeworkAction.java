@@ -1,8 +1,6 @@
 package cn.internship.action;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+import java.io.*;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +20,7 @@ import cn.internship.service.StudentService;
 import org.apache.commons.io.FileUtils;
 
 import com.opensymphony.xwork2.ActionSupport;
+import org.json.JSONObject;
 
 /**
  * 上传作业的相关请求与操作
@@ -82,8 +81,9 @@ public class HomeworkAction extends ActionSupport implements ServletRequestAware
 		String folderPath = "/upload/homework/"+student.getSno()+"/";
 		//文件实际路径
 		String realPath = ServletActionContext.getServletContext().getRealPath("/upload/homework/"+student.getSno()+"/");
-		System.out.println(folderPath);
-		System.out.println(realPath);
+//		System.out.println(folderPath);
+//		System.out.println(realPath);
+		JSONObject jo = new JSONObject();
 		//上传文件
 		if(upload!=null){
 			File saveFile = new File(new File(realPath),uploadFileName);
@@ -99,6 +99,15 @@ public class HomeworkAction extends ActionSupport implements ServletRequestAware
 			homework.setCourseId(courseId);
 			homework.setTitle(uploadFileName);
 			homeworkService.saveHomework(homework);
+			try {
+				response.setCharacterEncoding("utf-8");
+				PrintWriter out = response.getWriter();
+				out.println(jo);
+				out.flush();
+				out.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 			return super.execute();
 		}
 		return INPUT;
