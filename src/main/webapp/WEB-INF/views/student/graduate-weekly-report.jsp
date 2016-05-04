@@ -13,7 +13,7 @@
         <jsp:include page="../sidebar/sidebar-student.jsp" />
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main myMain practiceInmation">
-        <div class="panel panel-default myPanel">
+        <div class="panel panel-default myPanel practiceinfo">
             <div class="panel-head">毕设信息</div>
             <div class="panel-body">
                 <s:if test="">
@@ -26,7 +26,7 @@
         </div>
     </div>
        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main myMain weekReport">
-        <div class="panel panel-default myPanel weekReport">
+        <div class="panel panel-default myPanel weekReport1">
             <div class="panel-head">毕设周报 Graduation Weekly Report<a href="graduation-weekly-report-save"><button class="glyphicon glyphicon-plus myBu"></button></a></div>
             <div class="panel-body">
                 <s:if test="#request.graduationWeeklyReport.size()!=0">

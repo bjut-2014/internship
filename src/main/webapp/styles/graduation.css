@@ -7,6 +7,11 @@ body{
 	padding:12px 20px;
 	color: #797979;
 }
+.practiceinfo{
+	
+	border-left-style:inset;
+	border-left:3px solid rgb(102,119,194)
+}
 .panel-head{
 	border-bottom:3px solid rgb(217,217,217);
 	padding-bottom:20px;
@@ -41,6 +46,11 @@ body{
 	color: #797979;
 }
 .weekReport{padding-top:10px;}
+.weekReport1{
+    padding-top:10px;
+    border-left-style:inset;
+	border-left:3px solid rgb(75,187,244);
+}
 .weekReport table tr:nth-child(odd){background:white;}
 .weekReport table tr:nth-child(even){background:#F4F4F4;}
 .weekReport table td,th{
