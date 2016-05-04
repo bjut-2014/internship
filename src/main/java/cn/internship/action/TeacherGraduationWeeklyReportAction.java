@@ -14,7 +14,7 @@ import cn.internship.entity.GraduationWeeklyReport;
 import cn.internship.entity.Student;
 import cn.internship.entity.Teacher;
 import cn.internship.entity.WeeklyReport;
-import cn.internship.service.CourseService;
+
 import cn.internship.service.GraduationSelectionService;
 import cn.internship.service.GraduationWeeklyReportService;
 import cn.internship.service.StudentService;

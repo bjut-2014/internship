@@ -10,12 +10,26 @@
             <p class="title">嵌入式实训平台</p>
             <img src="images/login/login-line.png" class="login-line"/>
 			<div class="login-form-container">
-				<div class="login-roles">
+                <form action="login" method="post">
+				<!-- <div class="login-roles">
                     <div class="login-radio radio-checked fl"><span>老师</span></div>
                     <div class="login-radio radio-unchecked fl radio-student"><span>学生</span></div>
                     <div class="login-radio radio-unchecked fl"><span>企业</span></div>
-                </div>
-                <form action="login" method="post">
+                </div> -->
+                	<div class="login-roles">
+                        <label class="radio-inline">
+                            <input type="radio" name="userType" value="2" checked="checked"> 老师
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="userType" value="3"> 学生
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="userType" value="4"> 企业
+                        </label>
+	                	<%--<input type="radio" name="userType" value="2" checked="checked"/><span>老师</span>--%>
+	                	<%--<input type="radio" name="userType" value="3" /><span>学生</span>--%>
+	                	<%--<input type="radio" name="userType" value="4" /><span>企业</span>--%>
+                	</div>
                     <div class="login-form">
                         <div class="login-input-con">
                             <span class="user-icon"></span><input type="text" class="name" name="username" placeholder="用户名"/>
@@ -30,7 +44,7 @@
                             </a>
                         </div>
                         <div class="login-checkbox checkbox-checked"><span>记住密码</span></div>
-                        <div class="login-error"><s:actionerror/></div>
+                        <div class="submit-error"><s:actionerror/></div>
                         <button class="login-bt">登&nbsp;录</button>
                     </div>
                 </form>

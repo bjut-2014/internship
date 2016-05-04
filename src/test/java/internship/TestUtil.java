@@ -9,10 +9,11 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import cn.internship.entity.GraduationProSele;
+import cn.internship.entity.InternshipDetail;
 import cn.internship.entity.Student;
 import cn.internship.entity.WeeklyReport;
-import cn.internship.service.CourseService;
 import cn.internship.service.GraduationSelectionService;
+import cn.internship.service.InternshipDetailService;
 import cn.internship.service.StudentService;
 import cn.internship.service.WeeklyReportService;
 
@@ -32,12 +33,18 @@ public class TestUtil {
 	@Test
 	public void queryAllStudents(){
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-		CourseService cs = (CourseService) context.getBean("courseService");
-		List<Student> list=cs.getStudentsByCourseId(1);
-		for(Student st:list){
-			System.out.println(st.getSno());
-		}
+		InternshipDetailService is = (InternshipDetailService) context.getBean("internshipDetailService");
+		StudentService ss=(StudentService) context.getBean("studentService");
 		
+		List<InternshipDetail> list=is.getAllStudents();
+		
+		List<Student> students=new ArrayList<Student>();
+		for(InternshipDetail it:list){
+			String sno=it.getSno();
+			Student st=ss.get(sno);
+			System.out.println(st);
+			students.add(st);
+		}
 	}
 	
 	@Test

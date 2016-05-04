@@ -72,6 +72,7 @@
 	<!-- 登陆 -->
 	<bean id="loginAction" class="cn.internship.action.LoginAction" scope="prototype">
 		<property name="studentService" ref="studentService" />
+		<property name="teacherService" ref="teacherService" />
 	</bean>
 	<!-- end -->
 
@@ -86,6 +87,17 @@
 		<property name="studentService" ref="studentService" />
 	</bean>
 	<!-- end -->
+	
+	<!-- 教师的相关配置 -->
+	<bean id="teacherDao" class="cn.internship.dao.impl.TeacherDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="teacherService" class="cn.internship.service.impl.TeacherServiceImpl">
+		<property name="teacherDao" ref="teacherDao" />
+	</bean>
+
+	<!-- end -->
+	
 	
 	<!-- 系统日志相关配置 -->
 	<bean id="syslogDao" class="cn.internship.dao.impl.SyslogDaoImpl">
@@ -103,20 +115,25 @@
 	<!-- 老师查询周报相关配置 -->
 	
 	<bean id="teacher-weekly-report" class="cn.internship.action.TeacherWeeklyReportAction">
-		<property name="courseService" ref="courseService"></property>
+		<property name="internshipDetailService" ref="internshipDetailService"></property>
 		<property name="weeklyReportService" ref="weeklyReportService"></property>
+		<property name="studentService" ref="studentService"></property>
 	</bean>
-	<bean id="courseService" class="cn.internship.service.impl.CourseServiceImpl">
-		<property name="courseDao" ref="courseDao"></property>
-	</bean>
+	
 	<bean id="weeklyReportService" class="cn.internship.service.impl.WeeklyReportServiceImpl">
 		<property name="weeklyReportDao" ref="weeklyReportDao"></property>	
 	</bean>
-	<bean id="courseDao" class="cn.internship.dao.impl.CourseDaoImpl">
-		<property name="sessionFactory" ref="sessionFactory" />
-	</bean>
+	
 	<bean id="weeklyReportDao" class="cn.internship.dao.impl.WeeklyReportDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="internshipDetailService" class="cn.internship.service.impl.InternshipDetailServiceImpl">
+		<property name="internshipDetailDao" ref="internshipDetailDao"></property>
+	</bean>
+	
+	<bean id="internshipDetailDao" class="cn.internship.dao.impl.InternshipDetailDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	
 	<!-- end -->
@@ -144,5 +161,17 @@
 	</bean>
 	
 	<!-- end -->
+	
+	<bean id="fileDownloadAction" class="cn.internship.action.FileDownloadAction">
+		<property name="internshipReportService" ref="internshipReportService"></property>
+	</bean>
+	
+	<bean id="internshipReportService" class="cn.internship.service.impl.InternshipReportServiceImpl">
+		<property name="internshipReportDao" ref="internshipReportDao"></property>
+	</bean>
+	
+	<bean id="internshipReportDao" class="cn.internship.dao.impl.InternshipReportDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
 
 </beans>

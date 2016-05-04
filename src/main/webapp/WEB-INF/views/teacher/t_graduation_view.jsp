@@ -28,7 +28,7 @@
           <p><b>内容：</b></p>
           <p>${request.graduationWeeklyReport.content}</p>
           <p><b>时间：</b>${request.graduationWeeklyReport.date}</p>
-          <a href="graduation-weekly-report" class="btn btn-primary fr">返回</a>
+          <a href="teacher-graduation-weekly-report-all" class="btn btn-primary fr">返回</a>
         </div>
       </div>
     </div>

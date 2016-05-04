@@ -1,5 +1,6 @@
 package cn.internship.action;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -8,10 +9,13 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 
+import cn.internship.entity.InternshipDetail;
 import cn.internship.entity.Student;
 import cn.internship.entity.Teacher;
 import cn.internship.entity.WeeklyReport;
-import cn.internship.service.CourseService;
+
+import cn.internship.service.InternshipDetailService;
+import cn.internship.service.StudentService;
 import cn.internship.service.WeeklyReportService;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -25,8 +29,10 @@ public class TeacherWeeklyReportAction extends ActionSupport implements ServletR
 	private HttpServletRequest request;
 	private HttpServletResponse response;
 	
-	private CourseService courseService;
+
 	private WeeklyReportService weeklyReportService;
+	private InternshipDetailService internshipDetailService;
+	private StudentService studentService;
 	
 	//通过学生学号sno查询该学生的所有周报
 	private String studentId;
@@ -38,10 +44,18 @@ public class TeacherWeeklyReportAction extends ActionSupport implements ServletR
 	public String execute() throws Exception {
 		//获得当前用户
 		Teacher teacher=(Teacher) request.getSession().getAttribute("currentUser");
-		//获得当前正在实习的所有学生,暂时假定实训课程的课程Id为1
-		if(courseService.getStudentsByCourseId(1)!=null){
-			List<Student> students=courseService.getStudentsByCourseId(1);
-			request.setAttribute("students", students);
+		//获得当前正在实习的所有学生
+		if(internshipDetailService.getAllStudents()!=null){
+			List<InternshipDetail> list=internshipDetailService.getAllStudents();
+			List<Student> students=new ArrayList<Student>();
+			for(InternshipDetail it:list){
+				String sno=it.getSno();
+				Student st=studentService.get(sno);
+				students.add(st);
+			}
+			if(students!=null){
+				request.setAttribute("students", students);
+			}
 		}
 		return super.execute();
 	}
@@ -76,13 +90,7 @@ public class TeacherWeeklyReportAction extends ActionSupport implements ServletR
 		this.request=request;
 	}
 
-	public CourseService getCourseService() {
-		return courseService;
-	}
-
-	public void setCourseService(CourseService courseService) {
-		this.courseService = courseService;
-	}
+	
 
 	public WeeklyReportService getWeeklyReportService() {
 		return weeklyReportService;
@@ -106,6 +114,23 @@ public class TeacherWeeklyReportAction extends ActionSupport implements ServletR
 
 	public void setWeeklyReportId(Integer weeklyReportId) {
 		this.weeklyReportId = weeklyReportId;
+	}
+
+	public InternshipDetailService getInternshipDetailService() {
+		return internshipDetailService;
+	}
+
+	public void setInternshipDetailService(
+			InternshipDetailService internshipDetailService) {
+		this.internshipDetailService = internshipDetailService;
+	}
+
+	public StudentService getStudentService() {
+		return studentService;
+	}
+
+	public void setStudentService(StudentService studentService) {
+		this.studentService = studentService;
 	}
 	
 	

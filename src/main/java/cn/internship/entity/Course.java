@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -36,7 +37,7 @@ public class Course {
 	private Set<Student> students = new HashSet<>();
 	
 	//课程对应的案例库
-	@OneToMany(targetEntity=CaseLibrary.class,mappedBy="course")
+	@OneToMany(targetEntity=CaseLibrary.class,mappedBy="course",fetch=FetchType.EAGER)
 	private Set<CaseLibrary> caseLibraries = new HashSet<CaseLibrary>();
 	//上课时间
 	private String courseDate;
