@@ -16,16 +16,6 @@
             <jsp:include page="../sidebar/sidebar-student.jsp" />
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-                </ol>
-
-               
                <div class="wraper container-fluid">
                 <div class="row">
                     <div class="col-md-12">
@@ -47,31 +37,6 @@
                                             </thead>
                                      
                                             <tbody>
-<<<<<<< HEAD
-                                            <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td><label class="glyphicon glyphicon-open up"> 
- 			                                    <input id="inputfile" name="uploadFile" style="display:none;" type="file" onchange="upload(this)" /> 
- 			                                 </label> </td>
-                                            </tr>
-                                            <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td><label class="glyphicon glyphicon-open up"> 
- 			                                    <input id="inputfile" name="uploadFile" style="display:none;" type="file" onchange="upload(this)" /> 
- 			                                 </label></td>
-                                            </tr>
-=======
->>>>>>> ead379e37530d5ff6e507aefbb438fc88ec9bb79
                                                <s:iterator value="#request.comprehensiveCourseInfoList" var="info">
                                                <tr>
                                                		<td><s:property value="#info.course.name"/></td>
@@ -81,24 +46,15 @@
                                                		<td><s:property value="#info.stuScore"/></td>
                                                		<td><a href="scourseExample?courseId=<s:property value="#info.course.courseId" />"><span class="fa fa-folder-open do"></span></a></td>
 	                                           		<td>
-	                                           			<s:if test="#info.homework==null">
-	                                           			<!--<s:form action="uploadHomework" enctype="multipart/form-data" method="post">-->
-	                                           				<!--<label class="glyphicon glyphicon-open up"><input id="inputfile" name="uploadFile" style="display:none;" type="file" onchange="upload()" /></label>-->
-	                                           			<!--</s:form>-->
-		                                           			<s:form action="uploadHomework" enctype="multipart/form-data" method="post">
-		                                           				<s:file name="upload" label="选择文件" />
-		                                           				<input type="hidden" name="courseId" value='<s:property value="#info.course.courseId" />' />
-																<s:submit value="上传"/>
-		                                           			</s:form>
-		                                           			<!--<td>
-			                                           			<label class="glyphicon glyphicon-open up">
-			                                           				<input id="inputfile" name="uploadFile" style="display:none;" type="file" onchange="upload(this)" />
-			                                           			</label>
-		                                           			</td>-->
-	                                           			</s:if>
-	                                           			<s:else>
-	                                           				<a href="#info.homework.title.path"><s:property value="#info.homework.title" /></a>
-	                                           			</s:else>
+                                                    <s:if test="#info.homework==null">
+                                                        <input type="file" name="uploadfile" class="uploadfile"/>
+                                                        <input type="hidden" name="courseId" value='<s:property value="#info.course.courseId" />' />
+                                                    </s:if>
+                                                    <s:else>
+                                                        <%--<a href="#info.homework.title.path">--%>
+                                                            <s:property value="#info.homework.title" />
+                                                        <%--</a>--%>
+                                                    </s:else>
 	                                           		</td>
                                                </tr>
                                                </s:iterator>
@@ -111,8 +67,7 @@
                     </div>
                     
                 </div>    
-             </div>
-</div>
+               </div>
         </div>
     </div>
 </div>
