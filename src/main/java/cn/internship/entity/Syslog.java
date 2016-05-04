@@ -33,7 +33,6 @@ public class Syslog {
 	@Column(length=100)
 	private String behavior;
 	
-	
 	public Integer getSyslogId() {
 		return syslogId;
 	}
