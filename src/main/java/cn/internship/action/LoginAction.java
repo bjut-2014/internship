@@ -86,7 +86,6 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 			}
 			//将登陆用户存到session中
 			session.setAttribute("currentUser", student);
-<<<<<<< HEAD
 			session.setAttribute("userType", userType);
 //            session.setAttribute("currentType", student.getUserType());
 			return "success";
@@ -95,22 +94,12 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 			this.addActionError("登录类型不对");
             return INPUT;
 		}
-=======
-			session.setAttribute("currentType", student.getUserType());
-//		} else {
-//			this.addActionError("登录类型不对");
-//            return INPUT;
-//		}
-
-		return SUCCESS;
->>>>>>> ef354a5734f8648f56c1e17d2a743b42e8e3293f
 	}
 
 	
 	//注销
 	public String logout(){
 		request.getSession().removeAttribute("currentUser");
-<<<<<<< HEAD
 //        request.getSession().removeAttribute("currentType");
 		int uType = (int) request.getSession().getAttribute("userType");
 		if(uType==2){
@@ -118,10 +107,6 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 		}else if(uType == 3){
 			studentService.logout();
 		}
-=======
-        request.getSession().removeAttribute("currentType");
-		studentService.logout();
->>>>>>> ef354a5734f8648f56c1e17d2a743b42e8e3293f
 		return "logout";
 	}
 	
