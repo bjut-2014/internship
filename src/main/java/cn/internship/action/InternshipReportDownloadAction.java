@@ -13,7 +13,7 @@ import cn.internship.service.impl.InternshipReportServiceImpl;
 import com.opensymphony.xwork2.ActionSupport;
 
 //文件下载
-public class FileDownloadAction extends ActionSupport{
+public class InternshipReportDownloadAction extends ActionSupport{
 	
 	/**
 	 * 

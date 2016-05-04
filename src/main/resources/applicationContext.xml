@@ -162,7 +162,7 @@
 	
 	<!-- end -->
 	
-	<bean id="fileDownloadAction" class="cn.internship.action.FileDownloadAction">
+	<bean id="fileDownloadAction" class="cn.internship.action.InternshipReportDownloadAction">
 		<property name="internshipReportService" ref="internshipReportService"></property>
 	</bean>
 	
