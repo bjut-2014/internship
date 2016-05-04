@@ -33,9 +33,9 @@ public class FileDownloadAction extends ActionSupport{
 	public InputStream getDownloadFile() throws Exception
 	{
 		
-		InternshipReport ir=internshipReportService.getInternshipReport(studentId);
-		System.out.println(ir);
+		
 		try{
+			InternshipReport ir=internshipReportService.getInternshipReport(studentId);
 			//设置保存文件名
 			this.fileName = ir.getTitle();
 			fileName = new String(fileName.getBytes(), "ISO8859-1");
@@ -44,17 +44,29 @@ public class FileDownloadAction extends ActionSupport{
 		    InputStream in= ServletActionContext.getServletContext().getResourceAsStream(path) ;
 			System.out.println(in);
 		    return in;
-			
+		
 		}catch(Exception ex){
+			ex.printStackTrace();
 			return null;
+		
 		}
+			
+			
+		
 		
 	}
 	
 	@Override
 	public String execute() throws Exception {
 	
-		return SUCCESS;
+		InternshipReport ir=internshipReportService.getInternshipReport(studentId);
+		System.out.println(ir);
+		if(ir!=null){
+			return SUCCESS;
+		}else{
+			return "FileNotFound";
+		}
+		
 	}
 
 	

@@ -68,7 +68,7 @@
 		<!-- 老师下载实习报告 -->
 		
 		<action name="internship-report-download" class="fileDownloadAction">  
-			
+			<result name="FileNotFound">/WEB-INF/views/error/FileNotFound.jsp</result>
 			<result name="success" type="stream">
 				<param name="contentType">*</param>
 				<param name="contentDisposition">attachment;filename="${fileName}"</param>
