@@ -102,14 +102,45 @@
 	
 	<!-- 老师查询周报相关配置 -->
 	
-	<bean id="teacherWeeklyReportAction" class="cn.internship.action.TeacherWeeklyReportAction">
+	<bean id="teacher-weekly-report" class="cn.internship.action.TeacherWeeklyReportAction">
 		<property name="courseService" ref="courseService"></property>
+		<property name="weeklyReportService" ref="weeklyReportService"></property>
 	</bean>
 	<bean id="courseService" class="cn.internship.service.impl.CourseServiceImpl">
 		<property name="courseDao" ref="courseDao"></property>
 	</bean>
+	<bean id="weeklyReportService" class="cn.internship.service.impl.WeeklyReportServiceImpl">
+		<property name="weeklyReportDao" ref="weeklyReportDao"></property>	
+	</bean>
 	<bean id="courseDao" class="cn.internship.dao.impl.CourseDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="weeklyReportDao" class="cn.internship.dao.impl.WeeklyReportDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- end -->
+	
+	<!-- 教师查询毕设周报相关配置 -->
+	
+	<bean id="teacher-graduation-weekly-report" class="cn.internship.action.TeacherGraduationWeeklyReportAction"> 
+		<property name="graduationSelectionService" ref="graduationSelectionService"></property>
+		<property name="graduationWeeklyReportService" ref="graduationWeeklyReportService"></property>
+		<property name="studentService" ref="studentService"></property>
+	</bean>
+	
+	<bean id="graduationSelectionService" class="cn.internship.service.impl.GraduationSelectionServiceImpl">
+		<property name="graduationSelectionDao" ref="graduationSelectionDao"></property>
+	</bean>
+	<bean id="graduationSelectionDao" class="cn.internship.dao.impl.GraduationSelectionDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="graduationWeeklyReportService" class="cn.internship.service.impl.GraduationWeeklyReportServiceImpl">
+		<property name="graduationWeeklyReportDao" ref="graduationWeeklyReportDao"></property>
+	</bean>
+	<bean id="graduationWeeklyReportDao" class="cn.internship.dao.impl.GraduationWeeklyReportDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	
 	<!-- end -->

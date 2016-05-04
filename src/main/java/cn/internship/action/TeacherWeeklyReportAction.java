@@ -46,6 +46,7 @@ public class TeacherWeeklyReportAction extends ActionSupport implements ServletR
 		return super.execute();
 	}
 	
+	//通过学号获取该学生的所有周报
 	public String getOneStudentWeeklyReports(){
 		List<WeeklyReport> weeklyReportList=weeklyReportService.getAllWeeklyReport(studentId);
 		if(weeklyReportList!=null){
@@ -54,6 +55,7 @@ public class TeacherWeeklyReportAction extends ActionSupport implements ServletR
 		return SUCCESS;
 	}
 	
+	//通过周报Id获取一条周报
 	public String queryOneWeeklyReport(){
 		WeeklyReport wr=weeklyReportService.getWeeklyReport(weeklyReportId);
 		request.setAttribute("weeklyReport", wr);

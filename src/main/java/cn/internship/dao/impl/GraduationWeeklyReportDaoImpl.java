@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 
 import cn.internship.dao.GraduationWeeklyReportDao;
+
 import cn.internship.entity.GraduationWeeklyReport;
 
 public class GraduationWeeklyReportDaoImpl extends HibernateDaoSupport implements GraduationWeeklyReportDao{
@@ -37,5 +38,6 @@ public class GraduationWeeklyReportDaoImpl extends HibernateDaoSupport implement
 		List<GraduationWeeklyReport> list=(List<GraduationWeeklyReport>) getHibernateTemplate().find(hql, values);
 		return list;
 	}
+
 
 }

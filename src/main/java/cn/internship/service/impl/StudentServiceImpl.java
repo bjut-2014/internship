@@ -34,6 +34,9 @@ public class StudentServiceImpl implements StudentService{
 		return studentDao.get(id);
 	}
 	
+	public Student get(String sno){
+		return studentDao.get(sno);
+	}
 	//------------------------------------------get与set方法-----------------------------------------------------------------
 	public StudentDao getStudentDao() {
 		return studentDao;

@@ -66,14 +66,41 @@
 		
 		<!-- 老师下载实习报告 -->
 		
-		<action name="downloadFile" class="cn.internship.action.FileDownloadAction">
-			<param name="filePath">/InternshipReport/周报  王云竹.doc</param>
+		<action name="FileDownload" class="cn.internship.action.FileDownloadAction">  
 			<result name="success" type="stream">
-				<param name="contentType">application/octet-stream</param>
-				<param name="InputName">InputStream</param>
-				<param name="contentDisposition">attachment;filename="周报  王云竹.doc"</param>	
-				<param name="bufferSize">81920</param>		
-			</result>
+				<param name="contentType">*</param>
+				<param name="contentDisposition">attachment;filename="${fileName}"</param>
+				<param name="inputName">downloadFile</param>
+				<param name="bufferSize">81920</param>
+			</result>  
+       </action>  
+		
+		<!-- end -->
+		
+		<!-- 教师实习周报 -->
+		
+		<action name="teacher-weekly-report" class="teacher-weekly-report">
+			<result>/WEB-INF/views/teacher/t_internship.jsp</result>
+		</action>
+		<action name="teacher-weekly-report-all" class="teacher-weekly-report" method="getOneStudentWeeklyReports">
+			<result>/WEB-INF/views/teacher/t_internship_all.jsp</result>
+		</action>
+		<action name="teacher-weekly-report-view" class="teacher-weekly-report" method="queryOneWeeklyReport">
+			<result>/WEB-INF/views/teacher/t_internship_view.jsp</result>
+		</action>
+		
+		<!-- end -->
+		
+		<!-- 教师毕设周报 -->
+		
+		<action name="teacher-graduation-weekly-report" class="teacher-graduation-weekly-report">
+			<result>/WEB-INF/views/teacher/t_graduation.jsp</result>
+		</action>
+		<action name="teacher-graduation-weekly-report-all" class="teacher-graduation-weekly-report" method="getOneStudentWeeklyReports">
+			<result>/WEB-INF/views/teacher/t_graduation_all.jsp</result>
+		</action>
+		<action name="teacher-graduation-weekly-report-view" class="teacher-graduation-weekly-report" method="queryOneWeeklyReport">
+			<result>/WEB-INF/views/teacher/t_graduation_view.jsp</result>
 		</action>
 		
 		<!-- end -->

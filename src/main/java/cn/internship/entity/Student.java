@@ -125,7 +125,14 @@ public class Student {
 	public void setCourses(Set<Course> courses) {
 		this.courses = courses;
 	}
-	
+	@Override
+	public String toString() {
+		return "Student [studentId=" + studentId + ", sno=" + sno + ", name="
+				+ name + ", sex=" + sex + ", grade=" + grade + ", classes="
+				+ classes + ", phone=" + phone + ", email=" + email
+				+ ", password=" + password + ", userType=" + userType + "]";
+	}
+
 	
 	
 }

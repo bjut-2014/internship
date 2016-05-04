@@ -14,4 +14,6 @@ public interface StudentDao {
 	//通过主键查找学生
 	public Student get(Integer id);
 	
+	//通过学号查找学生
+	public Student get(String sno);
 }

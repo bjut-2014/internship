@@ -54,6 +54,11 @@ public class GraduationProSele {
 		public void setGraduationProTitle(String graduationProTitle) {
 			GraduationProTitle = graduationProTitle;
 		}
+		@Override
+		public String toString() {
+			return "GraduationProSele [id=" + id + ", sno=" + sno + ", tno="
+					+ tno + ", GraduationProTitle=" + GraduationProTitle + "]";
+		}
 		
 		
 }
