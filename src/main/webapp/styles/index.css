@@ -1,90 +1,4 @@
-/*nav*/
-.nav-container {
-    height: 50px;
-    line-height: 50px;
-    background-color: #739497;
-    color: #fff;
-    font-size: 14px;
-
-}
-.nav-title {
-    width: 209px;
-    height: 50px;
-    line-height: 50px;
-    font-size: 20px;
-    background-color: #11848f;
-    text-align: center;
-    color: #fff;
-}
-.nav-title:hover {
-    color: #fff;
-}
-.nav-right {
-    margin-right: 20px;
-}
-.logout {
-    color: #fff;
-    margin-left: 38px;
-    background: url(../images/index/logout.png) 0 4px no-repeat;
-    height: 11px;
-}
-.logout:hover {
-    color: #fff;
-}
-.logout span {
-    margin-left: 18px;
-}
-/*sidebar*/
-@media (min-width: 768px) {
-    .sidebar {
-        position: fixed;
-        top: 50px;
-        bottom: 0;
-        left: 0;
-        z-index: 1000;
-        display: block;
-        padding: 20px;
-        overflow-x: hidden;
-        overflow-y: auto;
-        background-color: #2f353f;
-        width: 209px;
-    }
-}
-.nav-sidebar {
-    margin-right: -21px;
-    margin-bottom: 20px;
-    margin-left: -20px;
-}
-.nav-sidebar > li > a {
-    padding-right: 20px;
-    padding-left: 20px;
-    font-size: 13px;
-    color: #838f99;
-}
-.nav-sidebar > .active > a,
-.nav-sidebar > .active > a:hover,
-.nav-sidebar > .active > a:focus {
-    color: #fff;
-    background-color: #2a303a;
-}
-.nav>li>a:focus,.nav>li>a:hover {
-    text-decoration: none;
-    background-color: #2a303a;
-    color: #fff;
-}
-.nav li a span {
-    margin-right: 18px;
-    margin-left: 17px;
-}
-.reset-pwd-ul {
-    position: absolute;
-    bottom: 10px;
-    width: 210px;
-}
 /*index*/
-.main {
-    padding-top: 60px;
-}
 .carousel-inner img {
     width: 1035px;
 }
@@ -109,12 +23,6 @@
 .list-group-item {
     font-size: 14px;
 }
-/*footer*/
 .copyright {
-    height: 50px;
-    line-height: 50px;
-    background-color: #f9f9f9;
-    color: #526069;
-    font-size: 12px;
-    padding-left: 230px;
+    bottom: inherit;
 }

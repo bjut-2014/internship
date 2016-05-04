@@ -8,6 +8,9 @@
 	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
 	<constant name="struts.devMode" value="true" />
 
+
+	<constant name="struts.multipart.saveDir" value="/tmp"/>
+
 	<!-- 把struts的请求委托给spring管理, 作用:创建Action实例的过程由spring处理,其他的还是有struts2自己处理 -->
 	<constant name="struts.objectFactory" value="spring" />
 	<!-- 去掉请求url中的‘.action’后缀 -->
@@ -15,6 +18,7 @@
 
 	<package name="default" namespace="/" extends="struts-default">
 
+ 
 		<!-- session过期拦截器 -->
 		<interceptors>
 			<interceptor name="loginedCheck"
@@ -58,11 +62,83 @@
 			<result name="logout">/login.jsp</result>
 		</action>
 		<!-- end -->
-		<!-- 学生相关操作 -->
-		<action name="index" class="studentAction">
-			<result>/WEB-INF/views/index.jsp</result>
+		<!-- 重置密码 -->
+		<action name="resetPwd" class="resetPwdAction" method="resetPwd">
+			<result name="success">/login.jsp</result>
+            <result name="input">/WEB-INF/views/common/reset-pwd.jsp</result>
 		</action>
 		<!-- end -->
+		<!-- 学生相关操作 -->
+		<action name="index" class="studentAction">
+            <result>/WEB-INF/views/index.jsp</result>
+		</action>
+		<!-- end -->
+		<!-- 实习相关操作 -->
+		<!-- 学生周报 -->
+		<action name="weekly-report" class="weekly-report">
+			<result>/WEB-INF/views/student/weekly-report.jsp</result>
+		</action>
+        <action name="weekly-report-edit" class="weekly-report" method="get">
+            <result >/WEB-INF/views/student/weekly-report-update.jsp</result>
+        </action>
+		<action name="weekly-report-add" class="weekly-report" method="add">
+			<result type="redirectAction">weekly-report</result>
+		</action>
+		<action name="weekly-report-delete" class="weekly-report" method="delete">
+			<result type="redirectAction">weekly-report</result>
+		</action>
+		<action name="weekly-report-update" class="weekly-report" method="update">
+			<result type="redirectAction">weekly-report</result>
+		</action>
+		<action name="weekly-report-view" class="weekly-report" method="getOneWeeklyReport">
+			<result>/WEB-INF/views/student/weekly-report-view.jsp</result>
+		</action>
+		<action name="weekly-report-save">
+			<result>/WEB-INF/views/student/weekly-report-add.jsp</result>
+		</action>
+		<!-- end -->
+		
+		<!-- 实习报告 -->
+		
+		<action name="upload" class="upload">
+    	<result type="redirectAction">weekly-report</result>
+    	<result name="input">error.jsp</result>
+    	<!-- 配置拦截器信息限制上传文件类型、大小 -->
+    	<interceptor-ref name="fileUpload">
+    		<param name="maximumSize">2097152</param>
+    		
+    	</interceptor-ref>
+    	<interceptor-ref name="defaultStack"></interceptor-ref>
+    </action>
+		
+		<!-- end -->
+		
+		<!-- 毕设周报 -->
+		
+		<action name="graduate-weekly-report" class="graduate-weekly-report">
+			<result>/WEB-INF/views/student/graduate-weekly-report.jsp</result>
+		</action>
+        <action name="graduate-weekly-report-edit" class="graduate-weekly-report" method="get">
+            <result>/WEB-INF/views/student/graduate-weekly-update.jsp</result>
+        </action>
+		<action name="graduate-weekly-report-add" class="graduate-weekly-report" method="add">
+			<result type="redirectAction">graduate-weekly-report</result>
+		</action>
+		<action name="graduate-weekly-report-delete" class="graduate-weekly-report" method="delete">
+			<result type="redirectAction">graduate-weekly-report</result>
+		</action>
+		<action name="graduate-weekly-report-update" class="graduate-weekly-report" method="update">
+			<result type="redirectAction">graduate-weekly-report</result>
+		</action>
+		<action name="graduate-weekly-report-view" class="graduate-weekly-report" method="getOneWeeklyReport">
+			<result>/WEB-INF/views/student/graduate-weekly-report-view.jsp</result>
+		</action>
+		<action name="graduation-weekly-report-save">
+			<result>/WEB-INF/views/student/graduation-weekly-add.jsp</result>
+		</action>
+		
+		<!-- end -->
+		
 	</package>
 
 
