@@ -158,6 +158,7 @@
 	</bean>
 	<bean id="caseLibraryAction" class="cn.internship.action.CaseLibraryAction">
 		<property name="caseLibraryService" ref="caseLibraryService" />
+		<property name="courseService" ref="courseService" />
 	</bean>
 	<!-- 学生实习模块相关配置 -->
 	

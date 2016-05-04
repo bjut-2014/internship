@@ -17,4 +17,6 @@ public interface CaseLibraryDao {
 	
 	public List<CaseLibrary> getByCId(Integer courseId);
 	
+	public void add(CaseLibrary caseLibrary);
+	
 }

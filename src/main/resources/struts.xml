@@ -152,6 +152,16 @@
 			<result>/WEB-INF/views/teacher/thomework.jsp</result>
 		</action>
 		<!-- end -->
+		<!-- 案例库上传相关操作 -->
+		<action name="addCaseLibrary" class="caseLibraryAction">
+			<result type="redirectAction">tcourseExample</result>
+			<result name="input" type="redirectAction">tcourseExample</result>
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">10240000</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack" />
+		</action>
+		<!-- end -->
 		<!-- 课程相关操作 -->
 		<action name="course" class="courseAction">
 			<result>/WEB-INF/views/student/studentcourses.jsp</result>
@@ -167,6 +177,7 @@
 			</interceptor-ref>
 			<interceptor-ref name="defaultStack" />
 		</action>
+		<!-- end -->
 		<action name="graduate-weekly-report-delete" class="graduate-weekly-report" method="delete">
 			<result type="redirectAction">graduate-weekly-report</result>
 		</action>
@@ -188,9 +199,10 @@
 				<param name="contentDisposition">attachment;filename="${fileName}"</param>
 				<param name="inputName">downloadFile</param>
 			</result>
-			
 		</action>
 		<!-- end -->
+
+
 
 	</package>
 

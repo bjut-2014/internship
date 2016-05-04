@@ -26,7 +26,12 @@ public class CaseLibraryServiceImpl implements CaseLibraryService{
 		return caseLibraryDao.get(caseLibraryId);
 	}
 
-
+	@Override
+	public void saveCaseLibrary(CaseLibrary caseLibrary) {
+		caseLibraryDao.add(caseLibrary);
+	}
+	
+	
 	//-----------------get与set方法-------------------------
 	
 	public CaseLibraryDao getCaseLibraryDao() {
@@ -36,5 +41,6 @@ public class CaseLibraryServiceImpl implements CaseLibraryService{
 	public void setCaseLibraryDao(CaseLibraryDao caseLibraryDao) {
 		this.caseLibraryDao = caseLibraryDao;
 	}
+
 	
 }

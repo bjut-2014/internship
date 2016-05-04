@@ -29,6 +29,7 @@ public class CaseLibraryDaoImpl extends HibernateDaoSupport implements CaseLibra
 		return getHibernateTemplate().get(CaseLibrary.class, id);
 	}
 
+	//通过课程主键查找相关案例库
 	@Override
 	public List<CaseLibrary> getByCId(Integer courseId) {
 		String hql = "from CaseLibrary cl where cl.course.courseId = "+courseId;
@@ -37,6 +38,12 @@ public class CaseLibraryDaoImpl extends HibernateDaoSupport implements CaseLibra
 			return null;
 		}
 		return caseLibraries;
+	}
+
+	//添加案例库
+	@Override
+	public void add(CaseLibrary caseLibrary) {
+		getHibernateTemplate().save(caseLibrary);
 	}
 
 }

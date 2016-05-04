@@ -39,6 +39,7 @@
 	                                	     	<s:form action="addCaseLibrary" enctype="multipart/form-data" method="post">
 	                                	     		<input type="hidden" name="courseId" value="<s:property value="#request.courseId" />">
 	                                	     		<s:file name="upload" label="选择文件" />
+	                                	     		<s:submit value="上传"/>
 	                                	     	</s:form>
 	                                	     </div>                               	                               
                                         <table class="table table-striped">
