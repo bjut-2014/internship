@@ -11,6 +11,12 @@ body{
 	padding-bottom:15px;
 }
 
+.practiceinfo{
+	
+	border-left-style:inset;
+	border-left:3px solid rgb(102,119,194)
+}
+
 .panel-body{
 	padding-bottom:10px;
 	font-size:14px;
@@ -18,6 +24,12 @@ body{
 
 .practiceRerort{
 	padding-top:10px;
+}
+
+.practiceRerort1{
+	padding-top:10px;
+	border-left-style:inset;
+	border-left:3px solid rgb(26,131,122);
 }
 .practiceRerort .panel-body p{
 	float:left;
@@ -49,6 +61,12 @@ body{
 }
 .weekReport{
     padding-top:10px;
+}
+
+.weekReport1{
+    padding-top:10px;
+    border-left-style:inset;
+	border-left:3px solid rgb(75,187,244);
 }
 .weekReport table tr:nth-child(odd){
     background:white;
