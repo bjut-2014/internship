@@ -30,5 +30,4 @@ public class InternshipDetailDaoImpl extends HibernateDaoSupport implements Inte
 		List<InternshipDetail> list=(List<InternshipDetail>) getHibernateTemplate().find(hql);
 		return list;
 	}
-
 }

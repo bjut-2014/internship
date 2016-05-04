@@ -32,5 +32,10 @@
 		<mapping class="cn.internship.entity.WeeklyReport" />
 		<mapping class="cn.internship.entity.GraduationWeeklyReport"/>
 		<mapping class="cn.internship.entity.InternshipDetail" />
+		<mapping class="cn.internship.entity.User"/>
+		<mapping class="cn.internship.entity.InternshipDetail" />
+		<mapping class="cn.internship.entity.InternshipReport" />
+		<mapping class="cn.internship.entity.WeeklyReport" />
+		<mapping class="cn.internship.entity.GraduationWeeklyReport" />
 	</session-factory>
 </hibernate-configuration>

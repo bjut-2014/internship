@@ -81,13 +81,12 @@ public class InternshipReport {
 	public void setPath(String path) {
 		this.path = path;
 	}
-
 	@Override
 	public String toString() {
 		return "InternshipReport [id=" + id + ", sno=" + sno + ", title="
 				+ title + ", date=" + date + ", path=" + path + "]";
 	}
-	
+
 	
 	
 

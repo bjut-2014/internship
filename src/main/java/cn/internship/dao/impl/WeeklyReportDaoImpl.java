@@ -45,7 +45,11 @@ public class WeeklyReportDaoImpl extends HibernateDaoSupport implements WeeklyRe
 		
 	}
 
+<<<<<<< HEAD
 	//根据学生学号获取所有的周报
+=======
+	//根据学生主键获取所有的周报
+>>>>>>> ef354a5734f8648f56c1e17d2a743b42e8e3293f
 	@Override
 	public List<WeeklyReport> getAll(String sno) {
 		String hql="from WeeklyReport wr where wr.sno=?";
