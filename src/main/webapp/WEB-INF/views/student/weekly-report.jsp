@@ -72,10 +72,13 @@
             <div class="panel-body">
                 <s:if test="#request.result==null">
                     <p class="file-title">暂无实习报告</p>
+                    <!-- 
                     <form action="upload" method="post" enctype="multipart/form-data">
                         <input class="myBu" type="submit" value="提交报告">
                         <input type="file" name="upload">
                     </form>
+                     -->
+                     <input type="file" name="uploadfile" class="uploadInternshipReport"/>
                 </s:if>
                 <s:else>
                     <p><s:property value="#request.result.title"/></p>
@@ -104,5 +107,6 @@
 
 <jsp:include page="../footer/footer.jsp" />
 <script src="scripts/weekly-report.js"></script>
+<script src="scripts/upload-internship-report.js"></script>
 </body>
 </html>
