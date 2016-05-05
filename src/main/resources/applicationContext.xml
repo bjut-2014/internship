@@ -244,4 +244,33 @@
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	<!-- end -->
+	
+	
+	<!-- 公告栏相关配置 -->
+	<bean id="noticeBoardDao" class="cn.internship.dao.impl.NoticeBoardDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="noticeBoardService" class="cn.internship.service.impl.NoticeBoardServiceImpl">
+		<property name="noticeBoardDao" ref="noticeBoardDao"/>
+	</bean>
+	<!-- end -->
+	
+	<!-- 招聘信息相关配置 -->
+	<bean id="recruitInfoDao" class="cn.internship.dao.impl.RecruitInfoDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="recruitInfoService" class="cn.internship.service.impl.RecruitInfoServiceImpl">
+		<property name="recruitInfoDao" ref="recruitInfoDao"/>
+	</bean>
+	<!-- end -->
+	
+	<!-- 轮播图相关配置 -->
+	<bean id="carouselFigureDao" class="cn.internship.dao.impl.CarouselFigureDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="carouselFigureService" class="cn.internship.service.impl.CarouselFigureServiceImpl">
+		<property name="carouselFigureDao" ref="carouselFigureDao"/>
+	</bean>
+	<!-- end -->
+	
 </beans>
