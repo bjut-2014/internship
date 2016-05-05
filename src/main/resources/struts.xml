@@ -176,7 +176,7 @@
 		<action name="teacher-graduation-weekly-report-all" class="teacher-graduation-weekly-report" method="getOneStudentWeeklyReports">
 			<result>/WEB-INF/views/teacher/t_graduation_all.jsp</result>
 		</action>
-		<action name="teacher-graduation-weekly-report-view" class="teacher-graduation-weekly-report" method="queryOneWeeklyReport">
+		<action name="teacher-graduation-weekly-report-view" class="teacher-graduation-weekly-report" method="queryOneGraduationWeeklyReport">
 			<result>/WEB-INF/views/teacher/t_graduation_view.jsp</result>
 		</action>
 		

@@ -74,6 +74,8 @@ public class SyslogUtils{
 			str="删除了一条毕设周报";
 		}else if(methodName.indexOf("saveInternshipReport")!=-1){
 			str="上传了实习报告";
+		}else if(methodName.indexOf("getInternshipReport")!=-1){
+			str="下载了一份实习报告";
 		}
 		else{
 			str="do nothing";

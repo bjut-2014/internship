@@ -12,6 +12,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import cn.internship.entity.Student;
 import cn.internship.entity.Syslog;
+import cn.internship.entity.Teacher;
 import cn.internship.service.StudentService;
 import cn.internship.service.SyslogService;
 
@@ -39,9 +40,11 @@ public class SyslogAction extends ActionSupport implements ServletRequestAware, 
 	
 	//获得某个学生的日志信息
 	public String stuSyslog(){
+		
 		Student student = (Student) request.getSession().getAttribute("currentUser");
 		List<Syslog> stuList = syslogService.getAll(student.getSno());
 		request.setAttribute("stuSyslogList", stuList);
+	
 		return SUCCESS;
 	}
 	

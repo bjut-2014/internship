@@ -61,6 +61,7 @@
 			<aop:after method="afterReturnLog" pointcut="execution(* cn.internship.service.impl.*.update*(..)) and !bean(syslogService)"/>
 			<aop:after method="afterReturnLog" pointcut="execution(* cn.internship.service.impl.*.login*(..)) and !bean(syslogService)"/>
 			<aop:after method="afterReturnLog" pointcut="execution(* cn.internship.service.impl.*.logout*(..)) and !bean(syslogService)"/>
+			<aop:after method="afterReturnLog" pointcut="execution(* cn.internship.service.impl.*.getInternshipReport(..)) and !bean(syslogService)"/>
 		</aop:aspect>
 	</aop:config>
 
