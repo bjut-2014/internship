@@ -16,8 +16,4 @@ public interface TeacherService {
 
 	//修改密码
 	public void updatePwd(Teacher teacher);
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> a1d593e20dfeeeab36222b998c8526a435ad4e31

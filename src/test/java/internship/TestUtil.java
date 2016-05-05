@@ -13,7 +13,6 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-<<<<<<< HEAD
 import cn.internship.entity.GraduationProSele;
 import cn.internship.entity.InternshipDetail;
 import cn.internship.entity.Student;
@@ -22,12 +21,10 @@ import cn.internship.service.GraduationSelectionService;
 import cn.internship.service.InternshipDetailService;
 import cn.internship.service.StudentService;
 import cn.internship.service.WeeklyReportService;
-=======
 import cn.internship.dao.CourseDao;
 import cn.internship.entity.CaseLibrary;
 import cn.internship.entity.Course;
 import cn.internship.entity.Student;
->>>>>>> a1d593e20dfeeeab36222b998c8526a435ad4e31
 import cn.internship.dao.WeeklyReportDao;
 import cn.internship.dao.impl.WeeklyReportDaoImpl;
 import cn.internship.entity.GraduationWeeklyReport;
@@ -55,7 +52,6 @@ public class TestUtil implements ServletRequestAware{
 	}
 	
 	@Test
-<<<<<<< HEAD
 	public void queryAllStudents(){
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		InternshipDetailService is = (InternshipDetailService) context.getBean("internshipDetailService");
@@ -91,25 +87,25 @@ public class TestUtil implements ServletRequestAware{
 	}
 	
 	@Test
-	public void getAllGraduatedStudents(){
+	public void getAllGraduatedStudents() {
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		GraduationSelectionService gss = (GraduationSelectionService) context.getBean("graduationSelectionService");
-		StudentService studentService=(StudentService) context.getBean("studentService");
-		List<GraduationProSele> list=gss.getSelectInfoByTno("t0001");
-		for(GraduationProSele ss:list){
+		StudentService studentService = (StudentService) context.getBean("studentService");
+		List<GraduationProSele> list = gss.getSelectInfoByTno("t0001");
+		for (GraduationProSele ss : list) {
 			System.out.println(ss);
 		}
-		List<Student> students=new ArrayList<Student>();
+		List<Student> students = new ArrayList<Student>();
 		//获得当前教师所带的毕设学生
-		for(GraduationProSele st:list){
-			String sno=st.getSno();
-			Student stt=studentService.get(sno);
+		for (GraduationProSele st : list) {
+			String sno = st.getSno();
+			Student stt = studentService.get(sno);
 			System.out.println(stt);
 			students.add(stt);
 			System.out.println(students);
 		}
+	}
 		
-=======
 	public void testTable(){
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		CourseDao courseDao = (CourseDao) context.getBean("courseDao");
@@ -155,7 +151,6 @@ public class TestUtil implements ServletRequestAware{
 			CaseLibrary caseLibrary = iterator.next();
 			System.out.println(caseLibrary.getName());
 		}
->>>>>>> a1d593e20dfeeeab36222b998c8526a435ad4e31
 	}
 	public void testAddWeeklyReport(){
 
