@@ -14,7 +14,7 @@
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main myMain practiceInmation">
         <div class="panel panel-default myPanel practiceinfo">
-            <div class="panel-head">毕设信息</div>
+            <div class="panel-head">毕设信息 Graduation Information</div>
             <div class="panel-body">
                 <s:if test="">
 
@@ -27,18 +27,16 @@
     </div>
        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main myMain weekReport">
         <div class="panel panel-default myPanel weekReport1">
-            <div class="panel-head">毕设周报 Graduation Weekly Report<a href="graduation-weekly-report-save"><button class="glyphicon glyphicon-plus myBu"></button></a></div>
+            <div class="panel-head-1">毕设周报 Graduation Weekly Report<a href="graduation-weekly-report-save"><button class="glyphicon glyphicon-plus myBu"></button></a></div>
             <div class="panel-body">
                 <s:if test="#request.graduationWeeklyReport.size()!=0">
-                <table class="table weekTable">
-                  <thead>
-                     <tr id="the">
-                        <th>标题</th>
-                        <th>时间</th>
-                        <th>操作</th>
-                     </tr>
-                  </thead>
+                <table class="table table-striped weekTable">
                   <tbody>
+                  <tr id="the">
+                      <th>标题</th>
+                      <th>时间</th>
+                      <th>操作</th>
+                  </tr>
                   <s:iterator value="#request.graduationWeeklyReport" var="list">
                       <tr>
                           <td><a href="graduate-weekly-report-view?graduationWeeklyReportId=${list.id}">${list.title}</a></td>
