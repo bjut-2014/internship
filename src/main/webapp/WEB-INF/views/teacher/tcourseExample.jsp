@@ -35,12 +35,14 @@
                                 <div class="row">
                                     <div class="col-md-12 col-sm-12 col-xs-12 rposition">                                     	                                    
 	                                    	<div class="rposotion">
-	                                    		<label class="fa fa-plus-square plus"><input id="inputfile" style="display:none;" type="file"></label>
-	                                	     	<s:form action="addCaseLibrary" enctype="multipart/form-data" method="post">
+	                                    		<!--  <label class="fa fa-plus-square plus"><input id="inputfile" style="display:none;" type="file"></label>-->
+	                                	     	<!--<s:form action="addCaseLibrary" enctype="multipart/form-data" method="post">
 	                                	     		<input type="hidden" name="courseId" value="<s:property value="#request.courseId" />">
 	                                	     		<s:file name="upload" label="选择文件" />
 	                                	     		<s:submit value="上传"/>
-	                                	     	</s:form>
+	                                	     	</s:form>-->
+	                                	     	 <input type="file" name="uploadfile" class="uploadfile"/>
+                                                 <input type="hidden" name="courseId" value="<s:property value="#request.courseId" />">
 	                                	     </div>                               	                               
                                         <table class="table table-striped">
                                             <thead>
@@ -75,5 +77,6 @@
     </div>
 </div>
 <jsp:include page="../footer/footer.jsp" />
+ <script src="scripts/tch-caselibrary-upload.js"></script>
 </body>
 </html>

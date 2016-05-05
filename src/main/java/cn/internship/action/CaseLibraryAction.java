@@ -1,6 +1,8 @@
 package cn.internship.action;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Date;
 
 import javax.servlet.http.HttpServletRequest;
@@ -10,6 +12,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
+import org.json.JSONObject;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -53,6 +56,7 @@ public class CaseLibraryAction extends ActionSupport implements ServletRequestAw
 		String realPath = ServletActionContext.getServletContext().getRealPath(folderPath);
 		System.out.println(folderPath);
 		System.out.println(realPath);
+		JSONObject jo = new JSONObject();
 		//上传文件
 		if(upload!=null){
 			File saveFile = new File(new File(realPath),uploadFileName);
@@ -67,6 +71,15 @@ public class CaseLibraryAction extends ActionSupport implements ServletRequestAw
 			caseLibrary.setFilePath(folderPath);
 			caseLibrary.setCourse(course);
 			caseLibraryService.saveCaseLibrary(caseLibrary);
+			try {
+				response.setCharacterEncoding("utf-8");
+				PrintWriter out = response.getWriter();
+				out.println(jo);
+				out.flush();
+				out.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 			return super.execute();
 		}
 		return INPUT;
