@@ -14,15 +14,26 @@
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main myMain practiceInmation">
         <div class="panel panel-default myPanel practiceinfo">
-            <div class="panel-head">实习信息 Practice Information</div>
+            <div class="panel-head-1">实习信息 Practice Information</div>
             <div class="panel-body">
-            	<s:if test="#request.internshipdetail!=null">
-                	姓名：<s:property value="#session.currentUser.name" /><br>
-                	实习公司：<s:property value="#request.internshipdetail.company_name" /><br>
-                	公司地址：<s:property value="#request.internshipdetail.company_address" /><br>
-                	实习时间：<s:property value="#request.internshipdetail.company_date" /><br>
-                	校外导师：<s:property value="#request.internshipdetail.company_teacher" /><br>
-                	实习分数：<s:property value="#request.internshipdetail.company_score" /><br>
+                <s:if test="#request.internshipdetail!=null">
+                <table class="table table-striped">
+                    <tbody>
+                        <tr>
+                            <td class="for-border-right">姓名：<s:property value="#session.currentUser.name" /></td>
+                            <td>实习时间：<s:property value="#request.internshipdetail.company_date" /></td>
+
+                        </tr>
+                        <tr>
+                            <td class="for-border-right">实习公司：<s:property value="#request.internshipdetail.company_name" /></td>
+                            <td>公司地址：<s:property value="#request.internshipdetail.company_address" /></td>
+                        </tr>
+                        <tr>
+                            <td class="for-border-right">校外导师：<s:property value="#request.internshipdetail.company_teacher" /></td>
+                            <td>实习分数：<s:property value="#request.internshipdetail.company_score" /></td>
+                        </tr>
+                    </tbody>
+                </table>
                 </s:if>
                 <s:else>
                 	<p>暂无实习信息</p>
@@ -32,20 +43,18 @@
     </div>
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main myMain weekReport">
         <div class="panel panel-default myPanel weekReport1">
-            <div class="panel-head">周报 weekly Report
+            <div class="panel-head-1">周报 weekly Report
                 <a href="weekly-report-save"><button class="glyphicon glyphicon-plus myBu"></button></a>
             </div>
             <div class="panel-body">
                 <s:if test="#request.weeklyplan.size()!=0">
-                <table class="table weekTable">
-                  <thead>
-                     <tr id="the">
-                        <th>标题</th>
-                        <th>时间</th>
-                        <th>操作</th>
-                     </tr>
-                  </thead>
+                <table class="table table-striped weekTable">
                   <tbody>
+                      <tr id="the">
+                          <th>标题</th>
+                          <th>时间</th>
+                          <th>操作</th>
+                      </tr>
                       <s:iterator value="#request.weeklyplan" var="list">
                           <tr>
                               <td><a href="weekly-report-view?weeklyReportId=${list.id}">${list.title}</a></td>
@@ -107,6 +116,5 @@
 
 <jsp:include page="../footer/footer.jsp" />
 <script src="scripts/weekly-report.js"></script>
-<script src="scripts/upload-internship-report.js"></script>
 </body>
 </html>

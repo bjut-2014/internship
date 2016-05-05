@@ -9,6 +9,10 @@ body{
 .panel-head{
 	border-bottom:3px solid rgb(217,217,217);
 	padding-bottom:15px;
+	font-size: 16px;
+}
+.panel-head-1 {
+    font-size: 16px;
 }
 
 .practiceinfo{
@@ -48,14 +52,12 @@ body{
 .myPu{
 	background:white;
 	border:none;
-	color:red;
-	padding:0.5px 0.5px;
+	color:#8e8e8e;
 	margin-left:30px;
-	border-radius:2px;
 }
 
 #the{
-	background:#F4F4F4;
+	/*background:#F4F4F4;*/
 	font-size: 14px;
 	color: #797979;
 }
@@ -68,12 +70,12 @@ body{
     border-left-style:inset;
 	border-left:3px solid rgb(75,187,244);
 }
-.weekReport table tr:nth-child(odd){
-    background:white;
-}
-.weekReport table tr:nth-child(even){
-    background:#F4F4F4;
-}
+/*.weekReport table tr:nth-child(odd){*/
+    /*background:white;*/
+/*}*/
+/*.weekReport table tr:nth-child(even){*/
+    /*background:#F4F4F4;*/
+/*}*/
 .weekReport table td,th{
 	text-align:center;
 }
@@ -91,7 +93,14 @@ body{
 }
 .table>tbody>tr>td {
     font-size: 14px;
+    color: #797979;
 }
 .copyright {
     bottom: inherit;
+}
+.for-border-right {
+    border-right: 1px solid #ddd;
+}
+.panel-body {
+    padding: 15px 0;
 }
