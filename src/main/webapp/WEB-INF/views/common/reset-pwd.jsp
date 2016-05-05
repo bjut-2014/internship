@@ -9,7 +9,12 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
-            <jsp:include page="../sidebar/sidebar-student.jsp" />
+        	<s:if test="#session.currentUser.userType==3">
+            	<jsp:include page="../sidebar/sidebar-student.jsp" />
+            </s:if>
+            <s:else>
+            	<jsp:include page="../sidebar/sidebar-teacher.jsp" />
+            </s:else>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <div class="row">
