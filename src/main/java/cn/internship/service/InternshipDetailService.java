@@ -7,7 +7,7 @@ public interface InternshipDetailService {
 
 	
 	public InternshipDetail getInternshipDetailBySno(String sno);
-	
+
 	//获取所有学生的实习信息
 	public List<InternshipDetail> getAllStudents();
 }

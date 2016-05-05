@@ -16,16 +16,18 @@ public class User {
 	//主键
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Integer id;
+	private Integer userId;
 	//用户类型
 	private Integer userType;
 	//权限
 	private Integer rights;
-	public Integer getId() {
-		return id;
+
+	
+	public Integer getUserId() {
+		return userId;
 	}
-	public void setId(Integer id) {
-		this.id = id;
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
 	public Integer getUserType() {
 		return userType;

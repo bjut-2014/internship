@@ -171,5 +171,4 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 	public void setTeacherService(TeacherService teacherService) {
 		this.teacherService = teacherService;
 	}
-	
 }

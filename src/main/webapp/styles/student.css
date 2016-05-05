@@ -1,0 +1,46 @@
+
+
+.practiceInmation{
+		height:180px;
+		padding-top:10px;
+}
+.practiceRerort{
+	height:150px;
+}
+.practiceRerort .panel-body p{
+	float:left;
+	width:80%;
+}
+
+.practiceRerort .panel-body button{
+
+	
+
+}
+
+.weekReport{height:350px;}
+.weekReport table tr:nth-child(odd){background:white;}
+.weekReport table tr:nth-child(even){background:#F4F4F4;}
+.weekReport table td,th{
+	text-align:center;
+}
+.weekReport table td:nth-child(2),th:nth-child(2){border-left:1px solid rgb(232,232,232);border-right:1px solid rgb(232,232,232);}
+
+.Gl{
+	margin-left:30px;
+	color:red;
+}
+.Gl1{
+	color:rgb(57,134,243);
+}
+
+
+
+
+
+
+
+
+
+
+

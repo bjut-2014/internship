@@ -10,7 +10,7 @@
         http://www.springframework.org/schema/tx/spring-tx.xsd
         http://www.springframework.org/schema/context
 		http://www.springframework.org/schema/context/spring-context.xsd">
-
+		
 	<!-- 导入资源文件 -->
 	<context:property-placeholder location="classpath:db.properties" />
 	<!-- 配置c3p0数据源 -->
@@ -61,6 +61,7 @@
 			<aop:after method="afterReturnLog" pointcut="execution(* cn.internship.service.impl.*.update*(..)) and !bean(syslogService)"/>
 			<aop:after method="afterReturnLog" pointcut="execution(* cn.internship.service.impl.*.login*(..)) and !bean(syslogService)"/>
 			<aop:after method="afterReturnLog" pointcut="execution(* cn.internship.service.impl.*.logout*(..)) and !bean(syslogService)"/>
+			<aop:after method="afterReturnLog" pointcut="execution(* cn.internship.service.impl.*.getInternshipReport(..)) and !bean(syslogService)"/>
 		</aop:aspect>
 	</aop:config>
 
@@ -75,6 +76,12 @@
 		<property name="teacherService" ref="teacherService" />
 	</bean>
 	<!-- end -->
+	<!-- 学生修改密码页面 -->
+	<bean id="resetPwdAction" class="cn.internship.action.ResetPwdAction" scope="prototype">
+		<property name="studentService" ref="studentService"/>
+		<property name="teacherService" ref="teacherService"/>
+	</bean>
+	<!-- end -->
 
 	<!-- 学生相关配置 -->
 	<bean id="studentDao" class="cn.internship.dao.impl.StudentDaoImpl">
@@ -85,19 +92,9 @@
 	</bean>
 	<bean id="studentAction" class="cn.internship.action.StudentAction">
 		<property name="studentService" ref="studentService" />
+		<property name="syslogService" ref="syslogService" />
 	</bean>
 	<!-- end -->
-	
-	<!-- 教师的相关配置 -->
-	<bean id="teacherDao" class="cn.internship.dao.impl.TeacherDaoImpl">
-		<property name="sessionFactory" ref="sessionFactory" />
-	</bean>
-	<bean id="teacherService" class="cn.internship.service.impl.TeacherServiceImpl">
-		<property name="teacherDao" ref="teacherDao" />
-	</bean>
-
-	<!-- end -->
-	
 	
 	<!-- 系统日志相关配置 -->
 	<bean id="syslogDao" class="cn.internship.dao.impl.SyslogDaoImpl">
@@ -119,19 +116,77 @@
 		<property name="weeklyReportService" ref="weeklyReportService"></property>
 		<property name="studentService" ref="studentService"></property>
 	</bean>
+	<!-- 课程相关配置 -->
+	<bean id="courseDao" class="cn.internship.dao.impl.CourseDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="courseService" class="cn.internship.service.impl.CourseServiceImpl">
+		<property name="courseDao" ref="courseDao" />
+	</bean>
+	<bean id="courseAction" class="cn.internship.action.CourseAction">
+		<property name="courseService" ref="courseService" />
+		<property name="homeworkService" ref="homeworkService" />
+		<property name="teacherService" ref="teacherService" />
+		<property name="caseLibraryService" ref="caseLibraryService" />
+	</bean>
+	<!-- end -->
+	
+	<!-- 上传作业的相关配置 -->
+	<bean id="homeworkDao" class="cn.internship.dao.impl.HomeworkDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="homeworkService" class="cn.internship.service.impl.HomeworkServiceImpl">
+		<property name="homeworkDao" ref="homeworkDao" />
+	</bean>
+	<bean id="homeworkAction" class="cn.internship.action.HomeworkAction">
+		<property name="homeworkService" ref="homeworkService" />
+		<property name="studentService" ref="studentService" />
+	</bean>
+	<!-- end -->
+	
+	<!-- 教师的相关配置 -->
+	<bean id="teacherDao" class="cn.internship.dao.impl.TeacherDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="teacherService" class="cn.internship.service.impl.TeacherServiceImpl">
+		<property name="teacherDao" ref="teacherDao" />
+	</bean>
+	<bean id="teacherAction" class="cn.internship.action.TeacherAction">
+		<property name="teacherService" ref="teacherService" />
+		<property name="syslogService" ref="syslogService" />
+	</bean>
+	<!-- end -->
+	
+	<!-- 案例库相关配置 -->
+	<bean id="caseLibraryDao" class="cn.internship.dao.impl.CaseLibraryDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="caseLibraryService" class="cn.internship.service.impl.CaseLibraryServiceImpl">
+		<property name="caseLibraryDao" ref="caseLibraryDao" />
+	</bean>
+	<bean id="caseLibraryAction" class="cn.internship.action.CaseLibraryAction">
+		<property name="caseLibraryService" ref="caseLibraryService" />
+		<property name="courseService" ref="courseService" />
+	</bean>
+	<!-- 学生实习模块相关配置 -->
+	
+	<bean id="weekly-report" class="cn.internship.action.WeeklyReportAction">
+		<property name="weeklyReportService" ref="weeklyReportService"></property>
+		<property name="internshipDetailService" ref="internshipDetailService"></property>
+		<property name="internshipReportService" ref="internshipReportService"></property>
+	</bean>
 	
 	<bean id="weeklyReportService" class="cn.internship.service.impl.WeeklyReportServiceImpl">
-		<property name="weeklyReportDao" ref="weeklyReportDao"></property>	
+		<property name="weeklyReportDao" ref="weeklyReportDao"></property>
 	</bean>
 	
 	<bean id="weeklyReportDao" class="cn.internship.dao.impl.WeeklyReportDaoImpl">
-		<property name="sessionFactory" ref="sessionFactory" />
+		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	
 	<bean id="internshipDetailService" class="cn.internship.service.impl.InternshipDetailServiceImpl">
 		<property name="internshipDetailDao" ref="internshipDetailDao"></property>
 	</bean>
-	
 	<bean id="internshipDetailDao" class="cn.internship.dao.impl.InternshipDetailDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
@@ -153,25 +208,40 @@
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	
-	<bean id="graduationWeeklyReportService" class="cn.internship.service.impl.GraduationWeeklyReportServiceImpl">
-		<property name="graduationWeeklyReportDao" ref="graduationWeeklyReportDao"></property>
+	<!--<bean id="fileDownloadAction" class="cn.internship.action.InternshipReportDownloadAction">-->
+		<!--<property name="internshipReportService" ref="internshipReportService"></property>-->
+	<!--</bean>-->
+	<!-- 学生实习报告模块 -->
+	
+	<bean id="upload" class="cn.internship.action.FileUploadAction">
+		<property name="ir" ref="internshipReportService"></property>
+	</bean>	
+	<bean id="internshipReportService" class="cn.internship.service.impl.InternshipReportServiceImpl">
+		<property name="internshipReportDao" ref="internshipReportDao"></property>
 	</bean>
-	<bean id="graduationWeeklyReportDao" class="cn.internship.dao.impl.GraduationWeeklyReportDaoImpl">
+	<bean id="internshipReportDao" class="cn.internship.dao.impl.InternshipReportDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
 	
 	<!-- end -->
 	
-	<bean id="fileDownloadAction" class="cn.internship.action.InternshipReportDownloadAction">
-		<property name="internshipReportService" ref="internshipReportService"></property>
+	<!-- 文件下载相关配置 -->
+	<bean id="fileDownloadAction" class="cn.internship.action.FileDownloadAction"></bean>
+	<!-- end -->
+
+	<!-- 毕设周报模块 -->
+	
+	<bean id="graduate-weekly-report" class="cn.internship.action.GraduationProjectAction">
+		<property name="graduationWeeklyReportService" ref="graduationWeeklyReportService"></property>
+		
 	</bean>
 	
-	<bean id="internshipReportService" class="cn.internship.service.impl.InternshipReportServiceImpl">
-		<property name="internshipReportDao" ref="internshipReportDao"></property>
+	<bean id="graduationWeeklyReportService" class="cn.internship.service.impl.GraduationWeeklyReportServiceImpl">
+		<property name="graduationWeeklyReportDao" ref="graduationWeeklyReportDao"></property>
 	</bean>
 	
-	<bean id="internshipReportDao" class="cn.internship.dao.impl.InternshipReportDaoImpl">
+	<bean id="graduationWeeklyReportDao" class="cn.internship.dao.impl.GraduationWeeklyReportDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
-
+	<!-- end -->
 </beans>

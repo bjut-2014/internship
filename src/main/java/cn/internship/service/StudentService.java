@@ -14,6 +14,9 @@ public interface StudentService {
 	public void logout();
 	
 	public Student get(Integer id);
-	
+
 	public Student get(String sno);
+
+	//修改密码
+	public void updatePwd(Student student);
 }

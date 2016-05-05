@@ -69,7 +69,7 @@ public class TeacherGraduationWeeklyReportAction extends ActionSupport implement
 	}
 	
 	//通过周报Id获取一条周报
-	public String queryOneWeeklyReport(){
+	public String queryOneGraduationWeeklyReport(){
 		GraduationWeeklyReport gr=graduationWeeklyReportService.getGraduationWeeklyReport(graduationWeeklyReportId);
 		request.setAttribute("graduationWeeklyReport", gr);
 		return SUCCESS;

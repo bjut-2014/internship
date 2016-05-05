@@ -86,6 +86,4 @@ public class Course {
 	public void setCoursePlace(String coursePlace) {
 		this.coursePlace = coursePlace;
 	}
-	
-	
 }

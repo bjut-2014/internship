@@ -8,6 +8,9 @@
 	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
 	<constant name="struts.devMode" value="true" />
 
+
+	<constant name="struts.multipart.saveDir" value="/tmp"/>
+
 	<!-- 把struts的请求委托给spring管理, 作用:创建Action实例的过程由spring处理,其他的还是有struts2自己处理 -->
 	<constant name="struts.objectFactory" value="spring" />
 	<!-- 去掉请求url中的‘.action’后缀 -->
@@ -15,6 +18,7 @@
 
 	<package name="default" namespace="/" extends="struts-default">
 
+ 
 		<!-- session过期拦截器 -->
 		<interceptors>
 			<interceptor name="loginedCheck"
@@ -50,7 +54,7 @@
 		<!-- 登陆 -->
 		<action name="login" class="loginAction">
 			<result name="success" type="redirectAction">index</result>
-			
+			<!--<result name="tsuccess" type="redirectAction">index</result>-->
 			<result name="input">/login.jsp</result>
 		</action>
 		<!-- end -->
@@ -59,9 +63,132 @@
 			<result name="logout">/login.jsp</result>
 		</action>
 		<!-- end -->
+		<!-- 重置密码 -->
+		<action name="reset" class="resetPwdAction">
+			<result>/WEB-INF/views/common/reset-pwd.jsp</result>
+		</action>
+		<action name="resetPwd" class="resetPwdAction" method="resetPwd">
+			<result name="success">/login.jsp</result>
+            <result name="input">/WEB-INF/views/common/reset-pwd.jsp</result>
+		</action>
+		<!-- end -->
 		<!-- 学生相关操作 -->
 		<action name="index" class="studentAction">
-			<result>/WEB-INF/views/index.jsp</result>
+            <result>/WEB-INF/views/index.jsp</result>
+		</action>
+		<!-- end -->
+		<!-- 实习相关操作 -->
+		<!-- 学生周报 -->
+		<action name="weekly-report" class="weekly-report">
+			<result>/WEB-INF/views/student/weekly-report.jsp</result>
+		</action>
+        <action name="weekly-report-edit" class="weekly-report" method="get">
+            <result >/WEB-INF/views/student/weekly-report-update.jsp</result>
+        </action>
+		<action name="weekly-report-add" class="weekly-report" method="add">
+			<result type="redirectAction">weekly-report</result>
+		</action>
+		<action name="weekly-report-delete" class="weekly-report" method="delete">
+			<result type="redirectAction">weekly-report</result>
+		</action>
+		<action name="weekly-report-update" class="weekly-report" method="update">
+			<result type="redirectAction">weekly-report</result>
+		</action>
+		<action name="weekly-report-view" class="weekly-report" method="getOneWeeklyReport">
+			<result>/WEB-INF/views/student/weekly-report-view.jsp</result>
+		</action>
+		<action name="weekly-report-save">
+			<result>/WEB-INF/views/student/weekly-report-add.jsp</result>
+		</action>
+		<!-- end -->
+		
+		<!-- 实习报告 -->
+		
+		<action name="upload" class="upload">
+    	<result type="redirectAction">weekly-report</result>
+    	<result name="input">error.jsp</result>
+    	<!-- 配置拦截器信息限制上传文件类型、大小 -->
+    	<interceptor-ref name="fileUpload">
+    		<param name="maximumSize">2097152</param>
+    		
+    	</interceptor-ref>
+    	<interceptor-ref name="defaultStack"></interceptor-ref>
+    </action>
+		
+		<!-- end -->
+		
+		<!-- 毕设周报 -->
+		
+		<action name="graduate-weekly-report" class="graduate-weekly-report">
+			<result>/WEB-INF/views/student/graduate-weekly-report.jsp</result>
+		</action>
+        <action name="graduate-weekly-report-edit" class="graduate-weekly-report" method="get">
+            <result>/WEB-INF/views/student/graduate-weekly-update.jsp</result>
+        </action>
+		<action name="graduate-weekly-report-add" class="graduate-weekly-report" method="add">
+			<result type="redirectAction">graduate-weekly-report</result>
+		</action>
+		<action name="stu-info" class="studentAction" method="info">
+			<result>/WEB-INF/views/student/studentinfo.jsp</result>
+		</action>
+		<action name="scourseExample" class="courseAction" method="showCaseLibraries"> 
+ 			<result>/WEB-INF/views/student/scourseExample.jsp</result> 
+ 		</action> 
+		<!-- end -->
+		<!-- 老师相关操作 -->
+		<!--<action name="tch-index" class="teacherAction">-->
+			<!--<result>/WEB-INF/views/teacher/index.jsp</result>-->
+		<!--</action>		-->
+		<action name="tch-info" class="teacherAction" method="info">
+			<result>/WEB-INF/views/teacher/teacherinfo.jsp</result>
+		</action>
+		<action name="tch-course" class="courseAction" method="tchCourse">
+			<result>/WEB-INF/views/teacher/teachercourses.jsp</result>
+		</action>
+		<action name="tcourseExample" class="courseAction" method="showCaseLibraries">
+			<result>/WEB-INF/views/teacher/tcourseExample.jsp</result>
+		</action>
+		<action name="thomework" class="homeworkAction" method="listHomeworkByCourse">
+			<result>/WEB-INF/views/teacher/thomework.jsp</result>
+		</action>
+		<!-- end -->
+		<!-- 案例库上传相关操作 -->
+		<action name="addCaseLibrary" class="caseLibraryAction">
+			<result type="redirectAction">tcourseExample</result>
+			<result name="input" type="redirectAction">tcourseExample</result>
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">10240000</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack" />
+		</action>
+		<!-- end -->
+		<!-- 课程相关操作 -->
+		<action name="course" class="courseAction">
+			<result>/WEB-INF/views/student/studentcourses.jsp</result>
+		</action>
+		<!-- end -->
+		<!-- 作业相关操作 -->
+		<action name="uploadHomework" class="homeworkAction">
+			<result type="redirectAction">course</result>
+			<result name="input" type="redirectAction">course</result>
+			<interceptor-ref name="fileUpload">
+				<!-- <param name="allowedTypes">image/jpeg,image/png,application/pdf</param> -->
+				<param name="maximumSize">10240000</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack" />
+		</action>
+		<!-- end -->
+		<action name="graduate-weekly-report-delete" class="graduate-weekly-report" method="delete">
+			<result type="redirectAction">graduate-weekly-report</result>
+		</action>
+		<action name="graduate-weekly-report-update" class="graduate-weekly-report" method="update">
+			<result type="redirectAction">graduate-weekly-report</result>
+		</action>
+		<action name="graduate-weekly-report-view" class="graduate-weekly-report" method="getOneWeeklyReport">
+			<result>/WEB-INF/views/student/graduate-weekly-report-view.jsp</result>
+		</action>
+		<action name="graduation-weekly-report-save">
+			<result>/WEB-INF/views/student/graduation-weekly-add.jsp</result>
 		</action>
 		<!-- end -->
 		
@@ -69,6 +196,9 @@
 		
 		<action name="internship-report-download" class="fileDownloadAction">  
 			<result name="FileNotFound">/WEB-INF/views/error/FileNotFound.jsp</result>
+		</action>
+		<!-- 文件下载 -->
+		<action name="download" class="fileDownloadAction">
 			<result name="success" type="stream">
 				<param name="contentType">*</param>
 				<param name="contentDisposition">attachment;filename="${fileName}"</param>
@@ -101,12 +231,10 @@
 		<action name="teacher-graduation-weekly-report-all" class="teacher-graduation-weekly-report" method="getOneStudentWeeklyReports">
 			<result>/WEB-INF/views/teacher/t_graduation_all.jsp</result>
 		</action>
-		<action name="teacher-graduation-weekly-report-view" class="teacher-graduation-weekly-report" method="queryOneWeeklyReport">
+		<action name="teacher-graduation-weekly-report-view" class="teacher-graduation-weekly-report" method="queryOneGraduationWeeklyReport">
 			<result>/WEB-INF/views/teacher/t_graduation_view.jsp</result>
 		</action>
-		
 		<!-- end -->
-		
 	</package>
 
 

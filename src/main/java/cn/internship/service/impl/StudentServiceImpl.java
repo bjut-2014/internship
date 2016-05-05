@@ -18,7 +18,9 @@ public class StudentServiceImpl implements StudentService{
 	public Student login(String sno, String password) {
 		Student student = studentDao.get(sno, password);
 		//设置全局用户信息
-		UserInfo.setInfo(student.getName(), student.getSno());
+        if (student != null) {
+            UserInfo.setInfo(student.getName(), student.getSno());
+        }
 		return student;
 	}
 
@@ -33,6 +35,11 @@ public class StudentServiceImpl implements StudentService{
 	public Student get(Integer id){
 		return studentDao.get(id);
 	}
+
+	@Override
+	public void updatePwd(Student student) {
+		studentDao.updateStudent(student);
+	}
 	
 	public Student get(String sno){
 		return studentDao.get(sno);
@@ -45,5 +52,6 @@ public class StudentServiceImpl implements StudentService{
 	public void setStudentDao(StudentDao studentDao) {
 		this.studentDao = studentDao;
 	}
+
 
 }

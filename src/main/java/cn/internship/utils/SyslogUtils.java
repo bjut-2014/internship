@@ -56,7 +56,35 @@ public class SyslogUtils{
 		}
 		else if(methodName.indexOf("logout")!=-1){
 			str = "注销了";
-		}else{
+		}else if(methodName.indexOf("saveWeeklyReport")!=-1){
+			str="提交了一条实习周报";
+		}else if(methodName.indexOf("updateWeeklyReport")!=-1){
+			str="更新了一条实习周报";
+		}else if(methodName.indexOf("deleteWeeklyReport")!=-1){
+			str="删除了一条实习周报";
+		}else if(methodName.indexOf("getWeeklyReport")!=-1){
+			str="查看了一条实习周报";
+		}else if(methodName.indexOf("getGraduationWeeklyReport")!=-1){
+			str="查看了一条毕设周报";
+		}else if(methodName.indexOf("saveGraduationWeeklyReport")!=-1){
+			str="提交了一条毕设周报";
+		}else if(methodName.indexOf("updateGraduationWeeklyReport")!=-1){
+			str="更新了一条毕设周报";
+		}else if(methodName.indexOf("deleteGraduationWeeklyReport")!=-1){
+			str="删除了一条毕设周报";
+		}else if(methodName.indexOf("saveInternshipReport")!=-1){
+			str="上传了实习报告";
+<<<<<<< HEAD
+		}else if(methodName.indexOf("getInternshipReport")!=-1){
+			str="下载了一份实习报告";
+=======
+		}else if(methodName.indexOf("saveHomework")!=-1){
+			str = "上传了作业";
+		}else if(methodName.indexOf("saveCaseLibrary")!=-1){
+			str="上传了一个案例";
+>>>>>>> a1d593e20dfeeeab36222b998c8526a435ad4e31
+		}
+		else{
 			str="do nothing";
 		}
 		return str;

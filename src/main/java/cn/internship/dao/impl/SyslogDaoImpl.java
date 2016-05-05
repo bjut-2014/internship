@@ -29,15 +29,21 @@ public class SyslogDaoImpl extends HibernateDaoSupport implements SyslogDao{
 		return list;
 	}
 
-	//获得某个编号下的所有日志
+	//获得某个编号下的前8条日志
 	@Override
 	public List<Syslog> getAll(String no) {
-		String hql = "from Syslog s where s.no=:no";
-		String[] params = new String[]{"no"};
-		String[] values = new String[]{no};
-		List<Syslog> list = (List<Syslog>) getHibernateTemplate().findByNamedParam(hql, params, values);
+		String hql = "from Syslog s where s.no='"+no+"' order by s.date desc";
+//		String[] params = new String[]{"no"};
+//		String[] values = new String[]{no};
+		List<Syslog> list = (List<Syslog>) getHibernateTemplate().find(hql);
 		if(list==null||list.size()==0){
 			return null;
+		}
+		//只取前10条数据
+		List<Syslog> newList = null;
+		if(list.size()>8){
+			newList = list.subList(0, 8);
+			return newList;
 		}
 		return list;
 	}

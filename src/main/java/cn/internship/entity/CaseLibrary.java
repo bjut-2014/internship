@@ -73,7 +73,4 @@ public class CaseLibrary {
 	public void setStuCaseLibrary(Boolean stuCaseLibrary) {
 		this.stuCaseLibrary = stuCaseLibrary;
 	}
-	
-	
-	
 }

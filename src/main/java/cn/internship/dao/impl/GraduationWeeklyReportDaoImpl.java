@@ -38,6 +38,4 @@ public class GraduationWeeklyReportDaoImpl extends HibernateDaoSupport implement
 		List<GraduationWeeklyReport> list=(List<GraduationWeeklyReport>) getHibernateTemplate().find(hql, values);
 		return list;
 	}
-
-
 }
