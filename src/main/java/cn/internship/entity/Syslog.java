@@ -20,7 +20,7 @@ public class Syslog {
 	//主键
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Integer syslogId;
 	//编号：学生学号，教师职工号
 	@Column(length=24)
 	private String no;
@@ -33,11 +33,12 @@ public class Syslog {
 	@Column(length=100)
 	private String behavior;
 	
-	public Integer getId() {
-		return id;
+
+	public Integer getSyslogId() {
+		return syslogId;
 	}
-	public void setId(Integer id) {
-		this.id = id;
+	public void setSyslogId(Integer syslogId) {
+		this.syslogId = syslogId;
 	}
 	public String getNo() {
 		return no;
