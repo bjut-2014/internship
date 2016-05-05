@@ -1,9 +1,9 @@
 /*index*/
 .carousel-inner img {
-    width: 1035px;
+    width: 100%;
 }
 .panel {
-    margin-top: 20px;
+    margin-top: 16px;
 }
 .panel-notice .panel-heading {
     background-color: #6676c2;
@@ -25,4 +25,7 @@
 }
 .copyright {
     bottom: inherit;
+}
+.panel {
+    background-color: initial;
 }

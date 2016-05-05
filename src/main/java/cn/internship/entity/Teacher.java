@@ -36,6 +36,10 @@ public class Teacher {
 	// 密码
 	@Column(length = 100)
 	private String password;
+	//职称
+	private String title;
+	//专业方向
+	private String major;
 	// 用户类型：该实体为教师
 	private Integer userType;
 	//教师教授的课程集合
@@ -97,5 +101,16 @@ public class Teacher {
 	public void setCourses(Set<Course> courses) {
 		this.courses = courses;
 	}
-
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getMajor() {
+		return major;
+	}
+	public void setMajor(String major) {
+		this.major = major;
+	}
 }

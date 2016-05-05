@@ -1,0 +1,55 @@
+.table-bordered>tbody,
+.table-bordered>thead{
+	font-size:13px;
+	color:#797979;
+}
+.table-bordered>tbody .position,
+.table-bordered>thead .position{
+	text-align:center;
+}
+.table-bordered>tbody .thin-width{
+	width:10%;
+	padding:5px;
+}
+.do{
+	color:#4bbbf4;
+	display:block;
+	margin-left:auto;
+	margin-top:5px;
+	font-size:14px;
+	text-align:center;
+}
+.up{
+	cursor:pointer;
+	color:#6777c2;
+	display:block;
+	margin-left:auto;
+	margin-top:5px;
+	text-align:center;
+	font-size:14px;
+	
+}
+.tdo{
+	color:#6777c2;
+	display:block;
+	margin-left:auto;
+	margin-top:5px;
+	text-align:center;
+	font-size:14px;
+}
+.tup{
+	color:#4bbbf4;	
+	display:block;
+	margin-left:auto;
+	margin-top:5px;
+	text-align:center;
+	font-size:14px;
+	
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+	padding: 10px;
+}
+.col-md-12 {
+	padding-left: 10px;
+	padding-right: 10px;
+}

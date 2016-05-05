@@ -50,4 +50,8 @@ public class TeacherServiceImpl implements TeacherService{
 	//-----------------------get与set方法--------------------
 	
 	
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> a1d593e20dfeeeab36222b998c8526a435ad4e31

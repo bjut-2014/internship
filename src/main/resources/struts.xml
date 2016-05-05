@@ -54,7 +54,7 @@
 		<!-- 登陆 -->
 		<action name="login" class="loginAction">
 			<result name="success" type="redirectAction">index</result>
-			
+			<!--<result name="tsuccess" type="redirectAction">index</result>-->
 			<result name="input">/login.jsp</result>
 		</action>
 		<!-- end -->
@@ -64,6 +64,9 @@
 		</action>
 		<!-- end -->
 		<!-- 重置密码 -->
+		<action name="reset" class="resetPwdAction">
+			<result>/WEB-INF/views/common/reset-pwd.jsp</result>
+		</action>
 		<action name="resetPwd" class="resetPwdAction" method="resetPwd">
 			<result name="success">/login.jsp</result>
             <result name="input">/WEB-INF/views/common/reset-pwd.jsp</result>
@@ -125,6 +128,56 @@
 		<action name="graduate-weekly-report-add" class="graduate-weekly-report" method="add">
 			<result type="redirectAction">graduate-weekly-report</result>
 		</action>
+		<action name="stu-info" class="studentAction" method="info">
+			<result>/WEB-INF/views/student/studentinfo.jsp</result>
+		</action>
+		<action name="scourseExample" class="courseAction" method="showCaseLibraries"> 
+ 			<result>/WEB-INF/views/student/scourseExample.jsp</result> 
+ 		</action> 
+		<!-- end -->
+		<!-- 老师相关操作 -->
+		<!--<action name="tch-index" class="teacherAction">-->
+			<!--<result>/WEB-INF/views/teacher/index.jsp</result>-->
+		<!--</action>		-->
+		<action name="tch-info" class="teacherAction" method="info">
+			<result>/WEB-INF/views/teacher/teacherinfo.jsp</result>
+		</action>
+		<action name="tch-course" class="courseAction" method="tchCourse">
+			<result>/WEB-INF/views/teacher/teachercourses.jsp</result>
+		</action>
+		<action name="tcourseExample" class="courseAction" method="showCaseLibraries">
+			<result>/WEB-INF/views/teacher/tcourseExample.jsp</result>
+		</action>
+		<action name="thomework" class="homeworkAction" method="listHomeworkByCourse">
+			<result>/WEB-INF/views/teacher/thomework.jsp</result>
+		</action>
+		<!-- end -->
+		<!-- 案例库上传相关操作 -->
+		<action name="addCaseLibrary" class="caseLibraryAction">
+			<result type="redirectAction">tcourseExample</result>
+			<result name="input" type="redirectAction">tcourseExample</result>
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">10240000</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack" />
+		</action>
+		<!-- end -->
+		<!-- 课程相关操作 -->
+		<action name="course" class="courseAction">
+			<result>/WEB-INF/views/student/studentcourses.jsp</result>
+		</action>
+		<!-- end -->
+		<!-- 作业相关操作 -->
+		<action name="uploadHomework" class="homeworkAction">
+			<result type="redirectAction">course</result>
+			<result name="input" type="redirectAction">course</result>
+			<interceptor-ref name="fileUpload">
+				<!-- <param name="allowedTypes">image/jpeg,image/png,application/pdf</param> -->
+				<param name="maximumSize">10240000</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack" />
+		</action>
+		<!-- end -->
 		<action name="graduate-weekly-report-delete" class="graduate-weekly-report" method="delete">
 			<result type="redirectAction">graduate-weekly-report</result>
 		</action>
@@ -137,13 +190,15 @@
 		<action name="graduation-weekly-report-save">
 			<result>/WEB-INF/views/student/graduation-weekly-add.jsp</result>
 		</action>
-		
 		<!-- end -->
 		
 		<!-- 老师下载实习报告 -->
 		
 		<action name="internship-report-download" class="fileDownloadAction">  
 			<result name="FileNotFound">/WEB-INF/views/error/FileNotFound.jsp</result>
+		</action>
+		<!-- 文件下载 -->
+		<action name="download" class="fileDownloadAction">
 			<result name="success" type="stream">
 				<param name="contentType">*</param>
 				<param name="contentDisposition">attachment;filename="${fileName}"</param>
@@ -179,9 +234,7 @@
 		<action name="teacher-graduation-weekly-report-view" class="teacher-graduation-weekly-report" method="queryOneGraduationWeeklyReport">
 			<result>/WEB-INF/views/teacher/t_graduation_view.jsp</result>
 		</action>
-		
 		<!-- end -->
-		
 	</package>
 
 

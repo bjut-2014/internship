@@ -132,7 +132,4 @@ public class Student {
 				+ classes + ", phone=" + phone + ", email=" + email
 				+ ", password=" + password + ", userType=" + userType + "]";
 	}
-
-	
-	
 }

@@ -104,7 +104,7 @@ textarea {
 @media (min-width: 768px) {
     .sidebar {
         position: fixed;
-        top: 50px;
+        top: 46px;
         bottom: 0;
         left: 0;
         z-index: 1000;
@@ -160,7 +160,7 @@ textarea {
     bottom: 0;
 }
 .main {
-    padding-top: 60px;
+    padding-top: 66px;
 }
 .submit-error {
     height: 23px;
