@@ -104,7 +104,7 @@
 		
 		<!-- 实习报告 -->
 		
-		<action name="upload" class="upload">
+		<action name="uploadReport" class="upload">
     	<result type="redirectAction">weekly-report</result>
     	<result name="input">error.jsp</result>
     	<!-- 配置拦截器信息限制上传文件类型、大小 -->
