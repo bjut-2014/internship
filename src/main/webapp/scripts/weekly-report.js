@@ -41,7 +41,7 @@ $(function () {
         form.append('uploadFileName', homeworkFile.name);
         $.ajax({
             dataType: 'JSON',
-            url: 'upload',
+            url: 'uploadReport',
             type: 'POST',
             data: form,
             processData: false,
