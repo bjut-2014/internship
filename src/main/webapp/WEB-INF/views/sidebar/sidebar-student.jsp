@@ -8,5 +8,5 @@
   <li class="<s:if test="#request.navId == 5">active</s:if>"><a href="graduate-weekly-report"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>毕设</a></li>
 </ul>
 <ul class="nav nav-sidebar reset-pwd-ul">
-  <li class="<s:if test="#request.navId == 6">active</s:if>"><a href="resetPwd"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>修改密码</a></li>
+  <li class="<s:if test="#request.navId == 6">active</s:if>"><a href="reset"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>修改密码</a></li>
 </ul>

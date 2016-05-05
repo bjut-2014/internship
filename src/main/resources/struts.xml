@@ -105,15 +105,15 @@
 		<!-- 实习报告 -->
 		
 		<action name="uploadReport" class="upload">
-    	<result type="redirectAction">weekly-report</result>
-    	<result name="input">error.jsp</result>
-    	<!-- 配置拦截器信息限制上传文件类型、大小 -->
-    	<interceptor-ref name="fileUpload">
-    		<param name="maximumSize">2097152</param>
-    		
-    	</interceptor-ref>
-    	<interceptor-ref name="defaultStack"></interceptor-ref>
-    </action>
+			<result type="redirectAction">weekly-report</result>
+			<result name="input">error.jsp</result>
+			<!-- 配置拦截器信息限制上传文件类型、大小 -->
+			<interceptor-ref name="fileUpload">
+				<param name="maximumSize">2097152</param>
+
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+		</action>
 		
 		<!-- end -->
 		
