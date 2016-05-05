@@ -208,9 +208,9 @@
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	
-	<!--<bean id="fileDownloadAction" class="cn.internship.action.InternshipReportDownloadAction">-->
-		<!--<property name="internshipReportService" ref="internshipReportService"></property>-->
-	<!--</bean>-->
+	<bean id="fileDownloadAction" class="cn.internship.action.InternshipReportDownloadAction">
+		<property name="internshipReportService" ref="internshipReportService"></property>
+	</bean>
 	<!-- 学生实习报告模块 -->
 	
 	<bean id="upload" class="cn.internship.action.FileUploadAction">
@@ -226,7 +226,7 @@
 	<!-- end -->
 	
 	<!-- 文件下载相关配置 -->
-	<bean id="fileDownloadAction" class="cn.internship.action.FileDownloadAction"></bean>
+	<bean id="filesDownloadAction" class="cn.internship.action.FileDownloadAction"></bean>
 	<!-- end -->
 
 	<!-- 毕设周报模块 -->

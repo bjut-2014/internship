@@ -198,7 +198,7 @@
 			<result name="FileNotFound">/WEB-INF/views/error/FileNotFound.jsp</result>
 		</action>
 		<!-- 文件下载 -->
-		<action name="download" class="fileDownloadAction">
+		<action name="download" class="filesDownloadAction">
 			<result name="success" type="stream">
 				<param name="contentType">*</param>
 				<param name="contentDisposition">attachment;filename="${fileName}"</param>

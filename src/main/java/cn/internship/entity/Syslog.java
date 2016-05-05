@@ -32,11 +32,6 @@ public class Syslog {
 	//行为
 	@Column(length=100)
 	private String behavior;
-<<<<<<< HEAD
-	
-=======
->>>>>>> dfe223da577b72dd75833ec49746564a09c36b1a
-
 	public Integer getSyslogId() {
 		return syslogId;
 	}
