@@ -2,7 +2,6 @@
 <!DOCTYPE>
 <html>
 <jsp:include page="../header/header.jsp" />
-<link href="styles/student.css" rel="stylesheet">
 <body>
 <jsp:include page="../nav/nav.jsp" />
 <div class="container-fluid">
