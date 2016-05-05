@@ -45,8 +45,8 @@
                            		<td><s:property value="#session.currentUser.phone"/></td>
                            	</tr>
                            	<tr>
-                           		<td>联系方式：</td>
-                           		<td><s:property value="#session.currentUser.phone"/></td>
+                           		<td>邮箱：</td>
+                           		<td><s:property value="#session.currentUser.email"/></td>
                            	</tr>
                            </tbody>
                       </table>

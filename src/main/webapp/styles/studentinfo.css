@@ -1,5 +1,5 @@
 .panel-notice{
-	border-top:5px solid #6676c2 ;
+	border-top:3px solid #6676c2 ;
 	height:80%
 }
 .panel-notice .panel-heading,
@@ -10,12 +10,12 @@
 	font-size:16px;
 }
 .panel-job{
-	border-top:5px solid #4bbbf4 ;
+	border-top:3px solid #4bbbf4 ;
 	height:80%
 }
 
 .table-striped>tbody{
-	font-size:12px;
+	font-size:14px;
 	color:#797979;
 }
 
@@ -53,12 +53,15 @@
 
 .item-info {
   margin-left: 15px;
-  margin-bottom: 15px;
-}
-
-.item-info p {
-  margin-bottom: 10px !important;
+  /*margin-bottom: 15px;*/
 }
 .copyright {
     bottom: inherit;
+}
+.panel .panel-body p {
+  margin: 7px 0;
+  color: #797979;
+}
+.text-muted {
+  margin-top: 3px;
 }
