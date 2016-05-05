@@ -5,6 +5,11 @@
 <jsp:include page="../header/header.jsp" />
 <link href="styles/lib/font-awesome.css" rel="stylesheet" />
 <link href="styles/practice.css" rel="stylesheet" />
+<style>
+    .copyright {
+        bottom: inherit;
+    }
+</style>
 <body>
 <jsp:include page="../nav/nav.jsp" />
 <div class="container-fluid">

@@ -3,7 +3,7 @@ body{
 	background-color:rgb(223,226,227);
 }
 .myPanel{
-	padding:20px 20px;
+	padding:20px 20px 0;
 	color: #797979;
 }
 .panel-head{
@@ -24,20 +24,6 @@ body{
 .panel-body{
 	padding-bottom:10px;
 	font-size:14px;
-}
-
-.practiceRerort{
-	padding-top:10px;
-}
-
-.practiceRerort1{
-	padding-top:10px;
-	border-left-style:inset;
-	border-left:3px solid rgb(26,131,122);
-}
-.practiceRerort .panel-body p{
-	float:left;
-	width:80%;
 }
 
 .myBu{
@@ -88,12 +74,22 @@ body{
     font-size: 14px;
     color: #797979;
 }
-.copyright {
-    bottom: inherit;
-}
 .for-border-right {
     border-right: 1px solid #ddd;
 }
 .panel-body {
     padding: 15px 0;
+}
+.practiceRerort{
+    padding-top:10px;
+}
+
+.practiceRerort1{
+    padding-top:10px;
+    border-left-style:inset;
+    border-left:3px solid rgb(26,131,122);
+}
+.practiceRerort .panel-body p{
+    float:left;
+    width:80%;
 }

@@ -4,7 +4,7 @@
 <html>
 <jsp:include page="../header/header.jsp" />
 <link href="styles/lib/font-awesome.css"  rel="stylesheet" />
-<link href="styles/t_internship1.css" rel="stylesheet" />
+<link href="styles/practice.css" rel="stylesheet" />
 <body>
 <jsp:include page="../nav/nav.jsp" />
 <div class="container-fluid">
@@ -15,9 +15,8 @@
  
        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
         <div class="panel panel-default myPanel weekReport">
-            <div class="panel-head">实习</div>
             <div class="panel-body">
-               <table class="table table-bordered">
+               <table class="table table-striped table-bordered">
              
                   <thead>
                      <tr id="the">
