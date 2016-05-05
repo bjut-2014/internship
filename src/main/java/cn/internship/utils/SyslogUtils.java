@@ -74,15 +74,12 @@ public class SyslogUtils{
 			str="删除了一条毕设周报";
 		}else if(methodName.indexOf("saveInternshipReport")!=-1){
 			str="上传了实习报告";
-<<<<<<< HEAD
 		}else if(methodName.indexOf("getInternshipReport")!=-1){
 			str="下载了一份实习报告";
-=======
 		}else if(methodName.indexOf("saveHomework")!=-1){
 			str = "上传了作业";
 		}else if(methodName.indexOf("saveCaseLibrary")!=-1){
 			str="上传了一个案例";
->>>>>>> a1d593e20dfeeeab36222b998c8526a435ad4e31
 		}
 		else{
 			str="do nothing";
