@@ -14,16 +14,6 @@
             <jsp:include page="../sidebar/sidebar-teacher.jsp" />
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                <!-- Indicators -->
-                <ol class="carousel-indicators">
-                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-                </ol>
-			
-               
                <div class="wraper container-fluid">
                 <div class="row">
                     <div class="col-md-12">
@@ -72,7 +62,6 @@
                     
                 </div>    
              </div>
-</div>
         </div>
     </div>
 </div>

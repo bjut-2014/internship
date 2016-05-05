@@ -42,6 +42,7 @@ public class TeacherWeeklyReportAction extends ActionSupport implements ServletR
 	//显示所有实习的学生
 	@Override
 	public String execute() throws Exception {
+		request.setAttribute("navId", 4);
 		//获得当前用户
 		Teacher teacher=(Teacher) request.getSession().getAttribute("currentUser");
 		//获得当前正在实习的所有学生
@@ -62,6 +63,7 @@ public class TeacherWeeklyReportAction extends ActionSupport implements ServletR
 	
 	//通过学号获取该学生的所有周报
 	public String getOneStudentWeeklyReports(){
+		request.setAttribute("navId", 4);
 		List<WeeklyReport> weeklyReportList=weeklyReportService.getAllWeeklyReport(studentId);
 		if(weeklyReportList!=null){
 			request.setAttribute("weeklyReportList", weeklyReportList);
@@ -71,6 +73,7 @@ public class TeacherWeeklyReportAction extends ActionSupport implements ServletR
 	
 	//通过周报Id获取一条周报
 	public String queryOneWeeklyReport(){
+		request.setAttribute("navId", 4);
 		WeeklyReport wr=weeklyReportService.getWeeklyReport(weeklyReportId);
 		request.setAttribute("weeklyReport", wr);
 		return SUCCESS;

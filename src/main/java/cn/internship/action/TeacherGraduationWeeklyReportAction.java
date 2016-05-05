@@ -43,6 +43,7 @@ public class TeacherGraduationWeeklyReportAction extends ActionSupport implement
 	//显示当前教师所带毕设学生
 	@Override
 	public String execute() throws Exception {
+		request.setAttribute("navId", 5);
 		//获得当前用户
 		Teacher teacher=(Teacher) request.getSession().getAttribute("currentUser");
 		List<GraduationProSele> list=graduationSelectionService.getSelectInfoByTno(teacher.getTno());
@@ -61,6 +62,7 @@ public class TeacherGraduationWeeklyReportAction extends ActionSupport implement
 	
 	//通过学号获取该学生的所有毕设周报
 	public String getOneStudentWeeklyReports(){
+		request.setAttribute("navId", 5);
 		List<GraduationWeeklyReport> graduationWeeklyReportList=graduationWeeklyReportService.getAllGraduationWeeklyReport(studentId);
 		if(graduationWeeklyReportList!=null){
 			request.setAttribute("graduationWeeklyReportList", graduationWeeklyReportList);
@@ -70,6 +72,7 @@ public class TeacherGraduationWeeklyReportAction extends ActionSupport implement
 	
 	//通过周报Id获取一条周报
 	public String queryOneGraduationWeeklyReport(){
+		request.setAttribute("navId", 5);
 		GraduationWeeklyReport gr=graduationWeeklyReportService.getGraduationWeeklyReport(graduationWeeklyReportId);
 		request.setAttribute("graduationWeeklyReport", gr);
 		return SUCCESS;
