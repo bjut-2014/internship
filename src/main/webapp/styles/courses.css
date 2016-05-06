@@ -27,6 +27,7 @@
 	margin-top:5px;
 	text-align:center;
 	font-size:14px;
+	z-index:1;
 	
 }
 .tdo{
@@ -45,4 +46,13 @@
 	text-align:center;
 	font-size:14px;
 	
+}
+.uploadfile{
+	position:absolute;
+	opacity:0;
+	top:0px;
+	left:0px;
+	height:14px;
+	width:14px;
+	z-index:2;
 }
