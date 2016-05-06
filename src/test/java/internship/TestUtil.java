@@ -1,5 +1,7 @@
 package internship;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
@@ -238,6 +240,59 @@ public class TestUtil implements ServletRequestAware{
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		GraduationWeeklyReportService wrs = (GraduationWeeklyReportService) context.getBean("graduationWeeklyReportService");
 		wrs.deleteGraduationWeeklyReport(1);
+	}
+	
+	@Test
+	public void addInternshipDetail(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		InternshipDetailService its=(InternshipDetailService) context.getBean("internshipDetailService");
+		InternshipDetail it=new InternshipDetail();
+		
+		SimpleDateFormat df=new SimpleDateFormat("yyyyMMdd");
+		String date="20160504";
+		Date dateTime = null;
+		try {
+			dateTime = df.parse(date);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		it.setCompany_address("Beijing");
+		it.setCompany_name("Baidu");
+		it.setCompany_teacher("Nemo");
+		it.setDate(dateTime);
+		it.setScore(98);
+		it.setSno("S0001");
+		
+		its.addInternshipDetail(it);
+	}
+	
+	@Test
+	public void getOneInternshipDetail(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		InternshipDetailService its=(InternshipDetailService) context.getBean("internshipDetailService");
+		InternshipDetail it=its.getInternshipDetailById(3);
+		System.out.println(it);
+	}
+	
+	@Test
+	public void updateInternshipDetail(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		InternshipDetailService its=(InternshipDetailService) context.getBean("internshipDetailService");
+		InternshipDetail it=its.getInternshipDetailById(3);
+		
+		it.setScore(96);
+		its.updateInternshipDetail(it);
+	}
+	
+	@Test
+	public void deleteInternshipDetail(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		InternshipDetailService its=(InternshipDetailService) context.getBean("internshipDetailService");
+		InternshipDetail it=its.getInternshipDetailById(3);
+		
+		its.deleteInternshipDetail(3);
 	}
 	
 	@Override
