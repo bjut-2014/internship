@@ -47,8 +47,11 @@
                                                		<td><a href="scourseExample?courseId=<s:property value="#info.course.courseId" />"><span class="fa fa-folder-open do"></span></a></td>
 	                                           		<td>
                                                     <s:if test="#info.homework==null">
-                                                        <input type="file" name="uploadfile" class="uploadfile"/>
-                                                        <input type="hidden" name="courseId" value='<s:property value="#info.course.courseId" />' />
+                                                        <label class="glyphicon glyphicon-open up">
+                                                        	<input type="file" name="uploadfile" class="uploadfile"/>
+                                                        	<input type="hidden" name="courseId" value='<s:property value="#info.course.courseId" />' />
+                                                        </label>
+                                                        
                                                     </s:if>
                                                     <s:else>
                                                         <%--<a href="#info.homework.title.path">--%>
