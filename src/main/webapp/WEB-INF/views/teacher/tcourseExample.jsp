@@ -31,8 +31,11 @@
 	                                	     		<s:file name="upload" label="选择文件" />
 	                                	     		<s:submit value="上传"/>
 	                                	     	</s:form>-->
-	                                	     	 <input type="file" name="uploadfile" class="uploadfile"/>
-                                                 <input type="hidden" name="courseId" value="<s:property value="#request.courseId" />">
+	                                	     	 <label class="fa fa-plus-square plus">
+	                                	     	 	<input type="file" name="uploadfile" class="uploadfile"/>
+	                                	     	 	<input type="hidden" name="courseId" value="<s:property value="#request.courseId" />">
+	                                	     	 </label>
+                                                 
 	                                	     </div>                               	                               
                                         <table class="table table-striped">
                                             <thead>
