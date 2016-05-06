@@ -22,6 +22,7 @@ th{
 	color:#2c9f94;
 	font-size:33px;
 	cursor:pointer;
+	z-index:1;
 }
 .do{
 	color:#4bbbf4;
@@ -43,4 +44,13 @@ th{
 .form-control{
 	padding:0px;
 	height:30px;
+}
+.uploadfile{
+	position:absolute;
+	opacity:0;
+	top:0px;
+	left:0px;
+	height:14px;
+	width:14px;
+	z-index:2;
 }
