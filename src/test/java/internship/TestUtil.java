@@ -295,6 +295,57 @@ public class TestUtil implements ServletRequestAware{
 		its.deleteInternshipDetail(3);
 	}
 	
+	@Test
+	public void getAllStudents(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		StudentService ss=(StudentService) context.getBean("studentService");
+		List<Student> list=ss.getAllStudents();
+		for(Student s:list){
+			System.out.println(s);
+		}
+		
+	}
+	
+	@Test
+	public void getOneStudentById(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		StudentService ss=(StudentService) context.getBean("studentService");
+		System.out.println(ss.get(1));
+	}
+	
+	@Test
+	public void testAddStudent(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		StudentService ss=(StudentService) context.getBean("studentService");
+		
+		Student st=new Student();
+		String sno="S0003";
+		st.setClasses("嵌入式2014级");
+		st.setName("兔朱迪");
+		st.setSno(sno);
+		st.setPassword(sno);
+		
+		ss.addStudent(st);
+	}
+	
+	@Test
+	public void testUpdateStudent(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		StudentService ss=(StudentService) context.getBean("studentService");
+		
+		Student st=ss.get(3);
+		st.setSno("S0004");
+		ss.updateStudent(st);
+	}
+	
+	@Test
+	public void testDeleteStudent(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		StudentService ss=(StudentService) context.getBean("studentService");
+		
+		ss.deleteStudent(3);
+	}
+	
 	@Override
 	public void setServletRequest(HttpServletRequest request) {
 		this.request=request;

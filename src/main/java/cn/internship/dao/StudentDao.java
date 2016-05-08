@@ -1,5 +1,7 @@
 package cn.internship.dao;
 
+import java.util.List;
+
 import cn.internship.entity.Student;
 
 /**
@@ -19,4 +21,13 @@ public interface StudentDao {
 
 	//更新用户信息
 	public void updateStudent(Student student);
+	
+	//获取所有学生信息
+	public List<Student> getAllStudents();
+	
+	//添加学生信息
+	public void addStudent(Student student);
+	
+	//通过主键删除学生信息
+	public void deleteStudent(Integer id);
 }
