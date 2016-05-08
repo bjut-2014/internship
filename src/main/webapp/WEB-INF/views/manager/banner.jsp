@@ -20,51 +20,29 @@
                 <div class="col-sm-12">             	
                     <div class="panel panel-default">
                     	<div class="panel-heading">
-                    		<h3 class="panel-title">老师管理 Teacher Manage</h3>
+                    		<h3 class="panel-title">公告栏</h3>
                     	</div>
                     	<div class="panel-body">     		
                              	<div class="form">
                              		<form class="cmxform form-horizontal tasi-form" id="commentForm" action="#" method="get" >
                              			<div class="form-group">
-                             				<label class="control-label col-lg-2">工号</label>
+                             				<label class="control-label col-lg-2">标题</label>
                              				<div class="col-lg-10">
-                             					<input name="tno" class="form-control" id="tno" type="text" aria-required="true"/>
+                             					<input name="btitle" class="form-control" id="btitle" type="text" aria-required="true"/>
                              				</div>
                              			</div>
                              			<div class="form-group">
-                             				<label class="control-label col-lg-2">老师姓名</label>
+                             				<label class="control-label col-lg-2">内容</label>
                              				<div class="col-lg-10">
-                             					<input name="tname" class="form-control" id="tname" type="text" aria-required="true"/>
+                             					<textarea name="bcontent" class="form-control" id="bcontent"  aria-required="true"></textarea>
                              				</div>
                              			</div>
                              			<div class="form-group">
-                             				<label class="control-label col-lg-2">性别</label>
+                             				<label class="control-label col-lg-2">图片</label>
                              				<div class="col-lg-10">
-                             					<select name="tsex" class="form-control" id="tsex"  aria-required="true" >
-                             						<option>男</option>
-                             						<option>女</option>
-                             					</select>
+                             					<input name="bpic" class="form-control" id="bpic"  type="file" aria-required="true"/>
                              				</div>
                              			</div>
-                             			<div class="form-group">
-                             				<label class="control-label col-lg-2">联系电话</label>
-                             				<div class="col-lg-10">
-                             					<input name="tphone" class="form-control" id="tphone" type="text" aria-required="true"/>
-                             				</div>
-                             			</div>
-                             			<div class="form-group">
-                             				<label class="control-label col-lg-2">电子邮件</label>
-                             				<div class="col-lg-10">
-                             					<input name="temail" class="form-control" id="temail" type="text" aria-required="true"/>
-                             				</div>
-                             			</div>
-                             			<div class="form-group">
-                             				<label class="control-label col-lg-2">方向</label>
-                             				<div class="col-lg-10">
-                             					<input name="tmajor" class="form-control" id="tmajor" type="text" aria-required="true"/>
-                             				</div>
-                             			</div>
-                             			
                              			<div class="form-group">
                              				
                              				<div class="col-lg-offset-2 col-lg-10">
