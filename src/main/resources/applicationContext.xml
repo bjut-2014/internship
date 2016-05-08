@@ -273,4 +273,11 @@
 	</bean>
 	<!-- end -->
 	
+	<!-- 管理员首页 -->
+	<bean id="adminAction" class="cn.internship.action.AdminAction">
+		<property name="noticeBoardService" ref="noticeBoardService"/>
+		<property name="recruitInfoService" ref="recruitInfoService"/>
+		<property name="carouselFigureService" ref="carouselFigureService"/>
+	</bean>
+	<!-- end -->
 </beans>

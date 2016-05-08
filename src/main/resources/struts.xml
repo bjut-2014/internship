@@ -235,6 +235,44 @@
 			<result>/WEB-INF/views/teacher/t_graduation_view.jsp</result>
 		</action>
 		<!-- end -->
+		
+		
+		<!-- 招聘、公告、轮播图相关操作 -->
+		<action name="adminAction" class="adminAction">
+			<result></result>
+		</action>
+		<!-- 公告 -->
+		<action name="addNoticeBoard" class="adminAction" method="addNoticeBoard">
+			<result type="redirectAction">adminAction</result>
+		</action>
+		<action name="deleteNoticeBoard" class="adminAction" method="deleteNoticeBoard">
+			<result type="redirectAction">adminAction</result>
+		</action>
+		<action name="updateNoticeBoard" class="adminAction" method="updateNoticeBoard">
+			<result type="redirectAction">adminAction</result>
+		</action>
+		<!-- 招聘 -->
+		<action name="addRecruitInfo" class="adminAction" method="addRecruitInfo">
+			<result type="redirectAction">adminAction</result>
+		</action>
+		<action name="deleteRecruitInfo" class="adminAction" method="deleteRecruitInfo">
+			<result type="redirectAction">adminAction</result>
+		</action>
+		<action name="updateRecruitInfo" class="adminAction" method="updateRecruitInfo">
+			<result type="redirectAction">adminAction</result>
+		</action>
+		<!-- 轮播图 -->
+		<action name="addCarouselFigure" class="adminAction" method="addCarouselFigure">
+			<result type="redirectAction">adminAction</result>
+		</action>
+		<action name="deleteCarouselFigure" class="adminAction" method="deleteCarouselFigure">
+			<result type="redirectAction">adminAction</result>
+		</action>
+		<action name="updateCarouselFigure" class="adminAction" method="updateCarouselFigure">
+			<result type="redirectAction">adminAction</result>
+		</action>
+		<!-- end -->
+		
 	</package>
 
 
