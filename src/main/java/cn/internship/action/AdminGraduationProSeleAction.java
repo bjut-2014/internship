@@ -20,6 +20,10 @@ import com.opensymphony.xwork2.ActionSupport;
  */
 public class AdminGraduationProSeleAction extends ActionSupport implements ServletRequestAware, ServletResponseAware{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private HttpServletRequest request;
 	private HttpServletResponse response;	
 	

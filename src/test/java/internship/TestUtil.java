@@ -8,36 +8,27 @@ import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import cn.internship.entity.GraduationProSele;
-import cn.internship.entity.InternshipDetail;
-import cn.internship.entity.Student;
-import cn.internship.entity.WeeklyReport;
-import cn.internship.service.GraduationSelectionService;
-import cn.internship.service.InternshipDetailService;
-import cn.internship.service.StudentService;
-import cn.internship.service.WeeklyReportService;
 import cn.internship.dao.CourseDao;
 import cn.internship.entity.CaseLibrary;
 import cn.internship.entity.Course;
-import cn.internship.entity.Student;
-import cn.internship.dao.WeeklyReportDao;
-import cn.internship.dao.impl.WeeklyReportDaoImpl;
+import cn.internship.entity.GraduationProSele;
 import cn.internship.entity.GraduationWeeklyReport;
+import cn.internship.entity.InternshipDetail;
 import cn.internship.entity.InternshipReport;
 import cn.internship.entity.Student;
 import cn.internship.entity.WeeklyReport;
+import cn.internship.service.GraduationSelectionService;
 import cn.internship.service.GraduationWeeklyReportService;
 import cn.internship.service.InternshipDetailService;
 import cn.internship.service.InternshipReportService;
+import cn.internship.service.StudentService;
 import cn.internship.service.WeeklyReportService;
-import cn.internship.service.impl.WeeklyReportServiceImpl;
 
 public class TestUtil implements ServletRequestAware{
 
@@ -314,18 +305,12 @@ public class TestUtil implements ServletRequestAware{
 	}
 	
 	@Test
-	public void testAddStudent(){
+	public void testAddGraudationProSele(){
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-		StudentService ss=(StudentService) context.getBean("studentService");
+		GraduationSelectionService gs=(GraduationSelectionService) context.getBean("graduationSelectionService");
 		
-		Student st=new Student();
-		String sno="S0003";
-		st.setClasses("嵌入式2014级");
-		st.setName("兔朱迪");
-		st.setSno(sno);
-		st.setPassword(sno);
-		
-		ss.addStudent(st);
+		GraduationProSele s=gs.getOneSelectInfo(1);
+		gs.deleteSelecInfo(1);
 	}
 	
 	@Test
