@@ -21,7 +21,7 @@ public class AdminDaoImpl extends HibernateDaoSupport implements AdminDao{
 
 	@Override
 	public Admin get(String username, String password) {
-		String hql = "from Admin a where a.username=:username and s.password=:password";
+		String hql = "from Admin a where a.username=:username and a.password=:password";
 		String[] params = new String[]{"username","password"};
 		String[] values = new String[]{username,password};
 		List<Admin> list = (List<Admin>) getHibernateTemplate().findByNamedParam(hql, params, values);
