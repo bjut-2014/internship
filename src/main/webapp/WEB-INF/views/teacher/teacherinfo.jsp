@@ -10,7 +10,7 @@
 <jsp:include page="../nav/nav.jsp" />
 <div class="container-fluid">
     <div class="row">
-        <div class="sidebar">
+        <div class="sidebar col-md-2 col-sm-3">
             <jsp:include page="../sidebar/sidebar-teacher.jsp" />
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">           

@@ -1,6 +1,6 @@
 .panel-notice{
 	border-top:3px solid #6676c2 ;
-	height:80%
+	height:80%;
 }
 .panel-notice .panel-heading,
 .panel-job .panel-heading{
@@ -55,9 +55,9 @@
   margin-left: 15px;
   /*margin-bottom: 15px;*/
 }
-.copyright {
-    bottom: inherit;
-}
+/*.copyright {*/
+    /*bottom: inherit;*/
+/*}*/
 .panel .panel-body p {
   margin: 7px 0;
   color: #797979;
@@ -67,4 +67,7 @@
 }
 .panel-title {
   font-size: 16px;
+}
+.sidebar {
+  padding: 20px;
 }

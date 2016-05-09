@@ -5,11 +5,6 @@
 <jsp:include page="../header/header.jsp" />
 <link href="styles/lib/font-awesome.css" rel="stylesheet" />
 <link href="styles/practice.css" rel="stylesheet" />
-<style>
-    .copyright {
-        bottom: inherit;
-    }
-</style>
 <body>
 <jsp:include page="../nav/nav.jsp" />
 <div class="container-fluid">
@@ -45,48 +40,44 @@
                 </s:else>
             </div>
         </div>
-    </div>
-      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main myMain weekReport">
         <div class="panel panel-default myPanel weekReport1">
             <div class="panel-head-1">周报 weekly Report
                 <a href="weekly-report-save"><button class="glyphicon glyphicon-plus myBu"></button></a>
             </div>
             <div class="panel-body">
                 <s:if test="#request.weeklyplan.size()!=0">
-                <table class="table table-striped weekTable">
-                  <tbody>
-                      <tr id="the">
-                          <th>标题</th>
-                          <th>时间</th>
-                          <th>操作</th>
-                      </tr>
-                      <s:iterator value="#request.weeklyplan" var="list">
-                          <tr>
-                              <td><a href="weekly-report-view?weeklyReportId=${list.id}">${list.title}</a></td>
-                              <td>${list.date }</td>
-                              <td>
-                              <a href="weekly-report-edit?weeklyReportId=${list.id}"><span class="glyphicon glyphicon-pencil Gl1"></span></a>
-                              <button type="button" class="glyphicon glyphicon-trash myPu weekly-plan-del" data-toggle="modal" data-target="#WeeklyPlanDel" data-id=${list.id}></button>
-                              </td>
-                           </tr>
-                      </s:iterator>
-                  </tbody>
-                </table>
+                    <table class="table table-striped weekTable">
+                        <tbody>
+                        <tr id="the">
+                            <th>标题</th>
+                            <th>时间</th>
+                            <th>操作</th>
+                        </tr>
+                        <s:iterator value="#request.weeklyplan" var="list">
+                            <tr>
+                                <td><a href="weekly-report-view?weeklyReportId=${list.id}">${list.title}</a></td>
+                                <td>${list.date }</td>
+                                <td>
+                                    <a href="weekly-report-edit?weeklyReportId=${list.id}"><span class="glyphicon glyphicon-pencil Gl1"></span></a>
+                                    <button type="button" class="glyphicon glyphicon-trash myPu weekly-plan-del" data-toggle="modal" data-target="#WeeklyPlanDel" data-id=${list.id}></button>
+                                </td>
+                            </tr>
+                        </s:iterator>
+                        </tbody>
+                    </table>
                 </s:if>
                 <s:else>
                     <p>暂无周报</p>
                 </s:else>
             </div>
         </div>
-    </div>
-      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main myMain practiceRerort">
         <div class="panel panel-default myPanel practiceRerort1">
             <div class="panel-head">实习报告 Practice Report
             </div>
             <div class="panel-body">
                 <s:if test="#request.result==null">
                     <p class="file-title">暂无实习报告</p>
-                     <input type="file" name="uploadfile" class="uploadInternshipReport"/>
+                    <input type="file" name="uploadfile" class="uploadInternshipReport"/>
                 </s:if>
                 <s:else>
                     <p><s:property value="#request.result.title"/></p>
