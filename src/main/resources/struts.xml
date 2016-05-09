@@ -238,7 +238,7 @@
 		
 		
 		<!-- 招聘、公告、轮播图相关操作 -->
-		<action name="adminAction" class="adminAction">
+		<action name="admin-login" class="adminAction">
 			<result>/WEB-INF/views/manager/m-login.jsp</result>
 		</action>
 		<action name="adminLoginAction" class="adminAction" method="login">

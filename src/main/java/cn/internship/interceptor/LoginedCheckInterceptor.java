@@ -22,7 +22,7 @@ public class LoginedCheckInterceptor extends AbstractInterceptor {
 		response.setHeader("Cache-Control", "no-store");
 		response.setDateHeader("Expires", 0);
 		// 对登录、注销与验证码请求直接放行,不予拦截
-		if (url.indexOf("login") != -1 || url.indexOf("logout") != -1 || url.indexOf("verifyCodeAction") != -1) {
+		if (url.indexOf("login") != -1 || url.indexOf("logout") != -1 || url.indexOf("verifyCodeAction") != -1 || url.indexOf("admin-login") !=-1) {
 			return invocation.invoke();
 		} else {
 			// 验证Session是否过期
