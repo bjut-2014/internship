@@ -93,6 +93,9 @@
 	<bean id="studentAction" class="cn.internship.action.StudentAction">
 		<property name="studentService" ref="studentService" />
 		<property name="syslogService" ref="syslogService" />
+		<property name="noticeBoardService" ref="noticeBoardService"/>
+		<property name="recruitInfoService" ref="recruitInfoService"/>
+		<property name="carouselFigureService" ref="carouselFigureService"/>
 	</bean>
 	<!-- end -->
 	
@@ -154,6 +157,9 @@
 	<bean id="teacherAction" class="cn.internship.action.TeacherAction">
 		<property name="teacherService" ref="teacherService" />
 		<property name="syslogService" ref="syslogService" />
+		<property name="noticeBoardService" ref="noticeBoardService"/>
+		<property name="recruitInfoService" ref="recruitInfoService"/>
+		<property name="carouselFigureService" ref="carouselFigureService"/>
 	</bean>
 	<!-- end -->
 	
@@ -284,6 +290,9 @@
 		<property name="noticeBoardService" ref="noticeBoardService"/>
 		<property name="recruitInfoService" ref="recruitInfoService"/>
 		<property name="carouselFigureService" ref="carouselFigureService"/>
+		<property name="adminService" ref="adminService"/>
+	</bean>
+	<bean id="adminLoginAction" class="cn.internship.action.AdminLoginAction" scope="prototype">
 		<property name="adminService" ref="adminService"/>
 	</bean>
 	<!-- end -->

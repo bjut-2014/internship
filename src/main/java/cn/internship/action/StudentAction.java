@@ -10,8 +10,14 @@ import org.apache.struts2.interceptor.ServletResponseAware;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+import cn.internship.entity.CarouselFigure;
+import cn.internship.entity.NoticeBoard;
+import cn.internship.entity.RecruitInfo;
 import cn.internship.entity.Student;
 import cn.internship.entity.Syslog;
+import cn.internship.service.CarouselFigureService;
+import cn.internship.service.NoticeBoardService;
+import cn.internship.service.RecruitInfoService;
 import cn.internship.service.StudentService;
 import cn.internship.service.SyslogService;
 
@@ -21,6 +27,9 @@ import cn.internship.service.SyslogService;
  */
 public class StudentAction extends ActionSupport implements ServletRequestAware, ServletResponseAware{
 
+	private NoticeBoardService noticeBoardService;
+	private RecruitInfoService recruitInfoService;
+	private CarouselFigureService carouselFigureService;
 	private StudentService studentService;
 	private HttpServletRequest request;
 	private HttpServletResponse response;
@@ -30,7 +39,15 @@ public class StudentAction extends ActionSupport implements ServletRequestAware,
 	@Override
 	public String execute() throws Exception {
 		request.setAttribute("navId", 1);
-		return super.execute();
+		List<NoticeBoard> noticeBoards = noticeBoardService.getAll();
+		List<RecruitInfo> recruitInfos = recruitInfoService.getAll();
+		List<CarouselFigure> carouselFigures = carouselFigureService.getAll();
+
+		request.setAttribute("noticeBoards", noticeBoards);
+		request.setAttribute("recruitInfos", recruitInfos);
+		request.setAttribute("carouselFigures", carouselFigures);
+
+		return SUCCESS;
 	}
 
 	//学生个人信息
@@ -69,6 +86,30 @@ public class StudentAction extends ActionSupport implements ServletRequestAware,
 
 	public void setSyslogService(SyslogService syslogService) {
 		this.syslogService = syslogService;
+	}
+
+	public NoticeBoardService getNoticeBoardService() {
+		return noticeBoardService;
+	}
+
+	public void setNoticeBoardService(NoticeBoardService noticeBoardService) {
+		this.noticeBoardService = noticeBoardService;
+	}
+
+	public RecruitInfoService getRecruitInfoService() {
+		return recruitInfoService;
+	}
+
+	public void setRecruitInfoService(RecruitInfoService recruitInfoService) {
+		this.recruitInfoService = recruitInfoService;
+	}
+
+	public CarouselFigureService getCarouselFigureService() {
+		return carouselFigureService;
+	}
+
+	public void setCarouselFigureService(CarouselFigureService carouselFigureService) {
+		this.carouselFigureService = carouselFigureService;
 	}
 
 	

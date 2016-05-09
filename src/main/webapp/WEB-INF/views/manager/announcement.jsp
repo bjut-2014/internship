@@ -24,17 +24,17 @@
                     	</div>
                     	<div class="panel-body">     		
                              	<div class="form">
-                             		<form class="cmxform form-horizontal tasi-form" id="commentForm" action="#" method="get" >
+                             		<form class="cmxform form-horizontal tasi-form" id="commentForm" action="addNoticeBoard" method="post" >
                              			<div class="form-group">
                              				<label class="control-label col-lg-2">标题</label>
                              				<div class="col-lg-10">
-                             					<input name="atitle" class="form-control" id="atitle" type="text" aria-required="true"/>
+                             					<input name="noticeBoardTitle" class="form-control" id="atitle" type="text" aria-required="true"/>
                              				</div>
                              			</div>
                              			<div class="form-group">
                              				<label class="control-label col-lg-2">内容</label>
                              				<div class="col-lg-10">
-                             					<textarea name="acontent" class="form-control" id="acontent"  aria-required="true"></textarea>
+                             					<textarea name="noticeBoardContent" class="form-control" id="acontent"  aria-required="true"></textarea>
                              				</div>
                              			</div>
                              			<div class="form-group">

@@ -38,27 +38,16 @@
                             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                         </div>
                     </div>
+                    <s:iterator value="#request.carouselFigures" var="cf">
                     <div class="item">
-                        <img src="images/index/banner-1.png" alt="...">
+                        <img src="upload/carouselFigure/<s:property value="#cf.pictureName"/>" alt="...">
                         <div class="carousel-caption">
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                            <h3><s:property value="cf.title" /></h3>
+                            <p><s:property value="cf.content" /></p>
                         </div>
                     </div>
-                    <div class="item">
-                        <img src="images/index/banner-1.png" alt="...">
-                        <div class="carousel-caption">
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="images/index/banner-1.png" alt="...">
-                        <div class="carousel-caption">
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                        </div>
-                    </div>
+                    </s:iterator>
+                    
                 </div>
 
                 <!-- Controls -->
@@ -79,11 +68,9 @@
                             <a href="#" class="panel-title panel-title-more fr">更多>></a>
                         </div>
                         <div class="list-group">
-                            <a href="#" class="list-group-item">这是一条公告xxxxxxxxxxx</a>
-                            <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-                            <a href="#" class="list-group-item">Morbi leo risus</a>
-                            <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-                            <a href="#" class="list-group-item">Vestibulum at eros</a>
+                        	<s:iterator value="#request.noticeBoards" var="nb">
+                        	<a href="#" class="list-group-item"><s:property value="#nb.title" /></a>
+                        	</s:iterator>
                         </div>
                     </div>
                 </div>
@@ -94,11 +81,9 @@
                             <a href="#" class="panel-title panel-title-more fr">更多>></a>
                         </div>
                         <div class="list-group">
-                            <a href="#" class="list-group-item">这是一条招聘信息xxxxxxxxx</a>
-                            <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-                            <a href="#" class="list-group-item">Morbi leo risus</a>
-                            <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-                            <a href="#" class="list-group-item">Vestibulum at eros</a>
+                            <s:iterator value="#request.recruitInfos" var="ri">
+                        	<a href="#" class="list-group-item"><s:property value="#ri.title" /></a>
+                        	</s:iterator>
                         </div>
                     </div>
                 </div>

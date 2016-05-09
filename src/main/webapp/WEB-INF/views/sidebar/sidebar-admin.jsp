@@ -2,7 +2,7 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <ul class="nav nav-sidebar">
   <li class="<s:if test="#request.navId == 1">active</s:if>"><a href="index"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>首页</a></li>
-  <li class="<s:if test="#request.navId == 2">active</s:if>"><a href=""><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span>发布信息</a></li>
+  <li class="<s:if test="#request.navId == 2">active</s:if>"><a href="publishInfo"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span>发布信息</a></li>
   <li class="<s:if test="#request.navId == 3">active</s:if>"><a href=""><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>课程</a></li>
   <li class="<s:if test="#request.navId == 4">active</s:if>"><a href=""><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>学生管理</a></li>
   <li class="<s:if test="#request.navId == 5">active</s:if>"><a href=""><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>教师管理</a></li>

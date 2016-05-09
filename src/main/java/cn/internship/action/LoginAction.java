@@ -104,6 +104,9 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 		request.getSession().removeAttribute("currentUser");
 //        request.getSession().removeAttribute("currentType");
 		int uType = (int) request.getSession().getAttribute("userType");
+		if(uType==1){
+			adminService.logout();
+		}
 		if(uType==2){
 			teacherService.logout();
 		} else if(uType == 3){
