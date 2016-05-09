@@ -24,23 +24,23 @@
                     	</div>
                     	<div class="panel-body">     		
                              	<div class="form">
-                             		<form class="cmxform form-horizontal tasi-form" id="commentForm" action="#" method="get" >
+                             		<s:form enctype="multipart/form-data" class="cmxform form-horizontal tasi-form" id="commentForm" action="addCarouselFigure" method="post" >
                              			<div class="form-group">
                              				<label class="control-label col-lg-2">标题</label>
                              				<div class="col-lg-10">
-                             					<input name="btitle" class="form-control" id="btitle" type="text" aria-required="true"/>
+                             					<input name="carouselFigureTitle" class="form-control" id="btitle" type="text" aria-required="true"/>
                              				</div>
                              			</div>
                              			<div class="form-group">
                              				<label class="control-label col-lg-2">内容</label>
                              				<div class="col-lg-10">
-                             					<textarea name="bcontent" class="form-control" id="bcontent"  aria-required="true"></textarea>
+                             					<textarea name="carouselFigureContent" class="form-control" id="bcontent"  aria-required="true"></textarea>
                              				</div>
                              			</div>
                              			<div class="form-group">
                              				<label class="control-label col-lg-2">图片</label>
                              				<div class="col-lg-10">
-                             					<input name="bpic" class="form-control" id="bpic"  type="file" aria-required="true"/>
+                             					<input name="upload" class="form-control" id="bpic"  type="file" aria-required="true"/>
                              				</div>
                              			</div>
                              			<div class="form-group">
@@ -52,7 +52,7 @@
                              			</div>
                              			
                              		
-                             		</form>                   	
+                             		</s:form>                   	
                     				     
 	                 				
                    				</div>

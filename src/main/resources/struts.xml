@@ -241,45 +241,67 @@
 		
 		
 		<!-- 招聘、公告、轮播图相关操作 -->
-		<action name="admin-login" class="adminAction">
+		<action name="admin-login" class="">
 			<result>/WEB-INF/views/manager/m-login.jsp</result>
 		</action>
-		<action name="adminLoginAction" class="adminAction" method="login">
+		<action name="adminLoginAction" class="adminLoginAction">
 			<result name="success" type="redirectAction">index</result>
 			<result name="input">/WEB-INF/views/manager/m-login.jsp</result>
 		</action>
+		<action name="adminLogout" class="adminLoginAction" method="logout">
+			<result>/WEB-INF/views/manager/m-login.jsp</result>
+		</action>
 		<!-- 公告 -->
 		<action name="addNoticeBoard" class="adminAction" method="addNoticeBoard">
-			<result type="redirectAction">adminAction</result>
+			<result type="redirectAction">publishInfo</result>
 		</action>
 		<action name="deleteNoticeBoard" class="adminAction" method="deleteNoticeBoard">
-			<result type="redirectAction">adminAction</result>
+			<result type="redirectAction">publishInfo</result>
 		</action>
 		<action name="updateNoticeBoard" class="adminAction" method="updateNoticeBoard">
-			<result type="redirectAction">adminAction</result>
+			<result type="redirectAction">publishInfo</result>
 		</action>
 		<!-- 招聘 -->
 		<action name="addRecruitInfo" class="adminAction" method="addRecruitInfo">
-			<result type="redirectAction">adminAction</result>
+			<result type="redirectAction">publishInfo</result>
 		</action>
 		<action name="deleteRecruitInfo" class="adminAction" method="deleteRecruitInfo">
-			<result type="redirectAction">adminAction</result>
+			<result type="redirectAction">publishInfo</result>
 		</action>
 		<action name="updateRecruitInfo" class="adminAction" method="updateRecruitInfo">
-			<result type="redirectAction">adminAction</result>
+			<result type="redirectAction">publishInfo</result>
 		</action>
 		<!-- 轮播图 -->
 		<action name="addCarouselFigure" class="adminAction" method="addCarouselFigure">
-			<result type="redirectAction">adminAction</result>
+			<result type="redirectAction">publishInfo</result>
+			<result name="input" type="redirectAction">publishInfo</result>
+			<interceptor-ref name="fileUpload">
+				<param name="allowedTypes">image/jpeg,image/png</param>
+				<param name="maximumSize">10240000</param>
+			</interceptor-ref>
+			<interceptor-ref name="defaultStack" />
 		</action>
 		<action name="deleteCarouselFigure" class="adminAction" method="deleteCarouselFigure">
-			<result type="redirectAction">adminAction</result>
+			<result type="redirectAction">publishInfo</result>
 		</action>
 		<action name="updateCarouselFigure" class="adminAction" method="updateCarouselFigure">
-			<result type="redirectAction">adminAction</result>
+			<result type="redirectAction">publishInfo</result>
 		</action>
 		<!-- end -->
-		
+		<!-- 发布信息 -->
+		<action name="publishInfo" class="adminAction">
+			<result>/WEB-INF/views/manager/publishinfo.jsp</result>
+		</action>
+		<action name="announcement" class="">
+			<result>/WEB-INF/views/manager/announcement.jsp</result>
+		</action>
+		<action name="recruitment" class="">
+			<result>/WEB-INF/views/manager/recruitment.jsp</result>
+		</action>
+		<action name="banner" class="">
+			<result>/WEB-INF/views/manager/banner.jsp</result>
+		</action>
+		<!-- end -->
 	</package>
 
 

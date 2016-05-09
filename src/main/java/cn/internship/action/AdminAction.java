@@ -56,10 +56,7 @@ public class AdminAction extends ActionSupport implements ServletRequestAware, S
 	private File upload;
 	private String uploadContentType;
 	private String uploadFileName;
-	// 登陆相关信息
-	private String username;
-	private String password;
-	private String verifyCode;
+	
 	
 	@Override
 	public String execute() throws Exception {
@@ -74,42 +71,7 @@ public class AdminAction extends ActionSupport implements ServletRequestAware, S
 		return SUCCESS;
 	}
 
-	// 登陆
-	public String login() {
-		HttpSession session = request.getSession();
-		// 清除登陆验证时提示的错误信息
-		this.clearErrorsAndMessages();
-		// 验证码错误
-		String verifyCode2 = (String) session.getAttribute("verifyCode");
-		if (verifyCode == null || "".equals(verifyCode) || !verifyCode.equalsIgnoreCase(verifyCode2)) {
-			this.addActionError("输入的验证码不正确，请重新输入！");
-			return INPUT;
-		}
-
-		// 用户名或者密码为空
-		if (username == null || "".equals(username) || password == null || "".equals(password)) {
-			this.addActionError("用户名或密码为空！");
-			return INPUT;
-		}
-		
-		Admin admin = adminService.login(username, password);
-		
-		//密码错误
-		if(admin == null){
-			this.addActionError("用户名或密码不正确！");
-			return INPUT;
-		}
-		//将登陆用户存到session中
-		session.setAttribute("currentUser", admin);
-		session.setAttribute("userType", 1);
-		return SUCCESS;
-	}
-
-	public String logout(){
-		request.getSession().removeAttribute("currentUser");
-		adminService.logout();
-		return "adminLogout";
-	}
+	
 
 	// 添加一条公告信息
 	public String addNoticeBoard() {
@@ -342,28 +304,5 @@ public class AdminAction extends ActionSupport implements ServletRequestAware, S
 		this.adminService = adminService;
 	}
 
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
-	public String getVerifyCode() {
-		return verifyCode;
-	}
-
-	public void setVerifyCode(String verifyCode) {
-		this.verifyCode = verifyCode;
-	}
 
 }

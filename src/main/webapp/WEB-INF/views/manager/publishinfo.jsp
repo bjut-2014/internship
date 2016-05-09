@@ -52,16 +52,17 @@
 				                                			<th class="rborder">时间</th>
 				                                			<th class="thin-width">操作</th>                                                                                                      
 				                            			</tr>
-				                         			                                    
-				                     				                                               
-				                           				<tr>
-				                                			<td class="rborder">新增课程</td>
-				                                			<td class="rborder">2016年4月</td>
-				                                			<td>
-				                                				<a href="announcement"><span class="glyphicon glyphicon-pencil mypencil"></span></a>
-                              									<a href="#"><span class="glyphicon glyphicon-trash mytrash"></span></a>
+				                         			    
+				                         			    <s:iterator value="#request.noticeBoards" var="nb">
+				                         			    <tr>
+				                         			    	<td class="rborder"><s:property value="#nb.title" /></td>
+				                         			    	<td class="rborder"><s:property value="#nb.date" /></td>
+				                         			    	<td>
+				                                				<a href="updateNoticeBoard?noticeBoardId=<s:property value="#nb.id" />"><span class="glyphicon glyphicon-pencil mypencil"></span></a>
+                              									<a href="deleteNoticeBoard?noticeBoardId=<s:property value="#nb.id" />"><span class="glyphicon glyphicon-trash mytrash"></span></a>
 				                                			</td>
-				                           				</tr>
+				                         			    </tr>
+				                         			    </s:iterator>                        
 				                    				</tbody>
 				                   				</table>
 					                 		</div>	                 		
@@ -78,15 +79,16 @@
 				                                			<th class="rborder">时间</th>
 				                                			<th class="thin-width">操作</th>                                                                                                      
 				                            			</tr>
-				                         			                                              
-				                           				<tr>
-				                                			<td class="rborder">新增课程</td>
-				                                			<td class="rborder">2016年4月</td>
-				                                			<td>
-				                                				<a href="recruitment"><span class="glyphicon glyphicon-pencil mypencil"></span></a>
-                              									<a href="#"><span class="glyphicon glyphicon-trash mytrash"></span></a>
+				                         			    <s:iterator value="#request.recruitInfos" var="ri">
+				                         			    <tr>
+				                         			    	<td class="rborder"><s:property value="#ri.title" /></td>
+				                         			    	<td class="rborder"><s:property value="#ri.date" /></td>
+				                         			    	<td>
+				                                				<a href="updateRecruitInfo?recruitInfoId=<s:property value="#ri.recruitInfoId" />"><span class="glyphicon glyphicon-pencil mypencil"></span></a>
+                              									<a href="deleteRecruitInfo?recruitInfoId=<s:property value="#ri.recruitInfoId" />"><span class="glyphicon glyphicon-trash mytrash"></span></a>
 				                                			</td>
-				                           				</tr>
+				                         			    </tr>
+				                         			    </s:iterator>   
 				                    				</tbody>
 				                   				</table>
 					                 		</div>	                 		
@@ -103,15 +105,16 @@
 				                                			<th class="rborder">时间</th>
 				                                			<th class="thin-width">操作</th>                                                                                                      
 				                            			</tr>
-				                         			                                               
-				                           				<tr>
-				                                			<td class="rborder">新增课程</td>
-				                                			<td class="rborder">2016年4月</td>
-				                                			<td>
-				                                				<a href="banner"><span class="glyphicon glyphicon-pencil mypencil"></span></a>
-                              									<a href="#"><span class="glyphicon glyphicon-trash mytrash"></span></a>
+														<s:iterator value="#request.carouselFigures" var="cf">
+				                         			    <tr>
+				                         			    	<td class="rborder"><s:property value="#cf.title" /></td>
+				                         			    	<td class="rborder"><s:property value="#cf.date" /></td>
+				                         			    	<td>
+				                                				<a href="updateCarouselFigure?carouselFigureId=<s:property value="#cf.carouselFigureId" />"><span class="glyphicon glyphicon-pencil mypencil"></span></a>
+                              									<a href="deleteCarouselFigure?carouselFigureId=<s:property value="#cf.carouselFigureId" />"><span class="glyphicon glyphicon-trash mytrash"></span></a>
 				                                			</td>
-				                           				</tr>
+				                         			    </tr>
+				                         			    </s:iterator>                      
 				                    				</tbody>
 				                   				</table>
 					                 		</div>	                 		
