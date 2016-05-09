@@ -39,5 +39,6 @@
 		<mapping class="cn.internship.entity.NoticeBoard"/>
 		<mapping class="cn.internship.entity.RecruitInfo"/>
 		<mapping class="cn.internship.entity.CarouselFigure"/>
+		<mapping class="cn.internship.entity.Admin"/>
 	</session-factory>
 </hibernate-configuration>

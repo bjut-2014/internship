@@ -1,14 +1,14 @@
 package cn.internship.entity;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * 管理员实体类
  * @author dreamlate
  *
  */
+@Entity
+@Table(name="admin")
 public class Admin {
 
 	//主键
