@@ -1,5 +1,7 @@
 .rposotion{
-	float:right;	
+	float:right;
+	margin-top: -58px;
+	cursor: pointer;
 }
 th{
 	text-align:center;
@@ -53,4 +55,10 @@ th{
 	height:14px;
 	width:14px;
 	z-index:2;
+}
+.sidebar {
+	padding: 20px;
+}
+.panel-heading {
+	border: none;
 }
