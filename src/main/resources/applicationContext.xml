@@ -273,11 +273,18 @@
 	</bean>
 	<!-- end -->
 	
-	<!-- 管理员首页 -->
+	<!-- 管理员相关配置 -->
+	<bean id="adminDao" class="cn.internship.dao.impl.AdminDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="adminService" class="cn.internship.service.impl.AdminServiceImpl">
+		<property name="adminDao" ref="adminDao"/>
+	</bean>
 	<bean id="adminAction" class="cn.internship.action.AdminAction">
 		<property name="noticeBoardService" ref="noticeBoardService"/>
 		<property name="recruitInfoService" ref="recruitInfoService"/>
 		<property name="carouselFigureService" ref="carouselFigureService"/>
+		<property name="adminService" ref="adminService"/>
 	</bean>
 	<!-- end -->
 </beans>
