@@ -27,6 +27,8 @@ public class AdminServiceImpl implements AdminService{
 		this.adminDao = adminDao;
 	}
 
-	
-	
+	@Override
+	public void logout(){
+		//方法体为空，主要为了aop框架能检测到注销事件
+	}
 }

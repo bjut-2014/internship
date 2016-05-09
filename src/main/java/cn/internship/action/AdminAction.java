@@ -105,6 +105,12 @@ public class AdminAction extends ActionSupport implements ServletRequestAware, S
 		return SUCCESS;
 	}
 
+	public String logout(){
+		request.getSession().removeAttribute("currentUser");
+		adminService.logout();
+		return "adminLogout";
+	}
+
 	// 添加一条公告信息
 	public String addNoticeBoard() {
 		NoticeBoard noticeBoard = new NoticeBoard();

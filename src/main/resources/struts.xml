@@ -62,6 +62,9 @@
 		<action name="logout" class="loginAction" method="logout">
 			<result name="logout">/login.jsp</result>
 		</action>
+        <action name="adminLogout" class="adminAction" method="logout">
+            <result name="adminLogout">/WEB-INF/views/manager/m-login.jsp</result>
+        </action>
 		<!-- end -->
 		<!-- 重置密码 -->
 		<action name="reset" class="resetPwdAction">
@@ -243,7 +246,7 @@
 		</action>
 		<action name="adminLoginAction" class="adminAction" method="login">
 			<result name="success" type="redirectAction">index</result>
-			<result name="input">/m-login.jsp</result>
+			<result name="input">/WEB-INF/views/manager/m-login.jsp</result>
 		</action>
 		<!-- 公告 -->
 		<action name="addNoticeBoard" class="adminAction" method="addNoticeBoard">

@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import cn.internship.service.AdminService;
 import com.opensymphony.xwork2.ActionSupport;
 
 import org.apache.struts2.interceptor.ServletRequestAware;
@@ -29,6 +30,7 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 
 	private StudentService studentService;
 	private TeacherService teacherService;
+	private AdminService adminService;
 	
     // 用户类型
     private int userType;
@@ -104,7 +106,7 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 		int uType = (int) request.getSession().getAttribute("userType");
 		if(uType==2){
 			teacherService.logout();
-		}else if(uType == 3){
+		} else if(uType == 3){
 			studentService.logout();
 		}
 		return "logout";
@@ -170,5 +172,13 @@ public class LoginAction extends ActionSupport implements ServletRequestAware, S
 
 	public void setTeacherService(TeacherService teacherService) {
 		this.teacherService = teacherService;
+	}
+
+	public AdminService getAdminService() {
+		return adminService;
+	}
+
+	public void setAdminService(AdminService adminService) {
+		this.adminService = adminService;
 	}
 }
