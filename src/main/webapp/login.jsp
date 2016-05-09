@@ -26,9 +26,6 @@
                         <label class="radio-inline">
                             <input type="radio" name="userType" value="4"> 企业
                         </label>
-	                	<%--<input type="radio" name="userType" value="2" checked="checked"/><span>老师</span>--%>
-	                	<%--<input type="radio" name="userType" value="3" /><span>学生</span>--%>
-	                	<%--<input type="radio" name="userType" value="4" /><span>企业</span>--%>
                 	</div>
                     <div class="login-form">
                         <div class="login-input-con">

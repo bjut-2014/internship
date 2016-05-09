@@ -239,7 +239,11 @@
 		
 		<!-- 招聘、公告、轮播图相关操作 -->
 		<action name="adminAction" class="adminAction">
-			<result></result>
+			<result>/WEB-INF/views/manager/m-login.jsp</result>
+		</action>
+		<action name="adminLoginAction" class="adminAction" method="login">
+			<result name="success" type="redirectAction">index</result>
+			<result name="input">/m-login.jsp</result>
 		</action>
 		<!-- 公告 -->
 		<action name="addNoticeBoard" class="adminAction" method="addNoticeBoard">
