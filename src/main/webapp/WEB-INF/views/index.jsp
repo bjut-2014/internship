@@ -84,7 +84,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6" style="padding-left: 0;">
                     <div class="panel panel-job">
                         <div class="panel-heading">
                             <h3 class="panel-title">招聘信息</h3>

@@ -74,7 +74,7 @@ textarea {
 
 }
 .nav-title {
-    width: 209px;
+    /*width: 209px;*/
     height: 50px;
     line-height: 50px;
     font-size: 20px;
@@ -113,7 +113,7 @@ textarea {
         overflow-x: hidden;
         overflow-y: auto;
         background-color: #4a5562;
-        width: 209px;
+        /*width: 209px;*/
     }
 }
 .nav-sidebar {
@@ -145,7 +145,7 @@ textarea {
 .reset-pwd-ul {
     position: absolute;
     bottom: 10px;
-    width: 210px;
+    width: 100%;
 }
 /*footer*/
 .copyright {
@@ -154,7 +154,7 @@ textarea {
     background-color: #f9f9f9;
     color: #526069;
     font-size: 12px;
-    padding-left: 230px;
+    padding-left: 17.8%;
     position: absolute;
     width: 100%;
     bottom: 0;
