@@ -240,6 +240,7 @@
 		
 		<action name="student" class="admin-student">
 			<result>/WEB-INF/views/admin/a_stu.jsp</result>
+			<result name="input">/WEB-INF/views/admin/a_stu.jsp</result>
 		</action>
 		<action name="student-save">
 			<result>/WEB-INF/views/admin/a_stuadd.jsp</result>
@@ -252,9 +253,11 @@
 		</action>
 		<action name="student-edit" class="admin-student" method="get">
 			<result>/WEB-INF/views/admin/a_stu_edit.jsp</result>
+			<result name="input" type="redirectAction">student</result>
 		</action>
 		<action name="student-update" class="admin-student" method="updateStudent">
 			<result type="redirectAction">student</result>
+			<result name="input">/WEB-INF/views/admin/stu_error.jsp</result>
 		</action>
 		<action name="student-delete" class="admin-student" method="deleteStudent">
 			<result type="redirectAction">student</result>

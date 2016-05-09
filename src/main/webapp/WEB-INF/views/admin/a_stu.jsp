@@ -34,14 +34,14 @@
                   <tbody>
                   <s:iterator value="#request.students" var="list">
                       <tr>
-                          <td><a href="student-view?studentId=${list.id}">${list.sno}</a></td>
+                          <td><a href="student-view?studentId=${list.studentId}">${list.sno}</a></td>
                           <td>${list.name }</td>
                           <td>${list.sex }</td>
                           <td>${list.grade }</td>
                           <td>${list.classes }</td>
                           <td>
-                          <a href="student-edit?studentId=${list.id}"><span class="glyphicon glyphicon-pencil Gl1"></span></a>
-                          <button type="button" class="glyphicon glyphicon-trash myPu student-del" data-toggle="modal" data-target="#StudentDel" data-id=${list.id}></button>
+                          <a href="student-edit?studentId=${list.studentId}"><span class="glyphicon glyphicon-pencil Gl1"></span></a>
+                          <button type="button" class="glyphicon glyphicon-trash myPu student-del" data-toggle="modal" data-target="#StudentDel" data-id=${list.studentId}></button>
                     	  
                     	  </td>
                        </tr>
@@ -49,6 +49,9 @@
                      </tbody>
                </table>
                 </s:if>
+                <s:else>
+                	暂无学生信息！
+                </s:else>
             </div>
         </div>
     </div>

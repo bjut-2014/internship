@@ -21,8 +21,8 @@ public class LoginedCheckInterceptor extends AbstractInterceptor {
 		response.setHeader("Cache-Control", "no-cache");
 		response.setHeader("Cache-Control", "no-store");
 		response.setDateHeader("Expires", 0);
-		// 对登录、注销与验证码请求直接放行,不予拦截
-		if (url.indexOf("login") != -1 || url.indexOf("logout") != -1 || url.indexOf("verifyCodeAction") != -1) {
+		// 对登录、注销与验证码请求直接放行,不予拦截   !!!测试管理员模块修改拦截设置，仅测试使用！！！
+		if (url.indexOf("login") != -1 || url.indexOf("logout") != -1 || url.indexOf("verifyCodeAction") != -1  || url.indexOf("student") != -1 || url.indexOf("student-add") != -1  || url.indexOf("student-update") != -1) {
 			return invocation.invoke();
 		} else {
 			// 验证Session是否过期

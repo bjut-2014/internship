@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
@@ -58,11 +59,18 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 		request.setAttribute("navId", 4);
 		
 		List<Student> students=studentService.getAllStudents();
-		if(students!=null){
-			request.setAttribute("students", students);
+		//HttpSession session=request.getSession();
+		try{
+			if(students!=null){
+				request.setAttribute("students", students);
+			}
+			
+			return super.execute();
+		}catch(Exception ex){
+			ex.printStackTrace();
+			return INPUT;
 		}
 		
-		return super.execute();
 	}
 	
 	
@@ -105,9 +113,12 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 		Student st=studentService.get(studentId);
 		if(st!=null){
 			request.setAttribute("updateStudent", st);
+			return SUCCESS;
+		}else{
+			return INPUT;
 		}
 		
-		return SUCCESS;
+		
 	}
 	
 	//更新学生信息
@@ -125,9 +136,15 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 		st.setSno(updateSno);
 		st.setUserType(3);
 		
-		studentService.updateStudent(st);
+		try{
+			studentService.updateStudent(st);
+			
+			return SUCCESS;
+		}catch(Exception ex){
+			ex.printStackTrace();
+			return INPUT;
+		}
 		
-		return SUCCESS;
 	}
 	
 	//根据主键删除学生信息
