@@ -25,19 +25,13 @@
                                 <div class="row">
                                     <div class="col-md-12 col-sm-12 col-xs-12 rposition">                                     	                                    
 	                                    	<div class="rposotion">
-	                                    		<!--  <label class="fa fa-plus-square plus"><input id="inputfile" style="display:none;" type="file"></label>-->
-	                                	     	<!--<s:form action="addCaseLibrary" enctype="multipart/form-data" method="post">
-	                                	     		<input type="hidden" name="courseId" value="<s:property value="#request.courseId" />">
-	                                	     		<s:file name="upload" label="选择文件" />
-	                                	     		<s:submit value="上传"/>
-	                                	     	</s:form>-->
 	                                	     	 <label class="fa fa-plus-square plus">
 	                                	     	 	<input type="file" name="uploadfile" class="uploadfile"/>
 	                                	     	 	<input type="hidden" name="courseId" value="<s:property value="#request.courseId" />">
 	                                	     	 </label>
                                                  
 	                                	     </div>                               	                               
-                                        <table class="table table-striped">
+                                        <table class="table table-striped" style="border: 1px solid #ddd;">
                                             <thead>
                                                 <tr>
                                                     <th class="rborder">案 例 名 称</th>

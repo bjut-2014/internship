@@ -6,7 +6,7 @@
   <meta name="description" content="北京工业大学嵌入式实训平台">
   <link rel="icon" href="images/sse.ico">
 
-  <title>嵌入式实训平台</title>
+  <title>嵌入式实训平台-北京工业大学</title>
   <!-- Bootstrap core CSS -->
   <link href="styles/lib/bootstrap.min.css" rel="stylesheet">
   <%--<link href="styles/lib/bootstrap-reset.css" rel="stylesheet">--%>
