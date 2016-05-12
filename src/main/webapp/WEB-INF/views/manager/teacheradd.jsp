@@ -11,7 +11,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="sidebar">
-            <jsp:include page="../sidebar/sidebar-student.jsp" />
+            <jsp:include page="../sidebar/sidebar-admin.jsp" />
         </div>   
     </div>
     
@@ -24,7 +24,7 @@
                     	</div>
                     	<div class="panel-body">     		
                              	<div class="form">
-                             		<form class="cmxform form-horizontal tasi-form" id="commentForm" action="#" method="get" >
+                             		<form class="cmxform form-horizontal tasi-form" id="commentForm" action="admin-add-teacher" method="post" >
                              			<div class="form-group">
                              				<label class="control-label col-lg-2">工号</label>
                              				<div class="col-lg-10">

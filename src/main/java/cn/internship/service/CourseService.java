@@ -18,4 +18,8 @@ public interface CourseService {
 	public Integer getCourseScore(Integer studentId,Integer courseId);
 
 	public Course get(Integer courseId);
+	
+	public void saveCourse(Course course);
+	
+	public void deleteCourse(Integer id);
 }

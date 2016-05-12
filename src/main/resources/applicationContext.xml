@@ -84,7 +84,7 @@
 	<!-- end -->
 
 	<!-- 学生相关配置 -->
-	<bean id="studentDao" class="cn.internship.dao.impl.StudentDaoImpl">
+	<bean id="studentDao" class="cn.internship.dao.impl.StudentDaoImpl" scope="prototype">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	<bean id="studentService" class="cn.internship.service.impl.StudentServiceImpl">
@@ -148,7 +148,7 @@
 	<!-- end -->
 	
 	<!-- 教师的相关配置 -->
-	<bean id="teacherDao" class="cn.internship.dao.impl.TeacherDaoImpl">
+	<bean id="teacherDao" class="cn.internship.dao.impl.TeacherDaoImpl" scope="prototype">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	<bean id="teacherService" class="cn.internship.service.impl.TeacherServiceImpl">

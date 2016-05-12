@@ -36,4 +36,22 @@ public class TeacherDaoImpl extends HibernateDaoSupport implements TeacherDao{
 	public void updateTeacher(Teacher teacher) {
 		getHibernateTemplate().update(teacher);
 	}
+
+	//添加教师
+	@Override
+	public void addTeacher(Teacher teacher) {
+		getHibernateTemplate().save(teacher);
+	}
+
+	//获得所有教师
+	@Override
+	public List<Teacher> getAll() {
+		return (List<Teacher>) getHibernateTemplate().find("from Teacher");
+	}
+
+	//删除教师
+	@Override
+	public void deleteTeacher(Integer id) {
+		getHibernateTemplate().delete(get(id));
+	}
 }

@@ -3,6 +3,7 @@ package cn.internship.entity;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -27,7 +28,7 @@ public class Course {
 	private String name;
 	//选课的老师
 	@ManyToOne(targetEntity=Teacher.class)
-	@JoinColumn(name="teacherId",referencedColumnName="teacherId",nullable=false)
+	@JoinColumn(name="teacherId",referencedColumnName="teacherId")
 	private Teacher teacher;
 	//选课的学生集合
 	@ManyToMany(targetEntity=Student.class)

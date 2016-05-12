@@ -60,6 +60,7 @@ public class AdminAction extends ActionSupport implements ServletRequestAware, S
 	
 	@Override
 	public String execute() throws Exception {
+		request.setAttribute("navId", 2);
 		List<NoticeBoard> noticeBoards = noticeBoardService.getAll();
 		List<RecruitInfo> recruitInfos = recruitInfoService.getAll();
 		List<CarouselFigure> carouselFigures = carouselFigureService.getAll();

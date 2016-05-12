@@ -38,7 +38,11 @@ public class CourseAction extends ActionSupport implements ServletRequestAware, 
 	
 	//所选的课程主键ID，用来查找相关的案例库
 	private Integer courseId;
-	
+	//添加课程的相关信息
+	private String ctitle;
+	private String ctime;
+	private String caddress;
+	private Integer cteacher;
 	@Override
 	public String execute() throws Exception {
 		request.setAttribute("navId", 3);
@@ -137,6 +141,32 @@ public class CourseAction extends ActionSupport implements ServletRequestAware, 
 	}
 	
 	
+	//管理员操作课程页面
+	public String showAdminCourse(){
+		List<Course> courses = courseService.getAll();
+		request.setAttribute("courses", courses);
+		return SUCCESS;
+	}
+	
+	//管理员添加课程
+	public String addCourse(){
+		Course course = new Course();
+		course.setName(ctitle);
+		course.setCoursePlace(caddress);
+		course.setCourseDate(ctime);
+		if(cteacher!=null){
+			course.setTeacher(teacherService.get(cteacher));
+		}
+		courseService.saveCourse(course);
+		return SUCCESS;
+	}
+	
+	//删除课程
+	public String deleteCourse(){
+		courseService.deleteCourse(courseId);
+		return SUCCESS;
+	}
+	
 	//-------------------------------------------------get与set方法-------------------------------------------
 	
 	@Override
@@ -191,6 +221,39 @@ public class CourseAction extends ActionSupport implements ServletRequestAware, 
 		this.caseLibraryService = caseLibraryService;
 	}
 
+	public String getCtitle() {
+		return ctitle;
+	}
+
+	public void setCtitle(String ctitle) {
+		this.ctitle = ctitle;
+	}
+
+	public String getCtime() {
+		return ctime;
+	}
+
+	public void setCtime(String ctime) {
+		this.ctime = ctime;
+	}
+
+	public String getCaddress() {
+		return caddress;
+	}
+
+	public void setCaddress(String caddress) {
+		this.caddress = caddress;
+	}
+
+	public Integer getCteacher() {
+		return cteacher;
+	}
+
+	public void setCteacher(Integer cteacher) {
+		this.cteacher = cteacher;
+	}
+
+	
 	
 	
 }

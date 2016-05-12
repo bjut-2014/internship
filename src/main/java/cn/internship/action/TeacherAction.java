@@ -1,5 +1,6 @@
 package cn.internship.action;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -31,6 +32,16 @@ public class TeacherAction  extends ActionSupport implements ServletRequestAware
 	private HttpServletResponse response;
 	private SyslogService syslogService;
 	
+	//添加教师的相关信息
+	private String tno;
+	private String tname;
+	private String tsex;
+	private String tphone;
+	private String temail;
+	private String tmajor;
+	
+	private Integer teacherId;
+	
 	@Override
 	public String execute() throws Exception {
 		request.setAttribute("navId", 2);
@@ -45,7 +56,7 @@ public class TeacherAction  extends ActionSupport implements ServletRequestAware
 		return SUCCESS;
 	}
 	
-	//学生个人信息
+	//个人信息
 	public String info(){
 		request.setAttribute("navId", 2);
 		Teacher teacher = (Teacher) request.getSession().getAttribute("currentUser");
@@ -55,8 +66,46 @@ public class TeacherAction  extends ActionSupport implements ServletRequestAware
 		return SUCCESS;
 	} 
 	
+	//显示所有教师
+	public String showTeachers(){
+		request.setAttribute("navId", 5);
+		List<Teacher> teachers = teacherService.getAll();
+		request.setAttribute("teachers", teachers);
+		return SUCCESS;
+	}
+	
+	//添加教师
+	public String addTeacher(){
+		request.setAttribute("navId", 5);
+		Teacher teacher = new Teacher();
+		teacher.setTno(tno);
+		teacher.setName(tname);
+		teacher.setPassword(tno);//默认密码与工号一至
+		teacher.setEmail(tname);
+		teacher.setMajor(tmajor);
+		teacher.setPhone(tphone);
+		Integer sexNumer = "男".equals(tsex)?1:2;
+		teacher.setSex(sexNumer);
+		teacherService.saveTeacher(teacher);
+		return SUCCESS;
+	}
+	
+	//删除教师
+	public String deleteTeacher(){
+		teacherService.deleteTeacher(teacherId);
+		return SUCCESS;
+	}
+	
 	//-----------------get与set方法--------------------------------
 	
+	public Integer getTeacherId() {
+		return teacherId;
+	}
+
+	public void setTeacherId(Integer teacherId) {
+		this.teacherId = teacherId;
+	}
+
 	@Override
 	public void setServletResponse(HttpServletResponse response) {
 		this.response = response;
@@ -106,6 +155,57 @@ public class TeacherAction  extends ActionSupport implements ServletRequestAware
 	public void setCarouselFigureService(CarouselFigureService carouselFigureService) {
 		this.carouselFigureService = carouselFigureService;
 	}
+
+	public String getTno() {
+		return tno;
+	}
+
+	public void setTno(String tno) {
+		this.tno = tno;
+	}
+
+	public String getTname() {
+		return tname;
+	}
+
+	public void setTname(String tname) {
+		this.tname = tname;
+	}
+
+	
+
+	public String getTsex() {
+		return tsex;
+	}
+
+	public void setTsex(String tsex) {
+		this.tsex = tsex;
+	}
+
+	public String getTphone() {
+		return tphone;
+	}
+
+	public void setTphone(String tphone) {
+		this.tphone = tphone;
+	}
+
+	public String getTemail() {
+		return temail;
+	}
+
+	public void setTemail(String temail) {
+		this.temail = temail;
+	}
+
+	public String getTmajor() {
+		return tmajor;
+	}
+
+	public void setTmajor(String tmajor) {
+		this.tmajor = tmajor;
+	}
+
 	
 	
 

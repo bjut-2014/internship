@@ -1,5 +1,7 @@
 package cn.internship.service;
 
+import java.util.List;
+
 import cn.internship.entity.Teacher;
 
 /**
@@ -16,4 +18,10 @@ public interface TeacherService {
 
 	//修改密码
 	public void updatePwd(Teacher teacher);
+	
+	public void saveTeacher(Teacher teacher);
+	
+	public List<Teacher> getAll();
+	
+	public void deleteTeacher(Integer id);
 }

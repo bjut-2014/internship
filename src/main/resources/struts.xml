@@ -302,6 +302,34 @@
 			<result>/WEB-INF/views/manager/banner.jsp</result>
 		</action>
 		<!-- end -->
+		<!-- 添加课程信息 -->
+		<action name="admin-course" class="courseAction" method="showAdminCourse">
+			<result>/WEB-INF/views/manager/course.jsp</result>
+		</action>
+		<action name="admin-show-add-course" class="teacherAction" method="showTeachers">
+			<result>/WEB-INF/views/manager/courseadd.jsp</result>
+		</action>
+		<action name="admin-add-course" class="courseAction" method="addCourse">
+			<result type="redirectAction">admin-course</result>
+		</action>
+		<action name="admin-delete-course" class="courseAction" method="deleteCourse">
+			<result type="redirectAction">admin-course</result>
+		</action>
+		<!-- end -->
+		<!-- 管理员添加教师信息 -->
+		<action name="admin-teacher" class="teacherAction" method="showTeachers">
+			<result>/WEB-INF/views/manager/teacher.jsp</result>
+		</action>
+		<action name="admin-show-add-teacher" class="">
+			<result>/WEB-INF/views/manager/teacheradd.jsp</result>
+		</action>
+		<action name="admin-add-teacher" class="teacherAction" method="addTeacher">
+			<result type="redirectAction">admin-teacher</result>
+		</action>
+		<action name="admin-delete-teacher" class="teacherAction" method="deleteTeacher">
+			<result type="redirectAction">admin-teacher</result>
+		</action>
+		<!-- end -->
 	</package>
 
 

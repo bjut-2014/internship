@@ -76,5 +76,19 @@ public class CourseDaoImpl extends HibernateDaoSupport implements CourseDao{
 	}
 
 
+	//添加课程记录
+	@Override
+	public void addCourse(Course course) {
+		getHibernateTemplate().save(course);
+	}
+
+
+	//删除课程记录
+	@Override
+	public void deleteCourse(Integer id) {
+		getHibernateTemplate().delete(get(id));
+	}
+
+
 
 }

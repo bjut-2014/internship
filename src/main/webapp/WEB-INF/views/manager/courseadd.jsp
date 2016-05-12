@@ -11,7 +11,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="sidebar">
-            <jsp:include page="../sidebar/sidebar-student.jsp" />
+            <jsp:include page="../sidebar/sidebar-admin.jsp" />
         </div>   
     </div>
     
@@ -24,17 +24,28 @@
                     	</div>
                     	<div class="panel-body">     		
                              	<div class="form">
-                             		<form class="cmxform form-horizontal tasi-form" id="commentForm" action="#" method="get" >
+                             		<form class="cmxform form-horizontal tasi-form" id="commentForm" action="admin-add-course" method="post" >
                              			<div class="form-group">
                              				<label class="control-label col-lg-2">课程名称</label>
                              				<div class="col-lg-10">
                              					<input name="ctitle" class="form-control" id="ctitle" type="text" aria-required="true"/>
                              				</div>
                              			</div>
-                             			<div class="form-group">
+                             			<!--  <div class="form-group">
                              				<label class="control-label col-lg-2">老师</label>
                              				<div class="col-lg-10">
                              					<input name="cteacher" class="form-control" id="cteacher" type="text" aria-required="true"/>
+                             				</div>
+                             			</div>-->
+                             			<div class="form-group">
+                             				<label class="control-label col-lg-2">老师</label>
+                             				<div class="col-lg-10">
+                             					<select name="cteacher" class="form-control" id="cteacher"  aria-required="true" >
+                             						<option></option>
+                             						<s:iterator value="#request.teachers" var="tch">
+                             							<option value="<s:property value="#tch.teacherId" />"><s:property value="#tch.name" /></option>
+                             						</s:iterator>
+                             					</select>
                              				</div>
                              			</div>
                              			<div class="form-group">

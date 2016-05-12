@@ -11,7 +11,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="sidebar">
-            <jsp:include page="../sidebar/sidebar-student.jsp" />
+            <jsp:include page="../sidebar/sidebar-admin.jsp" />
         </div>   
     </div>
     
@@ -23,7 +23,7 @@
                     	<div class="panel-heading">                  		
                     		<h3 class="panel-title">教师管理 Teacher Manage
                     			<a href="#"><span class="spanbtn">批量导入</span></a> 
-	                       		<a href="teacheradd"><span class="fa fa-plus-square rplus"></span></a>
+	                       		<a href="admin-show-add-teacher"><span class="fa fa-plus-square rplus"></span></a>
 	                       	</h3>	                                               
 	                 	  </div>
                     	
@@ -40,18 +40,25 @@
 				                     <th class="rborder">方向</th>
 				                     <th class="thin-width">操作</th>                                                                                                      
 				                  </tr>
+				                  <s:iterator value="#request.teachers" var="tch">
 				                  <tr>
-				                     <td class="rborder">T2014</td>
-				                     <td class="rborder">谌云莉</td>
-				                     <td class="rborder">女</td>
-				                     <td class="rborder"></td>
-				                     <td class="rborder"></td>
-				                     <td class="rborder">无线网络</td>	
+				                     <td class="rborder"><s:property value="#tch.tno" /></td>
+				                     <td class="rborder"><s:property value="#tch.name" /></td>
+				                     <td class="rborder"><s:if test="#tch.sex==2">女</s:if><s:else>男</s:else></td>
+				                     <td class="rborder"><s:property value="#tch.phone" /></td>
+				                     <td class="rborder"><s:property value="#tch.email" /></td>
+				                     <td class="rborder"><s:property value="#tch.courses" /></td>	
 				                     <td>
 				                         <a href="teacheradd"><span class="glyphicon glyphicon-pencil mypencil"></span></a>
-                              			 <a href="#"><span class="glyphicon glyphicon-trash mytrash"></span></a>
+                              			 <s:if test="#tch.courses==null ">
+                              			 <a href="admin-delete-teacher?teacherId=<s:property value="#tch.teacherId"/>"><span class="glyphicon glyphicon-trash mytrash"></span></a>
+				                    	</s:if>
+				                    	<s:else>
+				                    	<span>不能删</span>
+				                    	</s:else>
 				                     </td>
 				                  </tr>
+				                  </s:iterator>
 				                 </tbody>
 				           </table>
 					     </div>

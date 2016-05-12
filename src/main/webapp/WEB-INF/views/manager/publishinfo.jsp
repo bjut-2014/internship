@@ -11,7 +11,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="sidebar">
-            <jsp:include page="../sidebar/sidebar-student.jsp" />
+            <jsp:include page="../sidebar/sidebar-admin.jsp" />
         </div>   
     </div>
     

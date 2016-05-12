@@ -11,7 +11,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="sidebar">
-            <jsp:include page="../sidebar/sidebar-student.jsp" />
+            <jsp:include page="../sidebar/sidebar-admin.jsp" />
         </div>   
     </div>
     
@@ -23,7 +23,7 @@
                     	<div class="panel-heading">                  		
                     		<h3 class="panel-title">课程 Course
                     			<a href="#"><span class="spanbtn">批量导入</span></a> 
-	                       		<a href="courseadd"><span class="fa fa-plus-square rplus"></span></a>
+	                       		<a href="admin-show-add-course"><span class="fa fa-plus-square rplus"></span></a>
 	                       	</h3>	                                               
 	                 	  </div>
                     	
@@ -38,16 +38,18 @@
 				                     <th class="rborder">地点</th>
 				                     <th class="thin-width">操作</th>                                                                                                      
 				                  </tr>
+				                  <s:iterator value="#request.courses" var="cou">
 				                  <tr>
-				                     <td class="rborder">移动开发技术</td>
-				                     <td class="rborder">谌云莉</td>
-				                     <td class="rborder">2016年4月</td>
-				                     <td class="rborder">软件学院</td>	
+				                   <td class="rborder"><s:property value="#cou.name"/></td>
+				                     <td class="rborder"><s:property value="#cou.teacher.name"/></td>
+				                     <td class="rborder"><s:property value="#cou.courseDate"/></td>
+				                     <td class="rborder"><s:property value="#cou.coursePlace"/></td>	
 				                     <td>
-				                         <a href="courseadd"><span class="glyphicon glyphicon-pencil mypencil"></span></a>
-                              			 <a href="#"><span class="glyphicon glyphicon-trash mytrash"></span></a>
+				                         <a href="admin-update-course"><span class="glyphicon glyphicon-pencil mypencil"></span></a>
+                              			 <a href="admin-delete-course?courseId=<s:property value="#cou.courseId"/>"><span class="glyphicon glyphicon-trash mytrash"></span></a>
 				                     </td>
-				                  </tr>
+				                     </tr>
+				                  </s:iterator>
 				                 </tbody>
 				           </table>
 					     </div>

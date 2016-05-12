@@ -1,5 +1,7 @@
 package cn.internship.dao;
 
+import java.util.List;
+
 import cn.internship.entity.Teacher;
 
 /**
@@ -13,4 +15,10 @@ public interface TeacherDao {
 	public Teacher get(Integer teacherId);
 	//更新用户信息
 	public void updateTeacher(Teacher teacher);
+	
+	public void addTeacher(Teacher teacher);
+	
+	public List<Teacher> getAll();
+	
+	public void deleteTeacher(Integer id);
 }

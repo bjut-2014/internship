@@ -1,5 +1,7 @@
 package cn.internship.service.impl;
 
+import java.util.List;
+
 import cn.internship.dao.TeacherDao;
 import cn.internship.entity.Teacher;
 import cn.internship.service.TeacherService;
@@ -39,6 +41,23 @@ public class TeacherServiceImpl implements TeacherService{
 		return teacherDao.get(teacherId);
 	}
 
+	@Override
+	public void saveTeacher(Teacher teacher) {
+		teacherDao.addTeacher(teacher);
+	}
+
+	@Override
+	public List<Teacher> getAll() {
+		return teacherDao.getAll();
+	}
+
+	@Override
+	public void deleteTeacher(Integer id) {
+		teacherDao.deleteTeacher(id);
+	}
+	
+	//-----------------------get与set方法--------------------
+
 	public TeacherDao getTeacherDao() {
 		return teacherDao;
 	}
@@ -47,6 +66,6 @@ public class TeacherServiceImpl implements TeacherService{
 		this.teacherDao = teacherDao;
 	}
 
-	//-----------------------get与set方法--------------------
-	
+
+
 }
