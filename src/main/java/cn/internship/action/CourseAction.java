@@ -143,6 +143,7 @@ public class CourseAction extends ActionSupport implements ServletRequestAware, 
 	
 	//管理员操作课程页面
 	public String showAdminCourse(){
+		request.setAttribute("navId", 3);
 		List<Course> courses = courseService.getAll();
 		request.setAttribute("courses", courses);
 		return SUCCESS;

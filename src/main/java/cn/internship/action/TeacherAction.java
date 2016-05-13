@@ -81,7 +81,7 @@ public class TeacherAction  extends ActionSupport implements ServletRequestAware
 		teacher.setTno(tno);
 		teacher.setName(tname);
 		teacher.setPassword(tno);//默认密码与工号一至
-		teacher.setEmail(tname);
+		teacher.setEmail(temail);
 		teacher.setMajor(tmajor);
 		teacher.setPhone(tphone);
 		Integer sexNumer = "男".equals(tsex)?1:2;

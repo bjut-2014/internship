@@ -45,7 +45,7 @@ public class Teacher {
 	// 用户类型：该实体为教师
 	private Integer userType;
 	//教师教授的课程集合
-	@OneToMany(targetEntity=Course.class,mappedBy="teacher")
+	@OneToMany(targetEntity=Course.class,mappedBy="teacher",fetch=FetchType.EAGER)
 	private Set<Course> courses = new HashSet<>();
 	
 	
