@@ -1,5 +1,7 @@
 package cn.internship.service.impl;
 
+import java.util.List;
+
 import cn.internship.dao.StudentDao;
 import cn.internship.entity.Student;
 import cn.internship.service.StudentService;
@@ -37,13 +39,43 @@ public class StudentServiceImpl implements StudentService{
 	}
 
 	@Override
+	//修改密码
 	public void updatePwd(Student student) {
 		studentDao.updateStudent(student);
 	}
 	
+	//根据学号查找学生
 	public Student get(String sno){
 		return studentDao.get(sno);
 	}
+	
+	
+	@Override
+	//获取所有的学生信息
+	public List<Student> getAllStudents() {
+		return studentDao.getAllStudents();
+	}
+
+	@Override
+	//添加学生信息
+	public void addStudent(Student student) {
+		studentDao.addStudent(student);
+	}
+
+	@Override
+	//更新学生信息
+	public void updateStudent(Student student) {
+		studentDao.updateStudent(student);
+	}
+
+	@Override
+	//删除学生信息
+	public void deleteStudent(Integer id) {
+		studentDao.deleteStudent(id);
+	}
+	
+	
+	
 	//------------------------------------------get与set方法-----------------------------------------------------------------
 	public StudentDao getStudentDao() {
 		return studentDao;
@@ -52,6 +84,5 @@ public class StudentServiceImpl implements StudentService{
 	public void setStudentDao(StudentDao studentDao) {
 		this.studentDao = studentDao;
 	}
-
 
 }

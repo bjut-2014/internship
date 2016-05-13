@@ -330,6 +330,82 @@
 			<result type="redirectAction">admin-teacher</result>
 		</action>
 		<!-- end -->
+
+		<!-- 管理员学生信息 -->
+		
+		<action name="student" class="admin-student">
+			<result>/WEB-INF/views/admin/a_stu.jsp</result>
+			<result name="input">/WEB-INF/views/admin/a_stu.jsp</result>
+		</action>
+		<action name="student-save">
+			<result>/WEB-INF/views/admin/a_stuadd.jsp</result>
+		</action>
+		<action name="student-add" class="admin-student" method="addStudent">
+			<result type="redirectAction">student</result>
+		</action>
+		<action name="student-view" class="admin-student" method="getOneStudent">
+			<result>/WEB-INF/views/admin/a_stuinfo.jsp</result>
+		</action>
+		<action name="student-edit" class="admin-student" method="get">
+			<result>/WEB-INF/views/admin/a_stu_edit.jsp</result>
+			<result name="input" type="redirectAction">student</result>
+		</action>
+		<action name="student-update" class="admin-student" method="updateStudent">
+			<result type="redirectAction">student</result>
+			<result name="input">/WEB-INF/views/admin/stu_error.jsp</result>
+		</action>
+		<action name="student-delete" class="admin-student" method="deleteStudent">
+			<result type="redirectAction">student</result>
+		</action>
+		
+		<!-- end -->
+		
+		<!-- 管理员模块实习信息相关配置 -->
+		
+		<action name="internship-detail" class="internship-detail">
+			<result>/WEB-INF/views/admin/a_internship.jsp</result>
+		</action>
+		<action name="internship-detail-save" class="internship-detail">
+			<result>/WEB-INF/views/admin/a_internshipadd.jsp</result>
+		</action>
+		<action name="internship-detail-delete" class="internship-detail" method="deleteInernshipDetail">
+			<result type="redirectAction">internship-detail</result>
+		</action>
+		<action name="internship-detail-add" class="internship-detail" method="addInternshipDetail">
+			<result type="redirectAction">internship-detail</result>
+		</action>
+		<action name="internship-detail-edit" class="internship-detail" method="get">
+			<result>/WEB-INF/views/admin/a_internship_edit.jsp</result>
+		</action>
+		<action name="internship-detail-update" class="internship-detail" method="updateInternshipDetail">
+			<result type="redirectAction">internship-detail</result>
+		</action>
+		
+		<!-- end -->
+		
+		<!-- 管理员模块毕设选题信息相关配置 -->
+		
+		<action name="graduation-pro-sele" class="graduation-pro-sele">
+			<result>/WEB-INF/views/admin/a_graduation.jsp</result>
+		</action>
+		<action name="graduation-pro-sele-save" class="graduation-pro-sele">
+			<result>/WEB-INF/views/admin/a_graduationadd.jsp</result>
+		</action>
+		<action name="graduation-pro-sele-add" class="graduation-pro-sele" method="addSelectInfo">
+			<result type="redirectAction">graduation-pro-sele</result>
+		</action>
+		<action name="graduation-pro-sele-edit" class="graduation-pro-sele" method="get">
+			<result>/WEB-INF/views/admin/a_graduation_edit.jsp</result>
+		</action>
+		<action name="graduation-pro-sele-update" class="graduation-pro-sele" method="updateSelectInfo">
+			<result type="redirectAction">graduation-pro-sele</result>
+		</action>
+		<action name="graduation-pro-sele-delete" class="graduation-pro-sele" method="deleteSelectInfo">
+			<result type="redirectAction">graduation-pro-sele</result>
+		</action>
+		
+		<!-- end -->
+		
 	</package>
 
 

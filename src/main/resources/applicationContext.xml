@@ -296,4 +296,27 @@
 		<property name="adminService" ref="adminService"/>
 	</bean>
 	<!-- end -->
+
+	<!-- 管理员模块学生信息相关配置 -->
+	<bean id="admin-student" class="cn.internship.action.AdminStudentAction">
+		<property name="studentService" ref="studentService"></property>
+	</bean>
+	<!-- end -->
+	
+	<!-- 管理员模块实习信息相关配置 -->
+	
+	<bean id="internship-detail" class="cn.internship.action.AdminInternshipDetailAction">
+		<property name="internshipDetailService" ref="internshipDetailService"></property>
+	</bean>
+	
+	<!-- end -->
+	
+	<!-- 管理员模块毕设选题信息相关配置 -->
+	
+	<bean id="graduation-pro-sele" class="cn.internship.action.AdminGraduationProSeleAction">
+		<property name="graduationSelectionService" ref="graduationSelectionService"></property>
+	</bean>
+	
+	<!-- end -->
+	
 </beans>

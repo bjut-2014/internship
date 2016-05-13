@@ -1,5 +1,6 @@
 package cn.internship.dao.impl;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
@@ -30,4 +31,31 @@ public class InternshipDetailDaoImpl extends HibernateDaoSupport implements Inte
 		List<InternshipDetail> list=(List<InternshipDetail>) getHibernateTemplate().find(hql);
 		return list;
 	}
+
+	@Override
+	//添加一条实习信息
+	public void addInternshipDetail(InternshipDetail it) {
+		getHibernateTemplate().save(it);
+	}
+
+	@Override
+	//更新一条实习信息
+	public void updateInternshipDetail(InternshipDetail it) {
+		getHibernateTemplate().update(it);
+	}
+
+	@Override
+	//删除一条实习信息
+	public void deleteInternshipDetail(Integer deleteId) {
+		InternshipDetail it=get(deleteId);
+		getHibernateTemplate().delete(it);
+	}
+
+	
+	//根据主键获取学生实习信息
+	public InternshipDetail get(Integer id) {
+		return getHibernateTemplate().get(InternshipDetail.class, id);
+	}
+	
+	
 }

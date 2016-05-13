@@ -1,41 +1,34 @@
 package internship;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import cn.internship.entity.GraduationProSele;
-import cn.internship.entity.InternshipDetail;
-import cn.internship.entity.Student;
-import cn.internship.entity.WeeklyReport;
-import cn.internship.service.GraduationSelectionService;
-import cn.internship.service.InternshipDetailService;
-import cn.internship.service.StudentService;
-import cn.internship.service.WeeklyReportService;
 import cn.internship.dao.CourseDao;
 import cn.internship.entity.CaseLibrary;
 import cn.internship.entity.Course;
-import cn.internship.entity.Student;
-import cn.internship.dao.WeeklyReportDao;
-import cn.internship.dao.impl.WeeklyReportDaoImpl;
+import cn.internship.entity.GraduationProSele;
 import cn.internship.entity.GraduationWeeklyReport;
+import cn.internship.entity.InternshipDetail;
 import cn.internship.entity.InternshipReport;
 import cn.internship.entity.Student;
 import cn.internship.entity.WeeklyReport;
+import cn.internship.service.GraduationSelectionService;
 import cn.internship.service.GraduationWeeklyReportService;
 import cn.internship.service.InternshipDetailService;
 import cn.internship.service.InternshipReportService;
+import cn.internship.service.StudentService;
 import cn.internship.service.WeeklyReportService;
-import cn.internship.service.impl.WeeklyReportServiceImpl;
 
 public class TestUtil implements ServletRequestAware{
 
@@ -238,6 +231,104 @@ public class TestUtil implements ServletRequestAware{
 		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		GraduationWeeklyReportService wrs = (GraduationWeeklyReportService) context.getBean("graduationWeeklyReportService");
 		wrs.deleteGraduationWeeklyReport(1);
+	}
+	
+	@Test
+	public void addInternshipDetail(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		InternshipDetailService its=(InternshipDetailService) context.getBean("internshipDetailService");
+		InternshipDetail it=new InternshipDetail();
+		
+		SimpleDateFormat df=new SimpleDateFormat("yyyyMMdd");
+		String date="20160504";
+		Date dateTime = null;
+		try {
+			dateTime = df.parse(date);
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		it.setCompany_address("Beijing");
+		it.setCompany_name("Baidu");
+		it.setCompany_teacher("Nemo");
+		it.setDate(dateTime);
+		it.setScore(98);
+		it.setSno("S0001");
+		
+		its.addInternshipDetail(it);
+	}
+	
+	@Test
+	public void getOneInternshipDetail(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		InternshipDetailService its=(InternshipDetailService) context.getBean("internshipDetailService");
+		InternshipDetail it=its.getInternshipDetailById(3);
+		System.out.println(it);
+	}
+	
+	@Test
+	public void updateInternshipDetail(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		InternshipDetailService its=(InternshipDetailService) context.getBean("internshipDetailService");
+		InternshipDetail it=its.getInternshipDetailById(3);
+		
+		it.setScore(96);
+		its.updateInternshipDetail(it);
+	}
+	
+	@Test
+	public void deleteInternshipDetail(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		InternshipDetailService its=(InternshipDetailService) context.getBean("internshipDetailService");
+		InternshipDetail it=its.getInternshipDetailById(3);
+		
+		its.deleteInternshipDetail(3);
+	}
+	
+	@Test
+	public void getAllStudents(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		StudentService ss=(StudentService) context.getBean("studentService");
+		List<Student> list=ss.getAllStudents();
+		for(Student s:list){
+			System.out.println(s);
+		}
+		
+	}
+	
+	@Test
+	public void getOneStudentById(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		StudentService ss=(StudentService) context.getBean("studentService");
+		System.out.println(ss.get(1));
+	}
+	
+	@Test
+	public void testAddGraudationProSele(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		GraduationSelectionService gs=(GraduationSelectionService) context.getBean("graduationSelectionService");
+		
+		GraduationProSele s=gs.getOneSelectInfo(1);
+		gs.deleteSelecInfo(1);
+	}
+	
+	@Test
+	public void testUpdateStudent(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		StudentService ss=(StudentService) context.getBean("studentService");
+		
+		Student st=ss.get(3);
+		st.setSno("S0004");
+		ss.updateStudent(st);
+	}
+	
+	@Test
+	public void testDeleteStudent(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		StudentService ss=(StudentService) context.getBean("studentService");
+		
+		ss.deleteStudent(3);
 	}
 	
 	@Override

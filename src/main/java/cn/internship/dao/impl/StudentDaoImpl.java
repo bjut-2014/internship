@@ -49,4 +49,25 @@ public class StudentDaoImpl extends HibernateDaoSupport implements StudentDao{
 		getHibernateTemplate().update(student);
 	}
 
+	@Override
+	//获取所有学生信息
+	public List<Student> getAllStudents() {
+		String hql="from Student";
+		List<Student> list=(List<Student>) getHibernateTemplate().find(hql);
+		return list;
+	}
+
+	@Override
+	//添加学生信息
+	public void addStudent(Student student) {
+		getHibernateTemplate().save(student);
+	}
+
+	@Override
+	//根据主键删除学生信息
+	public void deleteStudent(Integer id) {
+		Student st=get(id);
+		getHibernateTemplate().delete(st);
+	}
+
 }
