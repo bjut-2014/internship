@@ -24,4 +24,5 @@ public interface CourseDao {
 	
 	public void deleteCourse(Integer id);
 	
+	public void updateCourse(Course course);
 }

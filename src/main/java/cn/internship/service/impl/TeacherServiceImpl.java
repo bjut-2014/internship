@@ -56,6 +56,11 @@ public class TeacherServiceImpl implements TeacherService{
 		teacherDao.deleteTeacher(id);
 	}
 	
+	@Override
+	public void updateTeacher(Teacher teacher){
+		teacherDao.updateTeacher(teacher);
+	}
+	
 	//-----------------------get与set方法--------------------
 
 	public TeacherDao getTeacherDao() {

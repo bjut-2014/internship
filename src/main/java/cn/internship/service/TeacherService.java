@@ -24,4 +24,6 @@ public interface TeacherService {
 	public List<Teacher> getAll();
 	
 	public void deleteTeacher(Integer id);
+	
+	public void updateTeacher(Teacher teacher);
 }

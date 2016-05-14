@@ -49,7 +49,7 @@
 				                     <td class="rborder"><s:property value="#tch.email" /></td>
 				                     <td class="rborder"><s:property value="#tch.major" /></td>	
 				                     <td>
-				                         <a href="teacheradd"><span class="glyphicon glyphicon-pencil mypencil"></span></a>
+				                         <a href="admin-show-update-tch?teacherId=<s:property value="#tch.teacherId"/>"><span class="glyphicon glyphicon-pencil mypencil"></span></a>
                               			 <s:if test="#tch.courses.size==0">
                               			 <a href="admin-delete-teacher?teacherId=<s:property value="#tch.teacherId"/>"><span class="glyphicon glyphicon-trash mytrash"></span></a>
 				                    	</s:if>

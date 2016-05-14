@@ -168,6 +168,26 @@ public class CourseAction extends ActionSupport implements ServletRequestAware, 
 		return SUCCESS;
 	}
 	
+	
+	//显示修改课程页面
+	public String showUpdateCourse(){
+		Course course = courseService.get(courseId);
+		request.setAttribute("course", course);
+		request.setAttribute("teachers", teacherService.getAll());
+		return SUCCESS;
+	}
+	
+	//修改课程信息
+	public String updateCourse(){
+		Course course = courseService.get(courseId);
+		course.setName(ctitle);
+		course.setCourseDate(ctime);
+		course.setCoursePlace(caddress);
+		course.setTeacher(teacherService.get(cteacher));
+		courseService.updateCourse(course);
+		return SUCCESS;
+	}
+	
 	//-------------------------------------------------get与set方法-------------------------------------------
 	
 	@Override

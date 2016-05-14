@@ -52,6 +52,11 @@ public class CourseServiceImpl implements CourseService{
 		courseDao.deleteCourse(id);
 	}
 
+	@Override
+	public void updateCourse(Course course) {
+		courseDao.updateCourse(course);
+	}
+
 	
 	//-----------------------------------get与set方法--------------------------------------------
 	
@@ -62,7 +67,6 @@ public class CourseServiceImpl implements CourseService{
 	public void setCourseDao(CourseDao courseDao) {
 		this.courseDao = courseDao;
 	}
-
 
 	
 

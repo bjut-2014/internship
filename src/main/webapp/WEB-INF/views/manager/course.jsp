@@ -44,7 +44,7 @@
 				                     <td class="rborder"><s:property value="#cou.courseDate"/></td>
 				                     <td class="rborder"><s:property value="#cou.coursePlace"/></td>	
 				                     <td>
-				                         <a href="admin-update-course"><span class="glyphicon glyphicon-pencil mypencil"></span></a>
+				                         <a href="admin-show-update-course?courseId=<s:property value="#cou.courseId"/>""><span class="glyphicon glyphicon-pencil mypencil"></span></a>
                               			 <a href="admin-delete-course?courseId=<s:property value="#cou.courseId"/>"><span class="glyphicon glyphicon-trash mytrash"></span></a>
 				                     </td>
 				                     </tr>

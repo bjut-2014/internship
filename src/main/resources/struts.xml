@@ -315,7 +315,14 @@
 		<action name="admin-delete-course" class="courseAction" method="deleteCourse">
 			<result type="redirectAction">admin-course</result>
 		</action>
+		<action name="admin-show-update-course" class="courseAction" method="showUpdateCourse">
+			<result>/WEB-INF/views/manager/courseupdate.jsp</result>
+		</action>
+		<action name="admin-update-course" class="courseAction" method="updateCourse">
+			<result type="redirectAction">admin-course</result>
+		</action>
 		<!-- end -->
+		
 		<!-- 管理员添加教师信息 -->
 		<action name="admin-teacher" class="teacherAction" method="showTeachers">
 			<result>/WEB-INF/views/manager/teacher.jsp</result>
@@ -336,6 +343,12 @@
 			<result>/WEB-INF/views/manager/batch-import-teacher.jsp</result>
 		</action>
 		<action name="import-tch" class="teacherAction" method="importTch">
+			<result type="redirectAction">admin-teacher</result>
+		</action>
+		<action name="admin-show-update-tch" class="teacherAction" method="showUpdateTeacher">
+			<result>/WEB-INF/views/manager/teacherupdate.jsp</result>
+		</action>
+		<action name="admin-update-teacher" class="teacherAction" method="updateTeacher">
 			<result type="redirectAction">admin-teacher</result>
 		</action>
 		<!-- end -->

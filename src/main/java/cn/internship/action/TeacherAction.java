@@ -179,6 +179,27 @@ public class TeacherAction  extends ActionSupport implements ServletRequestAware
 		return SUCCESS;
 	}
 	
+	//显示教师修改页面
+	public String showUpdateTeacher(){
+		Teacher teacher = teacherService.get(teacherId);
+		request.setAttribute("teacher", teacher);
+		return SUCCESS;
+	}
+	
+	//修改教师信息
+	public String updateTeacher(){
+		Teacher teacher = teacherService.get(teacherId);
+		teacher.setTno(tno);
+		teacher.setName(tname);
+		int sex = "男".equals(tsex) ? 1:2;
+		teacher.setSex(sex);
+		teacher.setEmail(temail);
+		teacher.setMajor(tmajor);
+		teacher.setPhone(tphone);
+		teacherService.updateTeacher(teacher);
+		return SUCCESS;
+	}
+	
 	//-----------------get与set方法--------------------------------
 	
 	public Integer getTeacherId() {

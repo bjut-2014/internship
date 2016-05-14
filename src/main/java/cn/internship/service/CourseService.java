@@ -22,4 +22,6 @@ public interface CourseService {
 	public void saveCourse(Course course);
 	
 	public void deleteCourse(Integer id);
+	
+	public void updateCourse(Course course);
 }
