@@ -16,7 +16,7 @@
        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main myMain weekReport">
         <div class="panel panel-default myPanel weekReport1">
             <div class="panel-head">学生管理
-          <button class="btn btn-default btn-sm myPi">批量导入</button>
+          <a class="btn btn-default btn-sm myPi" href="batch-import-stu">批量导入</a>
           <a href="student-save"><button class="btn btn-default btn-sm myBu"><span class="glyphicon glyphicon-plus"></span></button></a></div>
             <div class="panel-body">
                 <s:if test="#request.students!=null">

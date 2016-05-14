@@ -329,6 +329,15 @@
 		<action name="admin-delete-teacher" class="teacherAction" method="deleteTeacher">
 			<result type="redirectAction">admin-teacher</result>
 		</action>
+		<action name="batch-import-tch" class="">
+			<result>/WEB-INF/views/manager/batch-import-teacher.jsp</result>
+		</action>
+		<action name="upload-tch-excel" class="teacherAction" method="uploadTchExcel">
+			<result>/WEB-INF/views/manager/batch-import-teacher.jsp</result>
+		</action>
+		<action name="import-tch" class="teacherAction" method="importTch">
+			<result type="redirectAction">admin-teacher</result>
+		</action>
 		<!-- end -->
 
 		<!-- 管理员学生信息 -->
@@ -357,7 +366,15 @@
 		<action name="student-delete" class="admin-student" method="deleteStudent">
 			<result type="redirectAction">student</result>
 		</action>
-		
+		<action name="batch-import-stu" class="">
+			<result>/WEB-INF/views/admin/batch-import-student.jsp</result>
+		</action>
+		<action name="upload-stu-excel" class="admin-student" method="uploadStuExcel">
+			<result>/WEB-INF/views/admin/batch-import-student.jsp</result>
+		</action>
+		<action name="import-stu" class="admin-student" method="importStu">
+			<result type="redirectAction">student</result>
+		</action>
 		<!-- end -->
 		
 		<!-- 管理员模块实习信息相关配置 -->

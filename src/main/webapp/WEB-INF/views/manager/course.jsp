@@ -22,7 +22,6 @@
                     <div class="panel panel-default">
                     	<div class="panel-heading">                  		
                     		<h3 class="panel-title">课程 Course
-                    			<a href="#"><span class="spanbtn">批量导入</span></a> 
 	                       		<a href="admin-show-add-course"><span class="fa fa-plus-square rplus"></span></a>
 	                       	</h3>	                                               
 	                 	  </div>

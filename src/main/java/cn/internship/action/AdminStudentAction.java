@@ -1,15 +1,24 @@
 package cn.internship.action;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import jxl.Cell;
+import jxl.Sheet;
+import jxl.Workbook;
+import jxl.read.biff.BiffException;
+
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 
 import cn.internship.entity.Student;
+import cn.internship.entity.Teacher;
 import cn.internship.service.StudentService;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -53,6 +62,9 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 	
 	//====================================获取学生信息======================================
 	private Integer studentId;
+	
+	//上传的excel
+	private File upload;
 	
 	@Override
 	public String execute() throws Exception {
@@ -154,7 +166,73 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 		return SUCCESS;
 	}
 	
+	//上传excel
+	public String uploadStuExcel(){
+		List<Student> students = new ArrayList<Student>();
+		Workbook book = null;
+		if(upload!=null){
+			try {
+				book = Workbook.getWorkbook(upload);
+				Sheet sheet = book.getSheet(0);
+				int rows = sheet.getRows();
+				int columns = sheet.getColumns();
+				//格式不符合要求
+				if(columns!=5){
+					return SUCCESS;
+				}
+				for(int m=1;m<rows;m++){
+	//				for(int n=0;n<columns;n++){
+	//					Cell cell = sheet.getCell(n,m);
+	//					String result = cell.getContents();
+	//					System.out.print(result+",");
+	//				}
+					Student student = new Student();
+					//1学号
+					Cell cell = sheet.getCell(0,m);
+					String result = cell.getContents();
+					student.setSno(result);
+					student.setPassword(result);
+					//2名字
+					cell = sheet.getCell(1,m);
+					result = cell.getContents();
+					student.setName(result);
+					//3性别
+					cell = sheet.getCell(2,m);
+					result = cell.getContents();
+					int sex = "男".equals(result)?1:2;
+					student.setSex(sex);
+					//4年级
+					cell = sheet.getCell(3,m);
+					result = cell.getContents();
+					student.setGrade(Integer.parseInt(result));
+					//5班级
+					cell = sheet.getCell(4,m);
+					result = cell.getContents();
+					student.setClasses(result);
+					
+					students.add(student);
+				}
+			} catch (BiffException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		request.getSession().setAttribute("students", students);
+		return SUCCESS;
+	}
 	
+	//批量保存
+	public String importStu(){
+		ArrayList<Student> students = (ArrayList<Student>) request.getSession().getAttribute("students");
+		if(students!=null){
+			for(Student student:students){
+				studentService.addStudent(student);
+			}
+		}
+		request.getSession().setAttribute("students", null);
+		return SUCCESS;
+	}
 	
 	//===============================getter setter方法====================================
 	@Override
@@ -301,6 +379,16 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 
 	public void setStudentId(Integer studentId) {
 		this.studentId = studentId;
+	}
+
+
+	public File getUpload() {
+		return upload;
+	}
+
+
+	public void setUpload(File upload) {
+		this.upload = upload;
 	}
 
 	

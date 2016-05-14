@@ -172,6 +172,15 @@
 			<artifactId>json</artifactId>
 			<version>20160212</version>
 		</dependency>
+		<!-- end -->
+
+		<!-- java操作excel -->
+		<dependency>
+			<groupId>net.sourceforge.jexcelapi</groupId>
+			<artifactId>jxl</artifactId>
+			<version>2.6.12</version>
+		</dependency>
+		<!-- end -->
 
 	</dependencies>
 
