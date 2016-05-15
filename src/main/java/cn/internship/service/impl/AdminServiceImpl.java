@@ -31,4 +31,12 @@ public class AdminServiceImpl implements AdminService{
 	public void logout(){
 		//方法体为空，主要为了aop框架能检测到注销事件
 	}
+
+	public Admin get(Integer adminId) {
+		return adminDao.get(adminId);
+	}
+
+	public void updatePwd(Admin admin) {
+		adminDao.updateAdmin(admin);
+	}
 }

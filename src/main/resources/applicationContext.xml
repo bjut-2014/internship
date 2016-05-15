@@ -80,6 +80,7 @@
 	<bean id="resetPwdAction" class="cn.internship.action.ResetPwdAction" scope="prototype">
 		<property name="studentService" ref="studentService"/>
 		<property name="teacherService" ref="teacherService"/>
+		<property name="adminService" ref="adminService"/>
 	</bean>
 	<!-- end -->
 

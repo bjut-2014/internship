@@ -12,5 +12,7 @@ public interface AdminDao {
 	public Admin get(Integer adminId);
 	
 	public Admin get(String username,String password);
+
+	public void updateAdmin(Admin admin);
 	
 }
