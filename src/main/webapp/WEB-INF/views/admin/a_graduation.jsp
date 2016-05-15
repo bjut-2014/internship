@@ -37,7 +37,7 @@
 								<tbody>
 									<s:iterator value="#request.AllSelectInfo" var="list">
 										<tr>
-											<td>${list.sno}</a></td>
+											<td>${list.sno}</td>
 											<td>${list.tno }</td>
 											<td>${list.GraduationProTitle }</td>
 											<td><a
