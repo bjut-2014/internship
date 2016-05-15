@@ -10,7 +10,7 @@
 <jsp:include page="../nav/nav.jsp" />
 <div class="container-fluid">
     <div class="row">
-        <div class="sidebar">
+        <div class="sidebar col-sm-3 col-md-2">
             <jsp:include page="../sidebar/sidebar-admin.jsp" />
         </div>   
     </div>
