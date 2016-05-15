@@ -4,8 +4,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import cn.internship.entity.Admin;
 import cn.internship.entity.Student;
 import cn.internship.entity.Teacher;
+import cn.internship.service.AdminService;
 import cn.internship.service.StudentService;
 import cn.internship.service.TeacherService;
 import org.apache.struts2.interceptor.ServletRequestAware;
@@ -23,6 +25,7 @@ public class ResetPwdAction extends ActionSupport implements ServletRequestAware
 
     private StudentService studentService;
     private TeacherService teacherService;
+    private AdminService adminService;
 
     //初始密码
     private String password;
@@ -57,7 +60,6 @@ public class ResetPwdAction extends ActionSupport implements ServletRequestAware
         } else if (userType == 2) {
             Teacher teacher = (Teacher)request.getSession().getAttribute("currentUser");
             Teacher teacher1 = teacherService.get(teacher.getTeacherId());
-            System.out.println(teacher1);
             //获得当前用户的密码
             if(password == null || !teacher1.getPassword().equals(password)){
                 this.addActionError("初始密码错误");
@@ -66,6 +68,17 @@ public class ResetPwdAction extends ActionSupport implements ServletRequestAware
             //更改密码
             teacher1.setPassword(newpwd);
             teacherService.updatePwd(teacher1);
+        } else if (userType == 1) {
+            Admin admin = (Admin)request.getSession().getAttribute("currentUser");
+            Admin admin1 = adminService.get(admin.getAdminId());
+            //获得当前用户的密码
+            if(password == null || !admin1.getPassword().equals(password)){
+                this.addActionError("初始密码错误");
+                return INPUT;
+            }
+            //更改密码
+            admin1.setPassword(newpwd);
+            adminService.updatePwd(admin1);
         }
         if(newpwd == null || "".equals(newpwd) || renewpwd == null || "".equals(renewpwd)){
             this.addActionError("密码不能为空");
@@ -129,5 +142,13 @@ public class ResetPwdAction extends ActionSupport implements ServletRequestAware
 
     public void setTeacherService(TeacherService teacherService) {
         this.teacherService = teacherService;
+    }
+
+    public AdminService getAdminService() {
+        return adminService;
+    }
+
+    public void setAdminService(AdminService adminService) {
+        this.adminService = adminService;
     }
 }

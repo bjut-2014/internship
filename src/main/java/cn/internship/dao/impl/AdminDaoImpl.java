@@ -31,4 +31,8 @@ public class AdminDaoImpl extends HibernateDaoSupport implements AdminDao{
 		return list.get(0);
 	}
 
+	public void updateAdmin(Admin admin) {
+		getHibernateTemplate().update(admin);
+	}
+
 }

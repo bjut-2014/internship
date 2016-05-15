@@ -12,4 +12,8 @@ public interface AdminService {
 	public Admin login(String username,String password);
 
 	public void logout();
+
+	public Admin get(Integer adminId);
+
+	public void updatePwd(Admin admin);
 }
