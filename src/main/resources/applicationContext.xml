@@ -320,4 +320,17 @@
 	
 	<!-- end -->
 	
+	
+	<!-- 设备管理相关配置 -->
+	<bean id="equipmentDao" class="cn.internship.dao.impl.EquipmentDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="equipmentService" class="cn.internship.service.impl.EquipmentServiceImpl">
+		<property name="equipmentDao" ref="equipmentDao"/>
+	</bean>
+	<bean id="equipmentAction" class="cn.internship.action.EquipmentAction">
+		<property name="equipmentService" ref="equipmentService"/>
+	</bean>
+	<!-- end -->
+	
 </beans>
