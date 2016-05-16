@@ -9,14 +9,13 @@ body{
 .panel-head{
 	border-bottom:3px solid rgb(217,217,217);
 	padding-bottom:15px;
-	font-size: 23px;
+	font-size: 18px;
 }
 
 
 
 .panel-body{
 	padding-bottom:10px;
-	font-size:23px;
 }
 
 

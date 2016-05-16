@@ -47,7 +47,7 @@ public class AdminGraduationProSeleAction extends ActionSupport implements Servl
 	
 	@Override
 	public String execute() throws Exception {
-		request.setAttribute("navId", 6);
+		request.setAttribute("navId", 4);
 		
 		List<GraduationProSele> list=graduationSelectionService.getAllSelectInfo();
 		if(list!=null){
@@ -60,7 +60,7 @@ public class AdminGraduationProSeleAction extends ActionSupport implements Servl
 	
 	//添加一条毕设选题信息
 	public String addSelectInfo(){
-		request.setAttribute("navId", 6);
+		request.setAttribute("navId", 4);
 		
 		GraduationProSele gr=new GraduationProSele();
 		gr.setGraduationProTitle(addGraduationProTitle);
@@ -74,7 +74,7 @@ public class AdminGraduationProSeleAction extends ActionSupport implements Servl
 	
 	//根据主键获取一条毕设选题信息
 	public String getOneSelectInfo(){
-		request.setAttribute("navId", 6);
+		request.setAttribute("navId", 4);
 		
 		GraduationProSele gr=graduationSelectionService.getOneSelectInfo(graduationProSeleId);
 		if(gr!=null){
@@ -86,7 +86,7 @@ public class AdminGraduationProSeleAction extends ActionSupport implements Servl
 	
 	//更新之前通过主键获取毕设选题信息
 	public String get(){
-		request.setAttribute("navId", 6);
+		request.setAttribute("navId", 4);
 		
 		GraduationProSele gr=graduationSelectionService.getOneSelectInfo(graduationProSeleId);
 		if(gr!=null){
@@ -98,7 +98,7 @@ public class AdminGraduationProSeleAction extends ActionSupport implements Servl
 	
 	//更新一条毕设选题信息
 	public String updateSelectInfo(){
-		request.setAttribute("navId", 6);
+		request.setAttribute("navId", 4);
 		
 		GraduationProSele gr=graduationSelectionService.getOneSelectInfo(graduationProSeleId);
 		gr.setGraduationProTitle(updateGraduationProTitle);
@@ -111,6 +111,7 @@ public class AdminGraduationProSeleAction extends ActionSupport implements Servl
 	
 	//根据主键删除一条毕设选题信息
 	public String deleteSelectInfo(){
+		request.setAttribute("navId", 4);
 		graduationSelectionService.deleteSelecInfo(deleteId);
 		return SUCCESS;
 	}

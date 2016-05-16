@@ -55,7 +55,7 @@ public class TeacherAction  extends ActionSupport implements ServletRequestAware
 	
 	@Override
 	public String execute() throws Exception {
-		request.setAttribute("navId", 2);
+		request.setAttribute("navId", 7);
 		List<NoticeBoard> noticeBoards = noticeBoardService.getAll();
 		List<RecruitInfo> recruitInfos = recruitInfoService.getAll();
 		List<CarouselFigure> carouselFigures = carouselFigureService.getAll();
@@ -69,7 +69,7 @@ public class TeacherAction  extends ActionSupport implements ServletRequestAware
 	
 	//个人信息
 	public String info(){
-		request.setAttribute("navId", 2);
+		request.setAttribute("navId", 7);
 		Teacher teacher = (Teacher) request.getSession().getAttribute("currentUser");
 		String tno = teacher.getTno();
 		List<Syslog> stuSyslogList = syslogService.getAll(tno);
@@ -79,7 +79,7 @@ public class TeacherAction  extends ActionSupport implements ServletRequestAware
 	
 	//显示所有教师
 	public String showTeachers(){
-		request.setAttribute("navId", 5);
+		request.setAttribute("navId", 7);
 		List<Teacher> teachers = teacherService.getAll();
 		request.setAttribute("teachers", teachers);
 		return SUCCESS;
@@ -87,7 +87,7 @@ public class TeacherAction  extends ActionSupport implements ServletRequestAware
 	
 	//添加教师
 	public String addTeacher(){
-		request.setAttribute("navId", 5);
+		request.setAttribute("navId", 7);
 		Teacher teacher = new Teacher();
 		teacher.setTno(tno);
 		teacher.setName(tname);
@@ -103,12 +103,14 @@ public class TeacherAction  extends ActionSupport implements ServletRequestAware
 	
 	//删除教师
 	public String deleteTeacher(){
+		request.setAttribute("navId", 7);
 		teacherService.deleteTeacher(teacherId);
 		return SUCCESS;
 	}
 	
 	//读取批量导入教师信息
 	public String uploadTchExcel(){
+		request.setAttribute("navId", 7);
 		List<Teacher> teachers = new ArrayList<Teacher>();
 		Workbook book = null;
 		if(upload!=null){
@@ -169,6 +171,7 @@ public class TeacherAction  extends ActionSupport implements ServletRequestAware
 	
 	//批量保存
 	public String importTch(){
+		request.setAttribute("navId", 7);
 		ArrayList<Teacher> teachers = (ArrayList<Teacher>) request.getSession().getAttribute("teachers");
 		if(teachers!=null){
 			for(Teacher teacher:teachers){
@@ -181,6 +184,7 @@ public class TeacherAction  extends ActionSupport implements ServletRequestAware
 	
 	//显示教师修改页面
 	public String showUpdateTeacher(){
+		request.setAttribute("navId", 7);
 		Teacher teacher = teacherService.get(teacherId);
 		request.setAttribute("teacher", teacher);
 		return SUCCESS;
@@ -188,6 +192,7 @@ public class TeacherAction  extends ActionSupport implements ServletRequestAware
 	
 	//修改教师信息
 	public String updateTeacher(){
+		request.setAttribute("navId", 7);
 		Teacher teacher = teacherService.get(teacherId);
 		teacher.setTno(tno);
 		teacher.setName(tname);
