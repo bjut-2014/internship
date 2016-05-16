@@ -21,7 +21,8 @@ public class CarouselFigureDaoImpl extends HibernateDaoSupport implements Carous
 
 	@Override
 	public void delete(Integer id) {
-		getHibernateTemplate().delete(id);
+		CarouselFigure carouselFigure = get(id);
+		getHibernateTemplate().delete(carouselFigure);
 	}
 
 	@Override
