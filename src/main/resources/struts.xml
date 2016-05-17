@@ -143,7 +143,7 @@
 			<!--<result>/WEB-INF/views/teacher/index.jsp</result>-->
 		<!--</action>		-->
 		<action name="tch-info" class="teacherAction" method="info">
-			<result>/WEB-INF/views/teacher/teacherinfo.jsp</result>
+			<result>/WEB-INF/views/teacher/t_devicemanage.jsp</result>
 		</action>
 		<action name="tch-course" class="courseAction" method="tchCourse">
 			<result>/WEB-INF/views/teacher/teachercourses.jsp</result>
@@ -153,6 +153,15 @@
 		</action>
 		<action name="thomework" class="homeworkAction" method="listHomeworkByCourse">
 			<result>/WEB-INF/views/teacher/thomework.jsp</result>
+		</action>
+		<action name="t_adddevice" class="" method="">
+			<result>/WEB-INF/views/teacher/t_adddevice.jsp</result>
+		</action>
+		<action name="t_addDeviceHistory" class="" method="">
+			<result>/WEB-INF/views/teacher/t_addDeviceHistory.jsp</result>
+		</action>
+			<action name="t_otherdevice" class="" method="">
+			<result>/WEB-INF/views/teacher/t_otherdevice.jsp</result>
 		</action>
 		<!-- end -->
 		<!-- 案例库上传相关操作 -->
