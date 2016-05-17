@@ -13,7 +13,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="sidebar col-sm-3 col-md-2">
-            <jsp:include page="../sidebar/sidebar-teacher.jsp" />
+            <jsp:include page="../sidebar/sidebar-admin.jsp" />
         </div>   
     </div>
     
@@ -43,13 +43,21 @@
                              					<label  class="content">xilinx</label>
                              		
                              			</div>
+                             			                             			                             				
+                             				
                              			<div class="form-group">
                              				<label class="control-label col-lg-2">所属人</label>
-                             				
-                             					<label  class="content">谌云莉</label>
-                             					
+                             				<div class="col-lg-10">
+                             					<select name="dteacher" class="form-control" id="dteacher"  aria-required="true" >
+                             						<option></option>
+                             						<s:iterator value="#request.teachers" var="tch">
+                             							<option value="<s:property value="#tch.teacherId" />"><s:property value="#tch.name" /></option>
+                             						</s:iterator>
+                             					</select>
+                             				</div>
+                             			</div>		
                              			
-                             			</div>
+                             		
                              			<div class="form-group">
                              				<label class="control-label col-lg-2">借出人</label>
                              				<div class="col-lg-10">
@@ -145,8 +153,46 @@
 			                        	<td class="rborder">2015年7月10日  13：00</td>
 			                            
 			                      	</tr>
-			                      
-			                      
+			                      	<tr >
+			                        	<td class="rborder">D123</td>
+			                        	<td class="rborder">xilinx</td>
+			                        	<td class="rborder">谌云莉</td>
+			                        	<td class="rborder">借出</td>
+			                        	<td class="rborder">陈晓晓</td>
+			                        	<td class="rborder">2015年1月10日  13：00</td>
+			                        	<td class="rborder">2015年7月10日  13：00</td>
+			                            
+			                      	</tr>
+			                      	<tr >
+			                        	<td class="rborder">D123</td>
+			                        	<td class="rborder">xilinx</td>
+			                        	<td class="rborder">谌云莉</td>
+			                        	<td class="rborder">借出</td>
+			                        	<td class="rborder">陈晓晓</td>
+			                        	<td class="rborder">2015年1月10日  13：00</td>
+			                        	<td class="rborder">2015年7月10日  13：00</td>
+			                            
+			                      	</tr>
+			                      	<tr >
+			                        	<td class="rborder">D123</td>
+			                        	<td class="rborder">xilinx</td>
+			                        	<td class="rborder">谌云莉</td>
+			                        	<td class="rborder">借出</td>
+			                        	<td class="rborder">陈晓晓</td>
+			                        	<td class="rborder">2015年1月10日  13：00</td>
+			                        	<td class="rborder">2015年7月10日  13：00</td>
+			                            
+			                      	</tr>
+			                      	<tr >
+			                        	<td class="rborder">D123</td>
+			                        	<td class="rborder">xilinx</td>
+			                        	<td class="rborder">谌云莉</td>
+			                        	<td class="rborder">借出</td>
+			                        	<td class="rborder">陈晓晓</td>
+			                        	<td class="rborder">2015年1月10日  13：00</td>
+			                        	<td class="rborder">2015年7月10日  13：00</td>
+			                            
+			                      	</tr>
 			             			
 			                 	</tbody>
                  	</table>		

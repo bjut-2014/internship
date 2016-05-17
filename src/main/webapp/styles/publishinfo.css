@@ -138,6 +138,13 @@ th{
 	padding-left:10px;
 	font-weight:500;
 	color:#797979;
-	
-	
+}
+.Gl1{
+	color:rgb(57,134,243);
+}
+.myPu{
+	background:white;
+	border:none;
+	color:red;
+	margin-left:30px;
 }
