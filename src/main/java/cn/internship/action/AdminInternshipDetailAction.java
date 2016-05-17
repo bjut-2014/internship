@@ -56,7 +56,7 @@ public class AdminInternshipDetailAction extends ActionSupport implements Servle
 	
 	@Override
 	public String execute() throws Exception {
-		request.setAttribute("navId", 7);
+		request.setAttribute("navId", 5);
 		List<InternshipDetail> list=internshipDetailService.getAllStudents();
 		if(list!=null){
 			request.setAttribute("AllInternshipDetails", list);
@@ -67,7 +67,7 @@ public class AdminInternshipDetailAction extends ActionSupport implements Servle
 	
 	//添加实习信息
 	public String addInternshipDetail(){
-		request.setAttribute("navId", 7);
+		request.setAttribute("navId", 5);
 		InternshipDetail it=new InternshipDetail();
 		it.setCompany_address(add_companyAddress);
 		it.setCompany_name(add_companyName);
@@ -84,7 +84,7 @@ public class AdminInternshipDetailAction extends ActionSupport implements Servle
 	
 	//根据主键获取一条实习信息
 	public String getOneInternshipDetail(){
-		request.setAttribute("navID", 7);
+		request.setAttribute("navID", 5);
 		InternshipDetail it=internshipDetailService.getInternshipDetailById(internshipDetailId);
 		if(it!=null){
 			request.setAttribute("oneInternshipDetail", it);
@@ -94,7 +94,7 @@ public class AdminInternshipDetailAction extends ActionSupport implements Servle
 	
 	//更新实习信息之前通过主键获取实习信息
 	public String get(){
-		request.setAttribute("navId", 7);
+		request.setAttribute("navId", 5);
 		InternshipDetail it=internshipDetailService.getInternshipDetailById(internshipDetailId);
 		if(it!=null){
 			request.setAttribute("updateOneInternshipDetail", it);
@@ -104,7 +104,7 @@ public class AdminInternshipDetailAction extends ActionSupport implements Servle
 	
 	//更新实习信息
 	public String updateInternshipDetail(){
-		request.setAttribute("navId", 7);
+		request.setAttribute("navId", 5);
 		InternshipDetail it=internshipDetailService.getInternshipDetailById(internshipDetailId);
 		
 		it.setCompany_address(update_companyAddress);
@@ -121,7 +121,7 @@ public class AdminInternshipDetailAction extends ActionSupport implements Servle
 	
 	//删除实习信息
 	public String deleteInernshipDetail(){
-		request.setAttribute("navId", 7);
+		request.setAttribute("navId", 5);
 		internshipDetailService.deleteInternshipDetail(deleteId);
 		return SUCCESS;
 	}

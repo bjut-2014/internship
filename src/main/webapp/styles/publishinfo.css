@@ -101,7 +101,7 @@ th{
 	line-height:1.1;
 
 }
-.panel{
+.panel-admin{
 	border-top-left-radius :0px;
 	border-top:1px solid #ffffff;
 
@@ -132,4 +132,19 @@ th{
 }
 .sidebar {
 	padding: 20px;
+}
+.content{
+	padding-top:7px;
+	padding-left:10px;
+	font-weight:500;
+	color:#797979;
+}
+.Gl1{
+	color:rgb(57,134,243);
+}
+.myPu{
+	background:white;
+	border:none;
+	color:red;
+	margin-left:30px;
 }

@@ -68,7 +68,7 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 	
 	@Override
 	public String execute() throws Exception {
-		request.setAttribute("navId", 4);
+		request.setAttribute("navId", 6);
 		
 		List<Student> students=studentService.getAllStudents();
 		//HttpSession session=request.getSession();
@@ -88,7 +88,7 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 	
 	//添加学生信息
 	public String addStudent(){
-		request.setAttribute("navId", 4);
+		request.setAttribute("navId", 6);
 		
 		Student st=new Student();
 		st.setClasses(addClasses);
@@ -108,7 +108,7 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 	
 	//根据主键获取一条学生信息
 	public String getOneStudent(){
-		request.setAttribute("navId", 4);
+		request.setAttribute("navId", 6);
 		
 		Student st=studentService.get(studentId);
 		if(st!=null){
@@ -120,7 +120,7 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 	
 	//更新学生信息前通过主键获取当前学生信息
 	public String get(){
-		request.setAttribute("navId", 4);
+		request.setAttribute("navId", 6);
 		
 		Student st=studentService.get(studentId);
 		if(st!=null){
@@ -135,7 +135,7 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 	
 	//更新学生信息
 	public String updateStudent(){
-		request.setAttribute("navId", 4);
+		request.setAttribute("navId", 6);
 		
 		Student st=studentService.get(studentId);
 		st.setClasses(updateClasses);
@@ -161,13 +161,14 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 	
 	//根据主键删除学生信息
 	public String deleteStudent(){
-		request.setAttribute("navId", 4);
+		request.setAttribute("navId", 6);
 		studentService.deleteStudent(deleteId);
 		return SUCCESS;
 	}
 	
 	//上传excel
 	public String uploadStuExcel(){
+		request.setAttribute("navId", 6);
 		List<Student> students = new ArrayList<Student>();
 		Workbook book = null;
 		if(upload!=null){
@@ -224,6 +225,7 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 	
 	//批量保存
 	public String importStu(){
+		request.setAttribute("navId", 6);
 		ArrayList<Student> students = (ArrayList<Student>) request.getSession().getAttribute("students");
 		if(students!=null){
 			for(Student student:students){
