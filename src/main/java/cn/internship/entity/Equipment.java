@@ -2,15 +2,19 @@ package cn.internship.entity;
 
 import java.sql.Date;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * 设备实体类
  * @author dreamlate
  *
  */
+@Entity
+@Table(name="equipment")
 public class Equipment {
 
 	//主键

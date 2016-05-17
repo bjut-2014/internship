@@ -142,11 +142,8 @@
 		<!--<action name="tch-index" class="teacherAction">-->
 			<!--<result>/WEB-INF/views/teacher/index.jsp</result>-->
 		<!--</action>		-->
-		<!--<action name="tch-info" class="teacherAction" method="info">
-			<result>/WEB-INF/views/teacher/teacherinfo.jsp</result>
-		</action>-->
 		<action name="tch-info" class="teacherAction" method="info">
-			<result>/WEB-INF/views/manager/devicemanage.jsp</result>
+			<result>/WEB-INF/views/teacher/teacherinfo.jsp</result>
 		</action>
 		<action name="tch-course" class="courseAction" method="tchCourse">
 			<result>/WEB-INF/views/teacher/teachercourses.jsp</result>
@@ -157,13 +154,25 @@
 		<action name="thomework" class="homeworkAction" method="listHomeworkByCourse">
 			<result>/WEB-INF/views/teacher/thomework.jsp</result>
 		</action>
-		<action name="t_adddevice" class="" method="">
+		<action name="tch-equipment" class="equipmentAction" method="showTeacherEquipment">
+			<result>/WEB-INF/views/teacher/t_devicemanage.jsp</result>
+		</action>
+		<action name="tch-show-addEquipment" class="" method="">
 			<result>/WEB-INF/views/teacher/t_adddevice.jsp</result>
 		</action>
-		<action name="t_addDeviceHistory" class="" method="">
+		<action name="tch-addEquipment" class="equipmentAction" method="tchAddEquipment">
+			<result  type="redirectAction">tch-equipment</result>
+		</action>
+		<action name="tch-deleteEquipment" class="equipmentAction" method="tchDeleteEquipment">
+			<result  type="redirectAction">tch-equipment</result>
+		</action>
+		<action name="tch-showAddEquipmentHistory" class="equipmentAction" method="tchShowAddEquipmentHistory">
 			<result>/WEB-INF/views/teacher/t_addDeviceHistory.jsp</result>
 		</action>
-			<action name="t_otherdevice" class="" method="">
+		<action name="tch-addEquipmentHistory" class="equipmentAction" method="tchAddEquipmentHistory">
+			<result  type="redirectAction">tch-equipment</result>
+		</action>
+			<action name="tch-otherdevice" class="equipmentAction" method="showOtherTeacherEquipment">
 			<result>/WEB-INF/views/teacher/t_otherdevice.jsp</result>
 		</action>
 	

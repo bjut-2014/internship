@@ -30,14 +30,14 @@
                   			<th >设备状态</th>                                                   
                       						
              			</tr>
+             			<s:iterator value="#request.otherTeacherEquipments" var="ote">
              			<tr >
-                        	<td class="for-border-right">D123</td>
-                        	<td class="for-border-right">xilinx</td>
-                        	<td class="for-border-right">谌云莉</td>
-                        	<td >借出</td>
-                        	
+                        	<td class="for-border-right"><s:property value="#ote.eno" /></td>
+                        	<td class="for-border-right"><s:property value="#ote.name" /></td>
+                        	<td class="for-border-right"><s:property value="#ote.owner" /></td>
+                        	<td ><s:property value="#ote.state" /></td>
                       	</tr>
-             			
+             			</s:iterator>
                  	</tbody>
                </table>
             </div>

@@ -24,11 +24,11 @@
                     	</div>
                     	<div class="panel-body">     		
                              	<div class="form">
-                             		<form class="cmxform form-horizontal tasi-form" id="commentForm" action="admin-add-course" method="post" >
+                             		<form class="cmxform form-horizontal tasi-form" id="commentForm" action="tch-addEquipment" method="post" >
                              			<div class="form-group">
                              				<label class="control-label col-lg-2">设备编号</label>
                              				<div class="col-lg-10">
-                             					<input name="did" class="form-control" id="did" type="text" aria-required="true"/>
+                             					<input name="eno" class="form-control" id="did" type="text" aria-required="true"/>
                              				</div>
                              			</div>
                              			<!--  <div class="form-group">
@@ -40,7 +40,7 @@
                              			<div class="form-group">
                              				<label class="control-label col-lg-2">设备名称</label>
                              				<div class="col-lg-10">
-                             					<input name="dname" class="form-control" id="dname" type="text" aria-required="true"/>
+                             					<input name="ename" class="form-control" id="dname" type="text" aria-required="true"/>
                              				</div>
                              			</div>                            			
                              			

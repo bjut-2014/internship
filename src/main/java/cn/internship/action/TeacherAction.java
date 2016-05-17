@@ -55,7 +55,7 @@ public class TeacherAction  extends ActionSupport implements ServletRequestAware
 	
 	@Override
 	public String execute() throws Exception {
-		request.setAttribute("navId", 7);
+		request.setAttribute("navId", 2);
 		List<NoticeBoard> noticeBoards = noticeBoardService.getAll();
 		List<RecruitInfo> recruitInfos = recruitInfoService.getAll();
 		List<CarouselFigure> carouselFigures = carouselFigureService.getAll();
@@ -69,7 +69,7 @@ public class TeacherAction  extends ActionSupport implements ServletRequestAware
 	
 	//个人信息
 	public String info(){
-		request.setAttribute("navId", 7);
+		request.setAttribute("navId", 2);
 		Teacher teacher = (Teacher) request.getSession().getAttribute("currentUser");
 		String tno = teacher.getTno();
 		List<Syslog> stuSyslogList = syslogService.getAll(tno);

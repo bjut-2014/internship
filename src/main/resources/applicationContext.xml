@@ -330,6 +330,8 @@
 	</bean>
 	<bean id="equipmentAction" class="cn.internship.action.EquipmentAction">
 		<property name="equipmentService" ref="equipmentService"/>
+		<property name="teacherService" ref="teacherService"/>
+		<property name="adminService" ref="adminService"/>
 	</bean>
 	<!-- end -->
 	

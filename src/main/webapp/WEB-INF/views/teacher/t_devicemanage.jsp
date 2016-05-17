@@ -17,7 +17,7 @@
         <div class="panel panel-default myPanel practiceinfo">
             <div class="panel-head">
             	持有设备 Holding Device
-            	 <a href="t_adddevice"><button class="glyphicon glyphicon-plus myBu"></button></a>
+            	 <a href="tch-show-addEquipment"><button class="glyphicon glyphicon-plus myBu"></button></a>
            	</div>
            
             <div class="panel-body">             
@@ -33,20 +33,22 @@
                   			<th class="for-border-right">归还时间</th>                                                   
                 			<th class="position">操作</th>           					
              			</tr>
-             			<tr >
-                        	<td class="for-border-right">D123</td>
-                        	<td class="for-border-right">xilinx</td>
-                        	<td class="for-border-right">谌云莉</td>
-                        	<td class="for-border-right">借出</td>
-                        	<td class="for-border-right">陈晓晓</td>
-                        	<td class="for-border-right">2016年1月10日  13：00</td>
-                        	<td class="for-border-right"></td>
-                            <td>
-                            	<a href="t_addDeviceHistory"><span class="glyphicon glyphicon-pencil Gl1"></span></a>
-                           		<button type="button" class="glyphicon glyphicon-trash myPu weekly-plan-del" data-toggle="modal" data-target="#WeeklyPlanDel"></button>
-                           	</td>
-                      	</tr>
-             			
+             			<s:iterator value="#request.equipments" var="equ">
+             			<tr>
+                        	<th class="for-border-right"><s:property value="#equ.eno"/></th>                                                   
+                      		<th class="for-border-right"><s:property value="#equ.name"/></th>
+                  			<th class="for-border-right"><s:property value="#equ.owner"/></th> 
+                  			<th class="for-border-right"><s:property value="#equ.state"/></th>                                                   
+                      		<th class="for-border-right"><s:property value="#equ.people"/></th>
+                  			<th class="for-border-right"><s:property value="#equ.lendDate"/></th>
+                  			<th class="for-border-right"><s:property value="#equ.returnDate"/></th>                                                   
+                			<th class="position">
+								<a href="tch-showAddEquipmentHistory?equipmentId=<s:property value="#equ.equipmentId" />"><span class="glyphicon glyphicon-pencil Gl1"></span></a>
+                           		<!-- <button type="button" class="glyphicon glyphicon-trash myPu weekly-plan-del" data-toggle="modal" data-target="#WeeklyPlanDel"></button> -->
+								<a href="tch-deleteEquipment?equipmentId=<s:property value="#equ.equipmentId" />" ><span class="glyphicon glyphicon-trash" ></span></a> 
+							</th>           					
+             			</tr>
+             			</s:iterator>
                  	</tbody>
                </table>
             </div>
@@ -62,13 +64,14 @@
                             <th>姓名</th>                           
                             <th>查看</th>
                         </tr>
-                       
-                            <tr>
-                                <td  class="for-border-right">谌云莉</td>                              
-                                <td>
-                                    <a href="t_otherdevice"><span class="glyphicon glyphicon-eye-open Gl2"></span></a>                                    
-                                </td>
-                            </tr>
+                        <s:iterator value="#request.tchs" var="tch">
+                        <tr>
+                             <td  class="for-border-right"><s:property value="#tch.name" /></td>                              
+                             <td>
+                                 <a href="tch-otherdevice?teacherId=<s:property value="#tch.teacherId" />"><span class="glyphicon glyphicon-eye-open Gl2"></span></a>                                    
+                             </td>
+                         </tr>	
+                        </s:iterator>
                         </tbody>
                     </table>
             </div>
