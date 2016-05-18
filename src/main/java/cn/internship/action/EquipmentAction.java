@@ -127,8 +127,59 @@ public class EquipmentAction extends ActionSupport implements ServletRequestAwar
 	}
 	
 	public String showOtherTeacherEquipment(){
+		request.setAttribute("navId", 7);
 		List<Equipment> otherTeacherEquipments = equipmentService.getByTeacherId(teacherId); 
 		request.setAttribute("otherTeacherEquipments", otherTeacherEquipments);
+		return SUCCESS;
+	}
+	
+	//管理员页面显示所有设备信息
+	public String showAdminEquipments(){
+		request.setAttribute("navId", 9);
+		List<Equipment> adminEquipments = equipmentService.getAll();
+		request.setAttribute("adminEquipments", adminEquipments);
+		return SUCCESS;
+	}
+	//管理员页面，显示添加设备信息页面
+	public String showAdminAddEquipment(){
+		request.setAttribute("navId", 9);
+		List<Teacher> teachers = teacherService.getAll();
+		request.setAttribute("teachers", teachers);
+		return SUCCESS;
+	}
+	//管理员页面，添加设备信息
+	public String adminAddEquipment(){
+		Equipment equipment = new Equipment();
+		equipment.setEno(eno);
+		equipment.setName(ename);
+		equipment.setTeacherId(teacherId);
+		equipment.setOwner(teacherService.get(teacherId).getName());
+		equipmentService.save(equipment);
+		return SUCCESS;
+	}
+	
+	//管理员页面，添加设备记录页面
+	public String showAdminAddEquipmentHistory(){
+		request.setAttribute("navId", 9);
+		Equipment equipment = equipmentService.get(equipmentId);
+		request.setAttribute("equipment", equipment);
+		return SUCCESS;
+	}
+	
+	//管理员页面，添加设备记录
+	public String adminAddEquipmentHistory(){
+		Equipment equipment = equipmentService.get(equipmentId);
+		equipment.setLendDate(elendDate);
+		equipment.setReturnDate(ereturnDate);
+		equipment.setState(estate);
+		equipment.setPeople(epeople);
+		equipmentService.update(equipment);
+		return SUCCESS;
+	}
+	
+	//管理员删除一条设备信息
+	public String adminDeleteEquipment(){
+		equipmentService.delete(equipmentId);
 		return SUCCESS;
 	}
 	

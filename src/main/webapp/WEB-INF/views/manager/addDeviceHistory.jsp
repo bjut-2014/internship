@@ -26,10 +26,10 @@
                     	</div>
                     	<div class="panel-body">     		
                              	<div class="form">
-                             		<form class="cmxform form-horizontal tasi-form" id="commentForm" action="admin-add-course" method="post" >
+                             		<form class="cmxform form-horizontal tasi-form" id="commentForm" action="admin-add-equipmentHistory" method="post" >
                              			<div class="form-group">
                              				<label class="control-label col-lg-2">设备编号</label>                            				
-                             				<label class="content">d123</label>                            				
+                             				<label class="content"><s:property value="#request.equipment.eno"/></label>                            				
                              			</div>
                              			<!--  <div class="form-group">
                              				<label class="control-label col-lg-2">老师</label>
@@ -39,12 +39,15 @@
                              			</div>-->
                              			<div class="form-group">
                              				<label class="control-label col-lg-2">设备名称</label>
-                             				
-                             					<label  class="content">xilinx</label>
-                             		
+                             					<label  class="content"><s:property value="#request.equipment.name"/></label>
                              			</div>
+                             			                      
+                             			<div class="form-group">
+                             				<label class="control-label col-lg-2">所属人</label>
+                             					<label  class="content"><s:property value="#request.equipment.owner"/></label>
+                             			</div>   
                              			                             			                             				
-                             				
+                             			<!--  	
                              			<div class="form-group">
                              				<label class="control-label col-lg-2">所属人</label>
                              				<div class="col-lg-10">
@@ -56,24 +59,30 @@
                              					</select>
                              				</div>
                              			</div>		
+                             			-->
                              			
-                             		
+                             			<div class="form-group">
+                             				<label class="control-label col-lg-2">状态</label>
+                             				<div class="col-lg-10">
+                             					<input name="estate" class="form-control"  type="text" aria-required="true" value="<s:property value="#request.equipment.state"/>"/>
+                             				</div>
+                             			</div>
                              			<div class="form-group">
                              				<label class="control-label col-lg-2">借出人</label>
                              				<div class="col-lg-10">
-                             					<input name="dborrow" class="form-control" id="dborrow" type="text" aria-required="true"/>
+                             					<input name="epeople" class="form-control" id="dborrow" type="text" aria-required="true" value="<s:property value="#request.equipment.people"/>"/>
                              				</div>
                              			</div>
                              			<div class="form-group">
                              				<label class="control-label col-lg-2">借出时间</label>
                              				<div class="col-lg-10">
-                             					<input name="dborrowtime" class="form-control" id="datepicker" type="date" aria-required="true"/>
+                             					<input name="elendDate" class="form-control" id="datepicker" type="date" aria-required="true" value="<s:property value="#request.equipment.lendDate"/>"/>
                              				</div>
                              			</div>
                              			<div class="form-group">
                              				<label class="control-label col-lg-2">归还时间</label>
                              				<div class="col-lg-10">
-                             					<input name="dreturntime" class="form-control" id="datepicker" type="date" aria-required="true"/>
+                             					<input name="ereturnDate" class="form-control" id="datepicker" type="date" aria-required="true" value="<s:property value="#request.equipment.returnDate"/>"/>
                              				</div>
                              			</div>
                              			            			

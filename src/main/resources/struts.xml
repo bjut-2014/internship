@@ -464,6 +464,27 @@
 		
 		<!-- end -->
 		
+		
+		<!-- 管理员管理设备 -->
+		<action name="admin-equipment" class="equipmentAction" method="showAdminEquipments">
+			<result>/WEB-INF/views/manager/devicemanage.jsp</result>
+		</action>
+		<action name="show-admin-add-equipment" class="equipmentAction" method="showAdminAddEquipment">
+			<result>/WEB-INF/views/manager/adddevice.jsp</result>
+		</action>
+		<action name="admin-add-equipment" class="equipmentAction" method="adminAddEquipment">
+			<result type="redirectAction">admin-equipment</result>
+		</action>
+		<action name="show-admin-add-equipmentHistory" class="equipmentAction" method="showAdminAddEquipmentHistory">
+			<result>/WEB-INF/views/manager/addDeviceHistory.jsp</result>
+		</action>
+		<action name="admin-add-equipmentHistory" class="equipmentAction" method="adminAddEquipmentHistory">
+			<result type="redirectAction">admin-equipment</result>
+		</action>
+		<action name="admin-delete-equipment" class="equipmentAction" method="adminDeleteEquipment">
+			<result type="redirectAction">admin-equipment</result>
+		</action>
+		<!-- end -->
 	</package>
 
 

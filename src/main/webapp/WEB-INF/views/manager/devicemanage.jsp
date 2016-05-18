@@ -22,7 +22,7 @@
                     <div class="panel panel-default">
                     	<div class="panel-heading">                  		
                     		<h3 class="panel-title">所有设备 All Device
-	                       		<a href="adddevice"><span class="fa fa-plus-square rplus"></span></a>
+	                       		<a href="show-admin-add-equipment"><span class="fa fa-plus-square rplus"></span></a>
 	                       	</h3>	                                               
 	                 	  </div>
                     	
@@ -40,19 +40,22 @@
 		                  			<th class="rborder">归还时间</th>                                                   
 		                			<th class="position">操作</th>           					
 		             			</tr>
+		             			<s:iterator value="#request.adminEquipments" var="equ">
 		             			<tr >
-		                        	<td class="rborder">D123</td>
-		                        	<td class="rborder">xilinx</td>
-		                        	<td class="rborder">谌云莉</td>
-		                        	<td class="rborder">借出</td>
-		                        	<td class="rborder">陈晓晓</td>
-		                        	<td class="rborder">2016年1月10日  13：00</td>
-		                        	<td class="rborder"></td>
+		                        	<td class="rborder"><s:property value="#equ.eno" /></td>
+		                        	<td class="rborder"><s:property value="#equ.name" /></td>
+		                        	<td class="rborder"><s:property value="#equ.owner" /></td>
+		                        	<td class="rborder"><s:property value="#equ.state" /></td>
+		                        	<td class="rborder"><s:property value="#equ.people" /></td>
+		                        	<td class="rborder"><s:property value="#equ.lendDate" /></td>
+		                        	<td class="rborder"><s:property value="#equ.returnDate" /></td>
 		                            <td>
-		                            	<a href="addDeviceHistory"><span class="glyphicon glyphicon-pencil Gl1"></span></a>
-		                           		<button type="button" class="glyphicon glyphicon-trash myPu weekly-plan-del" data-toggle="modal" data-target="#WeeklyPlanDel"></button>
+		                            	<a href="show-admin-add-equipmentHistory?equipmentId=<s:property value="#equ.equipmentId" />"><span class="glyphicon glyphicon-pencil Gl1"></span></a>
+		                           		<!--  <button type="button" class="glyphicon glyphicon-trash myPu weekly-plan-del" data-toggle="modal" data-target="#WeeklyPlanDel"></button>-->
+		                           		<a href="admin-delete-equipment?equipmentId=<s:property value="#equ.equipmentId" />"><span class="glyphicon glyphicon-trash"></span></a>
 		                           	</td>
 		                      	</tr>
+		             			</s:iterator>
 				             </tbody>
 				           </table>
 					     </div>
