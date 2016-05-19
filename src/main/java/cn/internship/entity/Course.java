@@ -28,7 +28,7 @@ public class Course {
 	private String name;
 	//选课的老师
 	@ManyToOne(targetEntity=Teacher.class)
-	@JoinColumn(name="teacherId",referencedColumnName="teacherId")
+	@JoinColumn(name="teacherId",referencedColumnName="teacherId",nullable=true)
 	private Teacher teacher;
 	//选课的学生集合
 	@ManyToMany(targetEntity=Student.class)

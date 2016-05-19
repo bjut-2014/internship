@@ -3,7 +3,9 @@ package cn.internship.action;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,8 +19,10 @@ import jxl.read.biff.BiffException;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 
+import cn.internship.entity.Course;
 import cn.internship.entity.Student;
 import cn.internship.entity.Teacher;
+import cn.internship.service.CourseService;
 import cn.internship.service.StudentService;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -38,6 +42,7 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 	private HttpServletResponse response;
 	
 	private StudentService studentService;
+	private CourseService courseService;
 	
 	//====================================添加学生信息======================================
 	private String addClasses;
@@ -100,7 +105,15 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 		st.setSex(addSex);
 		st.setSno(addSno);
 		st.setUserType(3);
-		
+		List<Course> courses = courseService.getAll();
+		if(courses!=null){
+			Set<Course> courseSet = new HashSet<Course>();
+			for(Course c:courses){
+				courseSet.add(c);
+			}
+			//添加一个学生关联所有课程
+			st.setCourses(courseSet);
+		}
 		studentService.addStudent(st);
 		
 		return SUCCESS;
@@ -181,6 +194,7 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 				if(columns!=5){
 					return SUCCESS;
 				}
+				List<Course> courses = courseService.getAll();
 				for(int m=1;m<rows;m++){
 	//				for(int n=0;n<columns;n++){
 	//					Cell cell = sheet.getCell(n,m);
@@ -210,7 +224,14 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 					cell = sheet.getCell(4,m);
 					result = cell.getContents();
 					student.setClasses(result);
-					
+					if(courses!=null){
+						Set<Course> courseSet = new HashSet<Course>();
+						for(Course c:courses){
+							courseSet.add(c);
+						}
+						//添加一个学生关联所有课程
+						student.setCourses(courseSet);
+					}
 					students.add(student);
 				}
 			} catch (BiffException e) {
@@ -391,6 +412,16 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 
 	public void setUpload(File upload) {
 		this.upload = upload;
+	}
+
+
+	public CourseService getCourseService() {
+		return courseService;
+	}
+
+
+	public void setCourseService(CourseService courseService) {
+		this.courseService = courseService;
 	}
 
 	

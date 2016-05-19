@@ -334,7 +334,7 @@
 		<action name="admin-course" class="courseAction" method="showAdminCourse">
 			<result>/WEB-INF/views/manager/course.jsp</result>
 		</action>
-		<action name="admin-show-add-course" class="teacherAction" method="showTeachers">
+		<action name="admin-show-add-course" class="courseAction" method="showAdminAddCourse">
 			<result>/WEB-INF/views/manager/courseadd.jsp</result>
 		</action>
 		<action name="admin-add-course" class="courseAction" method="addCourse">

@@ -47,7 +47,6 @@
                              				<label class="control-label col-lg-2">所属人</label>
                              				<div class="col-lg-10">
                              					<select name="teacherId" class="form-control" id="dteacher"  aria-required="true" >
-                             						<option></option>
                              						<s:iterator value="#request.teachers" var="tch">
                              							<option value="<s:property value="#tch.teacherId" />"><s:property value="#tch.name" /></option>
                              						</s:iterator>

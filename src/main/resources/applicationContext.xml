@@ -132,6 +132,7 @@
 		<property name="homeworkService" ref="homeworkService" />
 		<property name="teacherService" ref="teacherService" />
 		<property name="caseLibraryService" ref="caseLibraryService" />
+		<property name="studentService" ref="studentService" />
 	</bean>
 	<!-- end -->
 	
@@ -301,6 +302,7 @@
 	<!-- 管理员模块学生信息相关配置 -->
 	<bean id="admin-student" class="cn.internship.action.AdminStudentAction">
 		<property name="studentService" ref="studentService"></property>
+		<property name="courseService" ref="courseService"></property>
 	</bean>
 	<!-- end -->
 	
