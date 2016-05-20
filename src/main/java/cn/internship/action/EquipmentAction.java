@@ -107,6 +107,12 @@ public class EquipmentAction extends ActionSupport implements ServletRequestAwar
 		return SUCCESS;
 	}
 	
+	//教师删除一条设备历史记录信息
+	public String tchDeleteEquipmentHistory(){
+		equipmentService.deleteHistory(equipmentId);
+		return SUCCESS;
+	}
+	
 	//显示添加设备的记录
 	public String tchShowAddEquipmentHistory(){
 		request.setAttribute("navId", 7);

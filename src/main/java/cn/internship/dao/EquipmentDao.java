@@ -17,6 +17,8 @@ public interface EquipmentDao {
 	
 	public void delete(Integer id);
 	
+	public void deleteHistory(Integer id);
+	
 	public List<Equipment> getByTeacherId(Integer teacherId);
 	
 	public List<Equipment> getAll();
@@ -24,4 +26,5 @@ public interface EquipmentDao {
 	public List<Equipment> getExceptTeacherId(Integer teacherId);
 	
 	public void update(Equipment equipment);
+	
 }

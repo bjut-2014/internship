@@ -31,6 +31,11 @@ public class EquipmentServiceImpl implements EquipmentService{
 	}
 
 	@Override
+	public void deleteHistory(Integer id) {
+		equipmentDao.deleteHistory(id);
+	}
+	
+	@Override
 	public List<Equipment> getByTeacherId(Integer teacherId) {
 		return equipmentDao.getByTeacherId(teacherId);
 	}
@@ -59,5 +64,7 @@ public class EquipmentServiceImpl implements EquipmentService{
 	public void setEquipmentDao(EquipmentDao equipmentDao) {
 		this.equipmentDao = equipmentDao;
 	}
+
+	
 
 }

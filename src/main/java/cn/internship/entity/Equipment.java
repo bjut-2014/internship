@@ -37,6 +37,9 @@ public class Equipment {
 	private String people;
 	//教师主键
 	private Integer teacherId;
+	//是否在历史记录里面
+	private Boolean isHistory;
+	
 	public Integer getEquipmentId() {
 		return equipmentId;
 	}
@@ -90,6 +93,12 @@ public class Equipment {
 	}
 	public void setTeacherId(Integer teacherId) {
 		this.teacherId = teacherId;
+	}
+	public Boolean getIsHistory() {
+		return isHistory;
+	}
+	public void setIsHistory(Boolean isHistory) {
+		this.isHistory = isHistory;
 	}
 	
 }

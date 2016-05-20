@@ -17,6 +17,8 @@ public void save(Equipment equipment);
 	
 	public void delete(Integer id);
 	
+	public void deleteHistory(Integer id);
+	
 	public List<Equipment> getByTeacherId(Integer teacherId);
 	
 	public List<Equipment> getAll();

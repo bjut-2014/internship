@@ -26,9 +26,17 @@ public class EquipmentDaoImpl extends HibernateDaoSupport implements EquipmentDa
 		return getHibernateTemplate().get(Equipment.class, id);
 	}
 
-	//删除一个设备
+	//删除一个设备（不是真的删除，仅是把这个数据标记为历史记录）
 	@Override
 	public void delete(Integer id) {
+		Equipment equipment = get(id);
+//		equipment.setIsHistory(true);
+		getHibernateTemplate().delete(equipment);
+	}
+	
+	//删除一个设备的历史记录
+	@Override
+	public void deleteHistory(Integer id) {
 		Equipment equipment = get(id);
 		getHibernateTemplate().delete(equipment);
 	}
@@ -44,7 +52,7 @@ public class EquipmentDaoImpl extends HibernateDaoSupport implements EquipmentDa
 	//获得所有设备
 	@Override
 	public List<Equipment> getAll() {
-		String hql = "from Equipment";
+		String hql = "from Equipment e";
 		List<Equipment> equipments = (List<Equipment>) getHibernateTemplate().find(hql);
 		return equipments;
 	}
