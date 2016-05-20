@@ -52,7 +52,7 @@
 		                            <td>
 		                            	<a href="show-admin-add-equipmentHistory?equipmentId=<s:property value="#equ.equipmentId" />"><span class="glyphicon glyphicon-pencil Gl1"></span></a>
 		                           		<!--  <button type="button" class="glyphicon glyphicon-trash myPu weekly-plan-del" data-toggle="modal" data-target="#WeeklyPlanDel"></button>-->
-		                           		<a href="admin-delete-equipment?equipmentId=<s:property value="#equ.equipmentId" />"><span class="glyphicon glyphicon-trash"></span></a>
+		                           		<a href="admin-delete-equipment?equipmentId=<s:property value="#equ.equipmentId" />"><span class="glyphicon glyphicon-trash mytrash"></span></a>
 		                           	</td>
 		                      	</tr>
 		             			</s:iterator>
