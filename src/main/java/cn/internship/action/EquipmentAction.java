@@ -42,7 +42,7 @@ public class EquipmentAction extends ActionSupport implements ServletRequestAwar
 	
 	@Override
 	public String execute() throws Exception {
-		
+		request.setAttribute("navId", 7);
 		return super.execute();
 	}
 	
@@ -103,12 +103,14 @@ public class EquipmentAction extends ActionSupport implements ServletRequestAwar
 	
 	//教师删除一条设备信息
 	public String tchDeleteEquipment(){
+		request.setAttribute("navId", 7);
 		equipmentService.delete(equipmentId);
 		return SUCCESS;
 	}
 	
 	//教师删除一条设备历史记录信息
 	public String tchDeleteEquipmentHistory(){
+		request.setAttribute("navId", 7);
 		equipmentService.deleteHistory(equipmentId);
 		return SUCCESS;
 	}
@@ -123,6 +125,7 @@ public class EquipmentAction extends ActionSupport implements ServletRequestAwar
 	
 	//添加设备的记录
 	public String tchAddEquipmentHistory(){
+		request.setAttribute("navId", 7);
 		Equipment equipment = equipmentService.get(equipmentId);
 		equipment.setPeople(epeople);
 		equipment.setLendDate(elendDate);
@@ -155,6 +158,7 @@ public class EquipmentAction extends ActionSupport implements ServletRequestAwar
 	}
 	//管理员页面，添加设备信息
 	public String adminAddEquipment(){
+		request.setAttribute("navId", 9);
 		Equipment equipment = new Equipment();
 		equipment.setEno(eno);
 		equipment.setName(ename);
@@ -174,6 +178,7 @@ public class EquipmentAction extends ActionSupport implements ServletRequestAwar
 	
 	//管理员页面，添加设备记录
 	public String adminAddEquipmentHistory(){
+		request.setAttribute("navId", 9);
 		Equipment equipment = equipmentService.get(equipmentId);
 		equipment.setLendDate(elendDate);
 		equipment.setReturnDate(ereturnDate);
@@ -185,6 +190,7 @@ public class EquipmentAction extends ActionSupport implements ServletRequestAwar
 	
 	//管理员删除一条设备信息
 	public String adminDeleteEquipment(){
+		request.setAttribute("navId", 9);
 		equipmentService.delete(equipmentId);
 		return SUCCESS;
 	}

@@ -16,6 +16,7 @@
                     <li><a href="tch-course"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>实训课程</a></li>
                     <li><a href="teacher-weekly-report"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>工作实习</a></li>
                     <li><a href="teacher-graduation-weekly-report"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>毕业设计</a></li>
+                    <li><a href="tch-equipment"><span class="glyphicon glyphicon-hdd" aria-hidden="true"></span>设备管理</a></li>
                 </ul>
             </s:if>
             <s:elseif test="#request.session.userType == 3">
@@ -36,6 +37,7 @@
                 <li><a href="internship-detail"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>工作实习</a></li>
                 <li><a href="student"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>学生管理</a></li>
                 <li><a href="admin-teacher"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>教师管理</a></li>
+                <li><a href="admin-equipment"><span class="glyphicon glyphicon-hdd" aria-hidden="true"></span>设备管理</a></li>
             </ul>
             </s:elseif>
             <ul class="nav nav-sidebar reset-pwd-ul">

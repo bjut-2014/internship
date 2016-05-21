@@ -35,18 +35,18 @@
              			</tr>
              			<s:iterator value="#request.equipments" var="equ">
              			<tr>
-                        	<th class="for-border-right"><s:property value="#equ.eno"/></th>                                                   
-                      		<th class="for-border-right"><s:property value="#equ.name"/></th>
-                  			<th class="for-border-right"><s:property value="#equ.owner"/></th> 
-                  			<th class="for-border-right"><s:property value="#equ.state"/></th>                                                   
-                      		<th class="for-border-right"><s:property value="#equ.people"/></th>
-                  			<th class="for-border-right"><s:property value="#equ.lendDate"/></th>
-                  			<th class="for-border-right"><s:property value="#equ.returnDate"/></th>                                                   
-                			<th class="position">
+                        	<td class="for-border-right"><s:property value="#equ.eno"/></td>
+                      		<td class="for-border-right"><s:property value="#equ.name"/></td>
+                  			<td class="for-border-right"><s:property value="#equ.owner"/></td>
+                  			<td class="for-border-right"><s:property value="#equ.state"/></td>
+                      		<td class="for-border-right"><s:property value="#equ.people"/></td>
+                  			<td class="for-border-right"><s:property value="#equ.lendDate"/></td>
+                  			<td class="for-border-right"><s:property value="#equ.returnDate"/></td>
+                			<td class="position">
 								<a href="tch-showAddEquipmentHistory?equipmentId=<s:property value="#equ.equipmentId" />"><span class="glyphicon glyphicon-pencil Gl1"></span></a>
                            		<!-- <button type="button" class="glyphicon glyphicon-trash myPu weekly-plan-del" data-toggle="modal" data-target="#WeeklyPlanDel"></button> -->
 								<a href="tch-deleteEquipment?equipmentId=<s:property value="#equ.equipmentId" />" ><span class="glyphicon glyphicon-trash" ></span></a> 
-							</th>           					
+							</td>
              			</tr>
              			</s:iterator>
                  	</tbody>

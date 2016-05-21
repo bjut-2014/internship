@@ -11,7 +11,17 @@
 <div class="container-fluid">
     <div class="row">
         <div class="sidebar col-sm-3 col-md-2">
-            <jsp:include page="../sidebar/sidebar-teacher.jsp" />
+			<ul class="nav nav-sidebar">
+				<li><a href="index"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>首页</a></li>
+				<li><a href="tch-info"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>个人信息</a></li>
+				<li><a href="tch-course"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>实训课程</a></li>
+				<li><a href="teacher-weekly-report"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>工作实习</a></li>
+				<li><a href="teacher-graduation-weekly-report"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>毕业设计</a></li>
+				<li class="active"><a href="tch-equipment"><span class="glyphicon glyphicon-hdd" aria-hidden="true"></span>设备管理</a></li>
+			</ul>
+			<ul class="nav nav-sidebar reset-pwd-ul">
+				<li><a href="reset"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>修改密码</a></li>
+			</ul>
         </div>   
     </div>
     

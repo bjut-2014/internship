@@ -8,7 +8,7 @@
   <li class="<s:if test="#request.navId == 5">active</s:if>"><a href="internship-detail"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>工作实习</a></li>
   <li class="<s:if test="#request.navId == 6">active</s:if>"><a href="student"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>学生管理</a></li>
   <li class="<s:if test="#request.navId == 7">active</s:if>"><a href="admin-teacher"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>教师管理</a></li>
-  <li class="<s:if test="#request.navId == 9">active</s:if>"><a href="admin-equipment"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>设备管理</a></li>
+  <li class="<s:if test="#request.navId == 9">active</s:if>"><a href="admin-equipment"><span class="glyphicon glyphicon-hdd" aria-hidden="true"></span>设备管理</a></li>
 </ul>
 <ul class="nav nav-sidebar reset-pwd-ul">
   <li class="<s:if test="#request.navId == 8">active</s:if>"><a href="reset"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>修改密码</a></li>
