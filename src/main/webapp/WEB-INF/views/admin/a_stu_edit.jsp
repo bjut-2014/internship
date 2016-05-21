@@ -9,10 +9,6 @@
 		<div class="row">
 			<div class="col-sm-3 col-md-2 sidebar">
 				<jsp:include page="../sidebar/sidebar-admin.jsp" />
-				<ul class="nav nav-sidebar reset-pwd-ul">
-					<li><a href="resetPwd"><span
-							class="glyphicon glyphicon-cog" aria-hidden="true"></span>修改密码</a></li>
-				</ul>
 			</div>
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
 				<form action="student-update" method="post">
@@ -38,7 +34,7 @@
 								<label class="col-sm-2 control-label">性别：</label>
 								<div class="col-sm-7">
 									<input name="updateSex" type="number" class="form-control" value=${request.updateStudent.sex }>
-									<label class="col-sm-2 control-label">请输入性别编号,1:男,2:女</label>
+									<label class="control-label">请输入性别编号,1:男,2:女</label>
 								</div>
 							</div>
 							<div class="form-group">

@@ -7,7 +7,11 @@
 <link href="styles/lib/bootstrap-reset.css"  rel="stylesheet" />
 <link href="styles/lib/bootstrap-datepicker.min.css"  rel="stylesheet" />
 <link href="styles/publishinfo.css" rel="stylesheet"/>
-
+<style>
+	.copyright {
+		bottom: inherit;
+	}
+</style>
 <body>
 <jsp:include page="../nav/nav.jsp" />
 <div class="container-fluid">
