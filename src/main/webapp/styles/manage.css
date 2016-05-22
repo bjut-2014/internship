@@ -116,3 +116,6 @@ body{
 .table>thead>tr>th {
 	 border-bottom: none;
 }
+.weekReport table tr:nth-child(even) {
+    background: #F3F5F6;
+}
