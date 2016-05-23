@@ -62,7 +62,7 @@
 		<action name="logout" class="loginAction" method="logout">
 			<result name="logout">/login.jsp</result>
 		</action>
-        <action name="adminLogout" class="adminAction" method="logout">
+        <action name="adminLogout" class="adminLoginAction" method="logout">
             <result name="adminLogout">/WEB-INF/views/manager/m-login.jsp</result>
         </action>
 		<!-- end -->
