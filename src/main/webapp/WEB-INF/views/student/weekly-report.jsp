@@ -81,6 +81,7 @@
                 </s:if>
                 <s:else>
                     <p><s:property value="#request.result.title"/></p>
+                    <input type="file" name="uploadfile" class="uploadInternshipReport"/>
                 </s:else>
             </div>
         </div>

@@ -29,7 +29,7 @@ public class GraduationProSele {
 		private String tno;
 		//毕设课题
 		@Column(length=1000)
-		private String GraduationProTitle;
+		private String graduationProTitle;
 		public Integer getId() {
 			return id;
 		}
@@ -48,16 +48,17 @@ public class GraduationProSele {
 		public void setTno(String tno) {
 			this.tno = tno;
 		}
+
 		public String getGraduationProTitle() {
-			return GraduationProTitle;
+			return graduationProTitle;
 		}
 		public void setGraduationProTitle(String graduationProTitle) {
-			GraduationProTitle = graduationProTitle;
+			this.graduationProTitle = graduationProTitle;
 		}
 		@Override
 		public String toString() {
 			return "GraduationProSele [id=" + id + ", sno=" + sno + ", tno="
-					+ tno + ", GraduationProTitle=" + GraduationProTitle + "]";
+					+ tno + ", GraduationProTitle=" + graduationProTitle + "]";
 		}
 		
 		

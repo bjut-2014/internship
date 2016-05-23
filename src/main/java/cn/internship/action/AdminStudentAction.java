@@ -90,20 +90,27 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 	public String addStudent(){
 		request.setAttribute("navId", 4);
 		
-		Student st=new Student();
-		st.setClasses(addClasses);
-		st.setEmail(addEmail);
-		st.setGrade(addGrade);
-		st.setName(addName);
-		st.setPassword(addSno);
-		st.setPhone(addPhone);
-		st.setSex(addSex);
-		st.setSno(addSno);
-		st.setUserType(3);
 		
-		studentService.addStudent(st);
 		
-		return SUCCESS;
+		try{
+			Student st=new Student();
+			st.setClasses(addClasses);
+			st.setEmail(addEmail);
+			st.setGrade(addGrade);
+			st.setName(addName);
+			st.setPassword(addSno);
+			st.setPhone(addPhone);
+			st.setSex(addSex);
+			st.setSno(addSno);
+			st.setUserType(3);
+			studentService.addStudent(st);
+			
+			return SUCCESS;	
+		}catch(Exception ex){
+			ex.printStackTrace();
+			return "fail";
+		}
+
 	}
 	
 	//根据主键获取一条学生信息
@@ -127,7 +134,7 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 			request.setAttribute("updateStudent", st);
 			return SUCCESS;
 		}else{
-			return INPUT;
+			return "fail";
 		}
 		
 		
@@ -154,7 +161,7 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 			return SUCCESS;
 		}catch(Exception ex){
 			ex.printStackTrace();
-			return INPUT;
+			return "fail";
 		}
 		
 	}
