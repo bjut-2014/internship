@@ -65,7 +65,7 @@ public class AdminLoginAction extends ActionSupport implements ServletRequestAwa
 	public String logout() {
 		request.getSession().removeAttribute("currentUser");
 		adminService.logout();
-		return SUCCESS;
+		return "adminLogout";
 	}
 
 	@Override
