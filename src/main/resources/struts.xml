@@ -276,9 +276,7 @@
 			<result name="success" type="redirectAction">index</result>
 			<result name="input">/WEB-INF/views/manager/m-login.jsp</result>
 		</action>
-		<action name="adminLogout" class="adminLoginAction" method="logout">
-			<result>/WEB-INF/views/manager/m-login.jsp</result>
-		</action>
+
 		<!-- 公告 -->
 		<action name="addNoticeBoard" class="adminAction" method="addNoticeBoard">
 			<result type="redirectAction">publishInfo</result>
@@ -394,24 +392,24 @@
 		
 		<action name="student" class="admin-student">
 			<result>/WEB-INF/views/admin/a_stu.jsp</result>
-			<result name="input">/WEB-INF/views/admin/a_stu.jsp</result>
 		</action>
 		<action name="student-save">
 			<result>/WEB-INF/views/admin/a_stuadd.jsp</result>
 		</action>
 		<action name="student-add" class="admin-student" method="addStudent">
 			<result type="redirectAction">student</result>
+			<result name="fail">/WEB-INF/views/admin/stu_error.jsp</result>
 		</action>
 		<action name="student-view" class="admin-student" method="getOneStudent">
 			<result>/WEB-INF/views/admin/a_stuinfo.jsp</result>
 		</action>
 		<action name="student-edit" class="admin-student" method="get">
 			<result>/WEB-INF/views/admin/a_stu_edit.jsp</result>
-			<result name="input" type="redirectAction">student</result>
+			<result name="fail" type="redirectAction">student</result>
 		</action>
 		<action name="student-update" class="admin-student" method="updateStudent">
 			<result type="redirectAction">student</result>
-			<result name="input">/WEB-INF/views/admin/stu_error.jsp</result>
+			<result name="fail">/WEB-INF/views/admin/stu_error.jsp</result>
 		</action>
 		<action name="student-delete" class="admin-student" method="deleteStudent">
 			<result type="redirectAction">student</result>

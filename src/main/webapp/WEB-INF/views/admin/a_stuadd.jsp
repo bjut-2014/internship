@@ -85,7 +85,7 @@
 
 						</div>
 						<input type="submit"
-							class="btn btn-primary practical-reports-submit col-sm-offset-8"
+							class="btn btn-primary col-sm-offset-8"
 							value="提交" />
 					</div>
 				</form>

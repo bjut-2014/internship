@@ -26,4 +26,11 @@ public class InternshipReportDaoImpl extends HibernateDaoSupport implements Inte
 		}
 	}
 
+	@Override
+	public void update(InternshipReport internshipReport) {
+		getHibernateTemplate().update(internshipReport);
+	}
+	
+	
+
 }

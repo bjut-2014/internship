@@ -15,8 +15,8 @@
 			</div>
 
 			<div
-				class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main myMain weekReport">
-				<div class="panel panel-default myPanel weekReport1">
+				class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main myMain ">
+				<div class="panel panel-default myPanel ">
 					<div class="panel-head">
 						毕设选题信息 <a href="graduation-pro-sele-save"><button
 								class="btn btn-default btn-sm myBu">
@@ -39,7 +39,7 @@
 										<tr>
 											<td>${list.sno}</td>
 											<td>${list.tno }</td>
-											<td>${list.GraduationProTitle }</td>
+											<td>${list.graduationProTitle }</td>
 											<td><a
 												href="graduation-pro-sele-edit?graduationProSeleId=${list.id}"><span
 													class="glyphicon glyphicon-pencil Gl1"></span></a>

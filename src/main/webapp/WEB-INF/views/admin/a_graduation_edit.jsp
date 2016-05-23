@@ -35,7 +35,7 @@
     <div class="form-group">
             <label class="col-sm-2 control-label">毕设课题：</label>
             <div class="col-sm-7">
-              <input name="updateGraduationProTitle" type="text" class="form-control" value=${request.updateSelectInfo.GraduationProSele }>
+              <input name="updateGraduationProTitle" type="text" class="form-control" value=${request.updateSelectInfo.graduationProTitle }>
               
             </div>
           </div>
@@ -44,7 +44,7 @@
        
           
         </div>
-            <input type="submit" class="btn btn-primary practical-reports-submit col-sm-offset-8" value="提交" />
+            <input type="submit" class="btn btn-primary  col-sm-offset-8" value="提交" />
           </div>
           </form>
         </div>

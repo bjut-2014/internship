@@ -94,29 +94,44 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 	//添加学生信息
 	public String addStudent(){
 		request.setAttribute("navId", 6);
-		
-		Student st=new Student();
-		st.setClasses(addClasses);
-		st.setEmail(addEmail);
-		st.setGrade(addGrade);
-		st.setName(addName);
-		st.setPassword(addSno);
-		st.setPhone(addPhone);
-		st.setSex(addSex);
-		st.setSno(addSno);
-		st.setUserType(3);
-		List<Course> courses = courseService.getAll();
-		if(courses!=null){
-			Set<Course> courseSet = new HashSet<Course>();
-			for(Course c:courses){
-				courseSet.add(c);
+		try{
+			Student st=new Student();
+			st.setClasses(addClasses);
+			st.setEmail(addEmail);
+			st.setGrade(addGrade);
+			st.setName(addName);
+			st.setPassword(addSno);
+			st.setPhone(addPhone);
+			st.setSex(addSex);
+			st.setSno(addSno);
+			st.setUserType(3);
+			List<Course> courses = courseService.getAll();
+			if(courses!=null){
+				Set<Course> courseSet = new HashSet<Course>();
+				for(Course c:courses){
+					courseSet.add(c);
+				}
+				//添加一个学生关联所有课程
+				st.setCourses(courseSet);
 			}
-			//添加一个学生关联所有课程
-			st.setCourses(courseSet);
+			studentService.addStudent(st);
+//			Student st=new Student();
+//			st.setClasses(addClasses);
+//			st.setEmail(addEmail);
+//			st.setGrade(addGrade);
+//			st.setName(addName);
+//			st.setPassword(addSno);
+//			st.setPhone(addPhone);
+//			st.setSex(addSex);
+//			st.setSno(addSno);
+//			st.setUserType(3);
+//			studentService.addStudent(st);
+			return SUCCESS;	
+		}catch(Exception ex){
+			ex.printStackTrace();
+			return "fail";
 		}
-		studentService.addStudent(st);
-		
-		return SUCCESS;
+
 	}
 	
 	//根据主键获取一条学生信息
@@ -140,7 +155,7 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 			request.setAttribute("updateStudent", st);
 			return SUCCESS;
 		}else{
-			return INPUT;
+			return "fail";
 		}
 		
 		
@@ -167,7 +182,7 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 			return SUCCESS;
 		}catch(Exception ex){
 			ex.printStackTrace();
-			return INPUT;
+			return "fail";
 		}
 		
 	}
