@@ -3,7 +3,9 @@ package cn.internship.action;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,8 +19,10 @@ import jxl.read.biff.BiffException;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 
+import cn.internship.entity.Course;
 import cn.internship.entity.Student;
 import cn.internship.entity.Teacher;
+import cn.internship.service.CourseService;
 import cn.internship.service.StudentService;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -38,6 +42,7 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 	private HttpServletResponse response;
 	
 	private StudentService studentService;
+	private CourseService courseService;
 	
 	//====================================添加学生信息======================================
 	private String addClasses;
@@ -68,7 +73,7 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 	
 	@Override
 	public String execute() throws Exception {
-		request.setAttribute("navId", 4);
+		request.setAttribute("navId", 6);
 		
 		List<Student> students=studentService.getAllStudents();
 		//HttpSession session=request.getSession();
@@ -88,10 +93,7 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 	
 	//添加学生信息
 	public String addStudent(){
-		request.setAttribute("navId", 4);
-		
-		
-		
+		request.setAttribute("navId", 6);
 		try{
 			Student st=new Student();
 			st.setClasses(addClasses);
@@ -103,8 +105,27 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 			st.setSex(addSex);
 			st.setSno(addSno);
 			st.setUserType(3);
+			List<Course> courses = courseService.getAll();
+			if(courses!=null){
+				Set<Course> courseSet = new HashSet<Course>();
+				for(Course c:courses){
+					courseSet.add(c);
+				}
+				//添加一个学生关联所有课程
+				st.setCourses(courseSet);
+			}
 			studentService.addStudent(st);
-			
+//			Student st=new Student();
+//			st.setClasses(addClasses);
+//			st.setEmail(addEmail);
+//			st.setGrade(addGrade);
+//			st.setName(addName);
+//			st.setPassword(addSno);
+//			st.setPhone(addPhone);
+//			st.setSex(addSex);
+//			st.setSno(addSno);
+//			st.setUserType(3);
+//			studentService.addStudent(st);
 			return SUCCESS;	
 		}catch(Exception ex){
 			ex.printStackTrace();
@@ -115,7 +136,7 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 	
 	//根据主键获取一条学生信息
 	public String getOneStudent(){
-		request.setAttribute("navId", 4);
+		request.setAttribute("navId", 6);
 		
 		Student st=studentService.get(studentId);
 		if(st!=null){
@@ -127,7 +148,7 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 	
 	//更新学生信息前通过主键获取当前学生信息
 	public String get(){
-		request.setAttribute("navId", 4);
+		request.setAttribute("navId", 6);
 		
 		Student st=studentService.get(studentId);
 		if(st!=null){
@@ -142,7 +163,7 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 	
 	//更新学生信息
 	public String updateStudent(){
-		request.setAttribute("navId", 4);
+		request.setAttribute("navId", 6);
 		
 		Student st=studentService.get(studentId);
 		st.setClasses(updateClasses);
@@ -168,13 +189,14 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 	
 	//根据主键删除学生信息
 	public String deleteStudent(){
-		request.setAttribute("navId", 4);
+		request.setAttribute("navId", 6);
 		studentService.deleteStudent(deleteId);
 		return SUCCESS;
 	}
 	
 	//上传excel
 	public String uploadStuExcel(){
+		request.setAttribute("navId", 6);
 		List<Student> students = new ArrayList<Student>();
 		Workbook book = null;
 		if(upload!=null){
@@ -187,6 +209,7 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 				if(columns!=5){
 					return SUCCESS;
 				}
+				List<Course> courses = courseService.getAll();
 				for(int m=1;m<rows;m++){
 	//				for(int n=0;n<columns;n++){
 	//					Cell cell = sheet.getCell(n,m);
@@ -216,7 +239,14 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 					cell = sheet.getCell(4,m);
 					result = cell.getContents();
 					student.setClasses(result);
-					
+					if(courses!=null){
+						Set<Course> courseSet = new HashSet<Course>();
+						for(Course c:courses){
+							courseSet.add(c);
+						}
+						//添加一个学生关联所有课程
+						student.setCourses(courseSet);
+					}
 					students.add(student);
 				}
 			} catch (BiffException e) {
@@ -231,6 +261,7 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 	
 	//批量保存
 	public String importStu(){
+		request.setAttribute("navId", 6);
 		ArrayList<Student> students = (ArrayList<Student>) request.getSession().getAttribute("students");
 		if(students!=null){
 			for(Student student:students){
@@ -396,6 +427,16 @@ public class AdminStudentAction extends ActionSupport implements ServletRequestA
 
 	public void setUpload(File upload) {
 		this.upload = upload;
+	}
+
+
+	public CourseService getCourseService() {
+		return courseService;
+	}
+
+
+	public void setCourseService(CourseService courseService) {
+		this.courseService = courseService;
 	}
 
 	

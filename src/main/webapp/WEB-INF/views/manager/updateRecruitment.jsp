@@ -36,17 +36,17 @@
                     	</div>
                     	<div class="panel-body">     		
                              	<div class="form">
-                             		<form class="cmxform form-horizontal tasi-form" id="commentForm" action="addRecruitInfo" method="post" >
+                             		<form class="cmxform form-horizontal tasi-form" id="commentForm" action="updateRecruitInfo" method="post" >
                              			<div class="form-group">
                              				<label class="control-label col-lg-2">标题</label>
                              				<div class="col-lg-10">
-                             					<input name="recruitInfoTitle" class="form-control" id="rtitle" type="text" aria-required="true"/>
+                             					<input name="recruitInfoTitle" value="<s:property value="#request.recruitInfo.title" />" class="form-control" id="rtitle" type="text" aria-required="true"/>
                              				</div>
                              			</div>
                              			<div class="form-group">
                              				<label class="control-label col-lg-2">内容</label>
                              				<div class="col-lg-10">
-                             					<textarea name="recruitInfoContent" class="form-control" id="rcontent"  aria-required="true"></textarea>
+                             					<textarea name="recruitInfoContent" class="form-control" id="rcontent"  aria-required="true"><s:property value="#request.recruitInfo.content" /></textarea>
                              				</div>
                              			</div>
                              			<div class="form-group">

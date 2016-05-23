@@ -32,21 +32,27 @@
                 <div class="col-sm-12">             	
                     <div class="panel panel-default">
                     	<div class="panel-heading">
-                    		<h3 class="panel-title">招聘信息</h3>
+                    		<h3 class="panel-title">轮播图</h3>
                     	</div>
                     	<div class="panel-body">     		
                              	<div class="form">
-                             		<form class="cmxform form-horizontal tasi-form" id="commentForm" action="addRecruitInfo" method="post" >
+                             		<s:form enctype="multipart/form-data" class="cmxform form-horizontal tasi-form" id="commentForm" action="updateCarouselFigure" method="post" >
                              			<div class="form-group">
                              				<label class="control-label col-lg-2">标题</label>
                              				<div class="col-lg-10">
-                             					<input name="recruitInfoTitle" class="form-control" id="rtitle" type="text" aria-required="true"/>
+                             					<input name="carouselFigureTitle" value="<s:property value="#request.carouselFigure.title" />" class="form-control" id="btitle" type="text" aria-required="true"/>
                              				</div>
                              			</div>
                              			<div class="form-group">
                              				<label class="control-label col-lg-2">内容</label>
                              				<div class="col-lg-10">
-                             					<textarea name="recruitInfoContent" class="form-control" id="rcontent"  aria-required="true"></textarea>
+                             					<textarea name="carouselFigureContent" class="form-control" id="bcontent"  aria-required="true"><s:property value="#request.carouselFigure.content" /></textarea>
+                             				</div>
+                             			</div>
+                             			<div class="form-group">
+                             				<label class="control-label col-lg-2">图片</label>
+                             				<div class="col-lg-10">
+                             					<input name="upload" value="<s:property value="#request.carouselFigure.pictureName" />"  class="form-control" id="bpic"  type="file" aria-required="true"/>
                              				</div>
                              			</div>
                              			<div class="form-group">
@@ -58,7 +64,7 @@
                              			</div>
                              			
                              		
-                             		</form>                   	
+                             		</s:form>                   	
                     				     
 	                 				
                    				</div>

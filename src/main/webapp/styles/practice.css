@@ -2,12 +2,15 @@
 body{
 	background-color:rgb(223,226,227);
 }
+a{
+	text-decoration:none;
+}
 .myPanel{
 	padding:20px 20px 0;
 	color: #797979;
 }
 .panel-head{
-	border-bottom:3px solid rgb(217,217,217);
+	/*border-bottom:1px solid rgb(217,217,217);*/
 	padding-bottom:15px;
 	font-size: 16px;
 }
@@ -38,7 +41,7 @@ body{
 .myPu{
 	background:white;
 	border:none;
-	color:#8e8e8e;
+	/*color:red;*/
 	margin-left:30px;
 }
 
@@ -51,7 +54,7 @@ body{
 }
 
 .weekReport1{
-    padding-top:10px;
+    padding-top:20px;
     border-left-style:inset;
 	border-left:3px solid rgb(75,187,244);
 }
@@ -73,6 +76,7 @@ body{
 .table>tbody>tr>td {
     font-size: 14px;
     color: #797979;
+    text-align:center;
 }
 .for-border-right {
     border-right: 1px solid #ddd;

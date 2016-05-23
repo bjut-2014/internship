@@ -1,6 +1,7 @@
 package cn.internship.action;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -20,6 +21,7 @@ import cn.internship.entity.Teacher;
 import cn.internship.service.CaseLibraryService;
 import cn.internship.service.CourseService;
 import cn.internship.service.HomeworkService;
+import cn.internship.service.StudentService;
 import cn.internship.service.TeacherService;
 
 /**
@@ -35,6 +37,7 @@ public class CourseAction extends ActionSupport implements ServletRequestAware, 
 	private HomeworkService homeworkService;
 	private TeacherService teacherService;
 	private CaseLibraryService caseLibraryService;
+	private StudentService studentService;
 	
 	//所选的课程主键ID，用来查找相关的案例库
 	private Integer courseId;
@@ -60,8 +63,10 @@ public class CourseAction extends ActionSupport implements ServletRequestAware, 
 		List<Homework> homeworkList = new ArrayList<Homework>(courseList.size());
 		
 		for(int i=0;i<n;i++){
-			String tchName = courseList.get(i).getTeacher().getName();
-			Integer courseId = courseList.get(i).getCourseId();
+			Teacher tchTemp = courseList.get(i).getTeacher();
+			String tchName = tchTemp==null?null:tchTemp.getName();
+			Course courseTemp = courseList.get(i);
+			Integer courseId = courseTemp==null?null:courseTemp.getCourseId();
 			Integer sScore = courseService.getCourseScore(studentId, courseId);
 			Homework homework = homeworkService.get(studentId, courseId);
 			teacherNameList.add(tchName);
@@ -158,7 +163,24 @@ public class CourseAction extends ActionSupport implements ServletRequestAware, 
 		if(cteacher!=null){
 			course.setTeacher(teacherService.get(cteacher));
 		}
+		List<Student> students = studentService.getAllStudents();
+		if(students!=null){
+			Set<Student> studentSets = new HashSet<Student>();
+			for(Student s:students){
+				studentSets.add(s);
+			}
+			//添加一门课关联所有学生
+			course.setStudents(studentSets);
+		}
 		courseService.saveCourse(course);
+		return SUCCESS;
+	}
+	
+	//显示管理员添加课程页面
+	public String showAdminAddCourse(){
+		request.setAttribute("navId", 3);
+		List<Teacher> teachers = teacherService.getAll();
+		request.setAttribute("teachers", teachers);
 		return SUCCESS;
 	}
 	
@@ -272,6 +294,14 @@ public class CourseAction extends ActionSupport implements ServletRequestAware, 
 
 	public void setCteacher(Integer cteacher) {
 		this.cteacher = cteacher;
+	}
+
+	public StudentService getStudentService() {
+		return studentService;
+	}
+
+	public void setStudentService(StudentService studentService) {
+		this.studentService = studentService;
 	}
 
 	

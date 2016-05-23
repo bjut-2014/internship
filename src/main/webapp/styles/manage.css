@@ -7,16 +7,15 @@ body{
 	color: #797979;
 }
 .panel-head{
-	border-bottom:3px solid rgb(217,217,217);
+	border-bottom:1px solid rgb(217,217,217);
 	padding-bottom:15px;
-	font-size: 23px;
+	font-size: 18px;
 }
 
 
 
 .panel-body{
 	padding-bottom:10px;
-	font-size:23px;
 }
 
 
@@ -48,7 +47,7 @@ body{
 }
 
 #the{
-	background:#F4F4F4;
+	background-color: #F3F5F6;
 	font-size: 14px;
 	color: #797979;
 }
@@ -92,4 +91,31 @@ body{
 }
 .table>tbody>tr>td {
     font-size: 14px;
+}
+.panel-body {
+	padding: 15px 0;
+}
+.rplus {
+	float: right;
+	font-size: 31px;
+	color: #2c9f94;
+	text-align: center;
+}
+.spanbtn {
+	width: 85px;
+	background-color: #5365b9;
+	color: white;
+	text-align: center;
+	font-size: 12px;
+	float: right;
+	margin-left: 10px;
+	padding: 8px;
+	border-radius: 3px;
+	line-height: 1.1;
+}
+.table>thead>tr>th {
+	 border-bottom: none;
+}
+.weekReport table tr:nth-child(even) {
+    background: #F3F5F6;
 }

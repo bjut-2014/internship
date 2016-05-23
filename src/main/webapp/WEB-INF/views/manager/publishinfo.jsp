@@ -33,7 +33,7 @@
                     	</ul>
                     </div>
                     
-                    <div class="panel panel-default">
+                    <div class="panel panel-default panel-admin">
                     	<div class="panel-body">
                     		<div class="row">
                              	<div class="col-md-12 col-sm-12 col-xs-12">                   	
@@ -58,7 +58,7 @@
 				                         			    	<td class="rborder"><s:property value="#nb.title" /></td>
 				                         			    	<td class="rborder"><s:property value="#nb.date" /></td>
 				                         			    	<td>
-				                                				<a href="updateNoticeBoard?noticeBoardId=<s:property value="#nb.id" />"><span class="glyphicon glyphicon-pencil mypencil"></span></a>
+				                                				<a href="showUpdateNoticeBoard?noticeBoardId=<s:property value="#nb.id" />"><span class="glyphicon glyphicon-pencil mypencil"></span></a>
                               									<a href="deleteNoticeBoard?noticeBoardId=<s:property value="#nb.id" />"><span class="glyphicon glyphicon-trash mytrash"></span></a>
 				                                			</td>
 				                         			    </tr>
@@ -84,7 +84,7 @@
 				                         			    	<td class="rborder"><s:property value="#ri.title" /></td>
 				                         			    	<td class="rborder"><s:property value="#ri.date" /></td>
 				                         			    	<td>
-				                                				<a href="updateRecruitInfo?recruitInfoId=<s:property value="#ri.recruitInfoId" />"><span class="glyphicon glyphicon-pencil mypencil"></span></a>
+				                                				<a href="showUpdateRecruitInfo?recruitInfoId=<s:property value="#ri.recruitInfoId" />"><span class="glyphicon glyphicon-pencil mypencil"></span></a>
                               									<a href="deleteRecruitInfo?recruitInfoId=<s:property value="#ri.recruitInfoId" />"><span class="glyphicon glyphicon-trash mytrash"></span></a>
 				                                			</td>
 				                         			    </tr>
@@ -110,7 +110,7 @@
 				                         			    	<td class="rborder"><s:property value="#cf.title" /></td>
 				                         			    	<td class="rborder"><s:property value="#cf.date" /></td>
 				                         			    	<td>
-				                                				<a href="updateCarouselFigure?carouselFigureId=<s:property value="#cf.carouselFigureId" />"><span class="glyphicon glyphicon-pencil mypencil"></span></a>
+				                                				<a href="showUpdateCarouselFigure?carouselFigureId=<s:property value="#cf.carouselFigureId" />"><span class="glyphicon glyphicon-pencil mypencil"></span></a>
                               									<a href="deleteCarouselFigure?carouselFigureId=<s:property value="#cf.carouselFigureId" />"><span class="glyphicon glyphicon-trash mytrash"></span></a>
 				                                			</td>
 				                         			    </tr>

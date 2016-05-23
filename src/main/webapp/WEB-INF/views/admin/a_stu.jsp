@@ -15,9 +15,9 @@
   
        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main myMain weekReport">
         <div class="panel panel-default myPanel weekReport1">
-            <div class="panel-head">学生管理
-          <a class="btn btn-default btn-sm myPi" href="batch-import-stu">批量导入</a>
-          <a href="student-save"><button class="btn btn-default btn-sm myBu"><span class="glyphicon glyphicon-plus"></span></button></a></div>
+            <div class="panel-head">学生管理 Student Manage
+          <a href="batch-import-stu"><span class="spanbtn">批量导入</span></a>
+          <a href="student-save"><span class="fa fa-plus-square rplus"></span></a></div>
             <div class="panel-body">
                 <s:if test="#request.students!=null">
                 <table class="table table-hover">

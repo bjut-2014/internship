@@ -132,6 +132,7 @@
 		<property name="homeworkService" ref="homeworkService" />
 		<property name="teacherService" ref="teacherService" />
 		<property name="caseLibraryService" ref="caseLibraryService" />
+		<property name="studentService" ref="studentService" />
 	</bean>
 	<!-- end -->
 	
@@ -301,6 +302,7 @@
 	<!-- 管理员模块学生信息相关配置 -->
 	<bean id="admin-student" class="cn.internship.action.AdminStudentAction">
 		<property name="studentService" ref="studentService"></property>
+		<property name="courseService" ref="courseService"></property>
 	</bean>
 	<!-- end -->
 	
@@ -318,6 +320,21 @@
 		<property name="graduationSelectionService" ref="graduationSelectionService"></property>
 	</bean>
 	
+	<!-- end -->
+	
+	
+	<!-- 设备管理相关配置 -->
+	<bean id="equipmentDao" class="cn.internship.dao.impl.EquipmentDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="equipmentService" class="cn.internship.service.impl.EquipmentServiceImpl">
+		<property name="equipmentDao" ref="equipmentDao"/>
+	</bean>
+	<bean id="equipmentAction" class="cn.internship.action.EquipmentAction">
+		<property name="equipmentService" ref="equipmentService"/>
+		<property name="teacherService" ref="teacherService"/>
+		<property name="adminService" ref="adminService"/>
+	</bean>
 	<!-- end -->
 	
 </beans>

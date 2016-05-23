@@ -90,6 +90,14 @@ public class AdminAction extends ActionSupport implements ServletRequestAware, S
 		return SUCCESS;
 	}
 
+	//显示修改公告信息页面
+	public String showUpdateNoticeBoard(){
+		request.setAttribute("navId", 2);
+		NoticeBoard noticeBoard = noticeBoardService.get(noticeBoardId);
+		request.setAttribute("noticeBoard", noticeBoard);
+		return SUCCESS;
+	}
+	
 	// 修改一条公告信息
 	public String updateNoticeBoard() {
 		NoticeBoard noticeBoard = noticeBoardService.get(noticeBoardId);
@@ -116,6 +124,14 @@ public class AdminAction extends ActionSupport implements ServletRequestAware, S
 		return SUCCESS;
 	}
 
+	//显示修改招聘信息页面
+	public String showUpdateRecruitInfo(){
+		request.setAttribute("navId", 2);
+		RecruitInfo recruitInfo = recruitInfoService.get(recruitInfoId);
+		request.setAttribute("recruitInfo", recruitInfo);
+		return SUCCESS;
+	}
+	
 	// 修改一条招聘信息
 	public String updateRecruitInfo() {
 		RecruitInfo recruitInfo = recruitInfoService.get(recruitInfoId);
@@ -154,13 +170,34 @@ public class AdminAction extends ActionSupport implements ServletRequestAware, S
 		carouselFigureService.delete(carouselFigureId);
 		return SUCCESS;
 	}
+	
+	//显示修改轮播图页面
+	public String showUpdateCarouselFigure(){
+		CarouselFigure carouselFigure = carouselFigureService.get(carouselFigureId);
+		request.setAttribute("carouselFigure", carouselFigure);
+		return SUCCESS;
+	}
 
 	// 修改一条轮播图信息
-	public String updateCarouselFigure() {
+	public String updateCarouselFigure() throws IOException {
 		CarouselFigure carouselFigure = carouselFigureService.get(carouselFigureId);
 		carouselFigure.setTitle(carouselFigureTitle);
 		carouselFigure.setContent(carouselFigureContent);
 		carouselFigure.setDate(new Date(new java.util.Date().getTime()));
+		
+		// 需要保存的路径
+		String folderPath = "/upload/carouselFigure/";
+		// 文件实际路径
+		String realPath = ServletActionContext.getServletContext().getRealPath(folderPath);
+		if (upload != null) {
+			File saveFile = new File(new File(realPath), uploadFileName);
+			if (!saveFile.getParentFile().exists()) {
+				saveFile.getParentFile().mkdirs();
+			}
+			FileUtils.copyFile(upload, saveFile);
+		}
+		carouselFigure.setPath(folderPath);
+		carouselFigure.setPictureName(uploadFileName);
 		carouselFigureService.update(carouselFigure);
 		return SUCCESS;
 	}

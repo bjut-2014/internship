@@ -154,6 +154,34 @@
 		<action name="thomework" class="homeworkAction" method="listHomeworkByCourse">
 			<result>/WEB-INF/views/teacher/thomework.jsp</result>
 		</action>
+		<action name="tch-equipment" class="equipmentAction" method="showTeacherEquipment">
+			<result>/WEB-INF/views/teacher/t_devicemanage.jsp</result>
+		</action>
+		<action name="tch-show-addEquipment" class="" method="">
+			<result>/WEB-INF/views/teacher/t_adddevice.jsp</result>
+		</action>
+		<action name="tch-addEquipment" class="equipmentAction" method="tchAddEquipment">
+			<result  type="redirectAction">tch-equipment</result>
+		</action>
+		<action name="tch-deleteEquipment" class="equipmentAction" method="tchDeleteEquipment">
+			<result  type="redirectAction">tch-equipment</result>
+		</action>
+		<action name="tch-showAddEquipmentHistory" class="equipmentAction" method="tchShowAddEquipmentHistory">
+			<result>/WEB-INF/views/teacher/t_addDeviceHistory.jsp</result>
+		</action>
+		<action name="tch-addEquipmentHistory" class="equipmentAction" method="tchAddEquipmentHistory">
+			<result  type="redirectAction">tch-equipment</result>
+		</action>
+			<action name="tch-otherdevice" class="equipmentAction" method="showOtherTeacherEquipment">
+			<result>/WEB-INF/views/teacher/t_otherdevice.jsp</result>
+		</action>
+	
+		<action name="adddevice" class="" method="">
+			<result>/WEB-INF/views/manager/adddevice.jsp</result>
+		</action>
+		<action name="addDeviceHistory" class="" method="">
+			<result>/WEB-INF/views/manager/addDeviceHistory.jsp</result>
+		</action>
 		<!-- end -->
 		<!-- 案例库上传相关操作 -->
 		<action name="addCaseLibrary" class="caseLibraryAction">
@@ -256,6 +284,9 @@
 		<action name="deleteNoticeBoard" class="adminAction" method="deleteNoticeBoard">
 			<result type="redirectAction">publishInfo</result>
 		</action>
+		<action name="showUpdateNoticeBoard" class="adminAction" method="showUpdateNoticeBoard">
+			<result>/WEB-INF/views/manager/updateAnnouncement.jsp</result>
+		</action>
 		<action name="updateNoticeBoard" class="adminAction" method="updateNoticeBoard">
 			<result type="redirectAction">publishInfo</result>
 		</action>
@@ -265,6 +296,9 @@
 		</action>
 		<action name="deleteRecruitInfo" class="adminAction" method="deleteRecruitInfo">
 			<result type="redirectAction">publishInfo</result>
+		</action>
+		<action name="showUpdateRecruitInfo" class="adminAction" method="showUpdateRecruitInfo">
+			<result>/WEB-INF/views/manager/updateRecruitment.jsp</result>
 		</action>
 		<action name="updateRecruitInfo" class="adminAction" method="updateRecruitInfo">
 			<result type="redirectAction">publishInfo</result>
@@ -281,6 +315,9 @@
 		</action>
 		<action name="deleteCarouselFigure" class="adminAction" method="deleteCarouselFigure">
 			<result type="redirectAction">publishInfo</result>
+		</action>
+		<action name="showUpdateCarouselFigure" class="adminAction" method="showUpdateCarouselFigure">
+			<result>/WEB-INF/views/manager/updateBanner.jsp</result>
 		</action>
 		<action name="updateCarouselFigure" class="adminAction" method="updateCarouselFigure">
 			<result type="redirectAction">publishInfo</result>
@@ -304,7 +341,7 @@
 		<action name="admin-course" class="courseAction" method="showAdminCourse">
 			<result>/WEB-INF/views/manager/course.jsp</result>
 		</action>
-		<action name="admin-show-add-course" class="teacherAction" method="showTeachers">
+		<action name="admin-show-add-course" class="courseAction" method="showAdminAddCourse">
 			<result>/WEB-INF/views/manager/courseadd.jsp</result>
 		</action>
 		<action name="admin-add-course" class="courseAction" method="addCourse">
@@ -434,6 +471,27 @@
 		
 		<!-- end -->
 		
+		
+		<!-- 管理员管理设备 -->
+		<action name="admin-equipment" class="equipmentAction" method="showAdminEquipments">
+			<result>/WEB-INF/views/manager/devicemanage.jsp</result>
+		</action>
+		<action name="show-admin-add-equipment" class="equipmentAction" method="showAdminAddEquipment">
+			<result>/WEB-INF/views/manager/adddevice.jsp</result>
+		</action>
+		<action name="admin-add-equipment" class="equipmentAction" method="adminAddEquipment">
+			<result type="redirectAction">admin-equipment</result>
+		</action>
+		<action name="show-admin-add-equipmentHistory" class="equipmentAction" method="showAdminAddEquipmentHistory">
+			<result>/WEB-INF/views/manager/addDeviceHistory.jsp</result>
+		</action>
+		<action name="admin-add-equipmentHistory" class="equipmentAction" method="adminAddEquipmentHistory">
+			<result type="redirectAction">admin-equipment</result>
+		</action>
+		<action name="admin-delete-equipment" class="equipmentAction" method="adminDeleteEquipment">
+			<result type="redirectAction">admin-equipment</result>
+		</action>
+		<!-- end -->
 	</package>
 
 
