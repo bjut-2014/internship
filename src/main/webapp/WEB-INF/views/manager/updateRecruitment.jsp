@@ -32,27 +32,21 @@
                 <div class="col-sm-12">             	
                     <div class="panel panel-default">
                     	<div class="panel-heading">
-                    		<h3 class="panel-title">轮播图</h3>
+                    		<h3 class="panel-title">招聘信息</h3>
                     	</div>
                     	<div class="panel-body">     		
                              	<div class="form">
-                             		<s:form enctype="multipart/form-data" class="cmxform form-horizontal tasi-form" id="commentForm" action="addCarouselFigure" method="post" >
+                             		<form class="cmxform form-horizontal tasi-form" id="commentForm" action="updateRecruitInfo" method="post" >
                              			<div class="form-group">
                              				<label class="control-label col-lg-2">标题</label>
                              				<div class="col-lg-10">
-                             					<input name="carouselFigureTitle" class="form-control" id="btitle" type="text" aria-required="true"/>
+                             					<input name="recruitInfoTitle" value="<s:property value="#request.recruitInfo.title" />" class="form-control" id="rtitle" type="text" aria-required="true"/>
                              				</div>
                              			</div>
                              			<div class="form-group">
                              				<label class="control-label col-lg-2">内容</label>
                              				<div class="col-lg-10">
-                             					<textarea name="carouselFigureContent" class="form-control" id="bcontent"  aria-required="true"></textarea>
-                             				</div>
-                             			</div>
-                             			<div class="form-group">
-                             				<label class="control-label col-lg-2">图片</label>
-                             				<div class="col-lg-10">
-                             					<input name="upload" class="form-control" id="bpic"  type="file" aria-required="true"/>
+                             					<textarea name="recruitInfoContent" class="form-control" id="rcontent"  aria-required="true"><s:property value="#request.recruitInfo.content" /></textarea>
                              				</div>
                              			</div>
                              			<div class="form-group">
@@ -64,7 +58,7 @@
                              			</div>
                              			
                              		
-                             		</s:form>                   	
+                             		</form>                   	
                     				     
 	                 				
                    				</div>

@@ -286,6 +286,9 @@
 		<action name="deleteNoticeBoard" class="adminAction" method="deleteNoticeBoard">
 			<result type="redirectAction">publishInfo</result>
 		</action>
+		<action name="showUpdateNoticeBoard" class="adminAction" method="showUpdateNoticeBoard">
+			<result>/WEB-INF/views/manager/updateAnnouncement.jsp</result>
+		</action>
 		<action name="updateNoticeBoard" class="adminAction" method="updateNoticeBoard">
 			<result type="redirectAction">publishInfo</result>
 		</action>
@@ -295,6 +298,9 @@
 		</action>
 		<action name="deleteRecruitInfo" class="adminAction" method="deleteRecruitInfo">
 			<result type="redirectAction">publishInfo</result>
+		</action>
+		<action name="showUpdateRecruitInfo" class="adminAction" method="showUpdateRecruitInfo">
+			<result>/WEB-INF/views/manager/updateRecruitment.jsp</result>
 		</action>
 		<action name="updateRecruitInfo" class="adminAction" method="updateRecruitInfo">
 			<result type="redirectAction">publishInfo</result>
@@ -311,6 +317,9 @@
 		</action>
 		<action name="deleteCarouselFigure" class="adminAction" method="deleteCarouselFigure">
 			<result type="redirectAction">publishInfo</result>
+		</action>
+		<action name="showUpdateCarouselFigure" class="adminAction" method="showUpdateCarouselFigure">
+			<result>/WEB-INF/views/manager/updateBanner.jsp</result>
 		</action>
 		<action name="updateCarouselFigure" class="adminAction" method="updateCarouselFigure">
 			<result type="redirectAction">publishInfo</result>

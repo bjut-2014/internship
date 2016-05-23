@@ -36,23 +36,23 @@
                     	</div>
                     	<div class="panel-body">     		
                              	<div class="form">
-                             		<s:form enctype="multipart/form-data" class="cmxform form-horizontal tasi-form" id="commentForm" action="addCarouselFigure" method="post" >
+                             		<s:form enctype="multipart/form-data" class="cmxform form-horizontal tasi-form" id="commentForm" action="updateCarouselFigure" method="post" >
                              			<div class="form-group">
                              				<label class="control-label col-lg-2">标题</label>
                              				<div class="col-lg-10">
-                             					<input name="carouselFigureTitle" class="form-control" id="btitle" type="text" aria-required="true"/>
+                             					<input name="carouselFigureTitle" value="<s:property value="#request.carouselFigure.title" />" class="form-control" id="btitle" type="text" aria-required="true"/>
                              				</div>
                              			</div>
                              			<div class="form-group">
                              				<label class="control-label col-lg-2">内容</label>
                              				<div class="col-lg-10">
-                             					<textarea name="carouselFigureContent" class="form-control" id="bcontent"  aria-required="true"></textarea>
+                             					<textarea name="carouselFigureContent" class="form-control" id="bcontent"  aria-required="true"><s:property value="#request.carouselFigure.content" /></textarea>
                              				</div>
                              			</div>
                              			<div class="form-group">
                              				<label class="control-label col-lg-2">图片</label>
                              				<div class="col-lg-10">
-                             					<input name="upload" class="form-control" id="bpic"  type="file" aria-required="true"/>
+                             					<input name="upload" value="<s:property value="#request.carouselFigure.pictureName" />"  class="form-control" id="bpic"  type="file" aria-required="true"/>
                              				</div>
                              			</div>
                              			<div class="form-group">
