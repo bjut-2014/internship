@@ -334,6 +334,13 @@
 		<property name="equipmentService" ref="equipmentService"/>
 		<property name="teacherService" ref="teacherService"/>
 		<property name="adminService" ref="adminService"/>
+		<property name="equipmentHistoryService" ref="equipmentHistoryService"/>
+	</bean>
+	<bean id="equipmentHistoryDao" class="cn.internship.dao.impl.EquipmentHistoryDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="equipmentHistoryService" class="cn.internship.service.impl.EquipmentHistoryServiceImpl">
+		<property name="equipmentHistoryDao" ref="equipmentHistoryDao"/>
 	</bean>
 	<!-- end -->
 	

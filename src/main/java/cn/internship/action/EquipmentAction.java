@@ -16,14 +16,17 @@ import org.apache.struts2.interceptor.ServletResponseAware;
 import com.opensymphony.xwork2.ActionSupport;
 
 import cn.internship.entity.Equipment;
+import cn.internship.entity.EquipmentHistory;
 import cn.internship.entity.Teacher;
 import cn.internship.service.AdminService;
+import cn.internship.service.EquipmentHistoryService;
 import cn.internship.service.EquipmentService;
 import cn.internship.service.TeacherService;
 
 public class EquipmentAction extends ActionSupport implements ServletRequestAware, ServletResponseAware{
 
 	private EquipmentService equipmentService;
+	private EquipmentHistoryService equipmentHistoryService;
 	private TeacherService teacherService;
 	private AdminService adminService;
 	
@@ -172,11 +175,13 @@ public class EquipmentAction extends ActionSupport implements ServletRequestAwar
 	public String showAdminAddEquipmentHistory(){
 		request.setAttribute("navId", 9);
 		Equipment equipment = equipmentService.get(equipmentId);
+		List<EquipmentHistory> equipmentHistories = equipmentHistoryService.getHistoryByEuipmentId(equipmentId);
 		request.setAttribute("equipment", equipment);
+		request.setAttribute("equipmentHistories", equipmentHistories);
 		return SUCCESS;
 	}
 	
-	//管理员页面，添加设备记录
+	//管理员页面，添加设备记录(修改设备信息)
 	public String adminAddEquipmentHistory(){
 		request.setAttribute("navId", 9);
 		Equipment equipment = equipmentService.get(equipmentId);
@@ -185,6 +190,19 @@ public class EquipmentAction extends ActionSupport implements ServletRequestAwar
 		equipment.setState(estate);
 		equipment.setPeople(epeople);
 		equipmentService.update(equipment);
+		
+		//添加设备的历史记录
+		EquipmentHistory equipmentHistory = new EquipmentHistory();
+		equipmentHistory.setEno(eno);
+		equipmentHistory.setName(ename);
+		equipmentHistory.setEquipmentId(equipmentId);
+		equipmentHistory.setLendDate(elendDate);
+		equipmentHistory.setReturnDate(ereturnDate);
+		equipmentHistory.setState(estate);
+		equipmentHistory.setPeople(epeople);
+		equipmentHistory.setOwner(teacherService.get(teacherId).getName());
+		equipmentHistory.setIsDeleted(false);
+		equipmentHistoryService.add(equipmentHistory);
 		return SUCCESS;
 	}
 	
@@ -297,6 +315,15 @@ public class EquipmentAction extends ActionSupport implements ServletRequestAwar
 
 	public void setTeacherId(Integer teacherId) {
 		this.teacherId = teacherId;
+	}
+
+	public EquipmentHistoryService getEquipmentHistoryService() {
+		return equipmentHistoryService;
+	}
+
+	public void setEquipmentHistoryService(
+			EquipmentHistoryService equipmentHistoryService) {
+		this.equipmentHistoryService = equipmentHistoryService;
 	}
 
 

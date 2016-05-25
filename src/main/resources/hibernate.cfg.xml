@@ -41,5 +41,6 @@
 		<mapping class="cn.internship.entity.CarouselFigure"/>
 		<mapping class="cn.internship.entity.Admin"/>
 		<mapping class="cn.internship.entity.Equipment"/>
+		<mapping class="cn.internship.entity.EquipmentHistory"/>
 	</session-factory>
 </hibernate-configuration>
