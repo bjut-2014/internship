@@ -22,7 +22,7 @@
                     <div class="panel panel-default">
                     	<div class="panel-heading">                  		
                     		<h3 class="panel-title">所有设备 All Device
-	                       		<a href="equipment-history" style='margin-left:500px'>设备历史记录</a>
+								<a href="equipment-history"><span class="spanbtn2">设备历史记录</span></a>
 	                       		<a href="show-admin-add-equipment"><span class="fa fa-plus-square rplus"></span></a>
 	                       	</h3>	                                               
 	                 	  </div>

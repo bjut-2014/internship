@@ -34,7 +34,7 @@
 								<label class="col-sm-2 control-label">性别：</label>
 								<div class="col-sm-7">
 									<input name="updateSex" type="number" class="form-control" value=${request.updateStudent.sex }>
-									<label class="control-label">请输入性别编号,1:男,2:女</label>
+									<span class="control-label" style="margin-top: 2px;display: inline-block;">请输入性别编号，1：男，2：女</span>
 								</div>
 							</div>
 							<div class="form-group">

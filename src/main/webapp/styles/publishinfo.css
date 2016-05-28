@@ -95,15 +95,15 @@ th{
 
 }
 .plus{
-	font-size:34px;
+	font-size:28px;
 	color:#2c9f94;
 	text-align:center;
-
+	margin-bottom: 10px;
 }
 .panel-admin{
 	border-top-left-radius :0px;
 	border-top:1px solid #ffffff;
-
+	padding: 0px 30px 20px;
 }
 
 .spanbtn{	
@@ -120,7 +120,7 @@ th{
 }
 .rplus{
 	float:right;
-	font-size:31px;
+	font-size:28px;
 	color:#2c9f94;
 	text-align:center;
 }
@@ -138,11 +138,25 @@ th{
 	color:#797979;
 }
 .Gl1{
-	color:rgb(57,134,243);
+	color:#11aaf1;
 }
 .myPu{
 	background:white;
 	border:none;
 	color:red;
 	margin-left:30px;
+}
+#acontent, #bcontent, #rcontent {
+	width: 80%;
+}
+.spanbtn2 {
+	background-color: #ecc65f;
+	color: white;
+	text-align: center;
+	font-size: 12px;
+	float: right;
+	margin-left: 10px;
+	padding: 8px;
+	border-radius: 3px;
+	line-height: 1.1;
 }

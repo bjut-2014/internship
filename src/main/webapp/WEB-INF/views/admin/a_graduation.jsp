@@ -15,17 +15,14 @@
 			</div>
 
 			<div
-				class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main myMain ">
+				class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main myMain weekReport">
 				<div class="panel panel-default myPanel ">
 					<div class="panel-head">
-						毕设选题信息 <a href="graduation-pro-sele-save"><button
-								class="btn btn-default btn-sm myBu">
-								<span class="glyphicon glyphicon-plus"></span>
-							</button> </a>
+						毕设选题信息 Graduation Information<a href="graduation-pro-sele-save"><span class="fa fa-plus-square rplus"></span></a>
 					</div>
 					<div class="panel-body">
 						<s:if test="#request.AllSelectInfo!=null">
-							<table class="table table-hover">
+							<table class="table table-striped">
 								<thead>
 									<tr id="the">
 										<th>学生学号</th>

@@ -35,7 +35,18 @@
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<h3 class="panel-title">
-								教师管理 Teacher Manage 
+								教师管理 Teacher Manage
+								<a href=""><span class="spanbtn">导入</span></a>
+								<a href="">
+									<span class="fa fa-plus-square rplus"></span>
+								<%--<form action="upload-tch-excel" enctype="multipart/form-data" method="post">--%>
+									<%--<s:file name="upload" label="选择文件"/>--%>
+									<%--<input type="submit" value="提交"/>--%>
+								<%--</form>--%>
+								<%--<form action="import-tch" method="post">--%>
+									<%--<input type="submit" value="导入">--%>
+								<%--</form>--%>
+								</a>
 							</h3>
 						</div>
 
@@ -47,12 +58,6 @@
 							</div>
 								
 							<hr/>
-							
-							<form action="upload-tch-excel" enctype="multipart/form-data" method="post">
-								<s:file name="upload" label="选择文件"/>
-								<input type="submit" value="提交"/>
-							</form>
-
 							<table class="table table-striped">
 								<tbody>
 									<tr>
@@ -76,9 +81,6 @@
 									</s:iterator>
 								</tbody>
 							</table>
-							<form action="import-tch" method="post">
-								<input type="submit" value="导入">
-							</form>
 						</div>
 					</div>
 				</div>

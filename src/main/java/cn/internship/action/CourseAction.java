@@ -156,6 +156,7 @@ public class CourseAction extends ActionSupport implements ServletRequestAware, 
 	
 	//管理员添加课程
 	public String addCourse(){
+		request.setAttribute("navId", 3);
 		Course course = new Course();
 		course.setName(ctitle);
 		course.setCoursePlace(caddress);
@@ -186,6 +187,7 @@ public class CourseAction extends ActionSupport implements ServletRequestAware, 
 	
 	//删除课程
 	public String deleteCourse(){
+		request.setAttribute("navId", 3);
 		courseService.deleteCourse(courseId);
 		return SUCCESS;
 	}
@@ -193,6 +195,7 @@ public class CourseAction extends ActionSupport implements ServletRequestAware, 
 	
 	//显示修改课程页面
 	public String showUpdateCourse(){
+		request.setAttribute("navId", 3);
 		Course course = courseService.get(courseId);
 		request.setAttribute("course", course);
 		request.setAttribute("teachers", teacherService.getAll());
@@ -201,6 +204,7 @@ public class CourseAction extends ActionSupport implements ServletRequestAware, 
 	
 	//修改课程信息
 	public String updateCourse(){
+		request.setAttribute("navId", 3);
 		Course course = courseService.get(courseId);
 		course.setName(ctitle);
 		course.setCourseDate(ctime);

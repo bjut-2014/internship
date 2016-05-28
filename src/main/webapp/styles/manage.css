@@ -87,17 +87,18 @@ body{
 	color:red;
 }
 .Gl1{
-	color:rgb(57,134,243);
+	color:#11aaf1;
 }
 .table>tbody>tr>td {
     font-size: 14px;
+	color: #797979;
 }
 .panel-body {
 	padding: 15px 0;
 }
 .rplus {
 	float: right;
-	font-size: 31px;
+	font-size: 28px;
 	color: #2c9f94;
 	text-align: center;
 }
@@ -118,4 +119,10 @@ body{
 }
 .weekReport table tr:nth-child(even) {
     background: #F3F5F6;
+}
+.table-striped>tbody,
+.table-striped>thead{
+	font-size:13px;
+	color:#797979;
+	text-align:center;
 }
