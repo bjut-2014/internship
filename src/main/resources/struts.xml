@@ -154,34 +154,7 @@
 		<action name="thomework" class="homeworkAction" method="listHomeworkByCourse">
 			<result>/WEB-INF/views/teacher/thomework.jsp</result>
 		</action>
-		<action name="tch-equipment" class="equipmentAction" method="showTeacherEquipment">
-			<result>/WEB-INF/views/teacher/t_devicemanage.jsp</result>
-		</action>
-		<action name="tch-show-addEquipment" class="" method="">
-			<result>/WEB-INF/views/teacher/t_adddevice.jsp</result>
-		</action>
-		<action name="tch-addEquipment" class="equipmentAction" method="tchAddEquipment">
-			<result  type="redirectAction">tch-equipment</result>
-		</action>
-		<action name="tch-deleteEquipment" class="equipmentAction" method="tchDeleteEquipment">
-			<result  type="redirectAction">tch-equipment</result>
-		</action>
-		<action name="tch-showAddEquipmentHistory" class="equipmentAction" method="tchShowAddEquipmentHistory">
-			<result>/WEB-INF/views/teacher/t_addDeviceHistory.jsp</result>
-		</action>
-		<action name="tch-addEquipmentHistory" class="equipmentAction" method="tchAddEquipmentHistory">
-			<result  type="redirectAction">tch-equipment</result>
-		</action>
-			<action name="tch-otherdevice" class="equipmentAction" method="showOtherTeacherEquipment">
-			<result>/WEB-INF/views/teacher/t_otherdevice.jsp</result>
-		</action>
-	
-		<action name="adddevice" class="" method="">
-			<result>/WEB-INF/views/manager/adddevice.jsp</result>
-		</action>
-		<action name="addDeviceHistory" class="" method="">
-			<result>/WEB-INF/views/manager/addDeviceHistory.jsp</result>
-		</action>
+		
 		<!-- end -->
 		<!-- 案例库上传相关操作 -->
 		<action name="addCaseLibrary" class="caseLibraryAction">
@@ -491,6 +464,47 @@
 		<action name="admin-delete-equipment" class="equipmentAction" method="adminDeleteEquipment">
 			<result type="redirectAction">admin-equipment</result>
 		</action>
+		<action name="equipment-history" class="equipmentAction" method="showEquipmentHistory">
+			<result>/WEB-INF/views/manager/equipmentHistory.jsp</result>
+		</action>
+		<action name="admin-delete-equipmentHistory" class="equipmentAction" method="adminDeleteEquipmentHistory">
+			<result type="redirectAction">equipment-history</result>
+		</action>
+		
+		<action name="tch-equipment" class="equipmentAction" method="showTeacherEquipment">
+			<result>/WEB-INF/views/teacher/t_devicemanage.jsp</result>
+		</action>
+		<action name="tch-show-addEquipment" class="" method="">
+			<result>/WEB-INF/views/teacher/t_adddevice.jsp</result>
+		</action>
+		<action name="tch-addEquipment" class="equipmentAction" method="tchAddEquipment">
+			<result  type="redirectAction">tch-equipment</result>
+		</action>
+		<action name="tch-deleteEquipment" class="equipmentAction" method="tchDeleteEquipment">
+			<result  type="redirectAction">tch-equipment</result>
+		</action>
+		<action name="tch-showAddEquipmentHistory" class="equipmentAction" method="tchShowAddEquipmentHistory">
+			<result>/WEB-INF/views/teacher/t_addDeviceHistory.jsp</result>
+		</action>
+		<action name="tch-addEquipmentHistory" class="equipmentAction" method="tchAddEquipmentHistory">
+			<result  type="redirectAction">tch-equipment</result>
+		</action>
+			<action name="tch-otherdevice" class="equipmentAction" method="showOtherTeacherEquipment">
+			<result>/WEB-INF/views/teacher/t_otherdevice.jsp</result>
+		</action>
+		<action name="adddevice" class="" method="">
+			<result>/WEB-INF/views/manager/adddevice.jsp</result>
+		</action>
+		<action name="addDeviceHistory" class="" method="">
+			<result>/WEB-INF/views/manager/addDeviceHistory.jsp</result>
+		</action>
+		<action name="tch-equipment-history" class="equipmentAction" method="showTchEquipmentHistory">
+			<result>/WEB-INF/views/teacher/t_devicemanageHistory.jsp</result>
+		</action>
+		<action name="admin-delete-equipmentHistory" class="equipmentAction" method="adminDeleteEquipmentHistory">
+			<result type="redirectAction">tch-equipment-history</result>
+		</action>
+		
 		<!-- end -->
 	</package>
 

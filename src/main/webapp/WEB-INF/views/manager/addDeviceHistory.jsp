@@ -138,7 +138,6 @@
 			                        	<td class=""><s:property value="#equh.returnDate" /></td>
 			                      	</tr>
 			             			</s:iterator>
-			             			
 			                 	</tbody>
                  			</table>		
                     	</div>

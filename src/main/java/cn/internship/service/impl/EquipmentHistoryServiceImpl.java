@@ -41,6 +41,24 @@ public class EquipmentHistoryServiceImpl implements EquipmentHistoryService {
 		equipmentHistoryDao.add(equipmentHistory);
 	}
 	
+	//删除一条设备的历史记录
+	@Override
+	public void delete(Integer id) {
+		equipmentHistoryDao.delete(id);
+	}
+	
+	//更新一条设备的历史记录
+	@Override
+	public void update(EquipmentHistory equipmentHistory) {
+		equipmentHistoryDao.update(equipmentHistory);
+	}
+
+	//获得指定教师的所有设备历史记录
+	@Override
+	public List<EquipmentHistory> getAllHistotyByTeacherId(Integer teacherId) {
+		return equipmentHistoryDao.getAllHistotyByTeacherId(teacherId);
+	}
+	
 	//----------------------------get与set-------------------------
 
 	public EquipmentHistoryDao getEquipmentHistoryDao() {
@@ -50,7 +68,7 @@ public class EquipmentHistoryServiceImpl implements EquipmentHistoryService {
 	public void setEquipmentHistoryDao(EquipmentHistoryDao equipmentHistoryDao) {
 		this.equipmentHistoryDao = equipmentHistoryDao;
 	}
-	
-	
+
+
 
 }

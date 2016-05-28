@@ -24,6 +24,8 @@ public class EquipmentHistory {
 	private String name;
 	//拥有者
 	private String owner;
+	//拥有者ID
+	private Integer ownerId;
 	//状态
 	private String state;
 	//借出时间
@@ -94,5 +96,13 @@ public class EquipmentHistory {
 	public void setIsDeleted(Boolean isDeleted) {
 		this.isDeleted = isDeleted;
 	}
+	public Integer getOwnerId() {
+		return ownerId;
+	}
+	public void setOwnerId(Integer ownerId) {
+		this.ownerId = ownerId;
+	}
+	
+	
 	
 }

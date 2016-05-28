@@ -21,9 +21,7 @@
                 <div class="col-sm-12">             	
                     <div class="panel panel-default">
                     	<div class="panel-heading">                  		
-                    		<h3 class="panel-title">所有设备 All Device
-	                       		<a href="equipment-history" style='margin-left:500px'>设备历史记录</a>
-	                       		<a href="show-admin-add-equipment"><span class="fa fa-plus-square rplus"></span></a>
+                    		<h3 class="panel-title">所有设备历史记录
 	                       	</h3>	                                               
 	                 	  </div>
                     	
@@ -41,7 +39,7 @@
 		                  			<th class="rborder">归还时间</th>                                                   
 		                			<th class="position">操作</th>           					
 		             			</tr>
-		             			<s:iterator value="#request.adminEquipments" var="equ">
+		             			<s:iterator value="#request.equipmentHistories" var="equ">
 		             			<tr >
 		                        	<td class="rborder"><s:property value="#equ.eno" /></td>
 		                        	<td class="rborder"><s:property value="#equ.name" /></td>
@@ -51,9 +49,7 @@
 		                        	<td class="rborder"><s:property value="#equ.lendDate" /></td>
 		                        	<td class="rborder"><s:property value="#equ.returnDate" /></td>
 		                            <td>
-		                            	<a href="show-admin-add-equipmentHistory?equipmentId=<s:property value="#equ.equipmentId" />"><span class="glyphicon glyphicon-pencil Gl1"></span></a>
-		                           		<!--  <button type="button" class="glyphicon glyphicon-trash myPu weekly-plan-del" data-toggle="modal" data-target="#WeeklyPlanDel"></button>-->
-		                           		<a href="admin-delete-equipment?equipmentId=<s:property value="#equ.equipmentId" />"><span class="glyphicon glyphicon-trash mytrash"></span></a>
+		                           		<a href="admin-delete-equipmentHistory?equipmentHistoryId=<s:property value="#equ.equipmentHistoryId" />"><span class="glyphicon glyphicon-trash mytrash"></span></a>
 		                           	</td>
 		                      	</tr>
 		             			</s:iterator>

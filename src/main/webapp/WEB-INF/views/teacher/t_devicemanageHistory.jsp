@@ -16,9 +16,7 @@
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main myMain practiceInmation">
         <div class="panel panel-default myPanel practiceinfo">
             <div class="panel-head">
-            	持有设备 Holding Device
-            	 <a href="tch-equipment-history" style='margin-left:500px'>设备历史记录</a>
-            	 <a href="tch-show-addEquipment"><button class="glyphicon glyphicon-plus myBu"></button></a>
+            	设备历史记录
            	</div>
            
             <div class="panel-body">             
@@ -34,7 +32,7 @@
                   			<th class="for-border-right">归还时间</th>                                                   
                 			<th class="position">操作</th>           					
              			</tr>
-             			<s:iterator value="#request.equipments" var="equ">
+             			<s:iterator value="#request.equipmentHistories" var="equ">
              			<tr>
                         	<td class="for-border-right"><s:property value="#equ.eno"/></td>
                       		<td class="for-border-right"><s:property value="#equ.name"/></td>
@@ -44,37 +42,12 @@
                   			<td class="for-border-right"><s:property value="#equ.lendDate"/></td>
                   			<td class="for-border-right"><s:property value="#equ.returnDate"/></td>
                 			<td class="position">
-								<a href="tch-showAddEquipmentHistory?equipmentId=<s:property value="#equ.equipmentId" />"><span class="glyphicon glyphicon-pencil Gl1"></span></a>
-                           		<!-- <button type="button" class="glyphicon glyphicon-trash myPu weekly-plan-del" data-toggle="modal" data-target="#WeeklyPlanDel"></button> -->
-								<a href="tch-deleteEquipment?equipmentId=<s:property value="#equ.equipmentId" />" ><span class="glyphicon glyphicon-trash mytrash"></span></a> 
+								<a href="admin-delete-equipmentHistory?equipmentHistoryId=<s:property value="#equ.equipmentHistoryId" />"><span class="glyphicon glyphicon-trash mytrash"></span></a>
 							</td>
              			</tr>
              			</s:iterator>
                  	</tbody>
                </table>
-            </div>
-        </div>
-        <div class="panel panel-default myPanel weekReport1">
-            <div class="panel-head">设备持有人 Device Holder
-               
-            </div>
-            <div class="panel-body">          
-                    <table class="table table-striped weekTable">
-                        <tbody>
-                        <tr id="the">
-                            <th>姓名</th>                           
-                            <th>查看</th>
-                        </tr>
-                        <s:iterator value="#request.tchs" var="tch">
-                        <tr>
-                             <td  class="for-border-right"><s:property value="#tch.name" /></td>                              
-                             <td>
-                                 <a href="tch-otherdevice?teacherId=<s:property value="#tch.teacherId" />"><span class="glyphicon glyphicon-eye-open Gl2"></span></a>                                    
-                             </td>
-                         </tr>	
-                        </s:iterator>
-                        </tbody>
-                    </table>
             </div>
         </div>
         

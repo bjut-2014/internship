@@ -47,4 +47,30 @@ public class EquipmentHistoryDaoImpl extends HibernateDaoSupport implements Equi
 		getHibernateTemplate().save(equipmentHistory);
 	}
 
+	//删除一条设备历史记录
+	@Override
+	public void delete(Integer id) {
+		EquipmentHistory equipmentHistory = get(id);
+		getHibernateTemplate().delete(equipmentHistory);
+	}
+
+	//获得一条设备历史记录
+	public EquipmentHistory get(Integer id){
+		return getHibernateTemplate().get(EquipmentHistory.class, id);
+	}
+
+	//获得更新一条设备历史记录
+	@Override
+	public void update(EquipmentHistory equipmentHistory) {
+		getHibernateTemplate().update(equipmentHistory);
+	}
+
+	//获得指定教师的所有设备历史记录
+	@Override
+	public List<EquipmentHistory> getAllHistotyByTeacherId(Integer teacherId) {
+		String hql = "from EquipmentHistory e where e.isDeleted=true and e.ownerId="+teacherId;
+		List<EquipmentHistory> equipmentHistories = (List<EquipmentHistory>) getHibernateTemplate().find(hql);
+		return equipmentHistories;
+	}
+	
 }

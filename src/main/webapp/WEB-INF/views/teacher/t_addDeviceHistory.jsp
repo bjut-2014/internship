@@ -115,51 +115,19 @@
 			                  			<th class="">归还时间</th>                                                   
 			                			      					
 			             			</tr>
+			             			<s:iterator value="#request.equipmentHistories" var="equh">
 			             			<tr >
-			                        	<td class="rborder">D123</td>
-			                        	<td class="rborder">xilinx</td>
-			                        	<td class="rborder">谌云莉</td>
-			                        	<td class="rborder">归还</td>
-			                        	<td class="rborder">陈晓晓</td>
-			                        	<td class="rborder">2016年1月10日  13：00</td>
-			                        	<td class=""></td>
-			                            
+			                        	<td class="rborder"><s:property value="#equh.eno" /></td>
+			                        	<td class="rborder"><s:property value="#equh.name" /></td>
+			                        	<td class="rborder"><s:property value="#equh.owner" /></td>
+			                        	<td class="rborder"><s:property value="#equh.state" /></td>
+			                        	<td class="rborder"><s:property value="#equh.people" /></td>
+			                        	<td class="rborder"><s:property value="#equh.lendDate" /></td>
+			                        	<td class=""><s:property value="#equh.returnDate" /></td>
 			                      	</tr>
-			                      	<tr >
-			                        	<td class="rborder">D123</td>
-			                        	<td class="rborder">xilinx</td>
-			                        	<td class="rborder">谌云莉</td>
-			                        	<td class="rborder">借出</td>
-			                        	<td class="rborder">陈晓晓</td>
-			                        	<td class="rborder">2015年1月10日  13：00</td>
-			                        	<td class="rborder">2015年7月10日  13：00</td>
-			                            
-			                      	</tr>
-			                      	<tr >
-			                        	<td class="rborder">D123</td>
-			                        	<td class="rborder">xilinx</td>
-			                        	<td class="rborder">谌云莉</td>
-			                        	<td class="rborder">借出</td>
-			                        	<td class="rborder">陈晓晓</td>
-			                        	<td class="rborder">2015年1月10日  13：00</td>
-			                        	<td class="rborder">2015年7月10日  13：00</td>
-			                            
-			                      	</tr>
-			                      	<tr >
-			                        	<td class="rborder">D123</td>
-			                        	<td class="rborder">xilinx</td>
-			                        	<td class="rborder">谌云莉</td>
-			                        	<td class="rborder">借出</td>
-			                        	<td class="rborder">陈晓晓</td>
-			                        	<td class="rborder">2015年1月10日  13：00</td>
-			                        	<td class="rborder">2015年7月10日  13：00</td>
-			                            
-			                      	</tr>
-			                      
-			                      
-			             			
+			             			</s:iterator>
 			                 	</tbody>
-                 	</table>		
+                 			</table>		
                     	</div>
                     </div>
                  </div>

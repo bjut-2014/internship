@@ -16,4 +16,9 @@ public interface EquipmentHistoryService {
 	
 	public void add(EquipmentHistory equipmentHistory);
 	
+	public void delete(Integer id);
+	
+	public void update(EquipmentHistory equipmentHistory);
+	
+	public List<EquipmentHistory> getAllHistotyByTeacherId(Integer teacherId);
 }

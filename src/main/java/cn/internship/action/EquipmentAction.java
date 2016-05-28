@@ -43,6 +43,9 @@ public class EquipmentAction extends ActionSupport implements ServletRequestAwar
 	private String estate;
 	private Integer teacherId;
 	
+	//设备历史记录信息
+	private Integer equipmentHistoryId;
+	
 	@Override
 	public String execute() throws Exception {
 		request.setAttribute("navId", 7);
@@ -108,6 +111,13 @@ public class EquipmentAction extends ActionSupport implements ServletRequestAwar
 	public String tchDeleteEquipment(){
 		request.setAttribute("navId", 7);
 		equipmentService.delete(equipmentId);
+		
+		//获得该设备的所有历史记录
+		List<EquipmentHistory> equipmentHistories = equipmentHistoryService.getHistoryByEuipmentId(equipmentId);
+		for(EquipmentHistory e:equipmentHistories){
+			e.setIsDeleted(true);
+			equipmentHistoryService.update(e);
+		}
 		return SUCCESS;
 	}
 	
@@ -123,6 +133,8 @@ public class EquipmentAction extends ActionSupport implements ServletRequestAwar
 		request.setAttribute("navId", 7);
 		Equipment equipment = equipmentService.get(equipmentId);
 		request.setAttribute("equipment", equipment);
+		List<EquipmentHistory> equipmentHistories = equipmentHistoryService.getHistoryByEuipmentId(equipmentId);
+		request.setAttribute("equipmentHistories", equipmentHistories);
 		return SUCCESS;
 	}
 	
@@ -135,6 +147,20 @@ public class EquipmentAction extends ActionSupport implements ServletRequestAwar
 		equipment.setReturnDate(ereturnDate);
 		equipment.setState(estate);
 		equipmentService.update(equipment);
+		
+		//添加设备的历史记录
+		EquipmentHistory equipmentHistory = new EquipmentHistory();
+		equipmentHistory.setEno(equipment.getEno());
+		equipmentHistory.setName(equipment.getName());
+		equipmentHistory.setEquipmentId(equipmentId);
+		equipmentHistory.setLendDate(elendDate);
+		equipmentHistory.setReturnDate(ereturnDate);
+		equipmentHistory.setState(estate);
+		equipmentHistory.setPeople(epeople);
+		equipmentHistory.setOwner(equipment.getOwner());
+		equipmentHistory.setOwnerId(equipment.getTeacherId());
+		equipmentHistory.setIsDeleted(false);
+		equipmentHistoryService.add(equipmentHistory);
 		return SUCCESS;
 	}
 	
@@ -201,6 +227,7 @@ public class EquipmentAction extends ActionSupport implements ServletRequestAwar
 		equipmentHistory.setState(estate);
 		equipmentHistory.setPeople(epeople);
 		equipmentHistory.setOwner(teacherService.get(teacherId).getName());
+		equipmentHistory.setOwnerId(teacherService.get(teacherId).getTeacherId());
 		equipmentHistory.setIsDeleted(false);
 		equipmentHistoryService.add(equipmentHistory);
 		return SUCCESS;
@@ -209,7 +236,38 @@ public class EquipmentAction extends ActionSupport implements ServletRequestAwar
 	//管理员删除一条设备信息
 	public String adminDeleteEquipment(){
 		request.setAttribute("navId", 9);
+		Equipment equipment = equipmentService.get(equipmentId);
 		equipmentService.delete(equipmentId);
+		
+		//获得该设备的所有历史记录
+		List<EquipmentHistory> equipmentHistories = equipmentHistoryService.getHistoryByEuipmentId(equipmentId);
+		for(EquipmentHistory e:equipmentHistories){
+			e.setIsDeleted(true);
+			equipmentHistoryService.update(e);
+		}
+		return SUCCESS;
+	}
+	
+	//打印所有历史记录
+	public String showEquipmentHistory(){
+		request.setAttribute("navId", 9);
+		List<EquipmentHistory> equipmentHistories = equipmentHistoryService.getAllHistoryByEuipmentIdIsDelete();
+		request.setAttribute("equipmentHistories", equipmentHistories);
+		return SUCCESS;
+	}
+	
+	//删除设备历史记录
+	public String adminDeleteEquipmentHistory(){
+		equipmentHistoryService.delete(equipmentHistoryId);
+		return SUCCESS;
+	}
+	
+	//打印教师设备的所有记录
+	public String showTchEquipmentHistory(){
+		request.setAttribute("navId", 7);
+		Teacher teacher = (Teacher) request.getSession().getAttribute("currentUser");
+		List<EquipmentHistory> equipmentHistories = equipmentHistoryService.getAllHistotyByTeacherId(teacher.getTeacherId());
+		request.setAttribute("equipmentHistories", equipmentHistories);
 		return SUCCESS;
 	}
 	
@@ -324,6 +382,14 @@ public class EquipmentAction extends ActionSupport implements ServletRequestAwar
 	public void setEquipmentHistoryService(
 			EquipmentHistoryService equipmentHistoryService) {
 		this.equipmentHistoryService = equipmentHistoryService;
+	}
+
+	public Integer getEquipmentHistoryId() {
+		return equipmentHistoryId;
+	}
+
+	public void setEquipmentHistoryId(Integer equipmentHistoryId) {
+		this.equipmentHistoryId = equipmentHistoryId;
 	}
 
 
