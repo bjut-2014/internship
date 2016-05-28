@@ -5,6 +5,14 @@
 <jsp:include page="../header/header.jsp" />
 <link href="styles/lib/font-awesome.css" rel="stylesheet" />
 <link href="styles/practice.css" rel="stylesheet" />
+<style>
+    .copyright {
+        bottom: inherit;
+    }
+    .s-table>tbody>tr>td {
+        text-align: left;
+    }
+</style>
 <body>
 <jsp:include page="../nav/nav.jsp" />
 <div class="container-fluid">
@@ -14,10 +22,10 @@
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main myMain practiceInmation">
         <div class="panel panel-default myPanel practiceinfo">
-            <div class="panel-head-1">实习信息 Practice Information</div>
+            <div class="panel-head">实习信息 Practice Information</div>
             <div class="panel-body">
                 <s:if test="#request.internshipdetail!=null">
-                <table class="table table-striped">
+                <table class="table table-striped s-table">
                     <tbody>
                         <tr>
                             <td class="for-border-right">姓名：<s:property value="#session.currentUser.name" /></td>
@@ -41,8 +49,8 @@
             </div>
         </div>
         <div class="panel panel-default myPanel weekReport1">
-            <div class="panel-head-1">周报 weekly Report
-                <a href="weekly-report-save"><button class="glyphicon glyphicon-plus myBu"></button></a>
+            <div class="panel-head">周报 weekly Report
+                <a href="weekly-report-save"><span class="fa fa-plus-square rplus"></span></a>
             </div>
             <div class="panel-body">
                 <s:if test="#request.weeklyplan.size()!=0">

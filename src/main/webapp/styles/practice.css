@@ -112,3 +112,12 @@ a{
     border-radius: 3px;
     line-height: 1.1;
 }
+.weekly-plan-del,.graduation-weekly-plan-del {
+    color: red;
+}
+.rplus{
+    float:right;
+    font-size:28px;
+    color:#2c9f94;
+    text-align:center;
+}

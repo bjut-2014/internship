@@ -18,7 +18,7 @@
 				class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main myMain weekReport">
 				<div class="panel panel-default myPanel ">
 					<div class="panel-head">
-						毕设选题信息 Graduation Information<a href="graduation-pro-sele-save"><span class="fa fa-plus-square rplus"></span></a>
+						毕设信息 Graduation Information<a href="graduation-pro-sele-save"><span class="fa fa-plus-square rplus"></span></a>
 					</div>
 					<div class="panel-body">
 						<s:if test="#request.AllSelectInfo!=null">
