@@ -1,7 +1,8 @@
 .table-bordered>tbody,
-.table-bordered>thead{
+.table-bordered>thead tr th{
 	font-size:13px;
 	color:#797979;
+	text-align: center;
 }
 .table-bordered>tbody .position,
 .table-bordered>thead .position{

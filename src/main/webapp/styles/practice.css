@@ -10,7 +10,7 @@ a{
 	color: #797979;
 }
 .panel-head{
-	/*border-bottom:1px solid rgb(217,217,217);*/
+	border-bottom:1px solid rgb(217,217,217);
 	padding-bottom:15px;
 	font-size: 16px;
 }
@@ -43,6 +43,7 @@ a{
 	border:none;
 	/*color:red;*/
 	margin-left:30px;
+	color: #337ab7;
 }
 
 #the{
@@ -96,4 +97,18 @@ a{
 .practiceRerort .panel-body p{
     float:left;
     width:80%;
+}
+.Gl2 {
+	color: #337ab7;
+}
+.spanbtn2 {
+    background-color: #ecc65f;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    float: right;
+    margin-left: 10px;
+    padding: 8px;
+    border-radius: 3px;
+    line-height: 1.1;
 }

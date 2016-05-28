@@ -22,7 +22,7 @@ th{
 }
 .plus{
 	color:#2c9f94;
-	font-size:33px;
+	font-size:28px;
 	cursor:pointer;
 	z-index:1;
 }
@@ -58,7 +58,4 @@ th{
 }
 .sidebar {
 	padding: 20px;
-}
-.panel-heading {
-	border: none;
 }

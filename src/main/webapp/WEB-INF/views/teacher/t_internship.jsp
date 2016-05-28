@@ -4,6 +4,7 @@
 <html>
 <jsp:include page="../header/header.jsp" />
 <link href="styles/lib/font-awesome.css"  rel="stylesheet" />
+<link href="styles/lib/bootstrap-reset.css"  rel="stylesheet" />
 <link href="styles/practice.css" rel="stylesheet" />
 <body>
 <jsp:include page="../nav/nav.jsp" />
@@ -14,7 +15,10 @@
         </div>
  
        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-        <div class="panel panel-default myPanel weekReport">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">实习信息 Internship Infomation</h3>
+            </div>
             <div class="panel-body">
                <table class="table table-striped table-bordered">
              

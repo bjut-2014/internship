@@ -17,7 +17,7 @@
         <div class="panel panel-default myPanel practiceinfo">
             <div class="panel-head">
             	持有设备 Holding Device
-            	 <a href="tch-equipment-history" style='margin-left:500px'>设备历史记录</a>
+                <a href="tch-equipment-history"><span class="spanbtn2">设备历史记录</span></a>
             	 <a href="tch-show-addEquipment"><button class="glyphicon glyphicon-plus myBu"></button></a>
            	</div>
            
