@@ -17,7 +17,7 @@
         <div class="panel panel-default myPanel weekReport1">
             <div class="panel-head">学生管理 Student Manage
           <a href="batch-import-stu"><span class="spanbtn">批量导入</span></a>
-          <a href="student-save"><span class="fa fa-plus-square rplus"></span></a></div>
+          <a href="student-save"><button class="glyphicon glyphicon-plus myBu"></button></a></div>
             <div class="panel-body">
                 <s:if test="#request.students!=null">
                 <table class="table table-hover">

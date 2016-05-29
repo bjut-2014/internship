@@ -16,7 +16,7 @@
       <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main myMain weekReport">
         <div class="panel panel-default myPanel">
             <div class="panel-head">实习信息 Internship Information
-                <a href="internship-detail-save"><span class="fa fa-plus-square rplus"></span></a>
+                <a href="internship-detail-save"><button class="glyphicon glyphicon-plus myBu"></button></a>
             </div>
             <div class="panel-body">
                 <s:if test="#request.AllInternshipDetails!=null">

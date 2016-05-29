@@ -50,7 +50,7 @@
         </div>
         <div class="panel panel-default myPanel weekReport1">
             <div class="panel-head">周报 weekly Report
-                <a href="weekly-report-save"><span class="fa fa-plus-square rplus"></span></a>
+                <a href="weekly-report-save"><button class="glyphicon glyphicon-plus myBu"></button></a>
             </div>
             <div class="panel-body">
                 <s:if test="#request.weeklyplan.size()!=0">

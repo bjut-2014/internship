@@ -38,7 +38,7 @@
 								学生管理 Teacher Manage
                                 <a href=""><span class="spanbtn">导入</span></a>
 							    <a href="">
-                                <span class="fa fa-plus-square rplus"></span>
+                                    <button class="glyphicon glyphicon-plus myBu"></button>
                                 <%--<form action="upload-stu-excel" enctype="multipart/form-data" method="post">--%>
                                     <%--<s:file name="upload" label="选择文件"/>--%>
                                     <%--<input type="submit" value="提交"/>--%>

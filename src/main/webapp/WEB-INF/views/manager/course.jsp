@@ -22,7 +22,7 @@
                     <div class="panel panel-default">
                     	<div class="panel-heading">                  		
                     		<h3 class="panel-title">课程 Course
-	                       		<a href="admin-show-add-course"><span class="fa fa-plus-square rplus"></span></a>
+	                       		<a href="admin-show-add-course"><button class="glyphicon glyphicon-plus myBu"></button></a>
 	                       	</h3>	                                               
 	                 	  </div>
                     	

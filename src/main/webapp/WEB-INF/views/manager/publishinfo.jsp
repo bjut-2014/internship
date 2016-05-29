@@ -42,7 +42,7 @@
 	                 				
 	                 					<div class="tab-pane active" id="announcement">
 	                 						<div class="rposotion">
-	                       						<a href="announcement"><span class="fa fa-plus-square plus"></span></a>                                              
+	                       						<a href="announcement"><button class="glyphicon glyphicon-plus myBu"></button></a>
 	                 						</div>
 					                 		<div class="profile-desk">
 					                 			<table  class="table table-striped">
@@ -69,7 +69,7 @@
 					                 	</div>
 					                 	<div class="tab-pane" id="recruitment">
 					                 	<div class="rposotion">
-	                       						<a href="recruitment"><span class="fa fa-plus-square plus"></span></a>                                                
+	                       						<a href="recruitment"><button class="glyphicon glyphicon-plus myBu"></button></a>
 	                 						</div>
 					                 		<div class="profile-desk">
 					                 			<table  class="table table-striped">
@@ -95,7 +95,7 @@
 					                 	</div>
 					                 	<div class="tab-pane" id="banner">
 					                 	<div class="rposotion">
-	                       						<a href="banner"><span class="fa fa-plus-square plus"></span></a>                                                
+	                       						<a href="banner"><button class="glyphicon glyphicon-plus myBu"></button></a>
 	                 						</div>
 					                 		<div class="profile-desk">
 					                 			<table  class="table table-striped">

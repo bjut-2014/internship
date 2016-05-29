@@ -22,10 +22,10 @@
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12 rposition">
                                 <div class="rposotion">
-                                     <label class="fa fa-plus-square plus">
+                                     <button class="glyphicon glyphicon-plus myBu">
                                         <input type="file" name="uploadfile" class="uploadfile"/>
                                         <input type="hidden" name="courseId" value="<s:property value="#request.courseId" />">
-                                     </label>
+                                     </button>
 
                                  </div>
                             <table class="table table-striped" style="border: 1px solid #ddd;">

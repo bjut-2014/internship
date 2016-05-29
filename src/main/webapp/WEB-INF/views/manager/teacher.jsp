@@ -23,7 +23,7 @@
                     	<div class="panel-heading">                  		
                     		<h3 class="panel-title">教师管理 Teacher Manage
                     			<a href="batch-import-tch"><span class="spanbtn">批量导入</span></a> 
-	                       		<a href="admin-show-add-teacher"><span class="fa fa-plus-square rplus"></span></a>
+	                       		<a href="admin-show-add-teacher"><button class="glyphicon glyphicon-plus myBu"></button></a>
 	                       	</h3>	                                               
 	                 	  </div>
                     	
