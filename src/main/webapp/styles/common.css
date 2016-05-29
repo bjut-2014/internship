@@ -109,11 +109,10 @@ textarea {
         left: 0;
         z-index: 1000;
         display: block;
-        padding: 20px;
+        padding: 20px!important;
         overflow-x: hidden;
         overflow-y: auto;
         background-color: #4a5562;
-        /*width: 209px;*/
     }
 }
 .nav-sidebar {
