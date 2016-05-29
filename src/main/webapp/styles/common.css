@@ -67,8 +67,8 @@ textarea {
 }
 /*nav*/
 .nav-container {
-    height: 50px;
-    line-height: 50px;
+    height: 56px;
+    line-height: 56px;
     background-color: #739697;
     color: #fff;
     font-size: 14px;
@@ -76,8 +76,8 @@ textarea {
 }
 .nav-title {
     /*width: 209px;*/
-    height: 50px;
-    line-height: 50px;
+    height: 56px;
+    line-height: 56px;
     font-size: 20px;
     background-color: #11858f;
     text-align: center;
@@ -124,8 +124,9 @@ textarea {
 .nav-sidebar > li > a {
     padding-right: 20px;
     padding-left: 20px;
-    font-size: 14px;
+    font-size: 15px;
     color: #839099;
+    padding: 12px 15px;
 }
 .nav-sidebar > .active > a,
 .nav-sidebar > .active > a:hover,
@@ -188,4 +189,8 @@ textarea {
     padding: 0.5px 0.5px;
     margin-left: 30px;
     border-radius: 2px;
+}
+.sidebar-arrow {
+    margin: 0!important;
+    float: right;
 }
