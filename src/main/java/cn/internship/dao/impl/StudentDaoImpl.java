@@ -40,7 +40,9 @@ public class StudentDaoImpl extends HibernateDaoSupport implements StudentDao{
 		if(list==null||list.size()==0){
 			return null;
 		}
-		return list.get(0);
+		else{
+			return list.get(0);
+		}
 	}
 
 	//更新用户信息

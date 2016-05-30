@@ -431,6 +431,7 @@
 		</action>
 		<action name="graduation-pro-sele-add" class="graduation-pro-sele" method="addSelectInfo">
 			<result type="redirectAction">graduation-pro-sele</result>
+			<result name="addFail">/WEB-INF/views/admin/add_error.jsp</result>
 		</action>
 		<action name="graduation-pro-sele-edit" class="graduation-pro-sele" method="get">
 			<result>/WEB-INF/views/admin/a_graduation_edit.jsp</result>
@@ -467,9 +468,7 @@
 		<action name="equipment-history" class="equipmentAction" method="showEquipmentHistory">
 			<result>/WEB-INF/views/manager/equipmentHistory.jsp</result>
 		</action>
-		<action name="admin-delete-equipmentHistory" class="equipmentAction" method="adminDeleteEquipmentHistory">
-			<result type="redirectAction">equipment-history</result>
-		</action>
+
 		
 		<action name="tch-equipment" class="equipmentAction" method="showTeacherEquipment">
 			<result>/WEB-INF/views/teacher/t_devicemanage.jsp</result>

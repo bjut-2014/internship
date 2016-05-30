@@ -61,6 +61,12 @@ public class TeacherServiceImpl implements TeacherService{
 		teacherDao.updateTeacher(teacher);
 	}
 	
+	@Override
+	public Teacher get(String tno) {
+		return teacherDao.get(tno);
+	}
+
+	
 	//-----------------------get与set方法--------------------
 
 	public TeacherDao getTeacherDao() {
@@ -71,6 +77,7 @@ public class TeacherServiceImpl implements TeacherService{
 		this.teacherDao = teacherDao;
 	}
 
+	
 
 
 }
