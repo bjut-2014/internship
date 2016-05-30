@@ -318,6 +318,8 @@
 	
 	<bean id="graduation-pro-sele" class="cn.internship.action.AdminGraduationProSeleAction">
 		<property name="graduationSelectionService" ref="graduationSelectionService"></property>
+		<property name="teacherService" ref="teacherService"></property>
+		<property name="studentService" ref="studentService"></property>
 	</bean>
 	
 	<!-- end -->

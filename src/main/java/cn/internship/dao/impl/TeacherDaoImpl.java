@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 
 import cn.internship.dao.TeacherDao;
+import cn.internship.entity.Student;
 import cn.internship.entity.Teacher;
 
 /**
@@ -53,5 +54,21 @@ public class TeacherDaoImpl extends HibernateDaoSupport implements TeacherDao{
 	@Override
 	public void deleteTeacher(Integer id) {
 		getHibernateTemplate().delete(get(id));
+	}
+
+	//根据教师编号获取教师信息
+	@Override
+	public Teacher get(String tno) {
+		String hql = "from Teacher t where t.tno=?";
+		Object[] values={tno};
+		@SuppressWarnings("unchecked")
+		List<Teacher> list = (List<Teacher>) getHibernateTemplate().find(hql,values);
+		if(list==null||list.size()==0){
+			return null;
+		}
+		else{
+			return list.get(0);
+		}
+		
 	}
 }

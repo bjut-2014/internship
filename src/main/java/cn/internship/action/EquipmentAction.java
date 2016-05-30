@@ -1,6 +1,8 @@
 package cn.internship.action;
 
 import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -13,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 
+import com.mysql.fabric.xmlrpc.base.Data;
 import com.opensymphony.xwork2.ActionSupport;
 
 import cn.internship.entity.Equipment;
@@ -38,8 +41,8 @@ public class EquipmentAction extends ActionSupport implements ServletRequestAwar
 	private String eno;
 	private String ename;
 	private String epeople;
-	private Date elendDate;
-	private Date ereturnDate;
+	private String elendDate;
+	private String ereturnDate;
 	private String estate;
 	private Integer teacherId;
 	
@@ -139,12 +142,15 @@ public class EquipmentAction extends ActionSupport implements ServletRequestAwar
 	}
 	
 	//添加设备的记录
-	public String tchAddEquipmentHistory(){
+	public String tchAddEquipmentHistory() throws ParseException{
 		request.setAttribute("navId", 7);
 		Equipment equipment = equipmentService.get(equipmentId);
 		equipment.setPeople(epeople);
-		equipment.setLendDate(elendDate);
-		equipment.setReturnDate(ereturnDate);
+		SimpleDateFormat sdf =   new SimpleDateFormat("yyyy-mm-dd");
+		java.util.Date elendDate1 = sdf.parse(changeDate(elendDate));
+		java.util.Date ereturnDate1 = sdf.parse(changeDate(ereturnDate));
+		equipment.setLendDate(new Date(elendDate1.getTime()));
+		equipment.setReturnDate(new Date(ereturnDate1.getTime()));
 		equipment.setState(estate);
 		equipmentService.update(equipment);
 		
@@ -153,8 +159,8 @@ public class EquipmentAction extends ActionSupport implements ServletRequestAwar
 		equipmentHistory.setEno(equipment.getEno());
 		equipmentHistory.setName(equipment.getName());
 		equipmentHistory.setEquipmentId(equipmentId);
-		equipmentHistory.setLendDate(elendDate);
-		equipmentHistory.setReturnDate(ereturnDate);
+		equipmentHistory.setLendDate(new Date(elendDate1.getTime()));
+		equipmentHistory.setReturnDate(new Date(ereturnDate1.getTime()));
 		equipmentHistory.setState(estate);
 		equipmentHistory.setPeople(epeople);
 		equipmentHistory.setOwner(equipment.getOwner());
@@ -208,11 +214,14 @@ public class EquipmentAction extends ActionSupport implements ServletRequestAwar
 	}
 	
 	//管理员页面，添加设备记录(修改设备信息)
-	public String adminAddEquipmentHistory(){
+	public String adminAddEquipmentHistory() throws ParseException{
 		request.setAttribute("navId", 9);
 		Equipment equipment = equipmentService.get(equipmentId);
-		equipment.setLendDate(elendDate);
-		equipment.setReturnDate(ereturnDate);
+		SimpleDateFormat sdf =   new SimpleDateFormat("yyyy-mm-dd");
+		java.util.Date elendDate1 = sdf.parse(changeDate(elendDate));
+		java.util.Date ereturnDate1 = sdf.parse(changeDate(ereturnDate));
+		equipment.setLendDate(new Date(elendDate1.getTime()));
+		equipment.setReturnDate(new Date(ereturnDate1.getTime()));
 		equipment.setState(estate);
 		equipment.setPeople(epeople);
 		equipmentService.update(equipment);
@@ -222,8 +231,8 @@ public class EquipmentAction extends ActionSupport implements ServletRequestAwar
 		equipmentHistory.setEno(eno);
 		equipmentHistory.setName(ename);
 		equipmentHistory.setEquipmentId(equipmentId);
-		equipmentHistory.setLendDate(elendDate);
-		equipmentHistory.setReturnDate(ereturnDate);
+		equipmentHistory.setLendDate(new Date(elendDate1.getTime()));
+		equipmentHistory.setReturnDate(new Date(ereturnDate1.getTime()));
 		equipmentHistory.setState(estate);
 		equipmentHistory.setPeople(epeople);
 		equipmentHistory.setOwner(teacherService.get(teacherId).getName());
@@ -269,6 +278,22 @@ public class EquipmentAction extends ActionSupport implements ServletRequestAwar
 		List<EquipmentHistory> equipmentHistories = equipmentHistoryService.getAllHistotyByTeacherId(teacher.getTeacherId());
 		request.setAttribute("equipmentHistories", equipmentHistories);
 		return SUCCESS;
+	}
+	
+	//日期-月份默认是从0开始计算的，所以要将月份加1
+	private String changeDate(String date){
+//		String date = "1991-1-1";
+		String[] strs = date.split("-");
+		int m = Integer.valueOf(strs[1]);
+		m++;
+		strs[1] = String.valueOf(m);
+		StringBuilder sb = new StringBuilder();
+		for(String s:strs){
+			sb.append(s+"-");
+			
+		}
+		sb.replace(sb.length()-1, sb.length(), "");
+		return sb.toString();
 	}
 	
 	//----------------------------------get与set------------------------------------------
@@ -343,19 +368,21 @@ public class EquipmentAction extends ActionSupport implements ServletRequestAwar
 		this.epeople = epeople;
 	}
 
-	public Date getElendDate() {
+	
+
+	public String getElendDate() {
 		return elendDate;
 	}
 
-	public void setElendDate(Date elendDate) {
+	public void setElendDate(String elendDate) {
 		this.elendDate = elendDate;
 	}
 
-	public Date getEreturnDate() {
+	public String getEreturnDate() {
 		return ereturnDate;
 	}
 
-	public void setEreturnDate(Date ereturnDate) {
+	public void setEreturnDate(String ereturnDate) {
 		this.ereturnDate = ereturnDate;
 	}
 

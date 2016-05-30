@@ -15,6 +15,8 @@ public interface TeacherService {
 	public void logout();
 	
 	public Teacher get(Integer teacherId);
+	
+	public Teacher get(String tno);
 
 	//修改密码
 	public void updatePwd(Teacher teacher);

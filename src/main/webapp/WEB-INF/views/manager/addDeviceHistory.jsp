@@ -82,13 +82,13 @@
                              			<div class="form-group">
                              				<label class="control-label col-lg-2">借出时间</label>
                              				<div class="col-lg-10">
-                             					<input name="elendDate" class="form-control" id="datepicker" type="date" aria-required="true" value="<s:property value="#request.equipment.lendDate"/>"/>
+                             					<input name="elendDate" class="form-control" id="datepicker1"  aria-required="true" value="<s:date name="#request.equipment.lendDate" format="yyyy-MM-dd" />"/>
                              				</div>
                              			</div>
                              			<div class="form-group">
                              				<label class="control-label col-lg-2">归还时间</label>
                              				<div class="col-lg-10">
-                             					<input name="ereturnDate" class="form-control" id="datepicker" type="date" aria-required="true" value="<s:property value="#request.equipment.returnDate"/>"/>
+                             					<input name="ereturnDate" class="form-control" id="datepicker2"  aria-required="true" value="<s:date name="#request.equipment.returnDate" format="yyyy-MM-dd" />"/>
                              				</div>
                              			</div>
                              			            			
@@ -134,8 +134,8 @@
 			                        	<td class="rborder"><s:property value="#equh.owner" /></td>
 			                        	<td class="rborder"><s:property value="#equh.state" /></td>
 			                        	<td class="rborder"><s:property value="#equh.people" /></td>
-			                        	<td class="rborder"><s:property value="#equh.lendDate" /></td>
-			                        	<td class=""><s:property value="#equh.returnDate" /></td>
+			                        	<td class="rborder"><s:date name="#equh.lendDate" format="yyyy-MM-dd" /> </td>
+			                        	<td class=""><s:date name="#equh.returnDate" format="yyyy-MM-dd" /></td>
 			                      	</tr>
 			             			</s:iterator>
 			                 	</tbody>
@@ -146,13 +146,17 @@
                  </div>
   </div>
 </div>
-<script>
-$(document).ready(function() {     
-	 $('#datepicker').datepicker();     
- });
-
-</script>
 <jsp:include page="../footer/footer.jsp" />
- <script src="scripts/lib/bootstrap-datepicker.min.js"></script>
+<script>
+$(document).ready(function(){
+$("#datepicker1").datepicker({
+	format:"yyyy-mm-dd"
+});
+$("#datepicker2").datepicker({
+	format:"yyyy-mm-dd"
+});
+});
+</script>
+<script src="scripts/lib/bootstrap-datepicker.min.js"></script>
 </body>
 </html>

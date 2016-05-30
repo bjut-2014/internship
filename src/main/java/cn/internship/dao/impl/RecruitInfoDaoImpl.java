@@ -37,14 +37,14 @@ public class RecruitInfoDaoImpl extends HibernateDaoSupport implements RecruitIn
 
 	@Override
 	public List<RecruitInfo> getAll() {
-		String hql = "from RecruitInfo";
+		String hql = "from RecruitInfo r order by r.date desc ";
 		List<RecruitInfo> list = (List<RecruitInfo>) getHibernateTemplate().find(hql);
 		return list;
 	}
 
 	@Override
 	public List<RecruitInfo> getByNum(int num) {
-		String hql = "from RecruitInfo";
+		String hql = "from RecruitInfo r order by r.date desc ";
 		List<RecruitInfo> list = (List<RecruitInfo>) getHibernateTemplate().find(hql);
 		//只取前num条数据
 		List<RecruitInfo> newList = null;
@@ -52,7 +52,7 @@ public class RecruitInfoDaoImpl extends HibernateDaoSupport implements RecruitIn
 			newList = list.subList(0, num);
 			return newList;
 		}
-		return null;
+		return list;
 	}
 
 }

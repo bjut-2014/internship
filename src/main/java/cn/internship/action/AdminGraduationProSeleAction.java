@@ -9,7 +9,11 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 
 import cn.internship.entity.GraduationProSele;
+import cn.internship.entity.Student;
+import cn.internship.entity.Teacher;
 import cn.internship.service.GraduationSelectionService;
+import cn.internship.service.StudentService;
+import cn.internship.service.TeacherService;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -28,6 +32,8 @@ public class AdminGraduationProSeleAction extends ActionSupport implements Servl
 	private HttpServletResponse response;	
 	
 	private GraduationSelectionService graduationSelectionService;
+	private StudentService studentService;
+	private TeacherService teacherService;
 	
 	//=====================================添加毕设选题信息==================================
 	private String addGraduationProTitle;
@@ -62,14 +68,38 @@ public class AdminGraduationProSeleAction extends ActionSupport implements Servl
 	public String addSelectInfo(){
 		request.setAttribute("navId", 4);
 		
-		GraduationProSele gr=new GraduationProSele();
-		gr.setGraduationProTitle(addGraduationProTitle);
-		gr.setSno(addSno);
-		gr.setTno(addTno);
+//		GraduationProSele gr=new GraduationProSele();
 		
-		graduationSelectionService.addSelectInfo(gr);
 		
-		return SUCCESS;
+		//查询添加的学生学号及教师编号是否存在
+		System.out.println(addSno);
+		System.out.println(addTno);
+		Teacher tc=teacherService.get(addTno);
+		System.out.println(tc);
+		Student st=studentService.get(addSno);
+		System.out.println(st);
+		
+		
+		if(st!=null && tc!=null){
+			GraduationProSele gr=new GraduationProSele();
+			
+			gr.setSno(addSno);
+			gr.setTno(addTno);
+			gr.setGraduationProTitle(addGraduationProTitle);
+			graduationSelectionService.addSelectInfo(gr);
+			request.setAttribute("add", "addSuccess");
+			return SUCCESS;
+		}else{
+			request.setAttribute("add", "addFail");
+			return "addFail";
+		}
+		
+//		gr.setSno(addSno);
+//		gr.setTno(addTno);
+		
+//		graduationSelectionService.addSelectInfo(gr);
+		
+//		return SUCCESS;
 	}
 	
 	//根据主键获取一条毕设选题信息
@@ -235,6 +265,26 @@ public class AdminGraduationProSeleAction extends ActionSupport implements Servl
 
 	public void setGraduationProSeleId(Integer graduationProSeleId) {
 		this.graduationProSeleId = graduationProSeleId;
+	}
+
+
+	public StudentService getStudentService() {
+		return studentService;
+	}
+
+
+	public void setStudentService(StudentService studentService) {
+		this.studentService = studentService;
+	}
+
+
+	public TeacherService getTeacherService() {
+		return teacherService;
+	}
+
+
+	public void setTeacherService(TeacherService teacherService) {
+		this.teacherService = teacherService;
 	}
 	
 	
