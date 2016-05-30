@@ -69,13 +69,13 @@
                              			<div class="form-group">
                              				<label class="control-label col-lg-2">借出时间</label>
                              				<div class="col-lg-10">
-                             					<input name="elendDate" class="form-control" id="datepicker1" type="date" aria-required="true"  value="<s:property value="#request.equipment.lendDate" />"/>
+                             					<input name="elendDate" class="form-control" id="datepicker1" type="date" aria-required="true"  value="<s:date name="#request.equipment.lendDate" format="yyyy-MM-dd" />"/>
                              				</div>
                              			</div>
                              			<div class="form-group">
                              				<label class="control-label col-lg-2">归还时间</label>
                              				<div class="col-lg-10">
-                             					<input name="ereturnDate" class="form-control" id="datepicker2" type="date" aria-required="true"  value="<s:property value="#request.equipment.returnDate" />"/>
+                             					<input name="ereturnDate" class="form-control" id="datepicker2" type="date" aria-required="true"  value="<s:date name="#request.equipment.returnDate" format="yyyy-MM-dd" />"/>
                              				</div>
                              			</div>
                              			            			
