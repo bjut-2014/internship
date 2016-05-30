@@ -500,7 +500,7 @@
 		<action name="tch-equipment-history" class="equipmentAction" method="showTchEquipmentHistory">
 			<result>/WEB-INF/views/teacher/t_devicemanageHistory.jsp</result>
 		</action>
-		<action name="admin-delete-equipmentHistory" class="equipmentAction" method="adminDeleteEquipmentHistory">
+		<action name="tch-delete-equipmentHistory" class="equipmentAction" method="adminDeleteEquipmentHistory">
 			<result type="redirectAction">tch-equipment-history</result>
 		</action>
 		

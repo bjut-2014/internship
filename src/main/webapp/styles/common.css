@@ -72,7 +72,7 @@ textarea {
     background-color: #739697;
     color: #fff;
     font-size: 14px;
-
+    box-shadow: 0 0px 8px 0 rgba(0,0,0,0.06),0 1px 0px 0 rgba(0,0,0,0.02);
 }
 .nav-title {
     /*width: 209px;*/
@@ -114,6 +114,7 @@ textarea {
         overflow-x: hidden;
         overflow-y: auto;
         background-color: #4a5562;
+        box-shadow: 7px 60px 12px rgba(0, 0, 0, 0.15);
     }
 }
 .nav-sidebar {
@@ -193,4 +194,16 @@ textarea {
 .sidebar-arrow {
     margin: 0!important;
     float: right;
+}
+.fa-chevron-right {
+    float: right;
+    margin-top: 3px;
+    font-size: 13px!important;
+}
+.user-icon {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: text-top;
 }

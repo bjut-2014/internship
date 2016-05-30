@@ -41,8 +41,8 @@
                   			<td class="for-border-right"><s:property value="#equ.owner"/></td>
                   			<td class="for-border-right"><s:property value="#equ.state"/></td>
                       		<td class="for-border-right"><s:property value="#equ.people"/></td>
-                  			<td class="for-border-right"><s:property value="#equ.lendDate"/></td>
-                  			<td class="for-border-right"><s:property value="#equ.returnDate"/></td>
+                  			<td class="for-border-right"><s:date name="#equ.lendDate" format="yyyy-MM-dd" /></td>
+                  			<td class="for-border-right"><s:date name="#equ.returnDate" format="yyyy-MM-dd" /></td>
                 			<td class="position">
 								<a href="tch-showAddEquipmentHistory?equipmentId=<s:property value="#equ.equipmentId" />"><span class="glyphicon glyphicon-pencil Gl1"></span></a>
                            		<!-- <button type="button" class="glyphicon glyphicon-trash myPu weekly-plan-del" data-toggle="modal" data-target="#WeeklyPlanDel"></button> -->
