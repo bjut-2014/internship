@@ -10,7 +10,9 @@ import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
 
 import cn.internship.entity.InternshipDetail;
+import cn.internship.entity.Student;
 import cn.internship.service.InternshipDetailService;
+import cn.internship.service.StudentService;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -30,6 +32,7 @@ public class AdminInternshipDetailAction extends ActionSupport implements Servle
 	private HttpServletResponse response;
 	
 	private InternshipDetailService internshipDetailService;
+	private StudentService studentService;
 	
 	//=================================添加学生实习信息===============================
 	private String add_companyAddress;
@@ -68,17 +71,26 @@ public class AdminInternshipDetailAction extends ActionSupport implements Servle
 	//添加实习信息
 	public String addInternshipDetail(){
 		request.setAttribute("navId", 5);
-		InternshipDetail it=new InternshipDetail();
-		it.setCompany_address(add_companyAddress);
-		it.setCompany_name(add_companyName);
-		it.setCompany_teacher(add_companyTeacher);
-		it.setDate(add_date);
-		it.setScore(add_score);
-		it.setSno(add_sno);
 		
-		internshipDetailService.addInternshipDetail(it);
+		InternshipDetail iten=internshipDetailService.getInternshipDetailBySno(add_sno);
+		Student st=studentService.get(add_sno);
+		if(st!=null && iten==null){
+			InternshipDetail it=new InternshipDetail();
+			it.setCompany_address(add_companyAddress);
+			it.setCompany_name(add_companyName);
+			it.setCompany_teacher(add_companyTeacher);
+			it.setDate(add_date);
+			it.setScore(add_score);
+			it.setSno(add_sno);
+			
+			internshipDetailService.addInternshipDetail(it);
+			return SUCCESS;
+		}else{
+			return "add_fail";
+		}
 		
-		return SUCCESS;
+		
+//		return SUCCESS;
 	}
 	
 	
@@ -258,6 +270,16 @@ public class AdminInternshipDetailAction extends ActionSupport implements Servle
 
 	public void setInternshipDetailId(Integer internshipDetailId) {
 		this.internshipDetailId = internshipDetailId;
+	}
+
+
+	public StudentService getStudentService() {
+		return studentService;
+	}
+
+
+	public void setStudentService(StudentService studentService) {
+		this.studentService = studentService;
 	}
 
 	

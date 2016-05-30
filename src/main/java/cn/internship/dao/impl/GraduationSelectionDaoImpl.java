@@ -52,6 +52,18 @@ public class GraduationSelectionDaoImpl extends HibernateDaoSupport implements G
 		getHibernateTemplate().delete(gr);
 	}
 
+	@Override
+	//根据学生学号获取毕设信息
+	public GraduationProSele getSelectInfoBtSno(String sno) {
+		String hql="from GraduationProSele gp where gp.sno=?";
+		Object values[]={sno};
+		List<GraduationProSele> list=(List<GraduationProSele>) getHibernateTemplate().find(hql, values);
+		if(list==null || list.size()==0){
+			return null;
+		}
+		return list.get(0);
+	}
+
 
 
 }

@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'stu_error.jsp' starting page</title>
+    <title>错误信息</title>
     
 
   </head>

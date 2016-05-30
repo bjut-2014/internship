@@ -48,7 +48,12 @@ public class GraduationSelectionServiceImpl implements GraduationSelectionServic
 		graduationSelectionDao.deleteSelectInfo(deleteId);
 	}
 	
-	
+	@Override
+	//根据学生学号获取毕设信息
+	public GraduationProSele getSelectInfoBySno(String sno) {
+		return graduationSelectionDao.getSelectInfoBtSno(sno);
+	}
+
 	//================================getter setter方法===================================
 	public GraduationSelectionDao getGraduationSelectionDao() {
 		return graduationSelectionDao;
@@ -58,4 +63,7 @@ public class GraduationSelectionServiceImpl implements GraduationSelectionServic
 		this.graduationSelectionDao = graduationSelectionDao;
 	}
 
+
+
+	
 }

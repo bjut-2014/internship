@@ -411,6 +411,7 @@
 		</action>
 		<action name="internship-detail-add" class="internship-detail" method="addInternshipDetail">
 			<result type="redirectAction">internship-detail</result>
+			<result name="add_fail">/WEB-INF/views/admin/addinternshipfail.jsp</result>
 		</action>
 		<action name="internship-detail-edit" class="internship-detail" method="get">
 			<result>/WEB-INF/views/admin/a_internship_edit.jsp</result>

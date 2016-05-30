@@ -23,6 +23,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    Warning:1、输入的学生学号或教师编号不存在！2、输入的学号有重复，一名学生只能有一条毕设信息！ 请核实后输入！
+    Warning:输入学号冲突或输入的学生学号不存在！请核实后输入！
   </body>
 </html>

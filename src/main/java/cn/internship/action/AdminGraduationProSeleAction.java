@@ -69,7 +69,7 @@ public class AdminGraduationProSeleAction extends ActionSupport implements Servl
 		request.setAttribute("navId", 4);
 		
 //		GraduationProSele gr=new GraduationProSele();
-		
+		GraduationProSele hgr=graduationSelectionService.getSelectInfoBySno(addSno);
 		
 		//查询添加的学生学号及教师编号是否存在
 		System.out.println(addSno);
@@ -80,7 +80,7 @@ public class AdminGraduationProSeleAction extends ActionSupport implements Servl
 		System.out.println(st);
 		
 		
-		if(st!=null && tc!=null){
+		if(st!=null && tc!=null && hgr==null){
 			GraduationProSele gr=new GraduationProSele();
 			
 			gr.setSno(addSno);

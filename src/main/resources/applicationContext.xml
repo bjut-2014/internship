@@ -310,6 +310,7 @@
 	
 	<bean id="internship-detail" class="cn.internship.action.AdminInternshipDetailAction">
 		<property name="internshipDetailService" ref="internshipDetailService"></property>
+		<property name="studentService" ref="studentService"></property>
 	</bean>
 	
 	<!-- end -->

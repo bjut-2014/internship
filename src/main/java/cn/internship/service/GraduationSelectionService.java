@@ -22,4 +22,7 @@ public interface GraduationSelectionService {
 	
 	//根据主键删除一条毕设选题信息
 	public void deleteSelecInfo(Integer deleteId);
+	
+	//根据学生学号获取相应的毕设信息
+	public GraduationProSele getSelectInfoBySno(String sno);
 }

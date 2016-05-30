@@ -10,6 +10,9 @@ public interface GraduationSelectionDao {
 	//根据教师编号获取毕设选题信息
 	public List<GraduationProSele> getSelectInfoByTno(String tno);
 	
+	//根据学生学号获取毕设选题信息
+	public GraduationProSele getSelectInfoBtSno(String sno);
+	
 	//获取所有的毕设选题信息
 	public List<GraduationProSele> getAllSelectInfo();
 	
