@@ -42,7 +42,7 @@
                   			<td class="for-border-right"><s:property value="#equ.lendDate"/></td>
                   			<td class="for-border-right"><s:property value="#equ.returnDate"/></td>
                 			<td class="position">
-								<a href="admin-delete-equipmentHistory?equipmentHistoryId=<s:property value="#equ.equipmentHistoryId" />"><span class="glyphicon glyphicon-trash mytrash"></span></a>
+								<a href="tch-delete-equipmentHistory?equipmentHistoryId=<s:property value="#equ.equipmentHistoryId" />"><span class="glyphicon glyphicon-trash mytrash"></span></a>
 							</td>
              			</tr>
              			</s:iterator>
