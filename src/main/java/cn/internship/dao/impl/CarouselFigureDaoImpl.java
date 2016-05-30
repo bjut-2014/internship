@@ -44,7 +44,7 @@ public class CarouselFigureDaoImpl extends HibernateDaoSupport implements Carous
 
 	@Override
 	public List<CarouselFigure> getByNum(int num) {
-		String hql = "from CarouselFigure";
+		String hql = "from CarouselFigure cf order by cf.date desc ";
 		List<CarouselFigure> list = (List<CarouselFigure>) getHibernateTemplate().find(hql);
 		//只取前num条数据
 		List<CarouselFigure> newList = null;

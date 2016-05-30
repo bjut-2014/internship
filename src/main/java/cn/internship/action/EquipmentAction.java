@@ -146,9 +146,9 @@ public class EquipmentAction extends ActionSupport implements ServletRequestAwar
 		request.setAttribute("navId", 7);
 		Equipment equipment = equipmentService.get(equipmentId);
 		equipment.setPeople(epeople);
-		SimpleDateFormat sdf =   new SimpleDateFormat("yyyy/mm/dd");
-		java.util.Date elendDate1 = sdf.parse(elendDate);
-		java.util.Date ereturnDate1 = sdf.parse(elendDate);
+		SimpleDateFormat sdf =   new SimpleDateFormat("yyyy-mm-dd");
+		java.util.Date elendDate1 = sdf.parse(changeDate(elendDate));
+		java.util.Date ereturnDate1 = sdf.parse(changeDate(ereturnDate));
 		equipment.setLendDate(new Date(elendDate1.getTime()));
 		equipment.setReturnDate(new Date(ereturnDate1.getTime()));
 		equipment.setState(estate);
@@ -217,9 +217,9 @@ public class EquipmentAction extends ActionSupport implements ServletRequestAwar
 	public String adminAddEquipmentHistory() throws ParseException{
 		request.setAttribute("navId", 9);
 		Equipment equipment = equipmentService.get(equipmentId);
-		SimpleDateFormat sdf =   new SimpleDateFormat("yyyy/mm/dd");
-		java.util.Date elendDate1 = sdf.parse(elendDate);
-		java.util.Date ereturnDate1 = sdf.parse(elendDate);
+		SimpleDateFormat sdf =   new SimpleDateFormat("yyyy-mm-dd");
+		java.util.Date elendDate1 = sdf.parse(changeDate(elendDate));
+		java.util.Date ereturnDate1 = sdf.parse(changeDate(ereturnDate));
 		equipment.setLendDate(new Date(elendDate1.getTime()));
 		equipment.setReturnDate(new Date(ereturnDate1.getTime()));
 		equipment.setState(estate);
@@ -278,6 +278,22 @@ public class EquipmentAction extends ActionSupport implements ServletRequestAwar
 		List<EquipmentHistory> equipmentHistories = equipmentHistoryService.getAllHistotyByTeacherId(teacher.getTeacherId());
 		request.setAttribute("equipmentHistories", equipmentHistories);
 		return SUCCESS;
+	}
+	
+	//日期-月份默认是从0开始计算的，所以要将月份加1
+	private String changeDate(String date){
+//		String date = "1991-1-1";
+		String[] strs = date.split("-");
+		int m = Integer.valueOf(strs[1]);
+		m++;
+		strs[1] = String.valueOf(m);
+		StringBuilder sb = new StringBuilder();
+		for(String s:strs){
+			sb.append(s+"-");
+			
+		}
+		sb.replace(sb.length()-1, sb.length(), "");
+		return sb.toString();
 	}
 	
 	//----------------------------------get与set------------------------------------------

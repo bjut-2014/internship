@@ -39,9 +39,9 @@ public class StudentAction extends ActionSupport implements ServletRequestAware,
 	@Override
 	public String execute() throws Exception {
 		request.setAttribute("navId", 1);
-		List<NoticeBoard> noticeBoards = noticeBoardService.getAll();
-		List<RecruitInfo> recruitInfos = recruitInfoService.getAll();
-		List<CarouselFigure> carouselFigures = carouselFigureService.getAll();
+		List<NoticeBoard> noticeBoards = noticeBoardService.getByNum(5);
+		List<RecruitInfo> recruitInfos = recruitInfoService.getByNum(5);
+		List<CarouselFigure> carouselFigures = carouselFigureService.getByNum(5);
 
 		request.setAttribute("noticeBoards", noticeBoards);
 		request.setAttribute("recruitInfos", recruitInfos);

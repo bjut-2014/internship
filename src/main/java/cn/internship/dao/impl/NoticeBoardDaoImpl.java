@@ -43,7 +43,7 @@ public class NoticeBoardDaoImpl extends HibernateDaoSupport implements NoticeBoa
 	//获得所有公告
 	@Override
 	public List<NoticeBoard> getAll() {
-		String hql = "from NoticeBoard";
+		String hql = "from NoticeBoard nb order by nb.date desc ";
 		List<NoticeBoard> list = (List<NoticeBoard>) getHibernateTemplate().find(hql);
 		return list;
 	}
@@ -51,7 +51,7 @@ public class NoticeBoardDaoImpl extends HibernateDaoSupport implements NoticeBoa
 	//获得指定条数的公告
 	@Override
 	public List<NoticeBoard> getByNum(int num) {
-		String hql = "from NoticeBoard";
+		String hql = "from NoticeBoard nb order by nb.date desc ";
 		List<NoticeBoard> list = (List<NoticeBoard>) getHibernateTemplate().find(hql);
 		//只取前num条数据
 		List<NoticeBoard> newList = null;

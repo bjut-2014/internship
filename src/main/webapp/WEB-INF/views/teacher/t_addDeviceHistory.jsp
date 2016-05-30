@@ -69,13 +69,13 @@
                              			<div class="form-group">
                              				<label class="control-label col-lg-2">借出时间</label>
                              				<div class="col-lg-10">
-                             					<input name="elendDate" class="form-control" id="datepicker1" type="date" aria-required="true"  value="<s:date name="#request.equipment.lendDate" format="yyyy-MM-dd" />"/>
+                             					<input name="elendDate" class="form-control" id="datepicker1" aria-required="true"  value="<s:date name="#request.equipment.lendDate" format="yyyy-MM-dd" />"/>
                              				</div>
                              			</div>
                              			<div class="form-group">
                              				<label class="control-label col-lg-2">归还时间</label>
                              				<div class="col-lg-10">
-                             					<input name="ereturnDate" class="form-control" id="datepicker2" type="date" aria-required="true"  value="<s:date name="#request.equipment.returnDate" format="yyyy-MM-dd" />"/>
+                             					<input name="ereturnDate" class="form-control" id="datepicker2"  aria-required="true"  value="<s:date name="#request.equipment.returnDate" format="yyyy-MM-dd" />"/>
                              				</div>
                              			</div>
                              			            			
@@ -137,13 +137,14 @@
 <jsp:include page="../footer/footer.jsp" />
 <script>
 $(document).ready(function(){
-$("#datepicker1").datepicker({
-	format:"yyyy/mm/dd"
-});
-$("#datepicker2").datepicker({
-	format:"yyyy/mm/dd"
-});
-});
+	$("#datepicker1").datepicker({
+		format:"yyyy-mm-dd"
+	});
+	$("#datepicker2").datepicker({
+		format:"yyyy-mm-dd"
+	});
+	});
 </script>
+<script src="scripts/lib/bootstrap-datepicker.min.js"></script>
 </body>
 </html>
