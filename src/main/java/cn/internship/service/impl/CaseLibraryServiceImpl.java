@@ -31,6 +31,10 @@ public class CaseLibraryServiceImpl implements CaseLibraryService{
 		caseLibraryDao.add(caseLibrary);
 	}
 	
+	@Override
+	public void delete(Integer id){
+		caseLibraryDao.delete(id);
+	}
 	
 	//-----------------get与set方法-------------------------
 	

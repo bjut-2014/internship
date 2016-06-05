@@ -46,4 +46,9 @@ public class CaseLibraryDaoImpl extends HibernateDaoSupport implements CaseLibra
 		getHibernateTemplate().save(caseLibrary);
 	}
 
+	@Override
+	public void delete(Integer id) {
+		getHibernateTemplate().delete(get(id));
+	}
+
 }

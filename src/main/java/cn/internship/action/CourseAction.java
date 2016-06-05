@@ -188,6 +188,16 @@ public class CourseAction extends ActionSupport implements ServletRequestAware, 
 	//删除课程
 	public String deleteCourse(){
 		request.setAttribute("navId", 3);
+		//找到和该课程相关的案例库信息
+		List<Integer> caseIds = new ArrayList<Integer>();
+		List<CaseLibrary> caseLibraries = caseLibraryService.getByCId(courseId);
+		for(CaseLibrary caseLibrary:caseLibraries){
+			caseIds.add(caseLibrary.getCaseLibraryId());
+		}
+		//删除和该课程相关的所有案例库信息
+		for(Integer caseId:caseIds){
+			caseLibraryService.delete(caseId);
+		}
 		courseService.deleteCourse(courseId);
 		return SUCCESS;
 	}

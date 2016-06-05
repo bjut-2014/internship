@@ -15,4 +15,6 @@ public interface CaseLibraryService {
 	public CaseLibrary get(Integer caseLibraryId);
 	
 	public void saveCaseLibrary(CaseLibrary caseLibrary);
+	
+	public void delete(Integer id);
 }

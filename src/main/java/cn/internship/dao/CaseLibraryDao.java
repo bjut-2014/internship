@@ -19,4 +19,6 @@ public interface CaseLibraryDao {
 	
 	public void add(CaseLibrary caseLibrary);
 	
+	public void delete(Integer id);
+	
 }
