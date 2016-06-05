@@ -20,9 +20,14 @@ public interface CourseDao {
 	
 	public Integer getCourseScore(Integer studentId,Integer courseId);
 	
+	public Integer setCourseScore(Integer studentId,Integer courseId,Integer score);
+	
 	public void addCourse(Course course);
 	
 	public void deleteCourse(Integer id);
 	
 	public void updateCourse(Course course);
+	
+	
+
 }

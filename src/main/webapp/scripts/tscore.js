@@ -9,7 +9,7 @@ $(document).ready(function(){
 		console.log(_cno.html());
 		$.ajax({
 			type:"POST",
-			url:"test",
+			url:"giveCourseScore",
 			data:{
 				sno:_sno.html(),
 				cno:_cno.html(),

@@ -143,9 +143,10 @@
 	<bean id="homeworkService" class="cn.internship.service.impl.HomeworkServiceImpl">
 		<property name="homeworkDao" ref="homeworkDao" />
 	</bean>
-	<bean id="homeworkAction" class="cn.internship.action.HomeworkAction">
+	<bean id="homeworkAction" class="cn.internship.action.HomeworkAction" scope="prototype">
 		<property name="homeworkService" ref="homeworkService" />
 		<property name="studentService" ref="studentService" />
+		<property name="courseService" ref="courseService" />
 	</bean>
 	<!-- end -->
 	

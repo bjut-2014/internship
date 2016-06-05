@@ -44,7 +44,7 @@
                                             <tbody>
                                                <s:iterator value="#request.comprehensiveHomeworkInfos" var="hm">
                                                <tr>
-                                               		<td class="cno" style="display:none;"></td>
+                                               		<td class="cno" style="display:none;"><s:property value="#hm.homework.courseId"/></td>
                                                		<td class="sno"><s:property value="#hm.no"/></td>                                              	
                                                		<td><s:property value="#hm.name"/></td>
                                                		<td><s:property value="#hm.homework.title"/></td>
@@ -52,7 +52,12 @@
                                                		<td><a href="download?fileName=<s:property value="#hm.homework.title"/>&baseFloder=<s:property value="#hm.homework.path"/>"><span class="glyphicon glyphicon-save do"></span></a></td>
                                                		
 	                                           		<td class="thin-width">
-	                                           			<input type="text" class="form-control input-block input-score"/>
+	                                           			<s:if test="#hm.score==-1">
+	                                           				<input type="text" class="form-control input-block input-score"/>
+	                                           			</s:if>
+	                                           			<s:else>
+	                                           				<input type="text" class="form-control input-block input-score" value="<s:property value="#hm.score"/>"/>
+	                                           			</s:else>
 	                                           		</td>
                                                </tr>
                                                </s:iterator>

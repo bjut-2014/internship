@@ -14,12 +14,14 @@ import org.apache.struts2.interceptor.ServletResponseAware;
 
 import cn.internship.entity.Homework;
 import cn.internship.entity.Student;
+import cn.internship.service.CourseService;
 import cn.internship.service.HomeworkService;
 import cn.internship.service.StudentService;
 
 import org.apache.commons.io.FileUtils;
 
 import com.opensymphony.xwork2.ActionSupport;
+
 import org.json.JSONObject;
 
 /**
@@ -33,6 +35,7 @@ public class HomeworkAction extends ActionSupport implements ServletRequestAware
 	
 	private HomeworkService homeworkService;
 	private StudentService studentService;
+	private CourseService courseService;
 	
 	//待上传文件的各种信息
 	private File upload;
@@ -41,6 +44,11 @@ public class HomeworkAction extends ActionSupport implements ServletRequestAware
 	
 	//选的课程的ID
 	private Integer courseId;
+	
+	//打分信息
+	private String sno;
+	private Integer cno;
+	private Integer score;
 	
 	@Override
 	public String execute() throws Exception {
@@ -92,13 +100,21 @@ public class HomeworkAction extends ActionSupport implements ServletRequestAware
 		int n = homeworks.size();
 		List<String> snoList = new ArrayList<String>(n);
 		List<String> snameList = new ArrayList<String>(n);
+		List<Integer> scoreList = new ArrayList<Integer>();
 		
 		for(int i=0;i<n;i++){
-//			int courseId = homeworks.get(i).getCourseId();
+			int cId = homeworks.get(i).getCourseId();
 			int studentId = homeworks.get(i).getStudentId();
+			int sc;
+			try {
+				sc = courseService.getCourseScore(studentId, cId);
+			} catch (Exception e) {
+				sc = -1;
+			}
 			Student student = studentService.get(studentId);
 			snoList.add(student.getSno());
 			snameList.add(student.getName());
+			scoreList.add(sc);
 		}
 		List<ComprehensiveHomeworkInfo> comprehensiveHomeworkInfos = new ArrayList<HomeworkAction.ComprehensiveHomeworkInfo>(n);
 		for(int i=0;i<n;i++){
@@ -106,6 +122,7 @@ public class HomeworkAction extends ActionSupport implements ServletRequestAware
 			comprehensiveHomeworkInfo.setHomework(homeworks.get(i));
 			comprehensiveHomeworkInfo.setName(snameList.get(i));
 			comprehensiveHomeworkInfo.setNo(snoList.get(i));
+			comprehensiveHomeworkInfo.setScore(scoreList.get(i));
 			comprehensiveHomeworkInfos.add(comprehensiveHomeworkInfo);
 		}
 		
@@ -113,10 +130,17 @@ public class HomeworkAction extends ActionSupport implements ServletRequestAware
 		return SUCCESS;
 	}
 	
+	//给课程打分
+	public String setCourseScore(){
+		courseService.setCourseScore(studentService.get(sno).getStudentId(), cno, score);
+		return SUCCESS;
+	}
+	
 	private class ComprehensiveHomeworkInfo{
 		private Homework homework;
 		private String name;
 		private String no;
+		private Integer score;
 		public Homework getHomework() {
 			return homework;
 		}
@@ -135,6 +159,13 @@ public class HomeworkAction extends ActionSupport implements ServletRequestAware
 		public void setNo(String no) {
 			this.no = no;
 		}
+		public Integer getScore() {
+			return score;
+		}
+		public void setScore(Integer score) {
+			this.score = score;
+		}
+		
 		
 	}
 	
@@ -207,6 +238,47 @@ public class HomeworkAction extends ActionSupport implements ServletRequestAware
 
 	public void setUpload(File upload) {
 		this.upload = upload;
+	}
+
+
+
+	public String getSno() {
+		return sno;
+	}
+
+
+	public void setSno(String sno) {
+		this.sno = sno;
+	}
+
+
+	public Integer getCno() {
+		return cno;
+	}
+
+
+	public void setCno(Integer cno) {
+		this.cno = cno;
+	}
+
+
+	public Integer getScore() {
+		return score;
+	}
+
+
+	public void setScore(Integer score) {
+		this.score = score;
+	}
+
+
+	public CourseService getCourseService() {
+		return courseService;
+	}
+
+
+	public void setCourseService(CourseService courseService) {
+		this.courseService = courseService;
 	}
 
 	

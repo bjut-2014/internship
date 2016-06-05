@@ -75,6 +75,24 @@ public class CourseDaoImpl extends HibernateDaoSupport implements CourseDao{
 		return score;
 	}
 
+	//设置成绩
+	@Override
+	public Integer setCourseScore(Integer studentId,Integer courseId,Integer score) {
+		//执行原生的sql语句
+		Integer result = getHibernateTemplate().execute(new HibernateCallback<Integer>() {
+			@Override
+			public Integer doInHibernate(Session session) throws HibernateException {
+				SQLQuery query = session.createSQLQuery("update student_course set score =? where courseId=? and studentId=?");
+//					query.addScalar("score");
+				query.setInteger(0, score);
+				query.setInteger(1, courseId);
+				query.setInteger(2, studentId);
+				return query.executeUpdate();
+			}
+		});
+		return result;
+	}
+	
 
 	//添加课程记录
 	@Override

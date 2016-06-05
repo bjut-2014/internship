@@ -57,6 +57,10 @@ public class CourseServiceImpl implements CourseService{
 		courseDao.updateCourse(course);
 	}
 
+	@Override
+	public Integer setCourseScore(Integer studentId,Integer courseId,Integer score){
+		return courseDao.setCourseScore(studentId, courseId, score);
+	}
 	
 	//-----------------------------------get与set方法--------------------------------------------
 	
